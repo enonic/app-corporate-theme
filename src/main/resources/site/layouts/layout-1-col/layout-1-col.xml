@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<layout>
+    <display-name>1 column</display-name>
+    <config>
+    </config>
+    <region>
+        <region name="left" />
+    </region>
+</layout>
