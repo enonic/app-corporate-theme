@@ -3,7 +3,7 @@
     <display-name>1 column</display-name>
     <config>
     </config>
-    <region>
+    <regions>
         <region name="left" />
-    </region>
+    </regions>
 </layout>
