@@ -17,9 +17,6 @@ exports.get = function(req) {
         leftRegion: component.regions['left'],
     };
 
-    libs.util.log(model.leftRegion);
-    return;
-
     // Rendering
    
     var body = libs.thymeleaf.render(view, model);
