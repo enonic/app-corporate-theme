@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Home | Nova</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
-    <link rel="stylesheet" data-th-href="${portal.assetUrl({'_path=css/bootstrap.min.css'})}" href="/assets/css/bootstrap.min.css" />
+    <!--<link rel="stylesheet" data-th-href="${portal.assetUrl({'_path=css/bootstrap.min.css'})}" href="/assets/css/bootstrap.min.css" />-->
+    <link data-th-href="${portal.assetUrl({'_path=css/bootstrap.min.css'})}" href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
     <link rel="stylesheet"  data-th-href="${portal.assetUrl({'_path=css/bootstrap-responsive.min.css'})}" href="/assets/css/bootstrap-responsive.min.css" />
     <!--<link rel="stylesheet"  data-th-href="${$portal.assetUrl({'_path=css/font-awesome.min.css'})}" href="/assets/css/font-awesome.min.css" />-->
     <link rel="stylesheet"  data-th-href="${portal.assetUrl({'_path=css/main.css'})}" href="/assets/css/main.css" />
     <link rel="stylesheet"  data-th-href="${portal.assetUrl({'_path=css/sl-slide.css'})}" href="/assets/css/sl-slide.css" />
+    <link rel="stylesheet" data-th-href="${portal.assetUrl({'_path=css/override.css'})}"/>
 
     <script data-th-src="${portal.assetUrl({'_path=js/vendor/modernizr-2.6.2-respond-1.1.0.min.js'})}" src="/assets/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 
@@ -32,13 +35,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-            <a id="logo" class="pull-left" href="index.html"></a>
+            <a id="logo" class="pull-left" data-th-href="${portal.pageUrl({'_path=' + site._path})}">
+                <img data-th-src="${logo}"/>
+            </a>
             <div class="nav-collapse collapse pull-right">
 
 
 
                 <nav>
-                    <ul class="menu-main">
+                    <ul class="menu-main nav">
                         <li data-th-each="menuItem : ${menuItems}"
                             data-th-class="${
 				'page_item' +
@@ -49,14 +54,14 @@
                             <a href="#" data-th-href="${portal.pageUrl({'_path=' + menuItem.path})}"
                                data-th-text="${menuItem.menuName} ?: ${menuItem.displayName}"
                                data-th-target="${menuItem.newWindow ? '_blank' : ''}">Page</a>
-                            <ul data-th-if="${menuItem.hasChildren}" class="menu-level-2">
+                            <ul data-th-if="${menuItem.hasChildren}" class="menu-level-2 dropdown-menu">
                                 <li data-th-each="submenuItem : ${menuItem.children}"
                                     data-th-class="${
 						(submenuItem.hasChildren ? 'has-children' : '') +
 						(submenuItem.inPath ? ' in-path' : '') +
 						(submenuItem.isActive ? ' active' : '')
 					}">
-                                    <a href="#" data-th-href="${portal.pageUrl({'_path=' + submenuItem.path})}"
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-th-href="${portal.pageUrl({'_path=' + submenuItem.path})}"
                                        data-th-text="${submenuItem.menuName} ?: ${submenuItem.displayName}"
                                        data-th-target="${submenuItem.newWindow ? '_blank' : ''}">Page title</a>
                                 </li>
@@ -114,23 +119,18 @@
     <div class="container">
         <div class="row-fluid">
             <div class="span5 cp">
-                &copy; 2013 <a target="_blank" href="http://shapebootstrap.net/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">ShapeBootstrap</a>. All Rights Reserved.
+               <p data-th-utext="${footer.text}" data-th-remove="tag"></p>
             </div>
             <!--/Copyright-->
 
             <div class="span6">
                 <ul class="social pull-right">
-                    <li><a href="#"><i class="icon-facebook"></i></a></li>
+                    <li data-th-if="${footer.icon}" data-th-each="footers : ${footer.icon}">
+                        <a href="#" data-th-class="${footers}"></a>
+                    </li>
+                    <!--<li><a href="#"><i class="icon-twitter"></i></a></li>-->
                     <li><a href="#"><i class="icon-twitter"></i></a></li>
-                    <li><a href="#"><i class="icon-pinterest"></i></a></li>
-                    <li><a href="#"><i class="icon-linkedin"></i></a></li>
-                    <li><a href="#"><i class="icon-google-plus"></i></a></li>
-                    <li><a href="#"><i class="icon-youtube"></i></a></li>
-                    <li><a href="#"><i class="icon-tumblr"></i></a></li>
-                    <li><a href="#"><i class="icon-dribbble"></i></a></li>
-                    <li><a href="#"><i class="icon-rss"></i></a></li>
-                    <li><a href="#"><i class="icon-github-alt"></i></a></li>
-                    <li><a href="#"><i class="icon-instagram"></i></a></li>
+
                 </ul>
             </div>
 
