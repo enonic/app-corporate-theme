@@ -1,0 +1,23 @@
+<content-type>
+    <display-name>Portfolio</display-name>
+    <super-type>base:structured</super-type>
+    <form>
+        <field-set name="portfolio">
+            <label>Portfolio</label>
+            <items>
+                <input name="portfolioImage" type="ImageSelector">
+                    <label>Image</label>
+                    <occurrences minimum="0" maximum="1" />
+                </input>
+                <input name="portfolioTitle" type="TextLine">
+                    <label>Title</label>
+                    <occurrences minimum="0" maximum="1"/>
+                </input>
+                <input name="portfolioIntro" type="TextArea">
+                    <label>Intro</label>
+                    <occurrences minimum="0" maximum="1"/>
+                </input>
+            </items>
+        </field-set>
+    </form>
+</content-type>
