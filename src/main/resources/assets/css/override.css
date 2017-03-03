@@ -1,0 +1,12 @@
+.menu-level-2 {
+    position: absolute;
+    display: none;
+    z-index: 100;
+}
+.navbar-nav li .dropdown-menu {
+    position: relative;
+}
+
+#portfolio{
+    padding: 50px 0;
+}
