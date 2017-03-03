@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
   <config>
+    <input type="ImageSelector" name="logo">
+      <label>Header Logo</label>
+      <occurrences minimum="0" maximum="1" />
+    </input>
+    <field-set name="footerInfo">
+      <label>Footer Info</label>
+      <items>
+        <input type="TextArea" name="footerText">
+          <label>Footer text</label>
+          <occurrences minimum="0" maximum="1" />
+        </input>
+        <input type="ComboBox" name="SocialIcon">
+          <label>Social Iccom</label>
+          <occurrences minimum="0" maximum="0" />
+          <config>
+            <option value="facebook">Facebook</option>
+            <option value="twitter">Twitter</option>
+            <option value="instagram">Instagram</option>
+            <option value="youtube">Youtube</option>
+            <option value="gplus">Google Plus</option>
+            <option value="linkedin">Linkedin</option>
+          </config>
+        </input>
+      </items>
+    </field-set>
   </config>
   <x-data mixin="menu-item"/>
 </site>
