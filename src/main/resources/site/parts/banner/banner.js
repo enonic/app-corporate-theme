@@ -10,10 +10,6 @@ exports.get = function(req){
     
     var component = libs.portal.getComponent();
     var config = component.config;
- 
-    
-    libs.util.log();
-    
     
     
     var model = {
@@ -22,6 +18,8 @@ exports.get = function(req){
         url : config.bannerUrl,
         color : config.bannerBackgroundCol
     };
+
+    libs.util.log(model.image);
 
     var body = libs.thymeleaf.render(view, model);
     return{ body: body};

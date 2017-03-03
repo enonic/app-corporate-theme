@@ -4,19 +4,19 @@
         <field-set name="banner">
             <label>Banner info</label>
             <items>
-                <input type="imageSelector" name="bannerImage">
+                <input type="ImageSelector" name="bannerImage">
                     <label>Image</label>
                     <occurrences minimum="1" maximum="1"/>
                 </input>
-                <input type="htmlArea" name="bannerText">
+                <input type="HtmlArea" name="bannerText">
                     <label>Text</label>
                     <occurrences minimum="0" maximum="1"/>
                 </input>
-                <input type="textLine" name="bannerUrl">
+                <input type="TextLine" name="bannerUrl">
                     <label>Url</label>
                     <occurrences minimum="0" maximum="1"/>
                 </input>
-                <input type="textLine" name="bannerBackgroundCol">
+                <input type="TextLine" name="bannerBackgroundCol">
                     <label>Background colour (Hex color)</label>
                     <occurrences minimum="0" maximum="1"/>
                 </input>
