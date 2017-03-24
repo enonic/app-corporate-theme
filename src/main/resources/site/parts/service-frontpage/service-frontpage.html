@@ -1,0 +1,26 @@
+<section id="services">
+    <div class="container">
+        <div class="center gap">
+            <h3 data-th-text="${title}"></h3>
+            <p class="lead" data-th-text="${intro}"></p>
+        </div>
+
+        <div class="row-fluid">
+            <ul>
+                <li data-th-if="${services}" data-th-each="service : ${services}">
+                    <div class="span4">
+                        <div class="media">
+                            <div class="pull-left">
+                                <i class="icon-medium" data-th-classappend="'icon-' + ${service.icon}"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading" data-th-text="${service.serviceTitle}"></h4>
+                                <p data-th-text="${service.serviceIntro}"></p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,20 @@
+<part>
+    <display-name>Services(Frontpage)</display-name>
+    <config>
+        <input type="TextLine" name="title">
+            <label>Part's title</label>
+            <occurrences minimum="1" maximum="1"></occurrences>
+        </input>
+        <input type="TextArea" name="intro">
+            <label>Part's intro</label>
+            <occurrences minimum="1" maximum="1"></occurrences>
+        </input>
+        <input type="ContentSelector" name="service">
+            <label>Services list</label>
+            <occurrences minimum="0" maximum="0"/>
+            <config>
+                <allowContentType>service</allowContentType>
+            </config>
+        </input>
+    </config>
+</part>
