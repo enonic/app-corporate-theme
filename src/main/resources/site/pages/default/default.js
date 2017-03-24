@@ -13,6 +13,7 @@ var view = resolve('default.html');
 exports.get = function(req){
 
     var content = libs.portal.getContent();
+    var showTitle = false;
     var mainRegion = content.page.regions["main"];
     var siteConfig = libs.contentLib.getSiteConfig({
         key: '/bootstrap-theme',
@@ -28,7 +29,12 @@ exports.get = function(req){
         scale : 'block(220,80)'
         
     });
-
+    var sitePath = libs.portal.getSite()._path;
+    var currentPath = content._path;
+    
+    if(sitePath === currentPath){
+        showTitle = true;
+    }
     
     //Fetching social media's icons
     var icons = siteConfig.SocialIcon ? libs.util.data.forceArray(siteConfig.SocialIcon) : null;
@@ -51,11 +57,12 @@ exports.get = function(req){
     var model = {
         logo : logo,
         site : libs.portal.getSite(),
+        showTitle : showTitle,
+        pageTitle : content.displayName,
         footer : footer,
         mainRegion : mainRegion,
         menuItems : libs.menu.getMenuTree(2)
     };
-
 
     var body = libs.thymeleaf.render(view, model);
     return { body : body};
