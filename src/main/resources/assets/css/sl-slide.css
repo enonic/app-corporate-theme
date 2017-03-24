@@ -95,9 +95,7 @@
 }
 
 /* Default styles for background colors */
-.sl-slide{
-	display: none;
-}
+
 .sl-slide-horizontal .sl-slide-inner {
 	background: #3498DB;
 }
