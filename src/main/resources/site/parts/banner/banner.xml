@@ -1,18 +1,22 @@
 <part>
-    <display-name>Header slider banner</display-name>
+    <display-name>Header slider</display-name>
     <config>
-        <field-set name="banner">
+        <item-set name="banner">
             <label>Banner info</label>
             <items>
-                <input type="ImageSelector" name="bannerImage">
+                <input type="ImageSelector" name="image">
                     <label>Image</label>
                     <occurrences minimum="1" maximum="1"/>
                 </input>
-                <input type="HtmlArea" name="bannerText">
-                    <label>Text</label>
+                <input type="TextLine" name="title1">
+                    <label>Title 1</label>
                     <occurrences minimum="0" maximum="1"/>
                 </input>
-                <input type="TextLine" name="bannerUrl">
+                <input type="TextLine" name="title2">
+                    <label>Title 2</label>
+                    <occurrences minimum="0" maximum="1"/>
+                </input>
+                <input type="TextLine" name="url">
                     <label>Url</label>
                     <occurrences minimum="0" maximum="1"/>
                 </input>
@@ -21,6 +25,7 @@
                     <occurrences minimum="0" maximum="1"/>
                 </input>
             </items>
-        </field-set>
+            <occurrences minimum="0" maximum="0" />
+        </item-set>
     </config>
 </part>

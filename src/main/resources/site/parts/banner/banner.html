@@ -1,6 +1,15 @@
-<div>
-    <img data-th-src="${portal.assetUrl('images/sample/slider/img1.png')}" />
-    <a data-th-href="${url}">
-        <p data-th-utext="${text}"></p>
-    </a>
+<div class="row" style="background-color: #1e347b">
+    <div id="slider" >
+        <ul class="slides"  >
+            <li data-th-if="${banners}" data-th-each="banner : ${banners}" class="slide" style="background-color: #1e347b">
+                <img class="pull-right" data-th-src="${banner.image}"/>
+                <h2 data-th-text="${banner.title}"></h2>
+                <h3 class="gap" data-th-text="${banner.secondTitle}"></h3>
+                <a class="btn btn-large btn-transparent" data-th-href="${banner.url}">Learn More</a>
+            </li>
+        </ul>
+
+        <span id="prev" ><i class="icon-angle-left"></i></span>
+        <span id="next"><i class="icon-angle-right"></i></span>
+    </div>
 </div>
