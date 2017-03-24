@@ -21,14 +21,14 @@ exports.get = function(req){
                 key : partnerLogos[i]
             });
 
-            libs.util.log(logoKey);
+            if(logoKey){
+                var logo = libs.portal.imageUrl({
+                    id: logoKey._id,
+                    scale: 'block(1024,768)',
+                });
 
-            var logo = libs.portal.imageUrl({
-                id: logoKey._id,
-                scale: 'block(1024,768)',
-            });
-
-            logosList.push(logo);
+                logosList.push(logo);
+            }
         }
     }
 
