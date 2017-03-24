@@ -6,7 +6,7 @@ var libs = {
 };
 
 //Setting
-var view = resolve("portfolio-list.html");
+var view = resolve("portfolio.html");
 
 exports.get = function(req){
     
@@ -51,9 +51,7 @@ exports.get = function(req){
         pageTitle : config.pageTitle,
         portfolioList : portfolioList ? portfolioList : null
     };
-
-
-    libs.util.log(model.portfolioList);
+    
     var body = libs.thymeleaf.render(view, model);
     return { body : body};
 };
