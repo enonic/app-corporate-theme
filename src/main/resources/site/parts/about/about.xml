@@ -1,0 +1,26 @@
+<part>
+    <display-name>About us</display-name>
+    <config>
+        <input name="title1" type="TextLine">
+            <label>Title 1</label>
+            <occurrences minimum="0" maximum="1"/>
+        </input>
+        <input name="text1" type="TextArea">
+            <label>Intro 1</label>
+            <occurrences minimum="0" maximum="1"/>
+        </input>
+        <input name="team" type="ContentSelector">
+            <label>Employees</label>
+            <occurrences minimum="0" maximum="0"/>
+            <allowContentType>employee</allowContentType>
+        </input>
+        <input name="title2" type="TextLine">
+            <label>Title 2</label>
+            <occurrences minimum="0" maximum="1"/>
+        </input>
+        <input name="text2" type="TextArea">
+            <label>Intro 2</label>
+            <occurrences minimum="0" maximum="1"/>
+        </input>
+    </config>
+</part>
