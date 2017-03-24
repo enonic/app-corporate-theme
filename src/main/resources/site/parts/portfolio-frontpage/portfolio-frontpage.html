@@ -1,0 +1,25 @@
+<section id="recent-works">
+    <div class="container">
+        <div class="center">
+            <h3 data-th-text="${title}"></h3>
+            <p class="lead" data-th-text="${intro}"></p>
+        </div>
+        <div class="gap"></div>
+        <ul class="gallery col-4">
+            <li data-th-if="portfolios" data-th-each="portfolio : ${portfolios}">
+                <div class="preview">
+                    <img alt=" " data-th-src="${portfolio.portfolioImage}">
+                    <div class="overlay">
+                    </div>
+                    <div class="links">
+                        <a data-toggle="modal" href="#modal-1"><i class="icon-eye-open"></i></a><a href="#"><i class="icon-link"></i></a>
+                    </div>
+                </div>
+                <div class="desc">
+                    <h5 data-th-text="${portfolio.portfolioTitle}"></h5>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+

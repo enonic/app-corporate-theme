@@ -1,0 +1,20 @@
+<part>
+    <display-name>Portfolio (Frontpage)</display-name>¨
+    <config>
+        <input name="partTitle" type="TextLine">
+            <label>Page Title</label>
+            <occurrences minimum="0" maximum="1" />
+        </input>
+        <input name="partIntro" type="TextArea">
+            <label>Page Title</label>
+            <occurrences minimum="0" maximum="1" />
+        </input>
+        <input name="portfolio" type="ContentSelector">
+            <label>Portfolio</label>
+            <occurrences minimum="0" maximum="0" />
+            <config>
+                <allowContentType>portfolio</allowContentType>
+            </config>
+        </input>
+    </config>
+</part>
