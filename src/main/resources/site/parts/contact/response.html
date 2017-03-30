@@ -1,5 +1,10 @@
-<div class="span8 response-field">
+<div data-th-if="${!error}" class="span8 response-field">
     <h4 id="response">Thank You!</h4>
     <h6>Your message successfully has been sent.</h6>
 </div>
+<div data-th-if="${error}" class="span8 response-field">
+    <h4 id="response">Error!</h4>
+    <h6 data-th-text="${error}"></h6>
+</div>
+
 

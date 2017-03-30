@@ -13,6 +13,7 @@ var view = resolve('contact.html');
 exports.post = function(req){
     var config = libs.portal.getComponent().config;
     var contactInfo = null;
+    var error = null;
 
     if(emailValidation(req.params.email) && req.params.message) {
         contactInfo = {
@@ -32,10 +33,16 @@ exports.post = function(req){
         });
     }
     catch(err) {
-        libs.util.log("Mail configuration does not set properly. Check out app's read me for details.");
+        error = "Mail configuration does not set properly. Check out app's read me for details.";
     }
 
-    var body = libs.thymeleaf.render(postView, null);
+    libs.util.log(error);
+    
+     var model ={
+         error : error 
+     };
+    
+    var body = libs.thymeleaf.render(postView, model);
     return {body : body};
 };
 
@@ -49,7 +56,8 @@ exports.get = function(req){
         text : config.text ? config.text : null ,
         address : siteConfig.address ||  null ,
         email : siteConfig.email || null ,
-        phone : siteConfig.phone || null
+        phone : siteConfig.phone || null ,
+        
     };
 
     var body = libs.thymeleaf.render(view, model);
