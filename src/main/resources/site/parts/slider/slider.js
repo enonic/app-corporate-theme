@@ -32,14 +32,11 @@ exports.get = function(req){
                 secondTitle : hit.title2,
                 url : hit.url,
                 backgroundColor : "background-color : " + hit.backgroundColor,
-               
             };
 
             banners.push(result);
         }
     }
-
-libs.util.log(banners);
 
     var model = {
        banners : banners
