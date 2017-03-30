@@ -1,0 +1,50 @@
+<section id="slide-show">
+    <div id="slider" class="sl-slider-wrapper">
+        <div class="sl-slider">
+            <div data-th-if="${banners}" data-th-each="banner : ${banners}"
+                    class="sl-slide item1" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+                <div class="sl-slide-inner">
+                    <div class="container">
+                        <img class="pull-right" data-th-src="${banner.image}" alt="" />
+                        <h2 data-th-text="${banner.title}"></h2>
+                        <h3 class="gap" data-th-text="${banner.secondTitle}"></h3>
+                        <a class="btn btn-large btn-transparent" data-th-href="${banner.url}" >Learn more</a>
+                    </div>
+                </div>
+            </div>
+
+           <!-- <div class="sl-slide item2" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
+                <div class="sl-slide-inner">
+                    <div class="container">
+                        <img class="pull-right" data-th-href="${portal.assetUrl({'_path=images/sample/slider/img2.png'})}" alt="" />
+                        <h2>Planning &amp; Analysis</h2>
+                        <h3 class="gap">Aenean ultricies mi vitast</h3>
+                        <a class="btn btn-large btn-transparent" href="#">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sl-slide item3" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
+                <div class="sl-slide-inner">
+                    <div class="container">
+                        <img class="pull-right" data-th-href="${portal.assetUrl({'_path=images/sample/slider/img3.png'})}" alt="" />
+                        <h2>Unique Solutions</h2>
+                        <h3 class="gap">Breatures who have been utterly</h3>
+                        <a class="btn btn-large btn-transparent" href="#">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+
+            <nav id="nav-arrows" class="nav-arrows">
+                <span class="nav-arrow-prev"><i class="icon-angle-left"></i></span>
+                <span class="nav-arrow-next"><i class="icon-angle-right"></i></span>
+            </nav>
+        </div>
+    </div>
+</section>
+
+
+
+
+

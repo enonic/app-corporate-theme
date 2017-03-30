@@ -1,8 +1,8 @@
 <part>
-    <display-name>Header slider</display-name>
+    <display-name>Slider</display-name>
     <config>
         <item-set name="banner">
-            <label>Banner info</label>
+            <label>Slider info</label>
             <items>
                 <input type="ImageSelector" name="image">
                     <label>Image</label>

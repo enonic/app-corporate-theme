@@ -5,7 +5,7 @@ var libs={
     util : require('/lib/enonic/util')
 };
 
-var view = resolve('banner.html');
+var view = resolve('slider.html');
 
 exports.get = function(req){
     
@@ -38,9 +38,10 @@ exports.get = function(req){
             banners.push(result);
         }
     }
-    
+
+
     var model = {
-       banners : banners ? banners : null
+       banners : banners
     };
 
     var body = libs.thymeleaf.render(view, model);

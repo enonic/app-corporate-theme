@@ -1,14 +1,14 @@
-ul{
+/*ul{
    list-style: none;
 }
-.has-children {
-    position: absolute;
-    display: none;
-    z-index: 100;
-}
+.has-children {*/
+    /*position: absolute;*/
+    /*display: none;*/
+    /*z-index: 100;*/
+/*}
 .navbar-nav li .dropdown-menu {
     position: relative;
-}
+}*/
 
 #portfolio{
     padding: 50px 0;
@@ -20,47 +20,9 @@ ul{
     padding: 50px 0;
 }
 
-/*Slider css*/
-#slider{
-    height : 520px;
-    width: inherit;
-    overflow: hidden;
-    float: right;
-    position: relative;
+section{
+    padding : 30px 0;
 }
-
-#slider .slides{
-    display: block;
-    height: 520px;
-    margin: 0;
-    padding : 0;
-
-}
-
-#slider .slide{
-    list-style-type: none;
-    height : 520px;
-    width: 1300px;
-    float: right!important;
-    margin: 0 200px;
-    padding: 100px 5px 5px 100px;
-}
-
-#prev{
-    font-size: 48px;
-    line-height:450px;
-    margin-left: 100px;
-    color: white;
-    position: absolute;
-    left: 80px;
-    top: 35px;
-}
-
-#next{
-    font-size: 48px;
-    line-height:450px!important;
-    color: white;
-    position: absolute;
-    right: 80px;
-    top: 35px;
+.button{
+    margin: 20px 0;
 }

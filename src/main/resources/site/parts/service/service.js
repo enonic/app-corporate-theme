@@ -37,7 +37,7 @@ exports.get = function(req){
 
             var serviceObj = {
                 icon : icon,
-                title : hit.data.serviceTitle ? hit.data.serviceTitle : hit.displayName,
+                title : hit.displayName,
                 intro : hit.data.serviceIntro ? hit.data.serviceIntro : null,
             };
                 if(serviceObj){

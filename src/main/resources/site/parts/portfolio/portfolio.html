@@ -6,17 +6,17 @@
                 <div class="overlay">
                 </div>
                 <div class="links">
-                    <a data-toggle="modal" href="#modal-1"><i class="icon-eye-open"></i></a><a href="#"><i class="icon-link"></i></a>
+                    <a data-toggle="modal" href="#modal-1"><i class="icon-eye-open"></i></a><a data-th-href="${portfolio.url}"><i class="icon-link"></i></a>
                 </div>
             </div>
             <div class="desc">
                 <h3 data-th-text="${portfolio.title}"></h3>
                 <h5 data-th-text="${portfolio.intro}"></h5>
             </div>
-           <div id="modal-1" class="modal hide fade">
+            <div id="modal-1" class="modal hide fade">
                 <a class="close-modal" href="javascript:;" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i></a>
                 <div class="modal-body">
-                    <img data-th-src="${portal.assetUrl({'_path=images/portfolio/full/item1.jpg'})}" alt=" " width="100%" style="max-height:400px">
+                    <img data-th-src="${portfolio.image}"  width="100%" style="max-height:400px">
                 </div>
             </div>
         </li>

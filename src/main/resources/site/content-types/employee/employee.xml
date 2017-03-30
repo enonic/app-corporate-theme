@@ -23,7 +23,8 @@
             <label>Social networks info</label>
             <expanded>true</expanded>
             <occurrences minimum="1" maximum="1"/>
-            <help-text>Select one or more options</help-text>
+            <help-text>Select one or more options from the list.
+                Add url for each in the corresponding field. Url should contains http/https. </help-text>
             <options minimum="1" maximum="4">
                 <option name="facebook">
                     <label>Facebook</label>

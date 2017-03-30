@@ -9,13 +9,14 @@
                     <label>Image</label>
                     <occurrences minimum="0" maximum="1" />
                 </input>
-                <input name="portfolioTitle" type="TextLine">
-                    <label>Title</label>
-                    <occurrences minimum="0" maximum="1"/>
-                </input>
                 <input name="portfolioIntro" type="TextArea">
                     <label>Intro</label>
                     <occurrences minimum="0" maximum="1"/>
+                </input>
+                <input name="portfolioUrl" type="TextLine">
+                    <label>External Url </label>
+                    <occurrences minimum="0" maximum="1"/>
+                    <help-text>Add external url for portfoloip. Url should contain hhtps or http. For example https://example.com </help-text>
                 </input>
             </items>
         </field-set>

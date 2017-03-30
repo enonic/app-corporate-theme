@@ -37,8 +37,10 @@ exports.get = function(req){
                     id : imageKey._id,
                     scale: 'block(1024,768)',
                 }),
-                title : hit.data.portfolioTitle,
-                intro : hit.data.portfolioIntro
+                title : hit.displayName,
+                intro : hit.data.portfolioIntro,
+                url : hit.data.portfolioUrl
+
             };
 
             if(portfolioObj){

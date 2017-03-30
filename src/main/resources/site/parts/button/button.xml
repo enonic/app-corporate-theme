@@ -1,0 +1,27 @@
+<part>
+    <display-name>Button</display-name>
+    <config>
+        <item-set name="btnSetting">
+            <label>Button Setting</label>
+            <occurrences minimum="0" maximum="0"/>
+            <items>
+                <input name="btnText" type="TextLine">
+                    <label>Button Text</label>
+                    <occurrences minimum="0" maximum="1"/>
+                </input>
+                <input name="btnColor" type="TextLine">
+                    <label>Button Color (Hex number)</label>
+                    <occurrences minimum="0" maximum="1"/>
+                </input>
+                <input name="externalUrl" type="TextLine">
+                    <label>External url</label>
+                    <occurrences minimum="0" maximum="1"/>
+                </input>
+                <input name="btnUrl" type="ContentSelector">
+                    <label>Url</label>
+                    <occurrences minimum="0" maximum="1"/>
+                </input>
+            </items>
+        </item-set>
+    </config>
+</part>

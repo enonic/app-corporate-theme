@@ -45,7 +45,7 @@ exports.get = function(){
                 id : employeeKey.data.photo,
                 scale: 'block(250,167)',
             }),
-            name : employeeKey.data.name,
+            name : employeeKey.displayName,
             intro : employeeKey.data.intro,
             facebookUrl : facebookUrl,
             twitterUrl : twitterUrl,

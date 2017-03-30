@@ -2,7 +2,6 @@
 <html>
 <head>
     <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Home | Nova</title>
     <meta name="description" content="">
@@ -17,9 +16,7 @@
     <link rel="stylesheet" data-th-href="${portal.assetUrl({'_path=css/override.css'})}"/>
 
     <script data-th-src="${portal.assetUrl({'_path=js/vendor/modernizr-2.6.2-respond-1.1.0.min.js'})}" src="/assets/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script data-th-src="${portal.assetUrl({'_path=js/slider.js'})}" src="/assets/js/slider.js"></script>
-    <script  data-th-src="${portal.assetUrl({'_path=js/main.js'})}" src="/assets/js/main.js" ></script>
+
 
     <!-- Le fav and touch icons -->
     <link rel="shortcut icon" data-th-href="${portal.assetUrl({'_path=images/ico/favicon.ico'})}" href="/assets/images/ico/favicon.ico" />
@@ -31,7 +28,95 @@
 
 </head>
 <body>
-<!--Header-->
+
+
+
+<!--
+<nav>
+    <ul class="menu-main">
+        &lt;!&ndash;/*
+            INFO: Remove the comment around this block to add a "Home" link first in the menu.
+            For this to work you must send in two parameters:
+                * site = portal.getSite();
+                * content = portal.getContent();
+
+        <li data-th-class="${(site._path == content._path ? 'page_item active' : 'page_item')}">
+            <a data-th-href="${portal.pageUrl({'_path=' + site._path})}" href="/">
+                Home
+            </a>
+        </li>
+        */&ndash;&gt;
+        <li data-th-each="menuItem : ${menuItems}"
+            data-th-class="${
+				'page_item' +
+				(menuItem.hasChildren ? ' has-children' : '') +
+				(menuItem.inPath ? ' in-path' : '') +
+				(menuItem.isActive ? ' active' : '')
+			}">
+            <a href="#" data-th-href="${portal.pageUrl({'_path=' + menuItem.path})}"
+               data-th-text="${menuItem.menuName} ?: ${menuItem.displayName}"
+               data-th-target="${menuItem.newWindow ? '_blank' : ''}">Page</a>
+            <ul data-th-if="${menuItem.hasChildren}" class="menu-level-2">
+                <li data-th-each="submenuItem : ${menuItem.children}"
+                    data-th-class="${
+						(submenuItem.hasChildren ? 'has-children' : '') +
+						(submenuItem.inPath ? ' in-path' : '') +
+						(submenuItem.isActive ? ' active' : '')
+					}">
+                    <a href="#" data-th-href="${portal.pageUrl({'_path=' + submenuItem.path})}"
+                       data-th-text="${submenuItem.menuName} ?: ${submenuItem.displayName}"
+                       data-th-target="${submenuItem.newWindow ? '_blank' : ''}">Page title</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+-->
+
+<header class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a id="logo" class="pull-left" href="index.html"></a>
+            <div class="nav-collapse collapse pull-right">
+                <ul class="nav">
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="icon-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="career.html">Career</a></li>
+                            <li><a href="blog-item.html">Blog Single</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="pricing.html">Pricing</a></li>
+                            <li><a href="404.html">404</a></li>
+                            <li><a href="typography.html">Typography</a></li>
+                            <li><a href="registration.html">Registration</a></li>
+                            <li class="divider"></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="terms.html">Terms of Use</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact-us.html">Contact</a></li>
+                    <li class="login">
+                        <a data-toggle="modal" href="#loginForm"><i class="icon-lock"></i></a>
+                    </li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</header>
+
+
+
+<!--Header
 <header class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
@@ -44,9 +129,6 @@
                 <img data-th-src="${logo}"/>
             </a>
             <div class="nav-collapse collapse pull-right">
-
-
-
                 <nav>
                     <ul class="menu-main nav">
                         <li data-th-each="menuItem : ${menuItems}"
@@ -75,38 +157,11 @@
                     </ul>
                 </nav>
 
-
-                <!--<ul class="nav">-->
-                    <!--<li class="active"><a href="index.html">Home</a></li>-->
-                    <!--<li><a href="about-us.html">About Us</a></li>-->
-                    <!--<li><a href="services.html">Services</a></li>-->
-                    <!--<li><a href="portfolio.html">Portfolio</a></li>-->
-                    <!--<li class="dropdown">-->
-                        <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="icon-angle-down"></i></a>-->
-                        <!--<ul class="dropdown-menu">-->
-                            <!--<li><a href="career.html">Career</a></li>-->
-                            <!--<li><a href="blog-item.html">Blog Single</a></li>-->
-                            <!--<li><a href="faq.html">FAQ</a></li>-->
-                            <!--<li><a href="pricing.html">Pricing</a></li>-->
-                            <!--<li><a href="404.html">404</a></li>-->
-                            <!--<li><a href="typography.html">Typography</a></li>-->
-                            <!--<li><a href="registration.html">Registration</a></li>-->
-                            <!--<li class="divider"></li>-->
-                            <!--<li><a href="privacy.html">Privacy Policy</a></li>-->
-                            <!--<li><a href="terms.html">Terms of Use</a></li>-->
-                        <!--</ul>-->
-                    <!--</li>-->
-                    <!--<li><a href="blog.html">Blog</a></li>-->
-                    <!--<li><a href="contact-us.html">Contact</a></li>-->
-                    <!--<li class="login">-->
-                        <!--<a data-toggle="modal" href="#loginForm"><i class="icon-lock"></i></a>-->
-                    <!--</li>-->
-                <!--</ul>-->
-            </div><!--/.nav-collapse -->
+            </div>/.nav-collapse
         </div>
     </div>
 </header>
-<!-- /header -->
+ /header -->
 
 <!-- Title -->
 <section class="title" data-th-if="${!showTitle}">
@@ -138,6 +193,34 @@
 
 
 <!--Footer-->
+<section id="bottom" class="main">
+    <div class="container">
+
+        <div class="row-fluid" style="padding-top: 30px">
+            <div class="span3">
+                <h4 data-th-text="${footer.title}"></h4>
+                <ul class="unstyled address">
+                    <li data-th-if="${footer.contactsInfo}" data-th-each="contactInfo : ${footer.contactsInfo}">
+                        <i data-th-class="'icon-' + ${contactInfo.icon}"></i>
+                        <p data-th-text="${contactInfo.text}"></p>
+                    </li>
+                </ul>
+            </div>
+            <div id="tweets" class="span3">
+                <h4 data-th-text="${footer.title2}"></h4>
+                <div>
+                    <ul class="arrow">
+                        <li data-th-if="items" data-th-each="item : ${footer.items}">
+                            <a data-th-href="${item.url}">
+                                <span data-th-text="${item.name}"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <footer id="footer">
     <div class="container">
         <div class="row-fluid">
@@ -167,6 +250,18 @@
     </div>
 </footer>
 <!--/Footer-->
+<script data-th-src="${portal.assetUrl({'_path=js/vendor/jquery-1.9.1.min.js'})}" src="/assets/js/vendor/jquery-1.9.1.min.js"></script>
+
+<script data-th-src="${portal.assetUrl({'_path=js/bootstrap.min.js'})}" src="/assets/js/bootstrap.min.js"></script>
+<script  data-th-src="${portal.assetUrl({'_path=js/main.js'})}" src="/assets/js/main.js" ></script>
+
+
+<script  data-th-src="${portal.assetUrl({'_path=js/jquery.ba-cond.min.js'})}" src="/assets/js/jquery.ba-cond.min.js" ></script>
+<script  data-th-src="${portal.assetUrl({'_path=js/jquery.slitslider.js'})}" src="/assets/js/jquery.slitslider.js" ></script>
+<script data-th-src="${portal.assetUrl({'_path=js/slider.js'})}" src="/assets/js/slider.js"></script>
+<script  data-th-src="${portal.assetUrl({'_path=js/twitter-bootstrap-hover-dropdown.min.js'})}" src="/assets/js/twitter-bootstrap-hover-dropdown.min.js" ></script>
+
+
 
 </body>
 </html>
