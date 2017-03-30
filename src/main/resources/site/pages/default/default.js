@@ -51,27 +51,24 @@ exports.get = function(req){
     }
 
     //Fetching contact information
-	 //Fetching contact information
+     var items = [];
 
-	     var items = [];
+     var companyItems = siteConfig.items ? libs.util.data.forceArray(siteConfig.items) : null;
+     if(companyItems) {
+         for (var j = 0; j < companyItems.length; j++) {
+             var itemKey = libs.contentLib.get({
+                 key : companyItems[j]
+             });
 
-	     var companyItems = siteConfig.items ? libs.util.data.forceArray(siteConfig.items) : null;
-	     if(companyItems) {
-	         for (var j = 0; j < companyItems.length; j++) {
-	             var itemKey = libs.contentLib.get({
-	                 key : companyItems[j]
-	             });
-
-	             var companyObject = {
-	                 name : itemKey.displayName,
-	                 url : libs.portal.pageUrl({
-	                     path : itemKey._path
-	                 })
-	             };
-	             items.push(companyObject);
-	         }
-	     }
-
+             var companyObject = {
+                 name : itemKey.displayName,
+                 url : libs.portal.pageUrl({
+                     path : itemKey._path
+                 })
+             };
+             items.push(companyObject);
+         }
+     }
 
 	 var column1  = {
 	     title : siteConfig.title,
