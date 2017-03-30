@@ -12,30 +12,32 @@ var view = resolve('default.html');
 //Handle Get request
 exports.get = function(req){
 
+    var site = libs.portal.getSite();
     var content = libs.portal.getContent();
+	 var siteConfig = libs.portal.getSiteConfig();
+
     var showTitle = false;
     var mainRegion = content.page.regions["main"];
-    var siteConfig = libs.contentLib.getSiteConfig({
-        key: '/bootstrap-theme',
-        applicationKey :  app.name
-    });
 
     //Fetching site logo
-    var logoKey = libs.contentLib.get({
-        key : siteConfig.logo
-    });
-    var logo = libs.portal.imageUrl({
-        id : logoKey._id,
-        scale : 'block(220,80)'
-        
-    });
-    var sitePath = libs.portal.getSite()._path;
+	 if (siteConfig.logo) {
+	    var logoKey = libs.contentLib.get({
+	        key : siteConfig.logo
+	    });
+		 if (logoKey) {
+		    var logo = libs.portal.imageUrl({
+		        id : siteConfig.logo,
+		        scale : 'block(220,80)'
+		    });
+		 }
+	 }
+    var sitePath = site._path;
     var currentPath = content._path;
-    
-    if(sitePath === currentPath){
+
+    if (sitePath === currentPath) {
         showTitle = true;
     }
-    
+
     //Footer content
     //Fetching social media's icons
     var icons = siteConfig.SocialIcon ? libs.util.data.forceArray(siteConfig.SocialIcon) : null;
@@ -46,7 +48,7 @@ exports.get = function(req){
              iconsList.push(iconClass);
         }
     }
-    
+
     //Fetching contact information
     var contact = siteConfig.contact;
     var contactsInfo = [];
@@ -91,7 +93,7 @@ exports.get = function(req){
         title2 : siteConfig.title2,
         items : items
     };
-    
+
     var model = {
         logo : logo,
         site : libs.portal.getSite(),
