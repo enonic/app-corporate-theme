@@ -86,7 +86,7 @@ public class DemoInitializer
     private void doInitialize()
         throws Exception
     {
-        final ContentPath demoSitePath = ContentPath.from( "/superhero" );
+        final ContentPath demoSitePath = ContentPath.from( "/my-corporation" );
         if ( hasContent( demoSitePath ) )
         {
             return;
