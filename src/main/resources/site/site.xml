@@ -57,23 +57,52 @@
         </input>
       </items>
     </field-set>
-        <input type="TextArea" name="footerText">
-          <label>Footer text</label>
-          <occurrences minimum="0" maximum="1" />
-        </input>
-
-        <input type="ComboBox" name="SocialIcon">
-          <label>Social icons</label>
-          <occurrences minimum="0" maximum="0" />
-          <config>
-            <option value="facebook">Facebook</option>
-            <option value="twitter">Twitter</option>
-            <option value="instagram">Instagram</option>
-            <option value="youtube">Youtube</option>
-            <option value="gplus">Google Plus</option>
-            <option value="linkedin">Linkedin</option>
-          </config>
-        </input>
+    <field-set name="footerBottom">
+      <label>Free bottom</label>
+      <items>
+          <input type="TextArea" name="footerText">
+            <label>Footer text</label>
+            <occurrences minimum="0" maximum="1" />
+          </input>
+        <field-set name="socialNetworks">
+          <label>Social networks info</label>
+          <items>
+            <input name="facebook" type="TextLine" >
+              <label>Facebook url</label>
+              <occurrences minimum="0" maximum="1" />
+            </input>
+            <input name="twitter" type="TextLine" >
+              <label>Twitter url</label>
+              <occurrences minimum="0" maximum="1" />
+            </input>
+            <input name="pinterest" type="TextLine" >
+              <label>Pinterest url</label>
+              <occurrences minimum="0" maximum="1" />
+            </input>
+            <input name="linkedin" type="TextLine" >
+              <label>Linkedin url</label>
+              <occurrences minimum="0" maximum="1" />
+            </input>
+            <input name="googleplus" type="TextLine" >
+              <label>Google plus url</label>
+              <occurrences minimum="0" maximum="1" />
+            </input>
+            <input name="youtube" type="TextLine" >
+              <label>Youtube url</label>
+              <occurrences minimum="0" maximum="1" />
+            </input>
+            <input name="tumblr" type="TextLine" >
+              <label>Tumblr url</label>
+              <occurrences minimum="0" maximum="1" />
+            </input>
+            <input name="instagram" type="TextLine" >
+              <label>Instagram url</label>
+              <occurrences minimum="0" maximum="1" />
+            </input>
+          </items>
+        </field-set>
+      </items>
+    </field-set>
       </items>
     </field-set>
   </config>

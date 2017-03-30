@@ -43,12 +43,13 @@ exports.post = function(req){
 //Get method
 exports.get = function(req){
     var config = libs.portal.getComponent().config;
+    var siteConfig = libs.portal.getSiteConfig();
+
     var model = {
         text : config.text ? config.text : null ,
-        address : config.address ? config.address : null ,
-        email : config.email ? config.email : null ,
-        phone : config.phone ? config.phone : null ,
-        site : config.site ? config.site : null ,
+        address : siteConfig.address ||  null ,
+        email : siteConfig.email || null ,
+        phone : siteConfig.phone || null
     };
 
     var body = libs.thymeleaf.render(view, model);

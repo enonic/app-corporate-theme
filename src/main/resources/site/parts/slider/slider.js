@@ -31,14 +31,15 @@ exports.get = function(req){
                 title : hit.title1,
                 secondTitle : hit.title2,
                 url : hit.url,
-                color : hit.bannerBackgroundCol,
-                item : "item" + (i+1)
+                backgroundColor : "background-color : " + hit.backgroundColor,
+               
             };
 
             banners.push(result);
         }
     }
 
+libs.util.log(banners);
 
     var model = {
        banners : banners

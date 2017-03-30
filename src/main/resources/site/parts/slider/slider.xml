@@ -20,7 +20,7 @@
                     <label>Url</label>
                     <occurrences minimum="0" maximum="1"/>
                 </input>
-                <input type="TextLine" name="bannerBackgroundCol">
+                <input type="TextLine" name="backgroundColor">
                     <label>Background colour (Hex color)</label>
                     <occurrences minimum="0" maximum="1"/>
                 </input>

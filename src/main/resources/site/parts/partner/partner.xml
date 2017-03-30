@@ -1,19 +1,18 @@
 <part>
     <display-name>Partners</display-name>
     <config>
-
-            <input type="TextLine" name="title">
-                <label>Title</label>
-                <occurrences  minimum="0" maximum="1"/>
-            </input>
-            <input type="TextArea" name="intro">
-                <label>Intro</label>
-                <ocurrences minimum="0" maximum="1"/>
-            </input>
-            <input type="ImageSelector" name="partnerLogo">
-                <label>Partner's logo</label>
-                <occurrences minimum="0" maximum="0" />
-            </input>
+        <input type="TextLine" name="title">
+            <label>Title</label>
+            <occurrences  minimum="0" maximum="1"/>
+        </input>
+        <input type="TextArea" name="intro">
+            <label>Intro</label>
+            <ocurrences minimum="0" maximum="1"/>
+        </input>
+        <input type="ImageSelector" name="partnerLogo">
+            <label>Partner's logo</label>
+            <occurrences minimum="0" maximum="4" />
+        </input>
 
     </config>
 </part>

@@ -18,7 +18,11 @@ exports.get = function(req){
 
     var showTitle = false;
     var mainRegion = content.page.regions["main"];
+<<<<<<< Updated upstream
 	 var menuItems = libs.menu.getMenuTree(2);
+=======
+    var siteConfig = libs.portal.getSiteConfig();
+>>>>>>> Stashed changes
 
     //Fetching site logo
 	 if (siteConfig.logo) {
@@ -40,6 +44,7 @@ exports.get = function(req){
     }
 
     //Footer content
+<<<<<<< Updated upstream
     //Fetching social media's icons
     var icons = siteConfig.SocialIcon ? libs.util.data.forceArray(siteConfig.SocialIcon) : null;
     var iconsList = [];
@@ -50,23 +55,12 @@ exports.get = function(req){
         }
     }
 
+=======
+    
+>>>>>>> Stashed changes
     //Fetching contact information
-    var contact = siteConfig.contact;
-    var contactsInfo = [];
+
     var items = [];
-
-
-    if(contact){
-        for (var i = 0; i < contact.length ; i++){
-            var contactObject  = {
-                icon : contact[i].icon,
-                text : contact[i].text
-            };
-            if(contactObject){
-                contactsInfo.push(contactObject);
-            }
-        }
-    }
 
     var companyItems = siteConfig.items ? libs.util.data.forceArray(siteConfig.items) : null;
     if(companyItems) {
@@ -85,18 +79,51 @@ exports.get = function(req){
         }
     }
 
+
+var column1  = {
+    title : siteConfig.title,
+    address : siteConfig.address,
+    email : siteConfig.email,
+    phone : siteConfig.phone,
+
+};
+
+var column2  = {
+    title : siteConfig.title2,
+    items : items,
+};
+
+var column3  = {
+    title : siteConfig.title3,
+    freeText : siteConfig.freeText,
+};
+
+var socialUrls = {
+    facebook : siteConfig.facebook || null,
+    twitter : siteConfig.twitter || null,
+    pinterest : siteConfig.pinterest || null,
+    linkedin : siteConfig.linkedin || null,
+    googleplus : siteConfig.googleplus || null,
+    youtube : siteConfig.youtube || null,
+    tumblr : siteConfig.tumblr || null,
+    instagram : siteConfig.instagram || null
+};
+
 // footer object
     var footer = {
-        text : siteConfig.footerText,
-        icon : iconsList,
-        title : siteConfig.title,
-        contactsInfo : contactsInfo,
-        title2 : siteConfig.title2,
-        items : items
+        column1 : column1,
+        column2 : column2,
+        column3 : column3,
+        footerText : siteConfig.footerText,
+        socialUrls : socialUrls
+
     };
+<<<<<<< Updated upstream
 	 var siteUrl = libs.portal.pageUrl({
 		 path: site._path
 	 });
+=======
+>>>>>>> Stashed changes
 
     var model = {
         logo : logo,
