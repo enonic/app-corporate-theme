@@ -36,6 +36,7 @@
             </a>
             <div class="nav-collapse collapse pull-right">
                 <ul class="nav">
+						  <li><a href="/" data-th-href="${siteUrl}">Home</a></li>
                     <li data-th-each="menuItem : ${menuItems}"
                         data-th-class="${
 		 (menuItem.hasChildren ? 'dropdown' : '') +
