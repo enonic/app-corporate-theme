@@ -7,16 +7,14 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
-    <!--<link rel="stylesheet" data-th-href="${portal.assetUrl({'_path=css/bootstrap.min.css'})}" href="/assets/css/bootstrap.min.css" />-->
-    <link data-th-href="${portal.assetUrl({'_path=css/bootstrap.min.css'})}" href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
-    <link rel="stylesheet"  data-th-href="${portal.assetUrl({'_path=css/bootstrap-responsive.min.css'})}" href="/assets/css/bootstrap-responsive.min.css" />
-    <link rel="stylesheet"  data-th-href="${portal.assetUrl({'_path=css/font-awesome.min.css'})}" href="/assets/css/font-awesome.min.css" />
-    <link rel="stylesheet"  data-th-href="${portal.assetUrl({'_path=css/main.css'})}" href="/assets/css/main.css" />
-    <link rel="stylesheet"  data-th-href="${portal.assetUrl({'_path=css/sl-slide.css'})}" href="/assets/css/sl-slide.css" />
+    <link rel="stylesheet" data-th-href="${portal.assetUrl({'_path=css/bootstrap.min.css'})}" href="../assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" data-th-href="${portal.assetUrl({'_path=css/bootstrap-responsive.min.css'})}" href="/assets/css/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" data-th-href="${portal.assetUrl({'_path=css/font-awesome.min.css'})}" href="/assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" data-th-href="${portal.assetUrl({'_path=css/main.css'})}" href="/assets/css/main.css" />
+    <link rel="stylesheet" data-th-href="${portal.assetUrl({'_path=css/sl-slide.css'})}" href="/assets/css/sl-slide.css" />
     <link rel="stylesheet" data-th-href="${portal.assetUrl({'_path=css/override.css'})}"/>
 
     <script data-th-src="${portal.assetUrl({'_path=js/vendor/modernizr-2.6.2-respond-1.1.0.min.js'})}" src="/assets/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-
 
     <!-- Le fav and touch icons -->
     <link rel="shortcut icon" data-th-href="${portal.assetUrl({'_path=images/ico/favicon.ico'})}" href="/assets/images/ico/favicon.ico" />
@@ -24,12 +22,8 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" data-th-href="${portal.assetUrl({'_path=images/ico/apple-touch-icon-114-precomposed.png'})}" href="/assets/images/ico/apple-touch-icon-114-precomposed.png" />
     <link rel="apple-touch-icon-precomposed" sizes="72x72" data-th-href="${portal.assetUrl({'_path=images/ico/apple-touch-icon-72-precomposed.png'})}" href="/assets/images/ico/apple-touch-icon-72-precomposed.png" />
     <link rel="apple-touch-icon-precomposed" data-th-href="${portal.assetUrl({'_path=images/ico/apple-touch-icon-57-precomposed.png'})}" href="/assets/images/ico/apple-touch-icon-57-precomposed.png" />
-
-
 </head>
 <body>
-
-
 
 <!--
 <nav>
@@ -81,7 +75,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-            <a id="logo" class="pull-left" href="index.html"></a>
+				<a id="logo" class="pull-left" href="/" data-th-href="${siteUrl}">
+					 <img data-th-src="${logo}"/>
+				</a>
             <div class="nav-collapse collapse pull-right">
                 <ul class="nav">
                     <li class="active"><a href="index.html">Home</a></li>
@@ -172,7 +168,7 @@
             </div>
             <div class="span6">
                 <ul class="breadcrumb pull-right">
-                    <li><a href="index.html">Home</a> <span class="divider">/</span></li>
+                    <li><a href="/" data-th-href="${siteUrl}">Home</a> <span class="divider">/</span></li>
                     <li class="active" data-th-text="${pageTitle}"></li>
                 </ul>
             </div>

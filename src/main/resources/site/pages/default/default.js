@@ -18,6 +18,7 @@ exports.get = function(req){
 
     var showTitle = false;
     var mainRegion = content.page.regions["main"];
+	 var menuItems = libs.menu.getMenuTree(2);
 
     //Fetching site logo
 	 if (siteConfig.logo) {
@@ -93,15 +94,19 @@ exports.get = function(req){
         title2 : siteConfig.title2,
         items : items
     };
+	 var siteUrl = libs.portal.pageUrl({
+		 path: site._path
+	 });
 
     var model = {
         logo : logo,
-        site : libs.portal.getSite(),
+        site : site,
+		  siteUrl: siteUrl,
         showTitle : showTitle,
         pageTitle : content.displayName,
         footer : footer,
         mainRegion : mainRegion,
-        menuItems : libs.menu.getMenuTree(2)
+        menuItems : menuItems
     };
 
     var body = libs.thymeleaf.render(view, model);
