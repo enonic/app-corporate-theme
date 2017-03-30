@@ -130,7 +130,7 @@ var socialUrls = {
         site : site,
 		  siteUrl: siteUrl,
         showTitle : showTitle,
-        pageTitle : content.displayName,
+        pageTitle : content.displayName + " | " + site.displayName,
         footer : footer,
         mainRegion : mainRegion,
         menuItems : menuItems
