@@ -51,48 +51,67 @@ exports.get = function(req){
     }
 
     //Fetching contact information
-    var contact = siteConfig.contact;
-    var contactsInfo = [];
-    var items = [];
+	 //Fetching contact information
 
-    if(contact){
-        for (var i = 0; i < contact.length ; i++){
-            var contactObject  = {
-                icon : contact[i].icon,
-                text : contact[i].text
-            };
-            if(contactObject){
-                contactsInfo.push(contactObject);
-            }
-        }
-    }
+	     var items = [];
 
-    var companyItems = siteConfig.items ? libs.util.data.forceArray(siteConfig.items) : null;
-    if(companyItems) {
-        for (var j = 0; j < companyItems.length; j++) {
-            var itemKey = libs.contentLib.get({
-                key : companyItems[j]
-            });
+	     var companyItems = siteConfig.items ? libs.util.data.forceArray(siteConfig.items) : null;
+	     if(companyItems) {
+	         for (var j = 0; j < companyItems.length; j++) {
+	             var itemKey = libs.contentLib.get({
+	                 key : companyItems[j]
+	             });
 
-            var companyObject = {
-                name : itemKey.displayName,
-                url : libs.portal.pageUrl({
-                    path : itemKey._path
-                })
-            };
-            items.push(companyObject);
-        }
-    }
+	             var companyObject = {
+	                 name : itemKey.displayName,
+	                 url : libs.portal.pageUrl({
+	                     path : itemKey._path
+	                 })
+	             };
+	             items.push(companyObject);
+	         }
+	     }
 
-// footer object
-    var footer = {
-        text : siteConfig.footerText,
-        icon : iconsList,
-        title : siteConfig.title,
-        contactsInfo : contactsInfo,
-        title2 : siteConfig.title2,
-        items : items
-    };
+
+	 var column1  = {
+	     title : siteConfig.title,
+	     address : siteConfig.address,
+	     email : siteConfig.email,
+	     phone : siteConfig.phone,
+
+	 };
+
+	 var column2  = {
+	     title : siteConfig.title2,
+	     items : items,
+	 };
+
+	 var column3  = {
+	     title : siteConfig.title3,
+	     freeText : siteConfig.freeText,
+	 };
+
+	 var socialUrls = {
+	     facebook : siteConfig.facebook || null,
+	     twitter : siteConfig.twitter || null,
+	     pinterest : siteConfig.pinterest || null,
+	     linkedin : siteConfig.linkedin || null,
+	     googleplus : siteConfig.googleplus || null,
+	     youtube : siteConfig.youtube || null,
+	     tumblr : siteConfig.tumblr || null,
+	     instagram : siteConfig.instagram || null
+	 };
+
+	 // footer object
+     var footer = {
+         column1 : column1,
+         column2 : column2,
+         column3 : column3,
+         footerText : siteConfig.footerText,
+         socialUrls : socialUrls
+
+     };
+
 	 var siteUrl = libs.portal.pageUrl({
 		 path: site._path
 	 });
