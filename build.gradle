@@ -16,7 +16,7 @@ apply plugin: 'com.enonic.xp.app'
 
 app {
     name = project.appName
-    displayName = project.displayName
+    displayName = 'Corporate Bootstrap Theme'
     vendorName = 'Enonic AS'
     vendorUrl = 'http://enonic.com'
 }
@@ -50,4 +50,3 @@ repositories {
         url 'http://repo.enonic.com/public'
     }
 }
-
