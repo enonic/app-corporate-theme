@@ -42,9 +42,8 @@ public final class DemoInitializer
 {
 
     private static final AccessControlList PERMISSIONS =
-        AccessControlList.of( AccessControlEntry.create().principal( PrincipalKey.ofAnonymous() ).allow( Permission.READ ).build(),
-                              AccessControlEntry.create().principal( RoleKeys.EVERYONE ).allow( Permission.READ ).build(),
-                              AccessControlEntry.create().principal( RoleKeys.AUTHENTICATED ).allowAll().build(),
+        AccessControlList.of( AccessControlEntry.create().principal( RoleKeys.EVERYONE ).allow( Permission.READ ).build(),
+                              AccessControlEntry.create().principal( RoleKeys.ADMINISTRATOR ).allowAll().build(),
                               AccessControlEntry.create().principal( RoleKeys.CONTENT_MANAGER_ADMIN ).allowAll().build() );
 
     private ContentService contentService;
@@ -99,8 +98,6 @@ public final class DemoInitializer
 
         logImport( nodeImportResult );
 
-        createLargeTree();
-
         // set permissions
         final Content demoContent = contentService.getByPath( demoSitePath );
         if ( demoContent != null )
@@ -140,15 +137,6 @@ public final class DemoInitializer
         }
     }
 
-    private CreateContentParams.Builder makeFolder()
-    {
-        return CreateContentParams.create().
-            owner( PrincipalKey.ofAnonymous() ).
-            contentData( new PropertyTree() ).
-            type( ContentTypeName.folder() ).
-            inheritPermissions( true );
-    }
-
     private boolean hasContent( final ContentPath path )
     {
         try
@@ -179,36 +167,7 @@ public final class DemoInitializer
         this.indexService = indexService;
     }
 
-    private void createLargeTree()
-    {
-        final ContentPath largeTreePath = ContentPath.from( "/large-tree" );
-        if ( !hasContent( largeTreePath ) )
-        {
-            contentService.create( makeFolder().
-                name( "large-tree" ).
-                displayName( "Large tree" ).
-                parent( ContentPath.ROOT ).
-                permissions( PERMISSIONS ).
-                inheritPermissions( false ).
-                build() );
 
-            for ( int i = 1; i <= 2; i++ )
-            {
-                Content parent = contentService.create( makeFolder().
-                    displayName( "large-tree-node-" + i ).
-                    displayName( "Large tree node " + i ).
-                    parent( largeTreePath ).build() );
-
-                for ( int j = 1; j <= 100; j++ )
-                {
-                    contentService.create( makeFolder().
-                        displayName( "large-tree-node-" + i + "-" + j ).
-                        displayName( "Large tree node " + i + "-" + j ).
-                        parent( parent.getPath() ).build() );
-                }
-            }
-        }
-    }
 
     private <T> T runAs( final Context context, final Callable<T> runnable )
     {
