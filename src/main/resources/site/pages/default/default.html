@@ -21,6 +21,8 @@
     <link rel="apple-touch-icon-precomposed" data-th-href="${portal.assetUrl({'_path=images/ico/apple-touch-icon-57-precomposed.png'})}" href="/assets/images/ico/apple-touch-icon-57-precomposed.png" />
 </head>
 <body>
+
+<!-- Page header and menu -->
 <header class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
@@ -36,14 +38,16 @@
                 <ul class="nav">
                     <li data-th-each="menuItem : ${menuItems}"
                         data-th-class="${
-		 '' +
 		 (menuItem.hasChildren ? 'dropdown' : '') +
 		 (menuItem.inPath ? ' in-path' : '') +
 		 (menuItem.isActive ? ' active' : '')
 	 }">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"
                            data-th-href="${portal.pageUrl({'_path=' + menuItem.path})}"
-                           data-th-target="${menuItem.newWindow ? '_blank' : ''}">
+                           data-th-target="${menuItem.newWindow ? '_blank' : ''}"
+									data-th-class="${menuItem.hasChildren ? 'dropdown-toggle' : ''}"
+									data-th-attr="data-toggle=${menuItem.hasChildren ? 'dropdown' : ''}"
+									>
                             <span data-th-text="${menuItem.menuName} ?: ${menuItem.displayName}" data-th-remove="tag">Page</span>
                             <i data-th-if="${menuItem.hasChildren}" class="icon-angle-down"></i>
                         </a>
@@ -65,7 +69,8 @@
         </div>
     </div>
 </header>
-<!-- Title -->
+
+<!-- Page breadcrumb and title bar -->
 <section class="title" data-th-if="${!showTitle}">
     <div class="container">
         <div class="row-fluid">
@@ -81,7 +86,8 @@
         </div>
     </div>
 </section>
-<!-- Title -->
+
+<!-- Main body -->
 <div id="container" tabindex="-1">
     <div class="row-fluid">
         <div data-portal-region="main">
@@ -91,7 +97,8 @@
         </div>
     </div>
 </div>
-<!--Footer-->
+
+<!-- Footer level 1 -->
 <section id="bottom" class="main">
     <div class="container">
         <div class="row-fluid" style="padding-top: 30px">
@@ -126,6 +133,8 @@
             </div>
         </div>
 </section>
+
+<!-- Footer level 2 -->
 <footer id="footer">
     <div class="container">
         <div class="row-fluid">
@@ -152,13 +161,13 @@
         </div>
     </div>
 </footer>
-<!--/Footer-->
+
 <script data-th-src="${portal.assetUrl({'_path=js/vendor/jquery-1.9.1.min.js'})}" src="/assets/js/vendor/jquery-1.9.1.min.js"></script>
 <script data-th-src="${portal.assetUrl({'_path=js/bootstrap.min.js'})}" src="/assets/js/bootstrap.min.js"></script>
-<script  data-th-src="${portal.assetUrl({'_path=js/main.js'})}" src="/assets/js/main.js" ></script>
-<script  data-th-src="${portal.assetUrl({'_path=js/jquery.ba-cond.min.js'})}" src="/assets/js/jquery.ba-cond.min.js" ></script>
-<script  data-th-src="${portal.assetUrl({'_path=js/jquery.slitslider.js'})}" src="/assets/js/jquery.slitslider.js" ></script>
+<script data-th-src="${portal.assetUrl({'_path=js/main.js'})}" src="/assets/js/main.js" ></script>
+<script data-th-src="${portal.assetUrl({'_path=js/jquery.ba-cond.min.js'})}" src="/assets/js/jquery.ba-cond.min.js" ></script>
+<script data-th-src="${portal.assetUrl({'_path=js/jquery.slitslider.js'})}" src="/assets/js/jquery.slitslider.js" ></script>
 <script data-th-src="${portal.assetUrl({'_path=js/slider.js'})}" src="/assets/js/slider.js"></script>
-<script  data-th-src="${portal.assetUrl({'_path=js/twitter-bootstrap-hover-dropdown.min.js'})}" src="/assets/js/twitter-bootstrap-hover-dropdown.min.js" ></script>
+<script data-th-src="${portal.assetUrl({'_path=js/twitter-bootstrap-hover-dropdown.min.js'})}" src="/assets/js/twitter-bootstrap-hover-dropdown.min.js" ></script>
 </body>
 </html>
