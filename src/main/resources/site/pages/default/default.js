@@ -18,11 +18,11 @@ exports.get = function(req){
 
     var showTitle = false;
     var mainRegion = content.page.regions["main"];
-<<<<<<< Updated upstream
+
 	 var menuItems = libs.menu.getMenuTree(2);
-=======
+
     var siteConfig = libs.portal.getSiteConfig();
->>>>>>> Stashed changes
+
 
     //Fetching site logo
 	 if (siteConfig.logo) {
@@ -44,7 +44,7 @@ exports.get = function(req){
     }
 
     //Footer content
-<<<<<<< Updated upstream
+
     //Fetching social media's icons
     var icons = siteConfig.SocialIcon ? libs.util.data.forceArray(siteConfig.SocialIcon) : null;
     var iconsList = [];
@@ -55,9 +55,6 @@ exports.get = function(req){
         }
     }
 
-=======
-    
->>>>>>> Stashed changes
     //Fetching contact information
 
     var items = [];
@@ -118,12 +115,11 @@ var socialUrls = {
         socialUrls : socialUrls
 
     };
-<<<<<<< Updated upstream
+
 	 var siteUrl = libs.portal.pageUrl({
 		 path: site._path
 	 });
-=======
->>>>>>> Stashed changes
+
 
     var model = {
         logo : logo,
