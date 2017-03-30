@@ -118,7 +118,8 @@ exports.get = function(req){
         site : site,
 		  siteUrl: siteUrl,
         showTitle : showTitle,
-        pageTitle : content.displayName + " | " + site.displayName,
+        pageTitle: content.displayName + " | " + site.displayName,
+		  breadcrumbTitle: content.displayName,
         footer : footer,
         mainRegion : mainRegion,
         menuItems : menuItems
