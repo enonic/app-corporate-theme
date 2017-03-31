@@ -1,7 +1,7 @@
 var libs = {
     portal : require('/lib/xp/portal'),
     thymeleaf : require('/lib/xp/thymeleaf'),
-    contentLib : require('/lib/xp/content'),
+    content : require('/lib/xp/content'),
     util : require('/lib/enonic/util')
 };
 
@@ -10,42 +10,48 @@ var view = resolve("portfolio.html");
 
 exports.get = function(req){
 
-    var config = libs.portal.getComponent().config;
+    var component = libs.portal.getComponent();
+    var config = component.config;
     var content = libs.portal.getContent();
-    var currentSite = libs.portal.getSite()._path;
-    var portfolioList =[];
+    var currentSite = libs.portal.getSite();
+    var sitePath = currentSite._path;
+    var portfolioList = [];
 
-    var portfolios = libs.contentLib.query({
+    var portfolios = libs.content.query({
         start : 0,
         count : 300,
         sort : "modifiedTime DESC",
         contentTypes : [
             app.name + ":portfolio"
         ],
-        query : "_path LIKE '/content" + currentSite + "/*'"
+        query : "_path LIKE '/content" + sitePath + "/*'"
     });
 
-    if(portfolios){
-        for(var i=0; i <portfolios.hits.length; i++){
+    if (portfolios) {
+        for (var i=0; i < portfolios.hits.length; i++) {
             var hit = portfolios.hits[i];
 
-            var imageKey = libs.contentLib.get({
+            var imageKey = libs.content.get({
                 key : hit.data.portfolioImage
             });
-            var portfolioObj = {
-                image : libs.portal.imageUrl({
-                    id : imageKey._id,
-                    scale: 'block(1024,768)',
-                }),
-                title : hit.displayName,
-                intro : hit.data.portfolioIntro,
-                url : hit.data.portfolioUrl,
-					 uniqueId: "portfolioItem" + (i+1)
-            };
+            var portfolioObj = {};
 
-            if(portfolioObj){
-                portfolioList.push(portfolioObj);
-            }
+				if (imageKey) {
+               portfolioObj.image = libs.portal.imageUrl({
+                  id : imageKey._id,
+                  scale: 'block(270,203)', // Thumbnail
+               }),
+               portfolioObj.imageFull = libs.portal.imageUrl({
+                  id: imageKey._id,
+                  scale: 'block(1024,768)', // Full size (opens in modal)
+               })
+				}
+            portfolioObj.title = hit.displayName,
+            portfolioObj.intro = hit.data.portfolioIntro,
+            portfolioObj.url = hit.data.portfolioUrl,
+				portfolioObj.uniqueId = "portfolioItem" + (i+1)
+
+				portfolioList.push(portfolioObj);
         }
     }
 

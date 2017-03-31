@@ -1,9 +1,5 @@
 <part>
     <display-name>Portfolio - List all</display-name>¨
     <config>
-        <input name="pageTitle" type="TextLine">
-            <label>Page Title</label>
-            <occurrences minimum="0" maximum="1" />
-        </input>
     </config>
 </part>

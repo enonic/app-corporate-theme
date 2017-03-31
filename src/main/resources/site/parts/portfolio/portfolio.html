@@ -1,22 +1,21 @@
 <section id="portfolio" class="container main">
     <ul class="gallery col-4">
-        <li data-th-if="${portfolioList}" data-th-each="portfolio : ${portfolioList}">
+        <li data-th-if="${portfolioList}" data-th-each="item : ${portfolioList}">
             <div class="preview">
-                <img data-th-src="${portfolio.image}">
-                <div class="overlay">
-                </div>
+                <img data-th-if="${item.image}" data-th-src="${item.image}" alt="" />
+                <div class="overlay"></div>
                 <div class="links">
-                    <a data-toggle="modal" href="#modal-1" data-th-href="${'#' + portfolio.uniqueId}"><i class="icon-eye-open"></i></a><a data-th-href="${portfolio.url}"><i class="icon-link"></i></a>
+                    <a data-toggle="modal" href="#modal-1" data-th-if="${item.imageFull}" data-th-href="${'#' + item.uniqueId}"><i class="icon-eye-open"></i></a><a data-th-href="${item.url}" data-th-if="${item.url}"><i class="icon-link"></i></a>
                 </div>
             </div>
             <div class="desc">
-                <h3 data-th-text="${portfolio.title}"></h3>
-                <h5 data-th-text="${portfolio.intro}"></h5>
+                <h3 data-th-text="${item.title}"></h3>
+                <h5 data-th-text="${item.intro}"></h5>
             </div>
-            <div id="modal-1" data-th-id="${portfolio.uniqueId}" class="modal hide fade">
-                <a class="close-modal" href="javascript:;" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i></a>
+            <div id="modal-1" data-th-id="${item.uniqueId}" data-th-if="${item.imageFull}" class="modal hide fade">
+                <a class="close-modal" href="#" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i></a>
                 <div class="modal-body">
-                    <img data-th-src="${portfolio.image}"  width="100%" style="max-height:400px">
+                    <img data-th-src="${item.imageFull}" alt="" />
                 </div>
             </div>
         </li>
