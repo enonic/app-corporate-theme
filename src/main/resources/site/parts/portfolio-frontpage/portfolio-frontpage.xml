@@ -1,16 +1,19 @@
 <part>
-    <display-name>Portfolio (Frontpage)</display-name>¨
+    <display-name>Portfolio - List selected</display-name>¨
     <config>
         <input name="partTitle" type="TextLine">
-            <label>Page Title</label>
+            <label>Heading</label>
+				<default>Our recent work</default>
             <occurrences minimum="0" maximum="1" />
         </input>
         <input name="partIntro" type="TextArea">
-            <label>Page Title</label>
+            <label>Introduction text</label>
+				<default>Some introduction text to your work</default>
             <occurrences minimum="0" maximum="1" />
         </input>
         <input name="portfolio" type="ContentSelector">
-            <label>Portfolio</label>
+            <label>Selected portfolio items</label>
+				<help-text>Select any number of specific portfolio items you want to show.</help-text>
             <occurrences minimum="0" maximum="0" />
             <config>
                 <allowContentType>portfolio</allowContentType>

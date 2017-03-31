@@ -1,5 +1,5 @@
 <part>
-    <display-name>Portfolio</display-name>¨
+    <display-name>Portfolio - List all</display-name>¨
     <config>
         <input name="pageTitle" type="TextLine">
             <label>Page Title</label>
