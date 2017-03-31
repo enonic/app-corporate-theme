@@ -57,8 +57,7 @@ exports.get = function(req){
     }
 
     var model = {
-        pageTitle : config.pageTitle,
-        portfolioList : portfolioList ? portfolioList : null
+        portfolioList : portfolioList || null
     };
 
     var body = libs.thymeleaf.render(view, model);

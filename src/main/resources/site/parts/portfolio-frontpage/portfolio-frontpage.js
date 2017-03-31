@@ -1,7 +1,7 @@
 var libs = {
     portal : require('/lib/xp/portal'),
     thymeleaf : require('/lib/xp/thymeleaf'),
-    contentLib : require('/lib/xp/content'),
+    content : require('/lib/xp/content'),
     util : require('/lib/enonic/util'),
     shared : require('/lib/shared')
 };
@@ -16,26 +16,30 @@ exports.get = function(req){
 
     if(portfolioArray){
         for(var i = 0; i < portfolioArray.length; i++ ){
-            var portfolioKey = libs.contentLib.get({
+            var portfolioItem = libs.content.get({
                 key : portfolioArray[i]
             });
 
-            if(portfolioKey){
-                var image = libs.portal.imageUrl({
-                    id : portfolioKey.data.portfolioImage,
-                    scale: 'block(1024,768)',
-                });
+            if (portfolioItem){
+					var imageKey = libs.content.get({
+	                key : portfolioItem.data.portfolioImage
+	            });
+					var portfolioObj = {};
 
-                var portfolioObject = {
-                    portfolioImage : image,
-                    portfolioTitle : portfolioKey.data.portfolioTitle,
-                    portfolioIntro : portfolioKey.data.portfolioIntro
-
-                };
-
-                if(portfolioObject){
-                    portfolios.push(portfolioObject );
-                }
+	 				if (imageKey) {
+	                portfolioObj.image = libs.portal.imageUrl({
+	                   id : imageKey._id,
+	                   scale: 'block(270,203)', // Thumbnail
+	                }),
+	                portfolioObj.imageFull = libs.portal.imageUrl({
+	                   id: imageKey._id,
+	                   scale: 'block(1024,768)', // Full size (opens in modal)
+	                })
+	 				}
+	            portfolioObj.title = portfolioItem.displayName,
+	            portfolioObj.intro = portfolioItem.data.portfolioIntro,
+	            portfolioObj.url = portfolioItem.data.portfolioUrl,
+	 				portfolioObj.uniqueId = "portfolioItem" + (i+1)
             }
         }
     }

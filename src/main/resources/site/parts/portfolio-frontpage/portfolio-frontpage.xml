@@ -13,8 +13,8 @@
         </input>
         <input name="portfolio" type="ContentSelector">
             <label>Selected portfolio items</label>
-				<help-text>Select any number of specific portfolio items you want to show.</help-text>
-            <occurrences minimum="0" maximum="0" />
+				<help-text>Select any number of specific portfolio items you want to show. Protip: Exactly 4 items looks best =)</help-text>
+            <occurrences minimum="0" maximum="4" />
             <config>
                 <allowContentType>portfolio</allowContentType>
             </config>
