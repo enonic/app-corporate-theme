@@ -39,7 +39,9 @@
           <input name="items" type="ContentSelector">
             <label>Select pages</label>
             <occurrences minimum="0" maximum="0"/>
-            <allowContentType>landing-page</allowContentType>
+            <config>
+              <allowContentType>landing-page</allowContentType>
+            </config>
           </input>
       </items>
     </field-set>
@@ -53,7 +55,6 @@
         <input name="freeText" type="HtmlArea">
           <label>Free text</label>
           <occurrences minimum="1" maximum="1"/>
-          <allowContentType>landing-page</allowContentType>
         </input>
       </items>
     </field-set>
