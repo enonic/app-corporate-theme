@@ -2,7 +2,8 @@ var libs = {
     portal : require('/lib/xp/portal'),
     thymeleaf : require('/lib/xp/thymeleaf'),
     contentLib : require('/lib/xp/content'),
-    util : require('/lib/enonic/util')
+    util : require('/lib/enonic/util'),
+    shared : require('/lib/shared')
 };
 
 var view = resolve('portfolio-frontpage.html');
