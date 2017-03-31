@@ -23,20 +23,16 @@ exports.post = function(req){
             email : req.params.email
         };
     }
-
-    try{
+    
         var mail = libs.mailLib.send({
             from : contactInfo.email,
             to : config.emailReceiver,
             subject : "Message",
             body : contactInfo.msg
         });
-    }
-    catch(err) {
-        error = "Mail configuration does not set properly. Check out app's read me for details.";
-    }
+    
 
-    libs.util.log(error);
+    libs.util.log(mail);
     
      var model ={
          error : error 
