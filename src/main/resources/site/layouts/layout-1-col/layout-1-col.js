@@ -14,7 +14,7 @@ exports.get = function(req) {
     
     var model = {
         component: component,
-        leftRegion: component.regions['left'],
+        mainRegion: component.regions['main'],
     };
 
     // Rendering

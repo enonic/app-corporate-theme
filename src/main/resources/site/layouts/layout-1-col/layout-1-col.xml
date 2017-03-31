@@ -3,6 +3,6 @@
     <config>
     </config>
     <regions>
-        <region name="left" />
+        <region name="main" />
     </regions>
 </layout>
