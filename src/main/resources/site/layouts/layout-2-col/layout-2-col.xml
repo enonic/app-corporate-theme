@@ -1,6 +1,17 @@
 <layout>
     <display-name>2 columns</display-name>
-    <config/>
+    <config>
+        <input name="layoutConf" type="comboBox">
+            <label>Column configuration</label>
+            <occurrences minimum="1" maximum="1"/>
+            <config>
+                <option value="70-30">70-30</option>
+                <option value="50-50">50-50</option>
+                <option value="30-70">30-70</option>
+            </config>
+            <default>50-50</default>
+        </input>
+    </config>
     <regions>
         <region name="left" />
         <region name="right" />
