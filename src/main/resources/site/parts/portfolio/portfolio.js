@@ -9,7 +9,7 @@ var libs = {
 var view = resolve("portfolio.html");
 
 exports.get = function(req){
-    
+
     var config = libs.portal.getComponent().config;
     var content = libs.portal.getContent();
     var currentSite = libs.portal.getSite()._path;
@@ -39,8 +39,8 @@ exports.get = function(req){
                 }),
                 title : hit.displayName,
                 intro : hit.data.portfolioIntro,
-                url : hit.data.portfolioUrl
-
+                url : hit.data.portfolioUrl,
+					 uniqueId: "portfolioItem" + (i+1)
             };
 
             if(portfolioObj){
@@ -53,7 +53,7 @@ exports.get = function(req){
         pageTitle : config.pageTitle,
         portfolioList : portfolioList ? portfolioList : null
     };
-    
+
     var body = libs.thymeleaf.render(view, model);
     return { body : body};
 };
