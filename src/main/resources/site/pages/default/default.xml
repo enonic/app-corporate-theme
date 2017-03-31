@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <page>
-    <display-name>Default Page Template</display-name>
+    <display-name>Default</display-name>
     <config />
     <regions>
         <region name="main"/>
