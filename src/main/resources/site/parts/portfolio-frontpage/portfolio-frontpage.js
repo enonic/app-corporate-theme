@@ -11,7 +11,7 @@ var view = resolve('portfolio-frontpage.html');
 exports.get = function(req){
 
     var config = libs.portal.getComponent().config;
-    var portfolios = [];
+    var portfolioList = [];
     var portfolioArray = config.portfolio ? libs.util.data.forceArray(config.portfolio) : null;
 
     if(portfolioArray){
@@ -37,16 +37,18 @@ exports.get = function(req){
 	                })
 	 				}
 	            portfolioObj.title = portfolioItem.displayName,
-	            portfolioObj.intro = portfolioItem.data.portfolioIntro,
+	            //portfolioObj.intro = portfolioItem.data.portfolioIntro,
 	            portfolioObj.url = portfolioItem.data.portfolioUrl,
 	 				portfolioObj.uniqueId = "portfolioItem" + (i+1)
+
+					portfolioList.push(portfolioObj);
             }
         }
     }
     var model = {
         title : config.partTitle,
         intro : config.partIntro,
-        portfolios : portfolios
+        portfolios : portfolioList
     };
     var body = libs.thymeleaf.render(view, model);
     return {body : body};
