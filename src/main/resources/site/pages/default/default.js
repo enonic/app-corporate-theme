@@ -1,23 +1,110 @@
 var libs = {
     portal : require('/lib/xp/portal'),
     thymeleaf : require('/lib/xp/thymeleaf'),
-    contentLib : require('/lib/xp/content'),
+    content : require('/lib/xp/content'),
     menu : require('/lib/enonic/menu'),
     util : require('/lib/enonic/util')
 };
-//Setting
+
 var view = resolve('default.html');
+
+function getBreadcrumbMenu(params) {
+	var content = libs.portal.getContent();
+	var site = libs.portal.getSite();
+	var breadcrumbMenu = [];
+	var item = {};
+	// Add Home button linking to site home if text for it is sent in
+	if (params.homeItem) {
+		if (params.homeItem.show) {
+			var homeUrl = libs.portal.pageUrl({
+				path: site._path,
+				type: 'absolute'
+			});
+			item = {
+				text: params.homeItem.text || site.displayName,
+				url: homeUrl,
+				active: (content._path === site._path)
+			};
+			breadcrumbMenu.push(item);
+			//log.info("Home added - ");
+			//libs.util.log(breadcrumbMenu);
+		}
+	}
+/*
+	// Add URL to current item
+	item = {};
+	item.text = content.displayName;
+	if (params.activeItem) {
+		if (params.activeItem.link) {
+			item.url = libs.portal.pageUrl({ path: content._path });
+		}
+	}
+	breadcrumbMenu.push(item);
+	log.info("Current item added - ");
+	libs.util.log(breadcrumbMenu);
+	libs.util.log(content);
+*/
+	// Not on frontpage, adding more things
+	if (content._path != site._path) {
+//		item = {};
+		var fullPath = content._path;
+		log.info(fullPath);
+		var arrVars = fullPath.split("/");
+		var arrLength = arrVars.length;
+		for (var i = 1; i < arrLength; i++) {
+			var lastVar = arrVars.pop();
+			log.info(lastVar);
+			if ( lastVar != '' ) {
+				var curItem = libs.content.get({ key: arrVars.join("/") + "/" + lastVar });
+				//libs.util.log(curItem);
+				if (curItem) {
+					var item = {};
+					var curItemUrl = libs.portal.pageUrl({
+						path: curItem._path,
+						type: 'absolute'
+					});
+					item.text = curItem.displayName;
+					if (content._path === curItem._path) {
+						item.active = true;
+					} else {
+						item.active = false;
+						item.url = curItemUrl;
+					}
+					breadcrumbMenu.push(item);
+				};
+			}
+		}
+	}
+
+	return breadcrumbMenu;
+}
+
 //Handle Get request
 exports.get = function(req){
-    var site = libs.portal.getSite();
+
     var content = libs.portal.getContent();
-    var siteConfig = libs.portal.getSiteConfig();
-    var showTitle = false;
+    var site = libs.portal.getSite();
+	 var siteConfig = libs.portal.getSiteConfig();
     var mainRegion = content.page.regions["main"];
     var menuItems = libs.menu.getMenuTree(2);
+
+	 var breadcrumbs = getBreadcrumbMenu({
+		 activeItem: {
+			 link: false
+		 },
+		 homeItem: {
+			 show: true, // Automatically uses displayName if not overwritten here
+			 text: "Homepage"
+		 }
+	 });
+	 //log.info("Result -");
+	 libs.util.log(breadcrumbs);
+
+	 var showTitle = false;
+
     //Fetching site logo
     if (siteConfig.logo) {
-        var logoKey = libs.contentLib.get({
+        var logoKey = libs.content.get({
             key : siteConfig.logo
         });
         if (logoKey) {
@@ -47,7 +134,7 @@ exports.get = function(req){
     var companyItems = siteConfig.items ? libs.util.data.forceArray(siteConfig.items) : null;
     if(companyItems) {
         for (var j = 0; j < companyItems.length; j++) {
-            var itemKey = libs.contentLib.get({
+            var itemKey = libs.content.get({
                 key : companyItems[j]
             });
             var companyObject = {
@@ -101,6 +188,7 @@ exports.get = function(req){
         showTitle : showTitle,
         pageTitle: content.displayName + " | " + site.displayName,
         breadcrumbTitle: content.displayName,
+		  breadcrumbs: breadcrumbs,
         footer : footer,
         mainRegion : mainRegion,
         menuItems : menuItems
