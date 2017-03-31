@@ -15,46 +15,48 @@ exports.get = function(){
     var twitterUrl = null;
     var linkedinUrl = null;
     var googleUrl = null;
-     
+
 
     var employeesArray = config.team ? libs.util.data.forceArray(config.team) : null;
-    for(var i=0 ; i <employeesArray.length; i++){
-        var employeeKey = libs.contentLib.get({
-            key : employeesArray[i]
-        });
-        
-        if(employeeKey.data.socialLinks._selected.indexOf("twitter") >= 0){
-             twitterUrl = employeeKey.data.socialLinks.twitter.twitterUrl;
-        }
-        
-        if(employeeKey.data.socialLinks._selected.indexOf("facebook") >= 0){
-            facebookUrl = employeeKey.data.socialLinks.facebook.facebookUrl;
-        }
-        
-        if(employeeKey.data.socialLinks._selected.indexOf("linkedin") >= 0){
-            linkedinUrl = employeeKey.data.socialLinks.linkedin.linkedinUrl;
-        }
-        
-        if(employeeKey.data.socialLinks._selected.indexOf("google") >= 0){
-            googleUrl = employeeKey.data.socialLinks.google.googleUrl;
-        }
-        
-        
-        var employeeObject = {
-            photo : libs.portal.imageUrl({
-                id : employeeKey.data.photo,
-                scale: 'block(250,167)',
-            }),
-            name : employeeKey.displayName,
-            intro : employeeKey.data.intro,
-            facebookUrl : facebookUrl,
-            twitterUrl : twitterUrl,
-            linkedinUrl : linkedinUrl,
-            googleUrl : googleUrl
-        };
-        
-        if(employeeObject){
-            employees.push(employeeObject);
+    if(employeesArray){
+
+        for(var i=0 ; i <employeesArray.length; i++) {
+            var employeeKey = libs.contentLib.get({
+                key: employeesArray[i]
+            });
+
+            if (employeeKey.data.socialLinks._selected.indexOf("twitter") >= 0) {
+                twitterUrl = employeeKey.data.socialLinks.twitter.twitterUrl;
+            }
+
+            if (employeeKey.data.socialLinks._selected.indexOf("facebook") >= 0) {
+                facebookUrl = employeeKey.data.socialLinks.facebook.facebookUrl;
+            }
+
+            if (employeeKey.data.socialLinks._selected.indexOf("linkedin") >= 0) {
+                linkedinUrl = employeeKey.data.socialLinks.linkedin.linkedinUrl;
+            }
+
+            if (employeeKey.data.socialLinks._selected.indexOf("google") >= 0) {
+                googleUrl = employeeKey.data.socialLinks.google.googleUrl;
+            }
+
+            var employeeObject = {
+                photo: libs.portal.imageUrl({
+                    id: employeeKey.data.photo,
+                    scale: 'block(250,167)',
+                }),
+                name: employeeKey.displayName,
+                intro: employeeKey.data.intro,
+                facebookUrl: facebookUrl,
+                twitterUrl: twitterUrl,
+                linkedinUrl: linkedinUrl,
+                googleUrl: googleUrl
+            };
+
+            if (employeeObject) {
+                employees.push(employeeObject);
+            }
         }
     }
 
@@ -65,6 +67,7 @@ exports.get = function(){
         title2 :config.title2,
         text2 : config.text2
     };
+
     var body = libs.thymeleaf.render(view, model);
     return {body : body};
 };
