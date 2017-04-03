@@ -16,7 +16,7 @@ exports.get = function(req){
     var content = libs.portal.getContent();
     var currentSite = libs.portal.getSite();
     var sitePath = currentSite._path;
-    var portfolioList = [];
+
 
     var portfolios = libs.content.query({
         start : 0,
@@ -28,33 +28,8 @@ exports.get = function(req){
         query : "_path LIKE '/content" + sitePath + "/*'"
     });
 
-    if (portfolios) {
-        for (var i=0; i < portfolios.hits.length; i++) {
-            var hit = portfolios.hits[i];
-
-            var imageKey = libs.content.get({
-                key : hit.data.portfolioImage
-            });
-            var portfolioObj = {};
-
-				if (imageKey) {
-               portfolioObj.image = libs.portal.imageUrl({
-                  id : imageKey._id,
-                  scale: 'block(270,203)', // Thumbnail
-               }),
-               portfolioObj.imageFull = libs.portal.imageUrl({
-                  id: imageKey._id,
-                  scale: 'block(1024,768)', // Full size (opens in modal)
-               })
-				}
-            portfolioObj.title = hit.displayName,
-            portfolioObj.intro = hit.data.portfolioIntro,
-            portfolioObj.url = hit.data.portfolioUrl,
-				portfolioObj.uniqueId = "portfolioItem" + (i+1)
-
-				portfolioList.push(portfolioObj);
-        }
-    }
+    var portfolioResults = portfolios.hits;
+    var portfolioList = libs.shared.getPortfolioData(portfolioResults);
 
     var model = {
         portfolioList : portfolioList || null
