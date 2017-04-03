@@ -1,27 +1,26 @@
 <part>
     <display-name>Button</display-name>
     <config>
-        <item-set name="btnSetting">
-            <label>Button Setting</label>
-            <occurrences minimum="0" maximum="0"/>
-            <items>
-                <input name="btnText" type="TextLine">
-                    <label>Button Text</label>
-                    <occurrences minimum="0" maximum="1"/>
-                </input>
-                <input name="btnColor" type="TextLine">
-                    <label>Button Color (Hex number)</label>
-                    <occurrences minimum="0" maximum="1"/>
-                </input>
-                <input name="externalUrl" type="TextLine">
-                    <label>External url</label>
-                    <occurrences minimum="0" maximum="1"/>
-                </input>
-                <input name="btnUrl" type="ContentSelector">
-                    <label>Url</label>
-                    <occurrences minimum="0" maximum="1"/>
-                </input>
-            </items>
-        </item-set>
+        <input name="btnText" type="TextLine">
+            <label>Button Text</label>
+            <occurrences minimum="0" maximum="1"/>
+        </input>
+        <input name="btnColor" type="TextLine">
+            <label>Button Color (Hex number)</label>
+            <occurrences minimum="0" maximum="1"/>
+            <help-text>Use a Hexadecimal color value for button color. (Example : #4286f4) </help-text>
+        </input>
+        <input name="externalUrl" type="TextLine">
+            <label>External URL</label>
+            <occurrences minimum="0" maximum="1"/>
+            <help-text>Add an URL, points to external web site. Url should contain "https" or "http". For example https://example.com.
+                You can only use either "External URL" or "Link to other page" at time. In case you fill both fields, "External URL" has priority and the button will link to it. </help-text>
+        </input>
+        <input name="btnUrl" type="ContentSelector">
+            <label>Link to other page</label>
+            <occurrences minimum="0" maximum="1"/>
+            <help-text>From the list above, choose a page that you have already made and want the button points to it.
+                You can only use either "External URL" or "Link to other page" at time. In case you fill both fields, "External URL" has priority and the button will link to it. </help-text>
+        </input>
     </config>
 </part>

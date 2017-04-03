@@ -11,7 +11,7 @@ var view = resolve("button.html");
 exports.get = function(req){
 
     var component = libs.portal.getComponent();
-    var config = component.config.btnSetting;
+    var config = component.config;
     var btnUrl;
     if(config){
         if(config.btnUrl){
@@ -29,10 +29,12 @@ exports.get = function(req){
             btnUrl = config.externalUrl;
         }
     }
+    var configColor = config.btnColor || "#5bb75b";
+    var btnColor = "background-color :" + configColor + ";";
 
     var model = {
-        btnText : config.btnText ? config.btnText : "Click Here",
-        btnColor : config.btnColor ? config.btnColor : "#5bb75b",
+        btnText : config.btnText || "Click Here",
+        btnColor : btnColor,
         btnUrl : btnUrl
 };
 
