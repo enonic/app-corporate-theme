@@ -2,42 +2,45 @@
     <display-name>Services</display-name>
     <super-type>base:structured</super-type>
     <form>
-        <field-set name="service">
-            <label>Service</label>
-            <items>
-                <input name="iconFrontPage" type="ComboBox">
-                    <label>Service icon (Front page)</label>
-                    <occurrences minimum="1" maximum="1" />
-                    <config>
-                        <option value="globe">Globe</option>
-                        <option value="thumbs-up-alt">Thumbs-up</option>
-                        <option value="leaf">Leaf</option>
-                        <option value="shopping-cart">Shopping cart</option>
-                    </config>
-                    <default>globe</default>
-                </input>
-                <input name="iconServicePage" type="ComboBox">
-                    <label>Service icon (Service page)</label>
-                    <occurrences minimum="1" maximum="1" />
-                    <config>
-                        <option value="bar-chart">Bar chart</option>
-                        <option value="cog">Cog</option>
-                        <option value="heart">Heart</option>
-                        <option value="globe">Globe</option>
-                        <option value="camera">Camera</option>
-                        <option value="bullhorn">Bullhorn</option>
-                    </config>
-                    <default>cog</default>
-                </input>
-                <input name="serviceTitle" type="TextLine">
-                    <label>Title</label>
-                    <occurrences minimum="0" maximum="1"/>
-                </input>
-                <input name="serviceIntro" type="TextArea">
-                    <label>Intro</label>
-                    <occurrences minimum="0" maximum="1"/>
-                </input>
-            </items>
-        </field-set>
+        <input name="iconFrontPage" type="ComboBox">
+            <label>Service icon (Front page)</label>
+            <occurrences minimum="1" maximum="1" />
+            <help-text>This icon is shown in Service section in front page.</help-text>
+            <config>
+                <option value="globe">Globe</option>
+                <option value="thumbs-up-alt">Thumbs-up</option>
+                <option value="leaf">Leaf</option>
+                <option value="shopping-cart">Shopping cart</option>
+            </config>
+            <default>globe</default>
+        </input>
+        <input name="iconServicePage" type="ComboBox">
+            <label>Service icon (Service page)</label>
+            <occurrences minimum="1" maximum="1" />
+            <help-text>This icon is shown in Service page.</help-text>
+            <config>
+                <option value="bar-chart">Bar chart</option>
+                <option value="cog">Cog</option>
+                <option value="heart">Heart</option>
+                <option value="globe">Globe</option>
+                <option value="camera">Camera</option>
+                <option value="bullhorn">Bullhorn</option>
+            </config>
+            <default>cog</default>
+        </input>
+        <input name="serviceTitle" type="TextLine">
+            <label>Title</label>
+            <occurrences minimum="0" maximum="1"/>
+        </input>
+        <input name="serviceIntro" type="TextArea">
+            <label>Service introduction</label>
+            <occurrences minimum="0" maximum="1"/>
+            <help-text>A short introduction to the service that is shown in Service section in front page.</help-text>
+        </input>
+        <input name="serviceDescription" type="HtmlArea">
+            <label>Service description</label>
+            <occurrences minimum="0" maximum="1"/>
+            <help-text>Description for the service, will be shown in Service page. </help-text>
+        </input>
     </form>
 </content-type>
