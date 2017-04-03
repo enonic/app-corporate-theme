@@ -46,8 +46,8 @@ exports.get = function(req){
     var siteConfig = libs.portal.getSiteConfig();
 
     var model = {
-        text : config.text ? config.text : null ,
-        address : siteConfig.address ||  null ,
+        text : config.text || null ,
+        address : siteConfig.address || null ,
         email : siteConfig.email || null ,
         phone : siteConfig.phone || null ,
         

@@ -21,14 +21,14 @@
             </config>
         </input>
         <input name="title2" type="TextLine">
-            <label>Title</label>
+            <label>Title </label>
             <occurrences minimum="0" maximum="1"/>
-            <help-text> The third section, can be optionally used as a description to companies activities or strength.</help-text>
+            <help-text> The third section, can be optionally used as a description to companies' activities or strength.</help-text>
         </input>
         <input name="text2" type="TextArea">
             <label>More about company</label>
             <occurrences minimum="0" maximum="1"/>
-            <help-text> The third section, can be optionally used as a description to companies activities or strength.</help-text>
+            <help-text> The third section, can be optionally used as a description to companies' activities or strength.</help-text>
 
         </input>
     </config>
