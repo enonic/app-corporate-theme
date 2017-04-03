@@ -19,7 +19,6 @@ exports.get = function(){
 
     var employeesArray = config.team ? libs.util.data.forceArray(config.team) : null;
     if(employeesArray){
-
         for(var i=0 ; i <employeesArray.length; i++) {
             var employeeKey = libs.contentLib.get({
                 key: employeesArray[i]
@@ -59,6 +58,8 @@ exports.get = function(){
             }
         }
     }
+
+    libs.util.log(employees);
 
     var model = {
         title1 : config.title1,
