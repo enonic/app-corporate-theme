@@ -1,8 +1,8 @@
-var libs={
-    portal : require('/lib/xp/portal'),
-    thymeleaf : require('/lib/xp/thymeleaf'),
-    contentLib : require('/lib/xp/content'),
-    util : require('/lib/enonic/util')
+var libs = {
+    portal: require('/lib/xp/portal'),
+    thymeleaf: require('/lib/xp/thymeleaf'),
+    content: require('/lib/xp/content'),
+    util: require('/lib/enonic/util')
 };
 
 var view = resolve('about.html');
@@ -16,30 +16,30 @@ exports.get = function(){
     var linkedinUrl = null;
     var googleUrl = null;
 
-
     var employeesArray = config.team ? libs.util.data.forceArray(config.team) : null;
     if(employeesArray){
-        for(var i=0 ; i <employeesArray.length; i++) {
-            var employeeKey = libs.contentLib.get({
+        for(var i=0 ; i < employeesArray.length; i++) {
+            var employeeKey = libs.content.get({
                 key: employeesArray[i]
             });
 
             var selected = employeeKey.data.socialLinks._selected;
+				var socialLinks = employeeKey.data.socialLinks;
 
             if (selected.indexOf("twitter") >= 0) {
-                twitterUrl = employeeKey.data.socialLinks.twitter.twitterUrl;
+                twitterUrl = socialLinks.twitter.twitterUrl;
             }
 
             if (selected.indexOf("facebook") >= 0) {
-                facebookUrl = employeeKey.data.socialLinks.facebook.facebookUrl;
+                facebookUrl = socialLinks.facebook.facebookUrl;
             }
 
             if (selected.indexOf("linkedin") >= 0) {
-                linkedinUrl = employeeKey.data.socialLinks.linkedin.linkedinUrl;
+                linkedinUrl = socialLinks.linkedin.linkedinUrl;
             }
 
             if (selected.indexOf("google") >= 0) {
-                googleUrl = employeeKey.data.socialLinks.google.googleUrl;
+                googleUrl = socialLinks.google.googleUrl;
             }
 
             var employeeObject = {
