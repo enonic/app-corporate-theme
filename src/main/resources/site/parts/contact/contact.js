@@ -31,9 +31,6 @@ exports.post = function(req){
             body : contactInfo.msg
         });
     
-
-    libs.util.log(mail);
-    
      var model ={
          error : error 
      };
