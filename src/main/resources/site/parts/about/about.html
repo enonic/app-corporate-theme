@@ -1,4 +1,4 @@
-<section id="about-us" class="container main">
+<section id="about-us" class="container main sectionPadding">
     <div class="row-fluid">
         <div class="span6">
             <h2 data-th-text="${title1}"></h2>
@@ -7,7 +7,7 @@
     </div>
     <h1 class="center">Meet the Team</h1>
     <hr>
-    <div class="row-fluid">
+    <div class="row-fluid sectionPadding">
         <div class="span3" data-th-if="${employees}" data-th-each="employee : ${employees}">
             <div class="box">
                 <p><img data-th-src="${employee.photo}" alt="" ></p>
