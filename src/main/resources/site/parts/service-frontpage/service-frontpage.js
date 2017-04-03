@@ -23,19 +23,6 @@ exports.get = function(req){
         }
 
             var  services = libs.shared.getServiceData(serviceId);
-
-				/*if (serviceKey) {
-	            var serviceObject = {
-	                icon : serviceKey.data.iconFrontPage || "globe",
-	                serviceTitle : serviceKey.data.serviecTitle || "No title added",
-	                serviceIntro : serviceKey.data.serviceIntro || "No description added"
-	            };
-				}
-
-            if(serviceObject){
-                services.push(serviceObject);
-            }
-        }*/
     }
 
 

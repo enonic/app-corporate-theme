@@ -17,6 +17,7 @@
             <occurrences minimum="0" maximum="4" />
             <config>
                 <allowContentType>portfolio</allowContentType>
+                <allowPath>${site}/*</allowPath>
             </config>
         </input>
     </config>

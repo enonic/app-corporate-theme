@@ -4,9 +4,10 @@
         <input type="TextLine" name="title">
             <label>Title</label>
             <occurrences  minimum="0" maximum="1"/>
+            <default>Our partners</default>
         </input>
         <input type="TextArea" name="intro">
-            <label>Short introduction about partner section.</label>
+            <label>Short introduction about your partners.</label>
             <ocurrences minimum="0" maximum="1"/>
         </input>
         <input type="ImageSelector" name="partnerLogo">

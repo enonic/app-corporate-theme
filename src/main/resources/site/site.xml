@@ -4,6 +4,10 @@
     <input type="ImageSelector" name="logo">
       <label>Header Logo</label>
       <occurrences minimum="0" maximum="1" />
+      <help-text>Add company logo-</help-text>
+      <config>
+        <allowPath>${site}/*</allowPath>
+      </config>
     </input>
     <field-set name="footer">
       <label>Footer Info </label>
@@ -12,8 +16,11 @@
           <label>Contact Info</label>
           <items>
             <input name="title" type="TextLine">
-              <label>Title for first column</label>
+              <label>Title contact info</label>
               <occurrences minimum="1" maximum="1"/>
+              <default>ADDRESS</default>
+              <help-text>Required title for contact info column. Default value is "ADDRESS".</help-text>
+
             </input>
             <input name="address" type="TextLine">
               <label>Address</label>
@@ -33,14 +40,18 @@
       <label>About company</label>
       <items>
           <input name="title2" type="TextLine">
-            <label>Title for second column</label>
+            <label>Title for links to different pages of website.</label>
             <occurrences minimum="1" maximum="1"/>
+            <default>OUR COMPANY</default>
+            <help-text>Required title for links to different pages of website. Default value is "OUR COMPANY".</help-text>
           </input>
           <input name="items" type="ContentSelector">
             <label>Select pages</label>
             <occurrences minimum="0" maximum="0"/>
+            <help-text>Select pages from above list.</help-text>
             <config>
               <allowContentType>landing-page</allowContentType>
+              <allowPath>${site}/*</allowPath>
             </config>
           </input>
       </items>

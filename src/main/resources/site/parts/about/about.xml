@@ -17,7 +17,7 @@
             <help-text>The second section is about introducing the employees. From the list above select employees you wish to Introduce. </help-text>
             <config>
                 <allowContentType>employee</allowContentType>
-                <allowPath>${site}</allowPath>
+                <allowPath>${site}/*</allowPath>
             </config>
         </input>
         <input name="title2" type="TextLine">

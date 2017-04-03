@@ -7,21 +7,26 @@
                 <input type="ImageSelector" name="image">
                     <label>Image</label>
                     <occurrences minimum="1" maximum="1"/>
+                    <config>
+                        <allowPath>${site}/*</allowPath>
+                    </config>
                 </input>
                 <input type="TextLine" name="title1">
-                    <label>Title 1</label>
+                    <label>First Title</label>
                     <occurrences minimum="0" maximum="1"/>
                 </input>
                 <input type="TextLine" name="title2">
-                    <label>Title 2</label>
+                    <label>Second Title</label>
                     <occurrences minimum="0" maximum="1"/>
                 </input>
                 <input type="TextLine" name="url">
-                    <label>Url</label>
+                    <label>External URL</label>
                     <occurrences minimum="0" maximum="1"/>
+                    <help-text>Add external url for this image. Url should contain "https" or "http". For example https://example.com</help-text>
                 </input>
                 <input type="TextLine" name="backgroundColor">
                     <label>Background colour (Hex color)</label>
+                    <help-text>Add background color for this image. The color should be a hexadecimal value.(like #4286f4)</help-text>
                     <occurrences minimum="0" maximum="1"/>
                 </input>
             </items>

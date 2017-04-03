@@ -11,8 +11,6 @@ var view = resolve("portfolio.html");
 
 exports.get = function(req){
 
-    var component = libs.portal.getComponent();
-    var config = component.config;
     var content = libs.portal.getContent();
     var currentSite = libs.portal.getSite();
     var sitePath = currentSite._path;
