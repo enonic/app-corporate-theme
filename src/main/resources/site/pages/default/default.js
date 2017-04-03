@@ -11,8 +11,11 @@ var view = resolve('default.html');
 function getBreadcrumbMenu(params) {
 	var content = libs.portal.getContent();
 	var site = libs.portal.getSite();
-	var breadcrumbMenu = [];
+	var breadcrumbItems = [];
+	var breadcrumbMenu = {};
 	var item = {};
+
+	libs.util.log(params);
 
 	// Take care of all incoming settings and set defaults
 	var settings = {
@@ -25,15 +28,15 @@ function getBreadcrumbMenu(params) {
 	// Not on frontpage, adding more things
 	if (content._path != site._path) {
 		var fullPath = content._path;
-		log.info(fullPath);
+		//log.info(fullPath);
 		var arrVars = fullPath.split("/");
 		var arrLength = arrVars.length;
 		for (var i = 1; i < arrLength-1; i++) { // Skip first item - the site - handled later.
 			var lastVar = arrVars.pop();
-			log.info(lastVar);
+			//log.info(lastVar);
 			if ( lastVar != '' ) {
 				var curItem = libs.content.get({ key: arrVars.join("/") + "/" + lastVar });
-				libs.util.log(curItem);
+				//libs.util.log(curItem);
 				if (curItem) {
 					var item = {};
 					var curItemUrl = libs.portal.pageUrl({
@@ -50,11 +53,8 @@ function getBreadcrumbMenu(params) {
 						item.active = false;
 						item.url = curItemUrl;
 					}
-					if (settings.dividerHtml) {
-						item.divider = settings.dividerHtml;
-					}
-					breadcrumbMenu.push(item);
-				};
+					breadcrumbItems.push(item);
+				}
 			}
 		}
 	}
@@ -70,13 +70,16 @@ function getBreadcrumbMenu(params) {
 			url: homeUrl,
 			active: (content._path === site._path)
 		};
-		if (settings.dividerHtml) {
-			item.divider = settings.dividerHtml;
-		}
-		breadcrumbMenu.push(item);
+		breadcrumbItems.push(item);
 	}
 
-	return breadcrumbMenu.reverse();
+	// Add divider html (if any) and reverse the menu item array
+	breadcrumbMenu.divider = settings.dividerHtml || null;
+	breadcrumbMenu.items = breadcrumbItems.reverse();
+
+	//libs.util.log(breadcrumbMenu);
+
+	return breadcrumbMenu;
 }
 
 //Handle Get request
@@ -89,11 +92,12 @@ exports.get = function(req){
     var menuItems = libs.menu.getMenuTree(2);
 
 	 var breadcrumbs = getBreadcrumbMenu({
-		 linkActiveItem: false,
-		 showHomepage: true,
-		 homepageTitle: "Homepage",
-		 dividerHtml: '<span class="divider">/</span>' // null
+		 linkActiveItem: false, // false (optional)
+		 showHomepage: true, // true (optional)
+		 homepageTitle: "Home", // null (optional)
+		 dividerHtml: '<span class="divider">/</span>' // null (optional)
 	 });
+//	 	dividerHtml: '<span class="divider">&gt;</span>'
 
 	 var showTitle = false;
 
