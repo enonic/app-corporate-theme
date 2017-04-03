@@ -6,12 +6,16 @@
             <occurrences  minimum="0" maximum="1"/>
         </input>
         <input type="TextArea" name="intro">
-            <label>Intro</label>
+            <label>Short introduction about partner section.</label>
             <ocurrences minimum="0" maximum="1"/>
         </input>
         <input type="ImageSelector" name="partnerLogo">
             <label>Partner's logo</label>
             <occurrences minimum="0" maximum="4" />
+            <help-text>You can select up to 4 images/logos of your partners.</help-text>
+            <config>
+                <allowPath>${site}/*</allowPath>
+            </config>
         </input>
 
     </config>

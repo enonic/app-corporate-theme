@@ -13,8 +13,6 @@ exports.get = function(req){
     var partnerLogos = config.partnerLogo ? libs.util.data.forceArray(config.partnerLogo) : null;
     var logosList = [];
 
-
-
     if(partnerLogos){
         for(var i = 0; i < partnerLogos.length; i++){
             var logoKey = libs.contentLib.get({
@@ -33,8 +31,8 @@ exports.get = function(req){
     }
 
     var model = {
-        title : config.title,
-        intro : config.intro,
+        title : config.title || null,
+        intro : config.intro || null,
         logosList : logosList
     };
 
