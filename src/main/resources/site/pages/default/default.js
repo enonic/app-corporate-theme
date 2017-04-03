@@ -8,16 +8,14 @@ var libs = {
 
 var view = resolve('default.html');
 
+// Generate the JSON for a breadcrumb menu starting at site root, going to current content
 function getBreadcrumbMenu(params) {
 	var content = libs.portal.getContent();
 	var site = libs.portal.getSite();
-	var breadcrumbItems = [];
-	var breadcrumbMenu = {};
-	var item = {};
+	var breadcrumbItems = []; // Stores each menu item
+	var breadcrumbMenu = {}; // Stores the final JSON sent to Thymeleaf
 
-	libs.util.log(params);
-
-	// Take care of all incoming settings and set defaults
+	// Safely take care of all incoming settings and set defaults
 	var settings = {
 		linkActiveItem: params.linkActiveItem || false,
 		showHomepage: params.showHomepage || true,
@@ -25,18 +23,16 @@ function getBreadcrumbMenu(params) {
 		dividerHtml: params.dividerHtml || null
 	}
 
-	// Not on frontpage, adding more things
+	// Loop the entire path for current content based on the slashes. Generate one JSON item node for each item.
+	// If on frontpage, skip the path-loop
 	if (content._path != site._path) {
 		var fullPath = content._path;
-		//log.info(fullPath);
 		var arrVars = fullPath.split("/");
 		var arrLength = arrVars.length;
-		for (var i = 1; i < arrLength-1; i++) { // Skip first item - the site - handled later.
+		for (var i = 1; i < arrLength-1; i++) { // Skip first item - the site - since it is handled separately.
 			var lastVar = arrVars.pop();
-			//log.info(lastVar);
-			if ( lastVar != '' ) {
-				var curItem = libs.content.get({ key: arrVars.join("/") + "/" + lastVar });
-				//libs.util.log(curItem);
+			if (lastVar != '') {
+				var curItem = libs.content.get({ key: arrVars.join("/") + "/" + lastVar }); // Make sure item exists
 				if (curItem) {
 					var item = {};
 					var curItemUrl = libs.portal.pageUrl({
@@ -44,9 +40,9 @@ function getBreadcrumbMenu(params) {
 						type: 'absolute'
 					});
 					item.text = curItem.displayName;
-					if (content._path === curItem._path) {
+					if (content._path === curItem._path) { // Is current node active?
 						item.active = true;
-						if (settings.linkActiveItem) {
+						if (settings.linkActiveItem) { // Respect setting for creating links for active item
 							item.url = curItemUrl;
 						}
 					} else {
@@ -59,14 +55,14 @@ function getBreadcrumbMenu(params) {
 		}
 	}
 
-	// Add Home button linking to site home if text for it is sent in
+	// Add Home button linking to site home, if wanted
 	if (settings.showHomepage) {
 		var homeUrl = libs.portal.pageUrl({
 			path: site._path,
 			type: 'absolute'
 		});
-		item = {
-			text: settings.homepageTitle || site.displayName,
+		var item = {
+			text: settings.homepageTitle || site.displayName, // Fallback to site displayName if no custom name given
 			url: homeUrl,
 			active: (content._path === site._path)
 		};
@@ -76,8 +72,6 @@ function getBreadcrumbMenu(params) {
 	// Add divider html (if any) and reverse the menu item array
 	breadcrumbMenu.divider = settings.dividerHtml || null;
 	breadcrumbMenu.items = breadcrumbItems.reverse();
-
-	//libs.util.log(breadcrumbMenu);
 
 	return breadcrumbMenu;
 }
