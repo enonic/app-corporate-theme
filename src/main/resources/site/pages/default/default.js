@@ -13,45 +13,14 @@ function getBreadcrumbMenu(params) {
 	var site = libs.portal.getSite();
 	var breadcrumbMenu = [];
 	var item = {};
-	// Add Home button linking to site home if text for it is sent in
-	if (params.homeItem) {
-		if (params.homeItem.show) {
-			var homeUrl = libs.portal.pageUrl({
-				path: site._path,
-				type: 'absolute'
-			});
-			item = {
-				text: params.homeItem.text || site.displayName,
-				url: homeUrl,
-				active: (content._path === site._path)
-			};
-			breadcrumbMenu.push(item);
-			//log.info("Home added - ");
-			//libs.util.log(breadcrumbMenu);
-		}
-	}
-/*
-	// Add URL to current item
-	item = {};
-	item.text = content.displayName;
-	if (params.activeItem) {
-		if (params.activeItem.link) {
-			item.url = libs.portal.pageUrl({ path: content._path });
-		}
-	}
-	breadcrumbMenu.push(item);
-	log.info("Current item added - ");
-	libs.util.log(breadcrumbMenu);
-	libs.util.log(content);
-*/
+
 	// Not on frontpage, adding more things
 	if (content._path != site._path) {
-//		item = {};
 		var fullPath = content._path;
 		log.info(fullPath);
 		var arrVars = fullPath.split("/");
 		var arrLength = arrVars.length;
-		for (var i = 1; i < arrLength; i++) {
+		for (var i = 1; i < arrLength-1; i++) { // Skip first item - the site - handled later.
 			var lastVar = arrVars.pop();
 			log.info(lastVar);
 			if ( lastVar != '' ) {
@@ -64,6 +33,7 @@ function getBreadcrumbMenu(params) {
 						type: 'absolute'
 					});
 					item.text = curItem.displayName;
+					// TODO: Respect params.linkActiveItem
 					if (content._path === curItem._path) {
 						item.active = true;
 					} else {
@@ -76,7 +46,21 @@ function getBreadcrumbMenu(params) {
 		}
 	}
 
-	return breadcrumbMenu;
+	// Add Home button linking to site home if text for it is sent in
+	if (params.showHomepage) {
+		var homeUrl = libs.portal.pageUrl({
+			path: site._path,
+			type: 'absolute'
+		});
+		item = {
+			text: params.homepageTitle || site.displayName,
+			url: homeUrl,
+			active: (content._path === site._path)
+		};
+		breadcrumbMenu.push(item);
+	}
+
+	return breadcrumbMenu.reverse();
 }
 
 //Handle Get request
@@ -89,16 +73,10 @@ exports.get = function(req){
     var menuItems = libs.menu.getMenuTree(2);
 
 	 var breadcrumbs = getBreadcrumbMenu({
-		 activeItem: {
-			 link: false
-		 },
-		 homeItem: {
-			 show: true, // Automatically uses displayName if not overwritten here
-			 text: "Homepage"
-		 }
+		 linkActiveItem: false,
+		 showHomepage: true,
+		 homepageTitle: "Homepage"
 	 });
-	 //log.info("Result -");
-	// libs.util.log(breadcrumbs);
 
 	 var showTitle = false;
 
