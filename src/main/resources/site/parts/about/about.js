@@ -9,7 +9,8 @@ var view = resolve('about.html');
 
 exports.get = function(){
 
-    var config = libs.portal.getComponent().config;
+    var component = libs.portal.getComponent();
+    var config = component.config;
     var employees = [];
     var facebookUrl = null;
     var twitterUrl = null;
@@ -17,7 +18,7 @@ exports.get = function(){
     var googleUrl = null;
 
     var employeesArray = config.team ? libs.util.data.forceArray(config.team) : null;
-    if(employeesArray){
+    if (employeesArray) {
         for(var i=0 ; i < employeesArray.length; i++) {
             var employeeKey = libs.content.get({
                 key: employeesArray[i]
@@ -27,27 +28,30 @@ exports.get = function(){
 	            var selected = employeeKey.data.socialLinks._selected;
 					var socialLinks = employeeKey.data.socialLinks;
 
+					// Check for use of social links
 	            if (selected.indexOf("twitter") >= 0) {
 	                twitterUrl = socialLinks.twitter.twitterUrl;
 	            }
-
 	            if (selected.indexOf("facebook") >= 0) {
 	                facebookUrl = socialLinks.facebook.facebookUrl;
 	            }
-
 	            if (selected.indexOf("linkedin") >= 0) {
 	                linkedinUrl = socialLinks.linkedin.linkedinUrl;
 	            }
-
 	            if (selected.indexOf("google") >= 0) {
 	                googleUrl = socialLinks.google.googleUrl;
 	            }
 
+					var imageUrl = null;
+					if (employeeKey.data.photo) {
+						imageUrl = libs.portal.imageUrl({
+							 id: employeeKey.data.photo,
+							 scale: 'block(250,167)',
+						});
+					}
+
 	            var employeeObject = {
-	                photo: libs.portal.imageUrl({
-	                    id: employeeKey.data.photo,
-	                    scale: 'block(250,167)',
-	                }),
+	                photo: imageUrl,
 	                name: employeeKey.displayName,
 	                intro: employeeKey.data.intro,
 	                facebookUrl: facebookUrl,
@@ -71,5 +75,5 @@ exports.get = function(){
     };
 
     var body = libs.thymeleaf.render(view, model);
-    return {body : body};
+    return { body : body };
 };
