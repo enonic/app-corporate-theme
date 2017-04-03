@@ -2,7 +2,8 @@ var libs = {
     portal : require('/lib/xp/portal'),
     thymeleaf : require('/lib/xp/thymeleaf'),
     contentLib : require('/lib/xp/content'),
-    util : require('/lib/enonic/util')
+    util : require('/lib/enonic/util'),
+    shared : require('/lib/shared')
 };
 
 //Setting
@@ -25,25 +26,8 @@ exports.get = function(req){
     });
 
     if(services){
-        for(var i=0; i <services.hits.length; i++){
-            var hit = services.hits[i];
-            var icon = null;
-
-            if(hit.data.iconServicePage){
-               icon = "icon-" + hit.data.iconServicePage + " icon-large"
-            } else {
-                icon = "icon-bar-chart icon-large";
-            }
-
-            var serviceObj = {
-                icon : icon,
-                title : hit.displayName,
-                intro : hit.data.serviceIntro ? hit.data.serviceIntro : null,
-            };
-                if(serviceObj){
-                serviceList.push(serviceObj);
-            }
-        }
+        var servicesResult = services.hits;
+        var serviceList = libs.shared.getServiceData(servicesResult);
     }
 
     var model = {

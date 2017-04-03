@@ -1,17 +1,15 @@
-<section class="services">
+<section class="services sectionPadding">
     <div class="container">
         <div class="row-fluid">
-            <ul style="list-style: none">
-                <li data-th-if="${serviceList}" data-th-each="service : ${serviceList}">
-                    <div class="span4">
-                        <div class="center">
-                            <i style="font-size: 48px" data-th-class="${service.icon}"></i>
-                            <h4 data-th-text="${service.title}"></h4>
-                            <p data-th-text="${service.intro}"></p>
-                        </div>
-                    </div>
-                </li>
-            </ul>
+            <div class="span4" data-th-if="${serviceList}" data-th-each="service : ${serviceList}">
+                <div class="center">
+                    <i style="font-size: 48px" data-th-class="${service.icon}"></i>
+                    <h4 data-th-text="${service.title}"></h4>
+                    <p data-th-text="${service.intro}"></p>
+                </div>
+                <a data-th-href="${service.readMore}">Read more</a>
+            </div>
         </div>
     </div>
 </section>
+
