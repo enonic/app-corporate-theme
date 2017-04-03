@@ -35,7 +35,7 @@
         <input name="serviceIntro" type="TextArea">
             <label>Service introduction</label>
             <occurrences minimum="0" maximum="1"/>
-            <help-text>A short introduction to the service that is shown in Service section in front page.</help-text>
+            <help-text>A short introduction to the service. The introduction will be in Service section in front page.</help-text>
         </input>
         <input name="serviceDescription" type="HtmlArea">
             <label>Service description</label>
