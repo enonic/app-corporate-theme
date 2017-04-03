@@ -2,7 +2,8 @@ var libs = {
     portal : require('/lib/xp/portal'),
     thymeleaf : require('/lib/xp/thymeleaf'),
     contentLib : require('/lib/xp/content'),
-    util : require('/lib/enonic/util')
+    util : require('/lib/enonic/util'),
+    shared : require('/lib/shared')
 };
 
 var view = resolve('service-frontpage.html');
@@ -10,16 +11,20 @@ var view = resolve('service-frontpage.html');
 exports.get = function(req){
 
     var config = libs.portal.getComponent().config;
-	 var services = [];
+    var serviceId = [];
     var serviceArray = config.service ? libs.util.data.forceArray(config.service) : null;
 
     if(serviceArray){
-        for(var i = 0; i < serviceArray.length; i++ ){
+        for(var i = 0; i < serviceArray.length; i++ ) {
             var serviceKey = libs.contentLib.get({
-                key : serviceArray[i]
+                key: serviceArray[i]
             });
+            serviceId.push(serviceKey);
+        }
 
-				if (serviceKey) {
+            var  services = libs.shared.getServiceData(serviceId);
+
+				/*if (serviceKey) {
 	            var serviceObject = {
 	                icon : serviceKey.data.iconFrontPage || "globe",
 	                serviceTitle : serviceKey.data.serviecTitle || "No title added",
@@ -30,14 +35,16 @@ exports.get = function(req){
             if(serviceObject){
                 services.push(serviceObject);
             }
-        }
+        }*/
     }
+
 
     var model = {
         title : config.title || "No title added",
         intro : config.intro || "No description added",
         services : services
     };
+
     var body = libs.thymeleaf.render(view, model);
     return {body : body};
 
