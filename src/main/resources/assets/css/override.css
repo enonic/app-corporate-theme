@@ -4,10 +4,7 @@
 #clients{
     padding: 50px;
 }
-.services{
-    padding: 50px 0;
-}
-section{
+.sectionPadding{
     padding : 30px 0;
 }
 .button{
