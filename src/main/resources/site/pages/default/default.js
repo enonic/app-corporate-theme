@@ -21,7 +21,7 @@ function getBreadcrumbMenu(params) {
 		showHomepage: params.showHomepage || true,
 		homepageTitle: params.homepageTitle || null,
 		dividerHtml: params.dividerHtml || null
-	}
+	};
 
 	// Loop the entire path for current content based on the slashes. Generate one JSON item node for each item.
 	// If on frontpage, skip the path-loop
