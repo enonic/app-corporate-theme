@@ -59,8 +59,6 @@ exports.get = function(){
         }
     }
 
-    libs.util.log(employees);
-
     var model = {
         title1 : config.title1,
         text1 : config.text1,

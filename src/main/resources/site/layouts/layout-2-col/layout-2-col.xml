@@ -1,7 +1,7 @@
 <layout>
     <display-name>2 columns</display-name>
     <config>
-        <input name="layoutConf" type="comboBox">
+        <input name="layoutConf" type="ComboBox">
             <label>Column configuration</label>
             <occurrences minimum="1" maximum="1"/>
             <config>
