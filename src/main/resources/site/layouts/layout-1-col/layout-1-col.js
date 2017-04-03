@@ -11,16 +11,12 @@ var view = resolve('layout-1-col.html');
 exports.get = function(req) {
 
     var component = libs.portal.getComponent();
-    
+
     var model = {
-        component: component,
-        mainRegion: component.regions['main'],
+        mainRegion: component.regions['main']
     };
 
     // Rendering
-   
     var body = libs.thymeleaf.render(view, model);
-
     return { body: body };
-
 };
