@@ -24,19 +24,21 @@ exports.get = function(){
                 key: employeesArray[i]
             });
 
-            if (employeeKey.data.socialLinks._selected.indexOf("twitter") >= 0) {
+            var selected = employeeKey.data.socialLinks._selected;
+
+            if (selected.indexOf("twitter") >= 0) {
                 twitterUrl = employeeKey.data.socialLinks.twitter.twitterUrl;
             }
 
-            if (employeeKey.data.socialLinks._selected.indexOf("facebook") >= 0) {
+            if (selected.indexOf("facebook") >= 0) {
                 facebookUrl = employeeKey.data.socialLinks.facebook.facebookUrl;
             }
 
-            if (employeeKey.data.socialLinks._selected.indexOf("linkedin") >= 0) {
+            if (selected.indexOf("linkedin") >= 0) {
                 linkedinUrl = employeeKey.data.socialLinks.linkedin.linkedinUrl;
             }
 
-            if (employeeKey.data.socialLinks._selected.indexOf("google") >= 0) {
+            if (selected.indexOf("google") >= 0) {
                 googleUrl = employeeKey.data.socialLinks.google.googleUrl;
             }
 
@@ -53,18 +55,17 @@ exports.get = function(){
                 googleUrl: googleUrl
             };
 
-            if (employeeObject) {
-                employees.push(employeeObject);
-            }
+             employees.push(employeeObject);
+
         }
     }
 
     var model = {
-        title1 : config.title1,
-        text1 : config.text1,
+        title1 : config.title1 || null,
+        text1 : config.text1 || null,
         employees : employees,
-        title2 :config.title2,
-        text2 : config.text2
+        title2 :config.title2 || null,
+        text2 : config.text2 || null
     };
 
     var body = libs.thymeleaf.render(view, model);
