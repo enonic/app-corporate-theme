@@ -98,7 +98,7 @@ exports.get = function(req){
 		 }
 	 });
 	 //log.info("Result -");
-	 libs.util.log(breadcrumbs);
+	// libs.util.log(breadcrumbs);
 
 	 var showTitle = false;
 
