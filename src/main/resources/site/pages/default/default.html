@@ -91,10 +91,14 @@
             </div>
             <div class="span6">
                 <ul class="breadcrumb pull-right">
-                    <li data-th-each="item, iterStat : ${breadcrumbs}" data-th-class="${item.active ? 'active' : ''}">
+                    <li data-th-each="item, iterStat : ${breadcrumbs}" data-th-class="
+								${item.active ? 'active' : ''} +
+								${iterStat.first ? ' first' : ''} +
+								${iterStat.last ? ' last' : ''}
+						  ">
 							  <a href="/" data-th-if="${item.url}" data-th-href="${item.url}" data-th-text="${item.text}">Home</a>
 							  <span data-th-unless="${item.url}" data-th-text="${item.text}" data-th-remove="tag">Home</span>
-							  <span class="divider" data-th-if="!${iterStat.last}">/</span>
+							  <div data-th-remove="tag" data-th-if="${item.divider} and !${iterStat.last}" data-th-utext="${item.divider}"></div>
 						  </li>
                 </ul>
             </div>

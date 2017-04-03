@@ -14,6 +14,14 @@ function getBreadcrumbMenu(params) {
 	var breadcrumbMenu = [];
 	var item = {};
 
+	// Take care of all incoming settings and set defaults
+	var settings = {
+		linkActiveItem: params.linkActiveItem || false,
+		showHomepage: params.showHomepage || true,
+		homepageTitle: params.homepageTitle || null,
+		dividerHtml: params.dividerHtml || null
+	}
+
 	// Not on frontpage, adding more things
 	if (content._path != site._path) {
 		var fullPath = content._path;
@@ -25,7 +33,7 @@ function getBreadcrumbMenu(params) {
 			log.info(lastVar);
 			if ( lastVar != '' ) {
 				var curItem = libs.content.get({ key: arrVars.join("/") + "/" + lastVar });
-				//libs.util.log(curItem);
+				libs.util.log(curItem);
 				if (curItem) {
 					var item = {};
 					var curItemUrl = libs.portal.pageUrl({
@@ -33,12 +41,17 @@ function getBreadcrumbMenu(params) {
 						type: 'absolute'
 					});
 					item.text = curItem.displayName;
-					// TODO: Respect params.linkActiveItem
 					if (content._path === curItem._path) {
 						item.active = true;
+						if (settings.linkActiveItem) {
+							item.url = curItemUrl;
+						}
 					} else {
 						item.active = false;
 						item.url = curItemUrl;
+					}
+					if (settings.dividerHtml) {
+						item.divider = settings.dividerHtml;
 					}
 					breadcrumbMenu.push(item);
 				};
@@ -47,16 +60,19 @@ function getBreadcrumbMenu(params) {
 	}
 
 	// Add Home button linking to site home if text for it is sent in
-	if (params.showHomepage) {
+	if (settings.showHomepage) {
 		var homeUrl = libs.portal.pageUrl({
 			path: site._path,
 			type: 'absolute'
 		});
 		item = {
-			text: params.homepageTitle || site.displayName,
+			text: settings.homepageTitle || site.displayName,
 			url: homeUrl,
 			active: (content._path === site._path)
 		};
+		if (settings.dividerHtml) {
+			item.divider = settings.dividerHtml;
+		}
 		breadcrumbMenu.push(item);
 	}
 
@@ -75,7 +91,8 @@ exports.get = function(req){
 	 var breadcrumbs = getBreadcrumbMenu({
 		 linkActiveItem: false,
 		 showHomepage: true,
-		 homepageTitle: "Homepage"
+		 homepageTitle: "Homepage",
+		 dividerHtml: '<span class="divider">/</span>' // null
 	 });
 
 	 var showTitle = false;
