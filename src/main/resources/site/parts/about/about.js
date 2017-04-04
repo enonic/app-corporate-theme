@@ -23,48 +23,48 @@ exports.get = function(){
                 key: employeesArray[i]
             });
 
-				if (employeeKey) {
-	            var selected = employeeKey.data.socialLinks._selected;
-					var socialLinks = employeeKey.data.socialLinks;
+			if (employeeKey) {
+			var selected = employeeKey.data.socialLinks._selected;
+				var socialLinks = employeeKey.data.socialLinks;
 
-	            if (selected.indexOf("twitter") >= 0) {
-	                twitterUrl = socialLinks.twitter.twitterUrl;
-	            }
+			if (selected.indexOf("twitter") >= 0) {
+				twitterUrl = socialLinks.twitter.twitterUrl;
+			}
 
-	            if (selected.indexOf("facebook") >= 0) {
-	                facebookUrl = socialLinks.facebook.facebookUrl;
-	            }
+			if (selected.indexOf("facebook") >= 0) {
+				facebookUrl = socialLinks.facebook.facebookUrl;
+			}
 
-	            if (selected.indexOf("linkedin") >= 0) {
-	                linkedinUrl = socialLinks.linkedin.linkedinUrl;
-	            }
+			if (selected.indexOf("linkedin") >= 0) {
+				linkedinUrl = socialLinks.linkedin.linkedinUrl;
+			}
 
-	            if (selected.indexOf("google") >= 0) {
-	                googleUrl = socialLinks.google.googleUrl;
-	            }
+			if (selected.indexOf("google") >= 0) {
+				googleUrl = socialLinks.google.googleUrl;
+			}
 
-	            var employeeObject = {
-	                photo: libs.portal.imageUrl({
-	                    id: employeeKey.data.photo,
-	                    scale: 'block(250,167)',
-	                }),
-	                name: employeeKey.displayName,
-	                intro: employeeKey.data.intro,
-	                facebookUrl: facebookUrl,
-	                twitterUrl: twitterUrl,
-	                linkedinUrl: linkedinUrl,
-	                googleUrl: googleUrl
-	            };
+			var employeeObject = {
+				photo: libs.portal.imageUrl({
+					id: employeeKey.data.photo,
+					scale: 'block(250,167)',
+				}),
+				name: employeeKey.displayName,
+				intro: employeeKey.data.intro,
+				facebookUrl: facebookUrl,
+				twitterUrl: twitterUrl,
+				linkedinUrl: linkedinUrl,
+				googleUrl: googleUrl
+			};
 
-	            employees.push(employeeObject);
-				}
-
+			employees.push(employeeObject);
+			}
         }
     }
 
     var model = {
         title1 : config.title1 || null,
         text1 : config.text1 || null,
+		titleEmployee : config.titleEmployee || null,
         employees : employees,
         title2 :config.title2 || null,
         text2 : config.text2 || null

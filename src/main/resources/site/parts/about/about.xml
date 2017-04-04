@@ -11,6 +11,12 @@
             <occurrences minimum="0" maximum="1"/>
             <help-text>About us part includes 3 sections. This field belongs to first section. It can be used as an introduction to the company.</help-text>
         </input>
+        <input name="titleEmployee" type="TextLine">
+            <label>Title for employees list</label>
+            <occurrences minimum="0" maximum="1"/>
+            <default>Meet the Team</default>
+            <help-text>Title for second section which is a list of employees.</help-text>
+        </input>
         <input name="team" type="ContentSelector">
             <label>Employees</label>
             <occurrences minimum="0" maximum="0"/>
@@ -21,7 +27,7 @@
             </config>
         </input>
         <input name="title2" type="TextLine">
-            <label>Title </label>
+            <label>Title</label>
             <occurrences minimum="0" maximum="1"/>
             <help-text> The third section, can be optionally used as a description to companies' activities or strength.</help-text>
         </input>
@@ -29,7 +35,6 @@
             <label>More about company</label>
             <occurrences minimum="0" maximum="1"/>
             <help-text> The third section, can be optionally used as a description to companies' activities or strength.</help-text>
-
         </input>
     </config>
 </part>

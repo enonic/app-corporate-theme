@@ -5,9 +5,10 @@
             <p data-th-text="${text1}"></p>
         </div>
     </div>
-    <h1 class="center">Meet the Team</h1>
-    <hr>
     <div class="row-fluid sectionPadding">
+        <hr>
+        <h1 class="center" data-th-text="${titleEmployee}"></h1>
+        <hr>
         <div class="span3" data-th-if="${employees}" data-th-each="employee : ${employees}">
             <div class="box">
                 <p><img data-th-src="${employee.photo}" alt="" ></p>
