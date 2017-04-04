@@ -6,28 +6,11 @@
             <occurrences minimum="0" maximum="1"/>
             <help-text>Optional field, briefly explains about different contact ways.</help-text>
         </input>
-        <input name="address" type="TextLine">
-            <label>Address</label>
-            <occurrences minimum="0" maximum="1"/>
-        </input>
-        <input name="email" type="TextLine">
-            <label>E-mail to show to public</label>
-            <occurrences minimum="0" maximum="1"/>
-            <help-text>This e-mail is shown in the website. Users will send their messages to this address.</help-text>
-        </input>
         <input name="emailReceiver" type="TextLine">
             <label>E-mail to receive the message</label>
             <occurrences minimum="1" maximum="1"/>
             <help-text>This field is required. E-mail address is not shown in the website, it receives users's messages.
             Please find more details about e-mail configuration in "Read me".</help-text>
-        </input>
-        <input name="phone" type="TextLine">
-            <label>Phone</label>
-            <occurrences minimum="0" maximum="1"/>
-        </input>
-        <input name="site" type="TextLine">
-            <label>Site Url</label>
-            <occurrences minimum="0" maximum="1"/>
         </input>
     </config>
 </part>
