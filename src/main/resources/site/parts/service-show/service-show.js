@@ -1,7 +1,7 @@
 var libs = {
     portal : require('/lib/xp/portal'),
     thymeleaf : require('/lib/xp/thymeleaf'),
-    contentLib : require('/lib/xp/content'),
+    content : require('/lib/xp/content'),
     util : require('/lib/enonic/util'),
     shared : require('/lib/shared')
 };
@@ -12,7 +12,7 @@ var view = resolve("service-show.html");
 exports.get = function(req){
 
     var currentService = libs.portal.getContent();
-    var serviceKey = libs.contentLib.get({
+    var serviceKey = libs.content.get({
         key : currentService._id
     });
 
@@ -27,8 +27,6 @@ exports.get = function(req){
     var model= {
         service : service || null
     };
-
-    libs.util.log(serviceKey);
     
     var body = libs.thymeleaf.render(view, model);
     return { body : body};

@@ -1,7 +1,7 @@
 var libs = {
     portal : require('/lib/xp/portal'),
     thymeleaf : require('/lib/xp/thymeleaf'),
-    contentLib : require('/lib/xp/content'),
+    content : require('/lib/xp/content'),
     util : require('/lib/enonic/util')
 };
 
@@ -15,7 +15,7 @@ exports.get = function(req){
 
     if(partnerLogos){
         for(var i = 0; i < partnerLogos.length; i++){
-            var logoKey = libs.contentLib.get({
+            var logoKey = libs.content.get({
                 key : partnerLogos[i]
             });
 

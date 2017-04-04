@@ -1,7 +1,7 @@
 var libs = {
     portal : require('/lib/xp/portal'),
     thymeleaf : require('/lib/xp/thymeleaf'),
-    contentLib : require('/lib/xp/content'),
+    content : require('/lib/xp/content'),
     util : require('/lib/enonic/util')
 };
 
@@ -15,7 +15,7 @@ exports.get = function(req){
     var btnUrl;
     if(config){
         if(config.btnUrl){
-            var btnKey = libs.contentLib.get({
+            var btnKey = libs.content.get({
                 key : config.btnUrl
             });
 

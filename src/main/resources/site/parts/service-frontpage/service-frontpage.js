@@ -1,7 +1,7 @@
 var libs = {
     portal : require('/lib/xp/portal'),
     thymeleaf : require('/lib/xp/thymeleaf'),
-    contentLib : require('/lib/xp/content'),
+    content : require('/lib/xp/content'),
     util : require('/lib/enonic/util'),
     shared : require('/lib/shared')
 };
@@ -16,7 +16,7 @@ exports.get = function(req){
 
     if(serviceArray){
         for(var i = 0; i < serviceArray.length; i++ ) {
-            var serviceKey = libs.contentLib.get({
+            var serviceKey = libs.content.get({
                 key: serviceArray[i]
             });
             serviceId.push(serviceKey);

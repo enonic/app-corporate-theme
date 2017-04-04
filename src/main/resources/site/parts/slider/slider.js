@@ -1,7 +1,7 @@
 var libs={
     portal : require('/lib/xp/portal'),
     thymeleaf : require('/lib/xp/thymeleaf'),
-    contentLib : require('/lib/xp/content'),
+    content : require('/lib/xp/content'),
     util : require('/lib/enonic/util')
 };
 
@@ -17,7 +17,7 @@ exports.get = function(req){
         for(var i = 0; i < config.length; i++){
             var image = null;
             var hit = config[i];
-            var imageKey = libs.contentLib.get({
+            var imageKey = libs.content.get({
                 key : hit.image
             });
             if(imageKey){

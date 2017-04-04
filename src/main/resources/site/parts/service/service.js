@@ -1,7 +1,7 @@
 var libs = {
     portal : require('/lib/xp/portal'),
     thymeleaf : require('/lib/xp/thymeleaf'),
-    contentLib : require('/lib/xp/content'),
+    content : require('/lib/xp/content'),
     util : require('/lib/enonic/util'),
     shared : require('/lib/shared')
 };
@@ -15,7 +15,7 @@ exports.get = function(req){
     var currentSite = libs.portal.getSite()._path;
     var serviceList =[];
 
-    var services = libs.contentLib.query({
+    var services = libs.content.query({
         start : 0,
         count : 300,
         sort : "modifiedTime DESC",
