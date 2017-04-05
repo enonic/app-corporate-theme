@@ -1,14 +1,16 @@
-<div class="container">
-    <div class="row-fluid">
-        <div data-portal-region="left" data-th-class="${leftCol}">
-            <div data-th-each="component : ${leftRegion.components}" data-th-remove="tag">
-                <div data-portal-component="${component.path}" data-th-remove="tag" />
+<section class="main-info">
+    <div class="container" data-th-style="${fullWidth}">
+        <div class="row-fluid">
+            <div data-portal-region="left" data-th-class="${leftCol}">
+                <div data-th-each="component : ${leftRegion.components}" data-th-remove="tag">
+                    <div data-portal-component="${component.path}" data-th-remove="tag" />
+                </div>
             </div>
-        </div>
-        <div data-portal-region="right" data-th-class="${rightCol}" >
-            <div data-th-each="component : ${rightRegion.components}" data-th-remove="tag">
-                <div data-portal-component="${component.path}" data-th-remove="tag" />
+            <div data-portal-region="right" data-th-class="${rightCol}" >
+                <div data-th-each="component : ${rightRegion.components}" data-th-remove="tag">
+                    <div data-portal-component="${component.path}" data-th-remove="tag" />
+                </div>
             </div>
         </div>
     </div>
-</div>
+</section>

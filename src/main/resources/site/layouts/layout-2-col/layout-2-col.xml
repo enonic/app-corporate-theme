@@ -11,6 +11,10 @@
             </config>
             <default>50-50</default>
         </input>
+        <input name="fullWidth" type="CheckBox">
+            <label>Full width layout?</label>
+            <occurrences minimum="0" maximum="1"/>
+        </input>
     </config>
     <regions>
         <region name="left" />

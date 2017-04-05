@@ -8,11 +8,12 @@ var view = resolve('layout-2-col.html');
 
 exports.get = function(req){
 
-   var component = libs.portal.getComponent();
-    
-    var columnConfig = component.config.layoutConf;
+    var component = libs.portal.getComponent();
+    var config = component.config;
+    var columnConfig = config.layoutConf;
     var leftCol;
     var rightCol;
+    var fullWidth= null;
 
     switch(columnConfig) {
         case '30-70' :
@@ -27,12 +28,17 @@ exports.get = function(req){
             leftCol = 6;
             rightCol = 6;
     }
-    
+
+    if(config.fullWidth){
+        fullWidth = "width: 100%";
+    }
+
     var model = {
         leftRegion : component.regions["left"],
         rightRegion : component.regions["right"],
         leftCol : 'span' + leftCol,
-        rightCol : 'span' + rightCol
+        rightCol : 'span' + rightCol,
+        fullWidth : fullWidth
     };
 
     var body = libs.thymeleaf.render(view, model);
