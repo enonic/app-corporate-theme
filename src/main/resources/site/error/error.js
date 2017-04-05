@@ -12,7 +12,7 @@ exports.handle404 = function (err) {
 exports.handleError = function(err){
 
     var debugMode = err.request.params.debug === 'true';
-    if (err.request.mode === 'preview') {
+    if (debugMode && err.request.mode === 'preview') {
         return;
     }
     var model = {
