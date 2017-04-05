@@ -1,11 +1,14 @@
-#portfolio{
-    padding: 50px 0;
+/*!*Padding for all sections whithout layout*!*/
+/*body>div>section {*/
+	/*padding: 50px 0;*/
+/*}*/
+/*Padding for sections with layout*/
+body div section {
+	padding: 50px 0;
 }
-#clients{
-    padding: 50px;
-}
-.sectionPadding{
-    padding : 40px 0;
+
+#slide-show{
+	padding : 0;
 }
 .button{
     margin: 20px 0;
