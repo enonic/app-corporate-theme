@@ -1,6 +1,10 @@
 <layout>
     <display-name>1 column</display-name>
     <config>
+        <input name="fullWidth" type="CheckBox">
+            <label>Full width?</label>
+            <occurrences minimum="0" maximum="1" />
+        </input>
     </config>
     <regions>
         <region name="main" />
