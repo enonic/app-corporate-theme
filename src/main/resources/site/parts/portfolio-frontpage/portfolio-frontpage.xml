@@ -7,7 +7,7 @@
             <occurrences minimum="0" maximum="1" />
         </input>
         <input name="partIntro" type="TextArea">
-            <label>Introduction text</label>
+            <label>Introduction</label>
 				<default>Some introduction text to your work</default>
             <occurrences minimum="0" maximum="1" />
         </input>

@@ -18,6 +18,5 @@
                 <allowPath>${site}/*</allowPath>
             </config>
         </input>
-
     </config>
 </part>

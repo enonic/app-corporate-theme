@@ -1,18 +1,18 @@
 <part>
-    <display-name>Services(Frontpage)</display-name>
+    <display-name>Services - List selected</display-name>
     <config>
         <input type="TextLine" name="title">
-            <label>Part's title</label>
+            <label>Title</label>
             <occurrences minimum="1" maximum="1"></occurrences>
             <default>What We Offer</default>
         </input>
         <input type="TextArea" name="intro">
-            <label>Part's intro</label>
+            <label>Introduction</label>
             <occurrences minimum="1" maximum="1"></occurrences>
             <default>Look at some of the recent projects we have completed for our valuble clients</default>
         </input>
         <input type="ContentSelector" name="service">
-            <label>Services list</label>
+            <label>Service list</label>
             <occurrences minimum="0" maximum="0"/>
             <config>
                 <allowContentType>service</allowContentType>

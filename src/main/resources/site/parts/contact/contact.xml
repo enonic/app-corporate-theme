@@ -2,7 +2,7 @@
     <display-name>Contact</display-name>
     <config>
         <input name="text" type="TextArea">
-            <label>Text</label>
+            <label>Description</label>
             <occurrences minimum="0" maximum="1"/>
             <help-text>Optional field, briefly explains about different contact ways.</help-text>
         </input>
