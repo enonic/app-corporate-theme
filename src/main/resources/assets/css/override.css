@@ -1,8 +1,6 @@
 body div section {
 	padding: 50px 0;
 }
-
-
 #slide-show{
 	padding : 0;
 }
@@ -33,4 +31,13 @@ padding-left: 10px;
 }
 .btn-margin{
 	margin-top: 20px;
+}
+
+/* General font-size for this theme is smaller when used with Bootstrap 3, increase the size a bit */
+body {
+	font-size: 14px;
+}
+/* Bootstrap 3 creates gray dividers, work bad on bright green bg. */
+.breadcrumb>li+li:before {
+	color: white;
 }
