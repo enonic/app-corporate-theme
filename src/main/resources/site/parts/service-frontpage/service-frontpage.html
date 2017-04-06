@@ -6,9 +6,9 @@
         </div>
 
 		  <div data-th-each="service: ${#numbers.sequence(0, #lists.size(services) - 1, 3)}" data-th-remove="tag">
-	  			<div class="row-fluid row-eq-height">
+	  			<div class="row row-eq-height">
 	  				<div data-th-each="index: ${#numbers.sequence(service, service + 2)}" data-th-remove="tag" data-th-with="service=${index lt #lists.size(services) ? services.get(index) : null}">
-	  					<div class="span4" data-th-if="${service != null}">
+	  					<div class="col-md-4" data-th-if="${service != null}">
 		                <div class="media">
 		                    <div class="pull-left">
 		                        <i class="icon-medium" data-th-classappend="${service.icon}"></i>

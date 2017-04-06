@@ -19,3 +19,11 @@ padding-left: 10px;
 	width: 100%;
 	max-height: 500px;
 }
+
+.thumbnail{
+	border: none;
+}
+.address{
+	padding-left: 0;
+}
+

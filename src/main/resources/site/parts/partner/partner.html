@@ -1,21 +1,21 @@
 <section id="clients" class="main">
     <div class="container">
-        <div class="row-fluid">
-            <div class="span2">
+        <div class="row">
+            <div class="col-md-2">
                 <div class="clearfix">
                     <h4 class="pull-left" data-th-text="${title}"></h4>
                 </div>
                 <p data-th-text="${intro}"></p>
             </div>
-            <div class="span10">
-                <div id="myCarousel" class="carousel slide clients">
+            <div class="col-md-10">
+                <div id="myCarousel" class="clients">
                     <!-- Carousel items -->
                     <div class="carousel-inner">
                         <div class="active item">
-                            <div class="row-fluid">
-                                <ul class="thumbnails">
-                                    <li class="span3" data-th-if="${logosList}" data-th-each="logo : ${logosList}">
-                                        <a href="#">
+                            <div class="row">
+                                <ul class="thumbnail list-unstyled">
+                                    <li class="col-md-3" data-th-if="${logosList}" data-th-each="logo : ${logosList}">
+                                        <a href="#" >
                                             <img data-th-src="${logo}">
                                         </a>
                                     </li>
