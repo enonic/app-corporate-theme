@@ -41,3 +41,15 @@ body {
 .breadcrumb>li+li:before {
 	color: white;
 }
+/* Needed in Bootstrap 3 to vertically align menu better. */
+ul.breadcrumb {
+	margin: 14px 0 0;
+}
+/* Properly re-space heading one inside the title header block, broken when Bootstrap 3 was introduced. */
+.title h1 {
+	margin: 12px 0;
+}
+/* We've removed an empty p-tag from original theme used to add spacing after icon, adding it to heading instead. */
+.services .center h4 {
+	margin-top: 10px;
+}
