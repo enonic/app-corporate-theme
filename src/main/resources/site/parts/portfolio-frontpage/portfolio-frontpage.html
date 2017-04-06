@@ -17,12 +17,25 @@
 	            <div class="desc">
 	                <h5 data-th-text="${item.title}"></h5>
 	            </div>
-	            <div id="modal-1" data-th-id="${item.uniqueId}" data-th-if="${item.imageFull}" class="modal hide fade">
-	                <a class="close-modal" href="#" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i></a>
-	                <div class="modal-body">
-	                    <img data-th-src="${item.imageFull}" alt="" />
-	                </div>
-	            </div>
+	            <!--<div id="modal-1" data-th-id="${item.uniqueId}" data-th-if="${item.imageFull}" class="modal hide fade">-->
+	                <!--<a class="close-modal" href="#" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i></a>-->
+	                <!--<div class="modal-body">-->
+	                    <!--<img data-th-src="${item.imageFull}" alt="" />-->
+	                <!--</div>-->
+	            <!--</div>-->
+
+				<div id="modal-1" data-th-id="${item.uniqueId}" data-th-if="${item.imageFull}" class="modal  fade">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-body">
+								<img data-th-src="${item.imageFull}" alt="" />
+							</div>
+							<a class="close" href="#" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i></a>
+						</div>
+					</div>
+				</div>
+
+
             </li>
         </ul>
     </div>

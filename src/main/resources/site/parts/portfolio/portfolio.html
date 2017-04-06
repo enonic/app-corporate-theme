@@ -12,12 +12,6 @@
                 <h3 data-th-text="${item.title}"></h3>
                 <h5 data-th-text="${item.intro}"></h5>
             </div>
-            <div id="modal-1" data-th-id="${item.uniqueId}" data-th-if="${item.imageFull}" class="modal hide fade">
-                <a class="close-modal" href="#" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i></a>
-                <div class="modal-body">
-                    <img data-th-src="${item.imageFull}" alt="" />
-                </div>
-            </div>
         </li>
     </ul>
 </section>
