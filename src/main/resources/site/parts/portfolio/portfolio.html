@@ -1,4 +1,4 @@
-<section id="portfolio" class="container main">
+<section class="container main portfolio">
     <ul class="gallery">
         <li data-th-if="${portfolioList}" data-th-each="item : ${portfolioList}">
             <div class="preview">
@@ -11,6 +11,17 @@
             <div class="desc">
                 <h3 data-th-text="${item.title}"></h3>
                 <h5 data-th-text="${item.intro}"></h5>
+            </div>
+
+            <div id="modal-1" data-th-id="${item.uniqueId}" data-th-if="${item.imageFull}" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <img data-th-src="${item.imageFull}" alt="" />
+                        </div>
+                    <a class="close" href="#" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i></a>
+                    </div>
+                </div>
             </div>
         </li>
     </ul>
