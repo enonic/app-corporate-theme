@@ -5,7 +5,7 @@ body div section {
 	padding : 0;
 }
 .button{
-    margin: 20px 0;
+    margin-top: 50px;
 }
 header #logo img {
 	max-width: 220px;
@@ -29,8 +29,8 @@ padding-left: 10px;
 .icon-medium{
 	width: auto;
 }
-.btn-margin{
-	margin-top: 20px;
+.box img{
+	max-width : 100%;
 }
 
 /* General font-size for this theme is smaller when used with Bootstrap 3, increase the size a bit */
