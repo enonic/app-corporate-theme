@@ -1,9 +1,9 @@
 <section class="services">
 	<div data-th-each="service: ${#numbers.sequence(0, #lists.size(serviceList) - 1, 3)}" data-th-remove="tag">
 		<div class="container">
-			<div class="row-fluid row-eq-height">
+			<div class="row row-eq-height">
 				<div data-th-each="index: ${#numbers.sequence(service, service + 2)}" data-th-remove="tag" data-th-with="service=${index lt #lists.size(serviceList) ? serviceList.get(index) : null}">
-					<div class="span4" data-th-if="${service != null}">
+					<div class="col-lg-4" data-th-if="${service != null}">
 						<div class="center">
 							<i style="font-size: 48px" data-th-class="${service.icon}"></i>
 							<h4 data-th-text="${service.title}"></h4>
