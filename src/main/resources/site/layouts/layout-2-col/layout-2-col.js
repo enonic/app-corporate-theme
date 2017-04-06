@@ -18,15 +18,15 @@ exports.get = function(req){
     switch(columnConfig) {
         case '30-70' :
             leftCol= 3;
-            rightCol = 6;
+            rightCol = 9;
             break;
         case '70-30' :
-            leftCol = 6;
+            leftCol = 9;
             rightCol = 3;
             break;
         default:
-            leftCol = 4;
-            rightCol = 4;
+            leftCol = 6;
+            rightCol = 6;
     }
 
     if(config.fullWidth){
