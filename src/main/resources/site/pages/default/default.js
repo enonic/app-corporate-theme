@@ -20,8 +20,7 @@ exports.get = function(req){
 	 var breadcrumbs = libs.menu.getBreadcrumbMenu({
 		 linkActiveItem: false,
 		 showHomepage: true,
-		 homepageTitle: "Home",
-		 dividerHtml: '<span class="divider">/</span>'
+		 homepageTitle: "Home"
 	 });
 
 	 var showTitle = false;
