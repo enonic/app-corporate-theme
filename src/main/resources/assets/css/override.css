@@ -53,3 +53,11 @@ ul.breadcrumb {
 .services .center h4 {
 	margin-top: 10px;
 }
+/* The transparent button inside the slider is too small in Bootstrap 3, increase its size. */
+.sl-slider-wrapper .sl-slide-inner .btn-large {
+	font-size: 20px;
+}
+/* Part button adds button that are too small in Bootstrap 3, unless this font-change is applied. */
+.button .btn-large {
+  font-size: 20px;
+}
