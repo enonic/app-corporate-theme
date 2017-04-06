@@ -2,6 +2,7 @@ body div section {
 	padding: 50px 0;
 }
 
+
 #slide-show{
 	padding : 0;
 }
@@ -27,3 +28,9 @@ padding-left: 10px;
 	padding-left: 0;
 }
 
+.icon-medium{
+	width: auto;
+}
+.btn-margin{
+	margin-top: 20px;
+}

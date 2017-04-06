@@ -66,11 +66,11 @@
 <!-- Page breadcrumb and title bar -->
 <section class="title" data-th-if="${!showTitle}">
     <div class="container">
-        <div class="row-fluid">
-            <div class="span6">
+        <div class="row">
+            <div class="col-md-6">
                 <h1 data-th-text="${breadcrumbTitle}"></h1>
             </div>
-            <div class="span6">
+            <div class="col-md-6">
 					<ul class="breadcrumb pull-right ">
 						 <li data-th-each="item, iterStat : ${breadcrumbs.items}" data-th-class="
 							  ${item.active ? 'active' : ''} +

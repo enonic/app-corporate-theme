@@ -1,15 +1,15 @@
 <section id="about-us" class="container main">
-    <div class="row-fluid">
-        <div class="span6">
+    <div class="row">
+        <div class="col-md-8">
             <h2 data-th-text="${title1}"></h2>
             <p data-th-text="${text1}"></p>
         </div>
     </div>
-    <div class="row-fluid sectionPadding">
+    <div class="row">
         <hr>
         <h1 class="center" data-th-text="${titleEmployee}"></h1>
         <hr>
-        <div class="span3" data-th-if="${employees}" data-th-each="employee : ${employees}">
+        <div class="col-md-3" data-th-if="${employees}" data-th-each="employee : ${employees}">
             <div class="box">
                 <p><img data-th-src="${employee.photo}" alt="" ></p>
                 <h5 data-th-text="${employee.name}"></h5>
@@ -21,8 +21,8 @@
             </div>
         </div>
     </div>
-    <div class="row-fluid">
-        <div class="span6">
+    <div class="row">
+        <div class="col-md-8">
             <h3 data-th-text="${title2}"></h3>
             <p data-th-text="${text2}"></p>
         </div>
