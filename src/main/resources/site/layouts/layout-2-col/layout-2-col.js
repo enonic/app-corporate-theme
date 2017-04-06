@@ -17,16 +17,16 @@ exports.get = function(req){
 
     switch(columnConfig) {
         case '30-70' :
-            leftCol= 4;
-            rightCol = 8;
+            leftCol= 3;
+            rightCol = 6;
             break;
         case '70-30' :
-            leftCol = 8;
-            rightCol = 4;
+            leftCol = 6;
+            rightCol = 3;
             break;
         default:
-            leftCol = 6;
-            rightCol = 6;
+            leftCol = 4;
+            rightCol = 4;
     }
 
     if(config.fullWidth){
@@ -36,8 +36,8 @@ exports.get = function(req){
     var model = {
         leftRegion : component.regions["left"],
         rightRegion : component.regions["right"],
-        leftCol : 'span' + leftCol,
-        rightCol : 'span' + rightCol,
+        leftCol : 'col-md-' + leftCol,
+        rightCol : 'col-md-' + rightCol,
         fullWidth : fullWidth
     };
 
