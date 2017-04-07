@@ -1,3 +1,7 @@
+@-ms-viewport { width: device-width; }
+@-o-viewport { width: device-width; }
+@viewport { width: device-width; }
+
 body div section {
 	padding: 50px 0;
 }
@@ -32,11 +36,15 @@ padding-left: 10px;
 .box img{
 	max-width : 100%;
 }
+/*Modal close icon*/
+.close{
+	opacity: 1!important;
+}
 .modal-close{
-	color: red!important;
-	right : -15px!important;
-	top : 0!important;
-
+	color: #3b4149!important;
+	right : 3px!important;
+	top : 5px!important;
+	z-index: 2;
 }
 /*Using fullWidth class to make layout width 100%*/
 .fullWidth{
