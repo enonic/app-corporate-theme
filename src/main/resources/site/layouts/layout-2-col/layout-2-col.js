@@ -27,18 +27,14 @@ exports.get = function(req){
             leftCol = 6;
             rightCol = 6;
     }
-
-
-    var fullWidth = config.fullWidth ? "fullWidth" : "";
-
-    libs.util.log(fullWidth);
-
+    
+    var fullWidth = config.fullWidth ? "container-fluid" : "container";
     var model = {
         leftRegion : component.regions["left"],
         rightRegion : component.regions["right"],
         leftCol : 'col-md-' + leftCol,
         rightCol : 'col-md-' + rightCol,
-        fullWidth : fullWidth
+        container : fullWidth
     };
 
     var body = libs.thymeleaf.render(view, model);

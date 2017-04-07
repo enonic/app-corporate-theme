@@ -12,17 +12,11 @@ exports.get = function(req) {
 
     var component = libs.portal.getComponent();
     var config = component.config;
-    var fullWidth = null;
-
-    var fullWidth = config.fullWidth ? "fullWidth" : "";
-
-    libs.util.log(fullWidth );
-
+    var fullWidth = config.fullWidth ? "container-fluid" : "container";
     var model = {
         mainRegion: component.regions['main'],
-        fullWidth : fullWidth
+        container : fullWidth
     };
-
     // Rendering
     var body = libs.thymeleaf.render(view, model);
     return { body: body };
