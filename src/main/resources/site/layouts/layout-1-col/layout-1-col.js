@@ -13,10 +13,10 @@ exports.get = function(req) {
     var component = libs.portal.getComponent();
     var config = component.config;
     var fullWidth = null;
-    
-    if(config.fullWidth) {
-       fullWidth = "width : 100%"; 
-    }
+
+    var fullWidth = config.fullWidth ? "fullWidth" : "";
+
+    libs.util.log(fullWidth );
 
     var model = {
         mainRegion: component.regions['main'],

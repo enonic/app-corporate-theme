@@ -32,7 +32,16 @@ padding-left: 10px;
 .box img{
 	max-width : 100%;
 }
+.modal-close{
+	color: red!important;
+	right : -15px!important;
+	top : 0!important;
 
+}
+/*Using fullWidth class to make layout width 100%*/
+.fullWidth{
+	width : 100%;
+}
 /* General font-size for this theme is smaller when used with Bootstrap 3, increase the size a bit */
 body {
 	font-size: 14px;

@@ -13,7 +13,6 @@ exports.get = function(req){
     var columnConfig = config.layoutConf;
     var leftCol;
     var rightCol;
-    var fullWidth= null;
 
     switch(columnConfig) {
         case '30-70' :
@@ -29,9 +28,10 @@ exports.get = function(req){
             rightCol = 6;
     }
 
-    if(config.fullWidth){
-        fullWidth = "width: 100%";
-    }
+
+    var fullWidth = config.fullWidth ? "fullWidth" : "";
+
+    libs.util.log(fullWidth);
 
     var model = {
         leftRegion : component.regions["left"],
