@@ -43,25 +43,16 @@ exports.getPortfolioData = function(portfolios) {
 
 exports.getServiceData = function(services){
     var serviceList = [];
-    var icon = null;
     var readMore = null;
-    var content = libs.portal.getContent();
-    var currentPath = content._path;
-    var sitePath = libs.portal.getSite()._path;
 
     for(var i=0; i <services.length; i++){
         var hit = services[i];
 
-        if(currentPath == sitePath){
-            var iconMedium = hit.data.iconFrontPage || "globe";
-            icon = "icon-" + iconMedium + " icon-medium";
-        } else {
-            var iconLarge = hit.data.iconServicePage || "bar-chart";
-            icon = "icon-" + iconLarge + " icon-large";
-            readMore = libs.portal.pageUrl({
-                path : hit._path
-            });
-        }
+         var icon =  "icon-" +hit.data.serviceIcon;
+
+        readMore = libs.portal.pageUrl({
+            path : hit._path
+        });
 
         var serviceObj = {
             icon : icon,
