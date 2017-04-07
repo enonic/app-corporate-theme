@@ -21,10 +21,8 @@ exports.get = function(req){
             });
             serviceId.push(serviceKey);
         }
-
-            var  services = libs.shared.getServiceData(serviceId);
+        var  services = libs.shared.getServiceData(serviceId);
     }
-
 
     var model = {
         title : config.title || "No title added",
