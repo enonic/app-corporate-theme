@@ -6,10 +6,6 @@
             <label>Photo</label>
             <occurrences minimum="1" maximum="1"/>
         </input>
-        <input name="name" type="TextLine">
-            <label>Name</label>
-            <occurrences minimum="1" maximum="1"/>
-        </input>
         <input name="intro" type="TextArea">
             <label>About</label>
             <occurrences minimum="1" maximum="1"/>
@@ -18,7 +14,7 @@
         <option-set name="socialLinks">
             <label>Social networks info</label>
             <expanded>true</expanded>
-            <occurrences minimum="1" maximum="1"/>
+            <occurrences minimum="0" maximum="1"/>
             <help-text>Select one or more options from the list.
                 Add url for each in the corresponding field. Url should contain "https" or "http". For example https://example.com. </help-text>
             <options minimum="1" maximum="4">
