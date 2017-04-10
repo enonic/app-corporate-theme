@@ -5,6 +5,11 @@
             <label>Full width?</label>
             <occurrences minimum="0" maximum="1" />
         </input>
+        <input name="backgroundColor" type="TextLine">
+            <label>Background colour (Hex color)</label>
+            <help-text>Add background color for this image. The color should be a hexadecimal value.(like #4286f4)</help-text>
+            <occurrences minimum="0" maximum="1" />
+        </input>
     </config>
     <regions>
         <region name="main" />

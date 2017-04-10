@@ -13,9 +13,12 @@ exports.get = function(req) {
     var component = libs.portal.getComponent();
     var config = component.config;
     var fullWidth = config.fullWidth ? "container-fluid" : "container";
+    var backgroundColor = config.backgroundColor || "#252525";
     var model = {
         mainRegion: component.regions['main'],
-        container : fullWidth
+        container : fullWidth,
+        backgroundColor : backgroundColor
+        
     };
     // Rendering
     var body = libs.thymeleaf.render(view, model);
