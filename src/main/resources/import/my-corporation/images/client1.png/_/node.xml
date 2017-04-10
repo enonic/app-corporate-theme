@@ -1,9 +1,9 @@
 <node>
-    <id>3ba4273e-0f84-4c10-b27c-54717bc14d71</id>
-    <childOrder>_manualordervalue DESC, _timestamp DESC</childOrder>
+    <id>916480d8-01aa-4909-8bf5-5d91409cf103</id>
+    <childOrder>modifiedtime DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2017-04-06T13:24:19.364Z</timestamp>
-    <inheritPermissions>true</inheritPermissions>
+    <timestamp>2017-04-10T11:16:51.018Z</timestamp>
+    <inheritPermissions>false</inheritPermissions>
     <permissions>
         <principal key="role:cms.admin">
             <allow type="array">
@@ -26,54 +26,44 @@
     </permissions>
     <data>
         <boolean name="valid">true</boolean>
-        <string name="displayName">Services</string>
-        <string name="type">com.enonic.app.bootstrap:landing-page</string>
-        <string name="owner">user:system:su</string>
-        <dateTime name="modifiedTime">2017-04-06T13:24:19.364Z</dateTime>
-        <string name="modifier">user:system:su</string>
+        <string name="displayName">client1</string>
+        <string name="type">media:image</string>
+        <dateTime name="createdTime">2017-04-10T10:34:25.282Z</dateTime>
         <string name="creator">user:system:su</string>
-        <dateTime name="createdTime">2017-03-06T08:43:35.472Z</dateTime>
-        <property-set name="publish">
-            <dateTime isNull="true" name="from"/>
-            <dateTime isNull="true" name="to"/>
+        <string name="modifier">user:system:su</string>
+        <dateTime name="modifiedTime">2017-04-10T10:34:25.282Z</dateTime>
+        <string name="owner">user:system:su</string>
+        <property-set name="data">
+            <property-set name="media">
+                <string name="attachment">client1.png</string>
+                <property-set name="focalPoint">
+                    <double name="x">0.5</double>
+                    <double name="y">0.5</double>
+                </property-set>
+            </property-set>
+            <string name="caption"/>
+            <string name="artist"/>
+            <string name="copyright"/>
+            <string name="tags"/>
         </property-set>
-        <property-set name="data"/>
         <property-set name="x">
-            <property-set name="com-enonic-app-bootstrap">
-                <property-set name="menu-item">
-                    <boolean name="menuItem">true</boolean>
-                    <string isNull="true" name="menuName"/>
+            <property-set name="media">
+                <property-set name="imageInfo">
+                    <long name="imageHeight">149</long>
+                    <long name="imageWidth">150</long>
+                    <string name="contentType">image/png</string>
+                    <long name="pixelSize">22350</long>
+                    <long name="byteSize">11259</long>
                 </property-set>
             </property-set>
         </property-set>
-        <property-set name="page">
-            <string name="controller">com.enonic.app.bootstrap:default</string>
-            <reference isNull="true" name="template"/>
-            <property-set name="region">
-                <string name="name">main</string>
-                <property-set name="component">
-                    <string name="type">PartComponent</string>
-                    <property-set name="PartComponent">
-                        <string name="name">Services</string>
-                        <string name="template">com.enonic.app.bootstrap:service</string>
-                        <property-set name="config"/>
-                    </property-set>
-                </property-set>
-                <property-set name="component">
-                    <string name="type">PartComponent</string>
-                    <property-set name="PartComponent">
-                        <string name="name">Button</string>
-                        <string name="template">com.enonic.app.bootstrap:button</string>
-                        <property-set name="config">
-                            <string name="btnText">Request a free quote</string>
-                            <string name="btnColor">#2dcc70</string>
-                            <string isNull="true" name="externalUrl"/>
-                        </property-set>
-                    </property-set>
-                </property-set>
-            </property-set>
-            <property-set name="config"/>
-            <boolean name="customized">true</boolean>
+        <property-set name="attachment">
+            <string name="name">client1.png</string>
+            <string name="label">source</string>
+            <binaryReference name="binary">client1.png</binaryReference>
+            <string name="mimeType">image/png</string>
+            <long name="size">11259</long>
+            <string name="text"/>
         </property-set>
     </data>
     <indexConfigs>
@@ -115,6 +105,56 @@
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
                 <path>page.regions</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>x</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>false</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>page</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>false</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>site</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>type</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>data</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -175,56 +215,6 @@
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
                 <path>attachment</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>true</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>x</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>false</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>page</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>false</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>site</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>true</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>type</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>true</decideByType>
-                    <enabled>true</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>data</path>
             </pathIndexConfig>
         </pathIndexConfigs>
     </indexConfigs>

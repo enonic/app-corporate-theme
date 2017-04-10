@@ -2,27 +2,9 @@
     <id>23e10ece-6e3b-4dad-8a89-1c54e31f7098</id>
     <childOrder>modifiedtime DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2017-03-08T12:31:00.768Z</timestamp>
-    <inheritPermissions>false</inheritPermissions>
+    <timestamp>2017-03-31T11:00:58.267Z</timestamp>
+    <inheritPermissions>true</inheritPermissions>
     <permissions>
-        <principal key="role:cms.cm.app">
-            <allow type="array">
-                <value>READ</value>
-            </allow>
-            <deny type="array"/>
-        </principal>
-        <principal key="role:system.admin">
-            <allow type="array">
-                <value>READ</value>
-                <value>CREATE</value>
-                <value>MODIFY</value>
-                <value>DELETE</value>
-                <value>PUBLISH</value>
-                <value>READ_PERMISSIONS</value>
-                <value>WRITE_PERMISSIONS</value>
-            </allow>
-            <deny type="array"/>
-        </principal>
         <principal key="role:cms.admin">
             <allow type="array">
                 <value>READ</value>
@@ -32,6 +14,12 @@
                 <value>PUBLISH</value>
                 <value>READ_PERMISSIONS</value>
                 <value>WRITE_PERMISSIONS</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
+        <principal key="role:system.everyone">
+            <allow type="array">
+                <value>READ</value>
             </allow>
             <deny type="array"/>
         </principal>

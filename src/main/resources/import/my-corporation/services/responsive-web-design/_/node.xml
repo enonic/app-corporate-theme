@@ -1,9 +1,9 @@
 <node>
-    <id>3ba4273e-0f84-4c10-b27c-54717bc14d71</id>
-    <childOrder>_manualordervalue DESC, _timestamp DESC</childOrder>
+    <id>29d4ad0d-1378-4fce-8323-4070b803959d</id>
+    <childOrder>modifiedtime DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2017-04-06T13:24:19.364Z</timestamp>
-    <inheritPermissions>true</inheritPermissions>
+    <timestamp>2017-04-07T10:18:16.169Z</timestamp>
+    <inheritPermissions>false</inheritPermissions>
     <permissions>
         <principal key="role:cms.admin">
             <allow type="array">
@@ -26,54 +26,34 @@
     </permissions>
     <data>
         <boolean name="valid">true</boolean>
-        <string name="displayName">Services</string>
-        <string name="type">com.enonic.app.bootstrap:landing-page</string>
+        <string name="displayName">Responsive Web Design</string>
+        <string name="type">com.enonic.app.bootstrap:service</string>
         <string name="owner">user:system:su</string>
-        <dateTime name="modifiedTime">2017-04-06T13:24:19.364Z</dateTime>
+        <dateTime name="modifiedTime">2017-04-07T10:18:16.168Z</dateTime>
         <string name="modifier">user:system:su</string>
         <string name="creator">user:system:su</string>
-        <dateTime name="createdTime">2017-03-06T08:43:35.472Z</dateTime>
+        <dateTime name="createdTime">2017-03-08T09:34:56.395Z</dateTime>
         <property-set name="publish">
             <dateTime isNull="true" name="from"/>
             <dateTime isNull="true" name="to"/>
         </property-set>
-        <property-set name="data"/>
+        <property-set name="data">
+            <string name="iconFrontPage">leaf</string>
+            <string name="iconServicePage">globe</string>
+            <string name="serviceTitle">Responsive Web Design</string>
+            <string name="serviceIntro">Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.</string>
+            <string name="serviceDescription">&lt;p&gt;Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.&lt;/p&gt;
+&lt;p&gt;Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.&lt;/p&gt;
+&lt;p&gt;Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.&lt;/p&gt;</string>
+            <string name="serviceIcon">globe</string>
+        </property-set>
         <property-set name="x">
             <property-set name="com-enonic-app-bootstrap">
                 <property-set name="menu-item">
-                    <boolean name="menuItem">true</boolean>
+                    <boolean name="menuItem">false</boolean>
                     <string isNull="true" name="menuName"/>
                 </property-set>
             </property-set>
-        </property-set>
-        <property-set name="page">
-            <string name="controller">com.enonic.app.bootstrap:default</string>
-            <reference isNull="true" name="template"/>
-            <property-set name="region">
-                <string name="name">main</string>
-                <property-set name="component">
-                    <string name="type">PartComponent</string>
-                    <property-set name="PartComponent">
-                        <string name="name">Services</string>
-                        <string name="template">com.enonic.app.bootstrap:service</string>
-                        <property-set name="config"/>
-                    </property-set>
-                </property-set>
-                <property-set name="component">
-                    <string name="type">PartComponent</string>
-                    <property-set name="PartComponent">
-                        <string name="name">Button</string>
-                        <string name="template">com.enonic.app.bootstrap:button</string>
-                        <property-set name="config">
-                            <string name="btnText">Request a free quote</string>
-                            <string name="btnColor">#2dcc70</string>
-                            <string isNull="true" name="externalUrl"/>
-                        </property-set>
-                    </property-set>
-                </property-set>
-            </property-set>
-            <property-set name="config"/>
-            <boolean name="customized">true</boolean>
         </property-set>
     </data>
     <indexConfigs>

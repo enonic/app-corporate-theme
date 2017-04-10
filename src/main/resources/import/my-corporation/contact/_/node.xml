@@ -2,27 +2,9 @@
     <id>ca8c605e-e22f-4529-84fb-73349133c868</id>
     <childOrder>modifiedtime DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2017-03-28T13:14:46.674Z</timestamp>
+    <timestamp>2017-04-07T11:21:25.321Z</timestamp>
     <inheritPermissions>true</inheritPermissions>
     <permissions>
-        <principal key="role:cms.cm.app">
-            <allow type="array">
-                <value>READ</value>
-            </allow>
-            <deny type="array"/>
-        </principal>
-        <principal key="role:system.admin">
-            <allow type="array">
-                <value>READ</value>
-                <value>CREATE</value>
-                <value>MODIFY</value>
-                <value>DELETE</value>
-                <value>PUBLISH</value>
-                <value>READ_PERMISSIONS</value>
-                <value>WRITE_PERMISSIONS</value>
-            </allow>
-            <deny type="array"/>
-        </principal>
         <principal key="role:cms.admin">
             <allow type="array">
                 <value>READ</value>
@@ -35,13 +17,19 @@
             </allow>
             <deny type="array"/>
         </principal>
+        <principal key="role:system.everyone">
+            <allow type="array">
+                <value>READ</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
     </permissions>
     <data>
         <boolean name="valid">true</boolean>
-        <string name="displayName">contact</string>
+        <string name="displayName">Contact</string>
         <string name="type">com.enonic.app.bootstrap:landing-page</string>
         <string name="owner">user:system:su</string>
-        <dateTime name="modifiedTime">2017-03-28T13:14:46.669Z</dateTime>
+        <dateTime name="modifiedTime">2017-04-07T11:21:25.320Z</dateTime>
         <string name="modifier">user:system:su</string>
         <string name="creator">user:system:su</string>
         <dateTime name="createdTime">2017-03-06T08:44:31.294Z</dateTime>
