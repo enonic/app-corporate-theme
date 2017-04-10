@@ -1,0 +1,20 @@
+<part>
+    <display-name>Employees list</display-name>
+    <config>
+        <input name="titleEmployee" type="TextLine">
+            <label>Title for employees list</label>
+            <occurrences minimum="0" maximum="1"/>
+            <default>Meet the Team</default>
+            <help-text>Title for second section which is a list of employees.</help-text>
+        </input>
+        <input name="team" type="ContentSelector">
+            <label>Employees</label>
+            <occurrences minimum="0" maximum="0"/>
+            <help-text>The second section is about introducing the employees. From the list above select employees you wish to Introduce. </help-text>
+            <config>
+                <allowContentType>employee</allowContentType>
+                <allowPath>${site}/*</allowPath>
+            </config>
+        </input>
+    </config>
+</part>

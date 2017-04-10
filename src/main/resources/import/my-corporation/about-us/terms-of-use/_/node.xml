@@ -1,8 +1,8 @@
 <node>
-    <id>519955b2-56e7-4a5a-b3cc-8f00efd43687</id>
+    <id>ff38a5bc-2717-4c92-9141-8b70d57f5deb</id>
     <childOrder>modifiedtime DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2017-03-31T11:00:58.322Z</timestamp>
+    <timestamp>2017-04-04T06:49:18.795Z</timestamp>
     <inheritPermissions>true</inheritPermissions>
     <permissions>
         <principal key="role:cms.admin">
@@ -26,13 +26,13 @@
     </permissions>
     <data>
         <boolean name="valid">true</boolean>
-        <string name="displayName">Templates</string>
-        <string name="type">portal:template-folder</string>
+        <string name="displayName">Terms of Use</string>
+        <string name="type">com.enonic.app.bootstrap:landing-page</string>
         <string name="owner">user:system:su</string>
-        <dateTime name="modifiedTime">2017-02-28T10:49:02.069Z</dateTime>
+        <dateTime name="modifiedTime">2017-04-04T06:49:18.794Z</dateTime>
         <string name="modifier">user:system:su</string>
         <string name="creator">user:system:su</string>
-        <dateTime name="createdTime">2017-02-03T09:33:59.929Z</dateTime>
+        <dateTime name="createdTime">2017-04-04T06:47:31.665Z</dateTime>
         <property-set name="publish">
             <dateTime isNull="true" name="from"/>
             <dateTime isNull="true" name="to"/>
@@ -41,7 +41,7 @@
         <property-set name="x">
             <property-set name="com-enonic-app-bootstrap">
                 <property-set name="menu-item">
-                    <boolean name="menuItem">false</boolean>
+                    <boolean name="menuItem">true</boolean>
                     <string isNull="true" name="menuName"/>
                 </property-set>
             </property-set>
@@ -51,6 +51,43 @@
             <reference isNull="true" name="template"/>
             <property-set name="region">
                 <string name="name">main</string>
+                <property-set name="component">
+                    <string name="type">LayoutComponent</string>
+                    <property-set name="LayoutComponent">
+                        <string name="name">1 column</string>
+                        <string name="template">com.enonic.app.bootstrap:layout-1-col</string>
+                        <property-set name="config"/>
+                        <property-set name="region">
+                            <string name="name">main</string>
+                            <property-set name="component">
+                                <string name="type">TextComponent</string>
+                                <property-set name="TextComponent">
+                                    <string name="name">Text</string>
+                                    <string name="text">&lt;h3&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;h3&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;h3&gt;Unauthorized/Illegal Usage&lt;/h3&gt;
+&lt;p&gt;Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;h3&gt;Ownership&lt;/h3&gt;
+&lt;p&gt;Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;h3&gt;Anti-fraud&lt;/h3&gt;
+&lt;p&gt;Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;h3&gt;Refund policy&lt;/h3&gt;
+&lt;p&gt;Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;h3&gt;Warranty and support&lt;/h3&gt;
+&lt;p&gt;Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;</string>
+                                </property-set>
+                            </property-set>
+                        </property-set>
+                    </property-set>
+                </property-set>
             </property-set>
             <property-set name="config"/>
             <boolean name="customized">true</boolean>

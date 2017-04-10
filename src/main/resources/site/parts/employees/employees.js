@@ -5,7 +5,7 @@ var libs = {
     util: require('/lib/enonic/util')
 };
 
-var view = resolve('about.html');
+var view = resolve('employees.html');
 
 exports.get = function(){
 
@@ -66,12 +66,8 @@ exports.get = function(){
     }
 
     var model = {
-        title1 : config.title1 || null,
-        text1 : config.text1 || null,
 		titleEmployee : config.titleEmployee || null,
-        employees : employees,
-        title2 :config.title2 || null,
-        text2 : config.text2 || null
+        employees : employees
     };
 
     var body = libs.thymeleaf.render(view, model);

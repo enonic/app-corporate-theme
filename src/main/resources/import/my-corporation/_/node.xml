@@ -1,28 +1,10 @@
 <node>
     <id>840899b3-3585-4c0d-a052-2f3f2b42763e</id>
-    <childOrder>modifiedtime DESC</childOrder>
+    <childOrder>_manualordervalue DESC, _timestamp DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2017-03-30T08:20:07.160Z</timestamp>
-    <inheritPermissions>true</inheritPermissions>
+    <timestamp>2017-04-10T13:25:41.541Z</timestamp>
+    <inheritPermissions>false</inheritPermissions>
     <permissions>
-        <principal key="role:cms.cm.app">
-            <allow type="array">
-                <value>READ</value>
-            </allow>
-            <deny type="array"/>
-        </principal>
-        <principal key="role:system.admin">
-            <allow type="array">
-                <value>READ</value>
-                <value>CREATE</value>
-                <value>MODIFY</value>
-                <value>DELETE</value>
-                <value>PUBLISH</value>
-                <value>READ_PERMISSIONS</value>
-                <value>WRITE_PERMISSIONS</value>
-            </allow>
-            <deny type="array"/>
-        </principal>
         <principal key="role:cms.admin">
             <allow type="array">
                 <value>READ</value>
@@ -35,13 +17,19 @@
             </allow>
             <deny type="array"/>
         </principal>
+        <principal key="role:system.everyone">
+            <allow type="array">
+                <value>READ</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
     </permissions>
     <data>
         <boolean name="valid">true</boolean>
         <string name="displayName">My Corporation</string>
         <string name="type">portal:site</string>
         <string name="owner">user:system:su</string>
-        <dateTime name="modifiedTime">2017-03-30T08:20:07.159Z</dateTime>
+        <dateTime name="modifiedTime">2017-04-10T13:25:41.540Z</dateTime>
         <string name="modifier">user:system:su</string>
         <string name="creator">user:system:su</string>
         <dateTime name="createdTime">2017-02-03T09:33:59.893Z</dateTime>
@@ -54,8 +42,8 @@
             <property-set name="siteConfig">
                 <string name="applicationKey">com.enonic.app.bootstrap</string>
                 <property-set name="config">
-                    <reference name="logo">b292b594-1c02-4681-836a-8551bba3721b</reference>
-                    <string name="footerText">Footer text is here!</string>
+                    <reference name="logo">90370b68-6b0e-4247-8eb5-ad4f839a76da</reference>
+                    <string name="footerText">© 2013 ShapeBootstrap. All Rights Reserved</string>
                     <string name="socialIcons">facebook</string>
                     <string name="socialIcons">instagram</string>
                     <string name="socialIcons">youtube</string>
@@ -88,6 +76,14 @@
                     <string name="phone">631-409-3105</string>
                     <string name="title3">Our Services</string>
                     <string name="freeText">&lt;p&gt;Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.&lt;/p&gt;</string>
+                    <string name="facebook">https://www.facebook.com/</string>
+                    <string name="twitter">https://twitter.com/</string>
+                    <string isNull="true" name="pinterest"/>
+                    <string name="linkedin">https://www.linkedin.com/</string>
+                    <string isNull="true" name="googleplus"/>
+                    <string name="youtube">https://www.youtube.com/</string>
+                    <string isNull="true" name="tumblr"/>
+                    <string name="instagram">https://www.instagram.com/</string>
                 </property-set>
             </property-set>
         </property-set>
@@ -114,22 +110,22 @@
                                 <reference name="image">9d6d1269-1944-4d2e-8ad2-a83fa3470d01</reference>
                                 <string name="title1">Creative Ideas</string>
                                 <string name="title2">Tincidunt condimentum eros</string>
-                                <string name="url">https://enonic.com</string>
-                                <string isNull="true" name="bannerBackgroundCol"/>
+                                <string isNull="true" name="url"/>
+                                <string isNull="true" name="backgroundColor"/>
                             </property-set>
                             <property-set name="banner">
                                 <reference name="image">23e10ece-6e3b-4dad-8a89-1c54e31f7098</reference>
                                 <string name="title1">Planning &amp; Analysis</string>
                                 <string name="title2">Aenean ultricies mi vitast</string>
                                 <string isNull="true" name="url"/>
-                                <string isNull="true" name="bannerBackgroundCol"/>
+                                <string name="backgroundColor">#e67e22</string>
                             </property-set>
                             <property-set name="banner">
                                 <reference name="image">81bca7c3-04a9-4ac0-ba66-cbe484af0bc7</reference>
                                 <string name="title1">Unique Solutions</string>
                                 <string name="title2">Breatures who have been utterly</string>
                                 <string isNull="true" name="url"/>
-                                <string isNull="true" name="bannerBackgroundCol"/>
+                                <string name="backgroundColor">#9b59b6</string>
                             </property-set>
                         </property-set>
                     </property-set>
@@ -139,14 +135,18 @@
                     <property-set name="LayoutComponent">
                         <string name="name">2 columns</string>
                         <string name="template">com.enonic.app.bootstrap:layout-2-col</string>
-                        <property-set name="config"/>
+                        <property-set name="config">
+                            <string name="layoutConf">70-30</string>
+                            <boolean name="fullWidth">false</boolean>
+                        </property-set>
                         <property-set name="region">
                             <string name="name">left</string>
                             <property-set name="component">
                                 <string name="type">TextComponent</string>
                                 <property-set name="TextComponent">
                                     <string name="name">Text</string>
-                                    <string name="text">&lt;p&gt;sjcvhjdbvjz vs,nmv bjnbvj bcjksfhJV HJ DABH&lt;/p&gt;</string>
+                                    <string name="text">&lt;h4&gt;Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas&lt;/h4&gt;
+&lt;p&gt;Tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet&lt;/p&gt;</string>
                                 </property-set>
                             </property-set>
                         </property-set>
@@ -158,11 +158,9 @@
                                     <string name="name">Button</string>
                                     <string name="template">com.enonic.app.bootstrap:button</string>
                                     <property-set name="config">
-                                    <property-set name="btnSetting">
-                                    <string name="btnText">Click here!</string>
-                                    <string name="btnColor">#985428</string>
-                                    <string name="externalUrl">https://enonic.com</string>
-                                    </property-set>
+                                    <string name="btnText">Free Download</string>
+                                    <string isNull="true" name="btnColor"/>
+                                    <string isNull="true" name="externalUrl"/>
                                     </property-set>
                                 </property-set>
                             </property-set>
@@ -170,47 +168,62 @@
                     </property-set>
                 </property-set>
                 <property-set name="component">
-                    <string name="type">PartComponent</string>
-                    <property-set name="PartComponent">
-                        <string name="name">Services(Frontpage)</string>
-                        <string name="template">com.enonic.app.bootstrap:service-frontpage</string>
+                    <string name="type">LayoutComponent</string>
+                    <property-set name="LayoutComponent">
+                        <string name="name">1 column</string>
+                        <string name="template">com.enonic.app.bootstrap:layout-1-col</string>
                         <property-set name="config">
-                            <string name="title">What We Offer</string>
-                            <string name="intro">Look at some of the recent projects we have completed for our valuble clients</string>
-                            <reference name="service">29d4ad0d-1378-4fce-8323-4070b803959d</reference>
-                            <reference name="service">b18f909d-d2c5-43f4-a1ba-1b295a0ef890</reference>
-                            <reference name="service">a660ffd4-dae2-4fd5-bca3-dc432c32d61c</reference>
-                            <reference name="service">56d67e28-2a10-4e14-a730-8d7f84270cfc</reference>
+                            <boolean name="fullWidth">true</boolean>
                         </property-set>
-                    </property-set>
-                </property-set>
-                <property-set name="component">
-                    <string name="type">PartComponent</string>
-                    <property-set name="PartComponent">
-                        <string name="name">Portfolio (Frontpage)</string>
-                        <string name="template">com.enonic.app.bootstrap:portfolio-frontpage</string>
-                        <property-set name="config">
-                            <string name="partTitle">Our Recent Works</string>
-                            <string name="partIntro">Look at some of the recent projects we have completed for our valuble clients</string>
-                            <reference name="portfolio">448bcaee-45d9-41d8-9e44-66391273a009</reference>
-                            <reference name="portfolio">c2ff1fda-3be4-4a3e-98c1-50f257053f0c</reference>
-                        </property-set>
-                    </property-set>
-                </property-set>
-                <property-set name="component">
-                    <string name="type">PartComponent</string>
-                    <property-set name="PartComponent">
-                        <string name="name">Partners</string>
-                        <string name="template">com.enonic.app.bootstrap:partner</string>
-                        <property-set name="config">
-                            <string name="title">OUR PARTNERS</string>
-                            <string name="intro">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</string>
-                            <reference name="partnerLogo">3cbdd30b-8633-4e3a-89a8-d59e7b2fd2b6</reference>
-                            <reference name="partnerLogo">bc4b8260-32e9-4631-bc1a-d19f59290abd</reference>
-                            <reference name="partnerLogo">20345354-11aa-4e73-a1ba-d773cbc40bcf</reference>
-                            <reference name="partnerLogo">9b5f0001-a903-49b1-b34d-9c0b3264fa14</reference>
-                            <reference name="partnerLogo">fbb0ffd9-a963-48b3-b676-9d1cb521c69c</reference>
-                            <reference name="partnerLogo">87c2c00d-e324-4dfa-8429-37cf5ac29fcc</reference>
+                        <property-set name="region">
+                            <string name="name">main</string>
+                            <property-set name="component">
+                                <string name="type">PartComponent</string>
+                                <property-set name="PartComponent">
+                                    <string name="name">Services - List selected</string>
+                                    <string name="template">com.enonic.app.bootstrap:service-frontpage</string>
+                                    <property-set name="config">
+                                    <string name="title">What We Offer</string>
+                                    <string name="intro">Look at some of the recent projects we have completed for our valuble clients</string>
+                                    <reference name="service">a660ffd4-dae2-4fd5-bca3-dc432c32d61c</reference>
+                                    <reference name="service">5dd0ac91-d5f8-4129-adba-d306575878ca</reference>
+                                    <reference name="service">eb7ccf69-0167-44a2-9558-c19e69a86b0d</reference>
+                                    <reference name="service">29d4ad0d-1378-4fce-8323-4070b803959d</reference>
+                                    <reference name="service">b18f909d-d2c5-43f4-a1ba-1b295a0ef890</reference>
+                                    <reference name="service">56d67e28-2a10-4e14-a730-8d7f84270cfc</reference>
+                                    </property-set>
+                                </property-set>
+                            </property-set>
+                            <property-set name="component">
+                                <string name="type">PartComponent</string>
+                                <property-set name="PartComponent">
+                                    <string name="name">Portfolio - List selected</string>
+                                    <string name="template">com.enonic.app.bootstrap:portfolio-frontpage</string>
+                                    <property-set name="config">
+                                    <string name="partTitle">Our recent work</string>
+                                    <string name="partIntro">Look at some of the recent projects we have completed for our valuble clients</string>
+                                    <reference name="portfolio">88686739-5263-4d4e-b6a2-c887fddd56da</reference>
+                                    <reference name="portfolio">a876ebc3-093d-4ea0-aa15-70efa52de397</reference>
+                                    <reference name="portfolio">448bcaee-45d9-41d8-9e44-66391273a009</reference>
+                                    <reference name="portfolio">c2ff1fda-3be4-4a3e-98c1-50f257053f0c</reference>
+                                    </property-set>
+                                </property-set>
+                            </property-set>
+                            <property-set name="component">
+                                <string name="type">PartComponent</string>
+                                <property-set name="PartComponent">
+                                    <string name="name">Partners</string>
+                                    <string name="template">com.enonic.app.bootstrap:partner</string>
+                                    <property-set name="config">
+                                    <string name="title">Our partners</string>
+                                    <string name="intro">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</string>
+                                    <reference name="partnerLogo">916480d8-01aa-4909-8bf5-5d91409cf103</reference>
+                                    <reference name="partnerLogo">fde46648-07b5-4d4f-9f6f-a951bd088eb4</reference>
+                                    <reference name="partnerLogo">b4d29df4-aef7-44d6-9c14-ce02e867840a</reference>
+                                    <reference name="partnerLogo">3f0debde-17ba-4fd5-b189-f37c8ee321b2</reference>
+                                    </property-set>
+                                </property-set>
+                            </property-set>
                         </property-set>
                     </property-set>
                 </property-set>
