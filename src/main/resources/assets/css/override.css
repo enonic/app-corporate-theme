@@ -90,3 +90,11 @@ ul.breadcrumb {
 ul.gallery li .preview .links {
 	text-align: center;
 }
+/* Images float over the edges of each box, stop that or phablets will look ugly. */
+.portfolio .gallery .preview img {
+	max-width: 100%;
+}
+/* Left side padding on the ul element makes the entire list of portfolio items not centered. Reset to Bootstrap defaults. */
+.portfolio .gallery {
+	padding: 0 15px;
+}

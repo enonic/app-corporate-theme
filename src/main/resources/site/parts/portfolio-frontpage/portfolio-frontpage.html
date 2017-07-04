@@ -5,8 +5,8 @@
             <p class="lead" data-th-text="${intro}"></p>
         </div>
         <div class="gap"></div>
-        <ul class="gallery col-4">
-            <li data-th-if="portfolios" data-th-each="item : ${portfolios}">
+        <ul class="gallery row">
+            <li class="col-sm-3" data-th-if="portfolios" data-th-each="item : ${portfolios}">
 					<div class="preview">
 	                <img data-th-if="${item.image}" data-th-src="${item.image}" alt="" />
 	                <div class="overlay"></div>
