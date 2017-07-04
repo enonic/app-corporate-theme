@@ -86,3 +86,7 @@ ul.breadcrumb {
 #bottom h4 {
 	text-transform: uppercase;
 }
+/* In our app, one can add only link (no preview) for a portfolio item, then the design doesn't properly center this link. */
+ul.gallery li .preview .links {
+	text-align: center;
+}
