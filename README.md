@@ -25,7 +25,7 @@ Please check [the original theme on Shapebootstrap](https://shapebootstrap.net/i
 
 ## Demo website included
 
-By installing the app in Enonic XP 6.10 (or higher), a demo site will be created automatically. It shows the use of all different components and can work as an inspiration for how you can build your very own site, from scratch. But feel free to customize the demo site to your own liking too.
+By installing the app in Enonic XP, a demo site will be created automatically. It shows the use of all different components and can work as an inspiration for how you can build your very own site, from scratch. But feel free to customize the demo site to your own liking too.
 
 ### Generate new demo sites
 
