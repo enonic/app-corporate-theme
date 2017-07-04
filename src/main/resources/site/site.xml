@@ -1,123 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-  <config>
-    <input type="ImageSelector" name="logo">
-      <label>Header Logo</label>
-      <occurrences minimum="0" maximum="1" />
-      <help-text>Add company logo-</help-text>
-      <config>
-        <allowPath>${site}/*</allowPath>
-      </config>
-    </input>
-    <field-set name="footer">
-      <label>Footer Info </label>
-      <items>
-        <field-set name="contact">
-          <label>Contact Info</label>
-          <items>
-            <input name="title" type="TextLine">
-              <label>Title contact info</label>
-              <occurrences minimum="1" maximum="1"/>
-              <default>ADDRESS</default>
-              <help-text>Required title for contact info column. Default value is "ADDRESS".</help-text>
+	<config>
+		<field-set name="company">
+			<label>Your company</label>
+			<items>
+				<input type="ImageSelector" name="logo">
+					<label>Company logo</label>
+					<occurrences minimum="0" maximum="1" />
+					<help-text>Add your company logo. Used in the header on all pages.</help-text>
+					<config>
+						<allowPath>${site}/*</allowPath>
+					</config>
+				</input>
+				<input name="address" type="TextLine">
+					<label>Company address</label>
+					<occurrences minimum="0" maximum="1"/>
+				</input>
+				<input name="email" type="TextLine">
+					<label>Company e-mail</label>
+					<occurrences minimum="0" maximum="1"/>
+				</input>
+				<input name="phone" type="TextLine">
+					<label>Company phone number</label>
+					<occurrences minimum="0" maximum="1"/>
+				</input>
+			</items>
+		</field-set>
 
-            </input>
-            <input name="address" type="TextLine">
-              <label>Address</label>
-              <occurrences minimum="0" maximum="1"/>
-            </input>
-            <input name="email" type="TextLine">
-              <label>E-mail</label>
-              <occurrences minimum="0" maximum="1"/>
-            </input>
-            <input name="phone" type="TextLine">
-              <label>Phone No</label>
-              <occurrences minimum="0" maximum="1"/>
-            </input>
-          </items>
-        </field-set>
-    <field-set name="about">
-      <label>About company</label>
-      <items>
-          <input name="title2" type="TextLine">
-            <label>Title for links to different pages of website.</label>
-            <occurrences minimum="1" maximum="1"/>
-            <default>OUR COMPANY</default>
-            <help-text>Required title for links to different pages of website. Default value is "OUR COMPANY".</help-text>
-          </input>
-          <input name="items" type="ContentSelector">
-            <label>Select pages</label>
-            <occurrences minimum="0" maximum="0"/>
-            <help-text>Select pages from above list.</help-text>
-            <config>
-              <allowContentType>landing-page</allowContentType>
-              <allowPath>${site}/*</allowPath>
-            </config>
-          </input>
-      </items>
-    </field-set>
-    <field-set name="text">
-      <label>Free text</label>
-      <items>
-        <input name="title3" type="TextLine">
-          <label>Title for third column</label>
-          <occurrences minimum="1" maximum="1"/>
-        </input>
-        <input name="freeText" type="HtmlArea">
-          <label>Free text</label>
-          <occurrences minimum="1" maximum="1"/>
-        </input>
-      </items>
-    </field-set>
-    <field-set name="footerBottom">
-      <label>Free bottom</label>
-      <items>
-          <input type="TextArea" name="footerText">
-            <label>Footer text</label>
-            <occurrences minimum="0" maximum="1" />
-          </input>
-        <field-set name="socialNetworks">
-          <label>Social networks info</label>
-          <items>
-            <input name="facebook" type="TextLine" >
-              <label>Facebook url</label>
-              <occurrences minimum="0" maximum="1" />
-            </input>
-            <input name="twitter" type="TextLine" >
-              <label>Twitter url</label>
-              <occurrences minimum="0" maximum="1" />
-            </input>
-            <input name="pinterest" type="TextLine" >
-              <label>Pinterest url</label>
-              <occurrences minimum="0" maximum="1" />
-            </input>
-            <input name="linkedin" type="TextLine" >
-              <label>Linkedin url</label>
-              <occurrences minimum="0" maximum="1" />
-            </input>
-            <input name="googleplus" type="TextLine" >
-              <label>Google plus url</label>
-              <occurrences minimum="0" maximum="1" />
-            </input>
-            <input name="youtube" type="TextLine" >
-              <label>Youtube url</label>
-              <occurrences minimum="0" maximum="1" />
-            </input>
-            <input name="tumblr" type="TextLine" >
-              <label>Tumblr url</label>
-              <occurrences minimum="0" maximum="1" />
-            </input>
-            <input name="instagram" type="TextLine" >
-              <label>Instagram url</label>
-              <occurrences minimum="0" maximum="1" />
-            </input>
-          </items>
-        </field-set>
-      </items>
-    </field-set>
-      </items>
-    </field-set>
-  </config>
-  <x-data mixin="menu-item"/>
+		<field-set name="footerColumns">
+			<label>Footer - headings</label>
+			<items>
+				<input name="title" type="TextLine">
+					<label>First column</label>
+					<occurrences minimum="1" maximum="1"/>
+					<default>Address</default>
+					<help-text>Required title for the contact info column in the footer. Default value is "Address".</help-text>
+				</input>
+				<input name="title2" type="TextLine">
+					<label>Second column</label>
+					<occurrences minimum="1" maximum="1"/>
+					<default>Our company</default>
+					<help-text>Required title for links to different pages of the website. Default value is "Our company".</help-text>
+				</input>
+				<input name="title3" type="TextLine">
+					<label>Third column</label>
+					<occurrences minimum="1" maximum="1"/>
+					<default>Our services</default>
+					<help-text>The third (and largest) column in the footer needs a heading. Use it to describe your site.</help-text>
+				</input>
+			</items>
+		</field-set>
+
+		<field-set name="footerCopy">
+			<label>Footer - copy</label>
+			<items>
+				<input name="items" type="ContentSelector">
+					<label>Focused content</label>
+					<occurrences minimum="0" maximum="0"/>
+					<help-text>Select pages that you want to link to from the footer. You can add multiple links to create a menu for your most important content.</help-text>
+					<config>
+						<allowContentType>landing-page</allowContentType>
+						<allowPath>${site}/*</allowPath>
+					</config>
+				</input>
+				<input name="freeText" type="HtmlArea">
+					<label>Company description</label>
+					<occurrences minimum="1" maximum="1"/>
+					<default>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</default>
+					<help-text>Describe your company. Shown only in the footer (third column).</help-text>
+				</input>
+				<input name="footerText" type="TextArea">
+					<label>Copyright message</label>
+					<occurrences minimum="0" maximum="1" />
+					<default>© 2017 Enonic &amp; ShapeBootstrap. All Rights Reserved</default>
+				</input>
+			</items>
+		</field-set>
+
+		<field-set name="socialNetworks">
+			<label>Social networks</label>
+			<items>
+				<input name="facebook" type="TextLine" >
+					<label>Facebook url</label>
+					<occurrences minimum="0" maximum="1" />
+				</input>
+				<input name="twitter" type="TextLine" >
+					<label>Twitter url</label>
+					<occurrences minimum="0" maximum="1" />
+				</input>
+				<input name="pinterest" type="TextLine" >
+					<label>Pinterest url</label>
+					<occurrences minimum="0" maximum="1" />
+				</input>
+				<input name="linkedin" type="TextLine" >
+					<label>Linkedin url</label>
+					<occurrences minimum="0" maximum="1" />
+				</input>
+				<input name="googleplus" type="TextLine" >
+					<label>Google plus url</label>
+					<occurrences minimum="0" maximum="1" />
+				</input>
+				<input name="youtube" type="TextLine" >
+					<label>Youtube url</label>
+					<occurrences minimum="0" maximum="1" />
+				</input>
+				<input name="tumblr" type="TextLine" >
+					<label>Tumblr url</label>
+					<occurrences minimum="0" maximum="1" />
+				</input>
+				<input name="instagram" type="TextLine" >
+					<label>Instagram url</label>
+					<occurrences minimum="0" maximum="1" />
+				</input>
+			</items>
+		</field-set>
+	</config>
+	<x-data mixin="menu-item"/>
 </site>
-
