@@ -19,7 +19,7 @@ All dependencies are bundled with the project.
 
 ### Based on Shapebootstrap Theme Nova
 
-We’ve based the design on the theme called Nova from Shapebootstrap. However, we have upgraded it from Bootstrap 2 to 3, and from an old version of jQuery to the latest 1.x-version. Upgrading even further is currently not needed. We’ve also adapted all the components to work with Enonic XP, with full configuration from the Content Studio admin interface.
+We’ve based the design on the theme called [Nova from Shapebootstrap](https://shapebootstrap.net/item/1524969-nova-multipurpose-site-template). However, we have upgraded it from Bootstrap 2 to 3, and from an old version of jQuery to the latest 1.x-version. Upgrading even further is currently not needed. We’ve also adapted all the components to work with Enonic XP, with full configuration from the Content Studio admin interface.
 
 Please check [the original theme on Shapebootstrap](https://shapebootstrap.net/item/1524969-nova-multipurpose-site-template).
 
