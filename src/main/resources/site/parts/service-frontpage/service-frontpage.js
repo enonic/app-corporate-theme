@@ -11,17 +11,20 @@ var view = resolve('service-frontpage.html');
 exports.get = function(req){
 
     var config = libs.portal.getComponent().config;
-    var serviceId = [];
+	 var services;
+	 var serviceId = [];
     var serviceArray = config.service ? libs.util.data.forceArray(config.service) : null;
 
     if(serviceArray){
         for(var i = 0; i < serviceArray.length; i++ ) {
-            var serviceKey = libs.content.get({
-                key: serviceArray[i]
-            });
-            serviceId.push(serviceKey);
+			   if (serviceArray[i]) {
+					var serviceKey = libs.content.get({
+	                key: serviceArray[i]
+	            });
+	            serviceId.push(serviceKey);
+				}
         }
-        var  services = libs.shared.getServiceData(serviceId);
+        services = libs.shared.getServiceData(serviceId);
     }
 
     var model = {
