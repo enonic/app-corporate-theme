@@ -1,31 +1,35 @@
 # Bootstrap Corporate Theme app
 
-This is an app for Enonic XP that lets you build your corporate website using a predefined set list of components. We give you a set of handy content types, staff list, contact form (using ajax), menus, customizable footer, a very nice slider for the frontpage, and many other nice features.
+This is an app for Enonic XP that lets you build your corporate website using a predefined set list of components. We give you a set of handy content types, staff list, contact form (using ajax), menus, customizable footer, a very nice slider for the frontpage, and many other nice features. Continue reading for detailed information about all of the components.
+
+For additional features, check out the [Enonic Market](https://market.enonic.com/) and try apps like [Favicon](https://market.enonic.com/vendors/selbekk/io.selbekk.favicon), [SEO Meta Fields](https://market.enonic.com/vendors/enonic/com.enonic.app.metafields), and more, that goes great with this theme.
 
 ## Features
 
 The Bootstrap Corporation Theme app is a responsive multi-purpose bootstrap theme website developed based on Twitter Bootstrap 3.3.7. It can be used for building a corporate, small business, or startup, website. It has different features and looks perfect on all devices. It is also customizable and you can change the content and design of the pages based on your needs by using reusable and configurable Enonic XP components like layouts and parts.
 
-### Other features
+### Dependencies
 
-Using the latest **Bootstrap 3** (3.3.7)
+Using the latest **Bootstrap 3** - 3.3.7
+Using the latest **jQuery 1** - 1.12.1
 Using **Font Awesome** 3.2.1
 Using **jquery SlitSlider** 1.2.0 from codrops (depends on modernizr 2.6.2 and ba-cond plugin)
-Using **latest 1.x of jquery** - jQuery 1.12.1
+
+All dependencies are bundled with the project.
 
 ### Based on Shapebootstrap Theme Nova
 
-We’ve based the design on the theme called Nova from Shapebootstrap. However, we have upgraded it from Bootstrap 2 to 3, and from an old version of jQuery to the latest 1.12-version. Upgrading even further is currently not needed. We’ve then adapted the files to work as an Enonic XP app, with full configuration from our admin interface - the content studio.
+We’ve based the design on the theme called Nova from Shapebootstrap. However, we have upgraded it from Bootstrap 2 to 3, and from an old version of jQuery to the latest 1.x-version. Upgrading even further is currently not needed. We’ve also adapted all the components to work with Enonic XP, with full configuration from the Content Studio admin interface.
 
-Please check the original theme on Shapebootstrap. https://shapebootstrap.net/item/1524969-nova-multipurpose-site-template
+Please check [the original theme on Shapebootstrap](https://shapebootstrap.net/item/1524969-nova-multipurpose-site-template).
 
 ## Demo website included
 
-By installing the app in Enonic XP a demo site will be created automatically. It shows the use of all different parts and can work as an inspiration to how you can build your very own site, from scratch, if you like. But feel free to customize the demo site to your own liking.
+By installing the app in Enonic XP 6.10 (or higher), a demo site will be created automatically. It shows the use of all different components and can work as an inspiration for how you can build your very own site, from scratch. But feel free to customize the demo site to your own liking too.
 
 ### Generate new demo sites
 
-Protip: If you happen to want to start over, just delete your site (or rename its `path`) and then go to the Application admin tool in Enonic XP and stop then start the app again. This will run the initialization script again and generate a new demo-site for you!
+Protip: If you happen to want to start over, just delete your site (or rename its `path`) and then go to the Application admin tool in Enonic XP and stop the app, then start the app again. This will run the initialization script once more and generate a new demo-site for you!
 
 **TODO: Proof read from here:**
 
