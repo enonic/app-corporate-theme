@@ -98,3 +98,11 @@ ul.gallery li .preview .links {
 .portfolio .gallery {
 	padding: 0 15px;
 }
+/* Footer looks odd with it's margins on phablets unless the paddings are adjusted. */
+#bottom {
+	padding: 50px 0 30px 0;
+}
+	#bottom .col-md-3,
+	#bottom .col-md-6 {
+		padding-bottom: 20px;
+	}
