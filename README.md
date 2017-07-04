@@ -13,7 +13,7 @@ The Bootstrap Corporation Theme app is a responsive multi-purpose bootstrap them
 * **Bootstrap 3** - 3.3.7
 * **jQuery 1** - 1.12.1
 * **Font Awesome 3** - 3.2.1
-* **jquery SlitSlider** 1.2.0 from codrops (depends on modernizr 2.6.2 and ba-cond plugin)
+* **jquery SlitSlider** 1.2.0 from codrops (depends on *modernizr 2.6.2* and *ba-cond plugin*)
 
 All dependencies are bundled with the project.
 
