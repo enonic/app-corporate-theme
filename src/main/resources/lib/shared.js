@@ -4,14 +4,13 @@ var libs = {
     util : require('/lib/enonic/util')
 };
 
-// Local library
 exports.getPortfolioData = function(portfolios) {
     var portfolioList = [];
     var image = null;
     var imageFull = null;
     for (var i=0; i < portfolios.length; i++) {
         var hit = portfolios[i];
-        
+
         var imageKey = libs.content.get({
         key : hit.data.portfolioImage
     });
@@ -26,7 +25,7 @@ exports.getPortfolioData = function(portfolios) {
             scale: 'block(1024,768)', // Full size (opens in modal)
         });
     }
-    
+
     var portfolioObj = {
         title : hit.displayName,
         intro : hit.data.portfolioIntro,
@@ -37,7 +36,7 @@ exports.getPortfolioData = function(portfolios) {
     };
         portfolioList.push(portfolioObj);
     }
-    
+
     return portfolioList;
 };
 

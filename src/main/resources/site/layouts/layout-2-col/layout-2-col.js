@@ -15,19 +15,20 @@ exports.get = function(req){
     var rightCol;
 
     switch(columnConfig) {
-        case '30-70' :
-            leftCol= 3;
+        case '30-70':
+            leftCol = 3;
             rightCol = 9;
             break;
-        case '70-30' :
+        case '70-30':
             leftCol = 9;
             rightCol = 3;
             break;
         default:
             leftCol = 6;
             rightCol = 6;
+				break;
     }
-    
+
     var fullWidth = config.fullWidth ? "container-fluid" : "container";
     var model = {
         leftRegion : component.regions["left"],
