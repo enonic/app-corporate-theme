@@ -6,14 +6,14 @@ For additional features, check out the [Enonic Market](https://market.enonic.com
 
 ## Features
 
-The Bootstrap Corporation Theme app is a responsive multi-purpose bootstrap theme website developed based on Twitter Bootstrap 3.3.7. It can be used for building a corporate, small business, or startup, website. It has different features and looks perfect on all devices. It is also customizable and you can change the content and design of the pages based on your needs by using reusable and configurable Enonic XP components like layouts and parts.
+The Bootstrap Corporation Theme app is a responsive multi-purpose bootstrap theme website developed based on Twitter Bootstrap 3. It can be used for building a corporate, small business, or startup, website. It has different features and looks perfect on all devices. It is also customizable and you can change the content and design of the pages based on your needs by using reusable and configurable Enonic XP components like layouts and parts.
 
 ### Dependencies
 
-Using the latest **Bootstrap 3** - 3.3.7
-Using the latest **jQuery 1** - 1.12.1
-Using **Font Awesome** 3.2.1
-Using **jquery SlitSlider** 1.2.0 from codrops (depends on modernizr 2.6.2 and ba-cond plugin)
+* **Bootstrap 3** - 3.3.7
+* **jQuery 1** - 1.12.1
+* **Font Awesome 3** - 3.2.1
+* **jquery SlitSlider** 1.2.0 from codrops (depends on modernizr 2.6.2 and ba-cond plugin)
 
 All dependencies are bundled with the project.
 
@@ -64,7 +64,7 @@ About**: This part is used for “About us” page. It has a setting for introdu
 
 **Partner**: This part has a setting for title and short introduction about this section. You are allowed to select or upload up to 4 images/ logos of partners.
 
-**Portfolio - List all**: Portfolio part is used in Portfolio page and shows the list of all portfolios content that already have been created. There is no setting for this part.
+**Portfolio - List all**: Portfolio part is used in Portfolio page and shows the list of all portfolios content that's already been created. There are no setting for this part.
 
 **Portfolio - List selected**:  This part shows a list of selected portfolios in front page. A title and introduction can be added to part setting as well.
 
@@ -89,9 +89,8 @@ smtpTLS = true
 This is if you want to use your own Gmail account for sending emails. When using this in production you would need to set up a dedicated SMTP server.
 
 ## Copyright
-**TODO: Copyright stuff .. or info about the original theme source:**
-**TODO: Used with approval from original author. Reference the email.**
-https://shapebootstrap.net/item/1524969-nova-multipurpose-site-template
+**TODO: Copyright stuff .. or info about the original theme source:**  
+**TODO: Used with approval from original author. Reference the email.**  
 
 ## Compatibility
 
