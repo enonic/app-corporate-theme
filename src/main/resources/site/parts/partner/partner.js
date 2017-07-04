@@ -22,7 +22,7 @@ exports.get = function(req){
             if(logoKey){
                 var logo = libs.portal.imageUrl({
                     id: logoKey._id,
-                    scale: 'block(1024,768)',
+                    scale: 'width(250)',
                 });
 
                 logosList.push(logo);
