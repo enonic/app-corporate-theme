@@ -11,12 +11,12 @@ exports.get = function(req){
 
     var component = libs.portal.getComponent();
     var banners = [];
-    var config = component.config.banner ? libs.util.data.forceArray(component.config.banner) : null;
+    var slides = component.config.banner ? libs.util.data.forceArray(component.config.banner) : null;
 
-    if(config){
-        for(var i = 0; i < config.length; i++){
+    if(slides){
+        for(var i = 0; i < slides.length; i++){
             var image, imageKey;
-            var hit = config[i];
+            var hit = slides[i];
 			if (hit.image) {
 	            imageKey = libs.content.get({
 	                key : hit.image
