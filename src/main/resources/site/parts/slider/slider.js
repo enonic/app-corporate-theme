@@ -8,18 +8,20 @@ var libs={
 var view = resolve('slider.html');
 
 exports.get = function(req){
-    
+
     var component = libs.portal.getComponent();
     var banners = [];
     var config = component.config.banner ? libs.util.data.forceArray(component.config.banner) : null;
 
     if(config){
         for(var i = 0; i < config.length; i++){
-            var image = null;
+            var image, imageKey;
             var hit = config[i];
-            var imageKey = libs.content.get({
-                key : hit.image
-            });
+			if (hit.image) {
+	            imageKey = libs.content.get({
+	                key : hit.image
+	            });
+			}
             if(imageKey){
                 image = libs.portal.imageUrl({
                     id: imageKey._id,
@@ -31,9 +33,8 @@ exports.get = function(req){
                 title : hit.title1,
                 secondTitle : hit.title2,
                 url : hit.url,
-                backgroundColor : "background-color : " + hit.backgroundColor,
+                backgroundColor : hit.backgroundColor
             };
-
             banners.push(result);
         }
     }
