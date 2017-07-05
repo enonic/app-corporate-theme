@@ -28,11 +28,17 @@ exports.get = function(req){
                     scale: 'width(600)'
                 });
             }
+			var linkTarget;
+			if (hit.linkTo) {
+                linkTarget = libs.portal.pageUrl({
+                    id : hit.linkTo
+                });
+            }
             var result = {
                 image : image,
                 title : hit.title1,
                 secondTitle : hit.title2,
-                url : hit.url,
+                linkTarget : linkTarget,
                 backgroundColor : hit.backgroundColor
             };
             banners.push(result);

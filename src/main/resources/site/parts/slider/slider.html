@@ -8,7 +8,7 @@
                         <img class="pull-right" data-th-src="${banner.image}" alt="" />
                         <h2 data-th-text="${banner.title}"></h2>
                         <h3 class="gap" data-th-text="${banner.secondTitle}"></h3>
-                        <a class="btn btn-large btn-transparent" data-th-href="${banner.url}" >Learn more</a>
+                        <a class="btn btn-large btn-transparent" data-th-href="${banner.linkTarget}" data-th-if="${banner.linkTarget}">Learn more</a>
                     </div>
                 </div>
             </div>

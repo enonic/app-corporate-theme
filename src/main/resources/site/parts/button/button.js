@@ -15,7 +15,7 @@ exports.get = function(req){
 			var btnKey = config.url.content.key;
 			if (btnKey) {
                 btnUrl = libs.portal.pageUrl({
-                    path : btnKey
+                    id : btnKey
                 });
             }
 		} else if (config.url._selected === 'text') {
