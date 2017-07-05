@@ -13,7 +13,7 @@ exports.get = function(req){
 
     var content = libs.portal.getContent();
     var site = libs.portal.getSite();
-	 var siteConfig = libs.portal.getSiteConfig();
+    var siteConfig = libs.portal.getSiteConfig();
     var mainRegion = content.page.regions["main"];
     var menuItems = libs.menu.getMenuTree(2);
 
