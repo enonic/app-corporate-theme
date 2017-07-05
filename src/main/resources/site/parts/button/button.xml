@@ -4,6 +4,7 @@
         <input name="btnText" type="TextLine">
             <label>Text</label>
             <occurrences minimum="0" maximum="1"/>
+			<help-text>Set a button text. Fallback value is "Click here"</help-text>
         </input>
         <input name="btnColor" type="TextLine">
             <label>Background color</label>
@@ -21,7 +22,7 @@
 			  <help-text>Add an URL to an external source. The URL should begin with "https" or "http". For example https://example.com.
                   You can only use either "External URL" or "Link to a page". In case you fill both fields, "Link to a page" has priority.</help-text>
 		      <items>
-		        <input name="externalUrl" type="TextLine">
+		        <input name="url" type="TextLine">
 		          <label>Full URL (including 'http')</label>
 		          <occurrences minimum="1" maximum="1"/>
 		        </input>
@@ -33,7 +34,7 @@
 			  <help-text>Select a page that you have already made and want the button to point to.
                   You can only use either "External URL" or "Link to a page". In case you fill both fields, "Link to a page" has priority.</help-text>
 		      <items>
-		        <input name="btnUrl" type="ContentSelector">
+		        <input name="key" type="ContentSelector">
 		          <label>Select page</label>
 		          <occurrences minimum="1" maximum="1"/>
 		          <config>

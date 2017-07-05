@@ -10,33 +10,27 @@ var view = resolve("button.html");
 
 exports.get = function(req){
 
-    var component = libs.portal.getComponent();
-    var config = component.config;
-    var btnUrl;
-    if(config){
-        if(config.btnUrl){
-            var btnKey = libs.content.get({
-                key : config.btnUrl
-            });
+    var config = libs.portal.getComponent().config;
+    var btnUrl = "#";
 
-            if(btnKey){
+	if (config.url) {
+		if (config.url._selected === 'content') {
+			var btnKey = config.url.content.key;
+			if (btnKey) {
                 btnUrl = libs.portal.pageUrl({
-                    path : btnKey._path
+                    path : btnKey
                 });
             }
-        }
-        else if(config.externalUrl){
-            btnUrl = config.externalUrl;
-        }
-    }
-    var configColor = config.btnColor || "#5bb75b";
-    var btnColor = "background-color :" + configColor + ";";
+		} else if (config.url._selected === 'text') {
+			btnUrl = config.url.text.url;
+		}
+	}
 
     var model = {
         btnText : config.btnText || "Click Here",
-        btnColor : btnColor,
+        btnColor : config.btnColor || "#5bb75b",
         btnUrl : btnUrl
-};
+	};
 
     var body = libs.thymeleaf.render(view, model);
     return { body : body};
