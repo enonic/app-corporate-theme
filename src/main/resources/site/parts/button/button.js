@@ -4,12 +4,9 @@ var libs = {
     content : require('/lib/xp/content'),
     util : require('/lib/enonic/util')
 };
-
-//Setting
 var view = resolve("button.html");
 
 exports.get = function(req){
-
     var config = libs.portal.getComponent().config;
     var btnUrl = "#";
 
@@ -32,6 +29,5 @@ exports.get = function(req){
         btnUrl : btnUrl
 	};
 
-    var body = libs.thymeleaf.render(view, model);
-    return { body : body};
-}
+    return { body : libs.thymeleaf.render(view, model) };
+};
