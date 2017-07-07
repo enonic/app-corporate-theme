@@ -6,7 +6,7 @@
             <occurrences minimum="0" maximum="1" />
         </input>
         <input name="backgroundColor" type="TextLine">
-            <label>Background colour</label>
+            <label>Background color</label>
             <help-text>Add background color for this layout. The color should be a hexadecimal value (like #4286f4).</help-text>
             <occurrences minimum="0" maximum="1" />
         </input>

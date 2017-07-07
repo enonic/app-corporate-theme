@@ -65,6 +65,7 @@ ul.gallery li .preview .links {
 /* Images float over the edges of each box, stop that or phablets will look ugly. */
 .portfolio .gallery .preview img {
 	max-width: 100%;
+	width: 100%;
 }
 /* Left side padding on the ul element makes the entire list of portfolio items not centered. Reset to Bootstrap defaults. */
 .portfolio .gallery {
@@ -76,6 +77,9 @@ ul.gallery li .desc {
 }
 ul.gallery li .preview {
 	margin: 0;
+}
+ul.gallery li {
+	padding: 10px;
 }
 /* Modal images */
 .portfolio .modal .modal-body img {
@@ -98,6 +102,9 @@ ul.gallery li .preview {
 	.portfolio .modal .icon-remove {
 		background-color: transparent;
 	}
+.layout-col-1 section {
+	padding-bottom: 50px;
+}
 /* Footer looks odd with it's margins on phablets unless the paddings are adjusted. */
 #bottom {
 	padding: 50px 0 30px 0;

@@ -11,7 +11,7 @@
             <ocurrences minimum="0" maximum="1"/>
         </input>
         <input type="ImageSelector" name="partnerLogo">
-            <label>Partner's logo</label>
+            <label>Partners</label>
             <occurrences minimum="0" maximum="4" />
             <help-text>You can select up to 4 images/logos of your partners.</help-text>
             <config>

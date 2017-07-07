@@ -3,7 +3,7 @@
         <div class="sl-slider">
             <div data-th-if="${banners}" data-th-each="banner : ${banners}"
                     class="sl-slide item1" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
-                <div class="sl-slide-inner" data-th-style="${'background-color:' + banner.backgroundColor}">
+                <div class="sl-slide-inner" data-th-style="${banner.backgroundColor ? 'background-color:' + banner.backgroundColor : ''}">
                     <div class="container">
                         <img class="pull-right" data-th-src="${banner.image}" alt="" />
                         <h2 data-th-text="${banner.title}"></h2>

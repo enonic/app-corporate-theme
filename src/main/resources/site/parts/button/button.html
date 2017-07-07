@@ -1,5 +1,5 @@
 <div class="center button btn-margin" >
-    <a class="btn btn-primary btn-large" data-th-style="${'background-color:' + btnColor}" data-th-href="${btnUrl}">
+    <a class="btn btn-primary btn-large" data-th-style="${btnColor ? 'background-color:' + btnColor : ''}" data-th-href="${btnUrl}">
         <span data-th-text="${btnText}"></span>
     </a>
 </div>

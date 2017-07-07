@@ -12,7 +12,7 @@
             <default>Look at some of the recent projects we have completed for our valuble clients</default>
         </input>
         <input type="ContentSelector" name="service">
-            <label>Service list</label>
+            <label>Selected services</label>
             <occurrences minimum="0" maximum="0"/>
             <config>
                 <allowContentType>service</allowContentType>
