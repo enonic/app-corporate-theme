@@ -106,43 +106,51 @@ ul.gallery li .preview .links {
 	#bottom .col-md-6 {
 		padding-bottom: 20px;
 	}
-/* Make menu toggle button work again with Bootstrap 3 */
-.navbar .btn-navbar {
-	/*display: inline-block;*/
-    /*cursor: pointer;*/
-	-webkit-box-shadow: none;
-	box-shadow: none;
+
+/* Nav toggler (small screens) */
+.navbar-default  .navbar-toggle {
+	border: none;
 }
-	.navbar .btn-navbar .icon-bar {
-	    width: 35px;
-	    height: 5px;
-	    background-color: #333;
-	    margin: 6px 0;
-	    transition: 0.4s;
+	.navbar-default .navbar-toggle .icon-bar {
+		width: 35px;
+		height: 5px;
+		background-color: #333;
+		margin: 6px 0;
+		transition: 0.4s;
 		display: block;
 	}
 	/* Rotate first bar */
-	.navbar .btn-navbar.active .icon-bar:nth-child(1) {
-	    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
-	    transform: rotate(-45deg) translate(-9px, 6px) ;
+	.navbar-toggle:not(.collapsed) .icon-bar:nth-child(1) {
+		-webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+		transform: rotate(-45deg) translate(-9px, 6px) ;
 	}
 	/* Fade out the second bar */
-	.navbar .btn-navbar.active .icon-bar:nth-child(2) {
-	    opacity: 0;
+	.navbar-toggle:not(.collapsed) .icon-bar:nth-child(2) {
+		opacity: 0;
 	}
 	/* Rotate last bar */
-	.navbar .btn-navbar.active .icon-bar:nth-child(3) {
-	    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
-	    transform: rotate(45deg) translate(-8px, -8px) ;
+	.navbar-toggle:not(.collapsed) .icon-bar:nth-child(3) {
+		-webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+		transform: rotate(45deg) translate(-8px, -8px) ;
 	}
+/* Fix issues with too big brand images. */
+.navbar-default .navbar-brand {
+	height: auto;
+	padding: 0 15px; /* As all other elements in Bootstrap */
+}
+@media (max-width: 768px) {
+	.navbar-default .navbar-brand {
+		padding: 0;
+	}
+	.navbar-default .navbar-toggle {
+		margin-right: 0;
+	}
+}
 
-/* Replace the hard coded .gap elements used in original theme. Only CSS needed! */
+/* Replace the hard coded .gap elements used in original theme. Only CSS needed! Also fixes improved design on smaller screens. */
 #services .row {
 	margin-bottom: 50px;
-}/*
-#services .row + .row {
-	margin-bottom: 50px;
-}*/
+}
 #services .row:last-child {
 	margin-bottom: 0px;
 }

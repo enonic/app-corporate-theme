@@ -15,62 +15,71 @@
 <body>
 
 <!-- Page header and menu -->
-<header class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="container">
-            <a class="btn btn-navbar pull-right" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </a>
-            <a id="logo" class="pull-left" href="/" data-th-href="${siteUrl}">
-                <img data-th-src="${logo}" alt=""/>
-            </a>
-            <div class="nav-collapse collapse pull-right">
-                <ul class="nav">
-						  <li><a href="/" data-th-href="${siteUrl}">Home</a></li>
-                    <li data-th-each="menuItem : ${menuItems}"
-                        data-th-class="${
-		 (menuItem.hasChildren ? 'dropdown' : '') +
-		 (menuItem.inPath ? ' in-path' : '') +
-		 (menuItem.isActive ? ' active' : '')
-	 }">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                           data-th-href="${portal.pageUrl({'_path=' + menuItem.path})}"
-                           data-th-target="${menuItem.newWindow ? '_blank' : ''}"
-									data-th-class="${menuItem.hasChildren ? 'dropdown-toggle' : ''}"
-									data-th-attr="data-toggle=${menuItem.hasChildren ? 'dropdown' : ''}"
-									>
-                            <span data-th-text="${menuItem.menuName} ?: ${menuItem.displayName}" data-th-remove="tag">Page</span>
-                            <i data-th-if="${menuItem.hasChildren}" class="icon-angle-down"></i>
-                        </a>
-                        <ul data-th-if="${menuItem.hasChildren}" class="dropdown-menu">
-                            <li data-th-each="submenuItem : ${menuItem.children}"
-                                data-th-class="${
-				 (submenuItem.hasChildren ? 'dropdown' : '') +
-				 (submenuItem.inPath ? ' in-path' : '') +
-				 (submenuItem.isActive ? ' active' : '')
-			 }">
-                                <a href="#" data-th-href="${portal.pageUrl({'_path=' + submenuItem.path})}"
-                                   data-th-text="${submenuItem.menuName} ?: ${submenuItem.displayName}"
-                                   data-th-target="${submenuItem.newWindow ? '_blank' : ''}">Page title</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div><!--/.nav-collapse -->
-        </div>
+<header class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+   <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <!--<a class="navbar-brand" href="#">
+        <img alt="Brand" src="...">
+	</a>-->
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#corporate-collapsed-menu" aria-expanded="false">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+		<span class="sr-only">Toggle navigation</span>
+      </button>
+	  <a class="navbar-brand" href="/" data-th-href="${siteUrl}">
+		  <img data-th-src="${logo}" alt=""/>
+	  </a>
     </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <nav class="collapse navbar-collapse pull-right" id="corporate-collapsed-menu">
+		<ul class="nav navbar-nav">
+			<li><a href="/" data-th-href="${siteUrl}">Home</a></li>
+			<li data-th-each="menuItem : ${menuItems}"
+				data-th-class="${
+ (menuItem.hasChildren ? 'dropdown' : '') +
+ (menuItem.inPath ? ' in-path' : '') +
+ (menuItem.isActive ? ' active' : '')
+}">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown"
+					data-th-href="${portal.pageUrl({'_path=' + menuItem.path})}"
+					data-th-target="${menuItem.newWindow ? '_blank' : ''}"
+					data-th-class="${menuItem.hasChildren ? 'dropdown-toggle' : ''}"
+					data-th-attr="data-toggle=${menuItem.hasChildren ? 'dropdown' : ''}"
+					>
+					<span data-th-text="${menuItem.menuName} ?: ${menuItem.displayName}" data-th-remove="tag">Page</span>
+					<i data-th-if="${menuItem.hasChildren}" class="icon-angle-down"></i>
+				</a>
+				<ul data-th-if="${menuItem.hasChildren}" class="dropdown-menu">
+					<li data-th-each="submenuItem : ${menuItem.children}"
+						data-th-class="${
+		 (submenuItem.hasChildren ? 'dropdown' : '') +
+		 (submenuItem.inPath ? ' in-path' : '') +
+		 (submenuItem.isActive ? ' active' : '')
+	 }">
+						<a href="#" data-th-href="${portal.pageUrl({'_path=' + submenuItem.path})}"
+						   data-th-text="${submenuItem.menuName} ?: ${submenuItem.displayName}"
+						   data-th-target="${submenuItem.newWindow ? '_blank' : ''}">Page title</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+    </nav><!-- /.navbar-collapse -->
+   </div><!-- /.container -->
+  </div><!-- /.container-fluid -->
 </header>
 
 <!-- Page breadcrumb and title bar -->
 <section class="title" data-th-if="${!showTitle}">
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-sm-6 col-xs-12">
                 <h1 data-th-text="${breadcrumbTitle}"></h1>
             </div>
-            <div class="col-md-6">
+            <div class="col-sm-6 col-xs-12">
 					<ul class="breadcrumb pull-right ">
 						 <li data-th-each="item, iterStat : ${breadcrumbs.items}" data-th-class="
 							  ${item.active ? 'active' : ''} +
