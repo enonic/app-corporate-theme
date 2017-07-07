@@ -135,3 +135,22 @@ ul.gallery li .preview .links {
 	    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
 	    transform: rotate(45deg) translate(-8px, -8px) ;
 	}
+
+/* Replace the hard coded .gap elements used in original theme. Only CSS needed! */
+#services .row {
+	margin-bottom: 50px;
+}/*
+#services .row + .row {
+	margin-bottom: 50px;
+}*/
+#services .row:last-child {
+	margin-bottom: 0px;
+}
+@media (max-width: 992px) {
+	#services .row {
+		margin-bottom: 0px;
+	}
+	#services .col-md-4 {
+		padding-bottom: 2em;
+	}
+}
