@@ -11,10 +11,6 @@ body div section {
 .button{
     margin: 50px 0;
 }
-header #logo img {
-	max-width: 220px;
-	max-height: 80px;
-}
 .contactInfo{
 	padding-left: 10px;
 }
@@ -49,10 +45,6 @@ header #logo img {
 	right : 3px!important;
 	top : 5px!important;
 	z-index: 2;
-}
-/*Using fullWidth class to make layout width 100%*/
-.fullWidth{
-	width : 100%;
 }
 /* General font-size for this theme is smaller when used with Bootstrap 3, increase the size a bit */
 body {
@@ -107,6 +99,15 @@ ul.gallery li .preview .links {
 		padding-bottom: 20px;
 	}
 
+/* Old theme CSS and new bootstrap doesn't color hover in menu sub levels properly. */
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus,
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-submenu:hover > a,
+.dropdown-submenu:focus > a {
+	color: #ffffff;
+}
 /* Nav toggler (small screens) */
 .navbar-default  .navbar-toggle {
 	border: none;
@@ -138,6 +139,10 @@ ul.gallery li .preview .links {
 	height: auto;
 	padding: 0 15px; /* As all other elements in Bootstrap */
 }
+	.navbar-default .navbar-brand img {
+		max-width: 220px;
+		max-height: 80px;
+	}
 @media (max-width: 768px) {
 	.navbar-default .navbar-brand {
 		padding: 0;
