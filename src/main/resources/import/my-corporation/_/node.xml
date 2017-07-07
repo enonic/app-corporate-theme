@@ -2,7 +2,7 @@
     <id>840899b3-3585-4c0d-a052-2f3f2b42763e</id>
     <childOrder>_manualordervalue DESC, _timestamp DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2017-04-10T13:25:41.541Z</timestamp>
+    <timestamp>2017-07-07T10:59:46.318Z</timestamp>
     <inheritPermissions>false</inheritPermissions>
     <permissions>
         <principal key="role:cms.admin">
@@ -29,52 +29,31 @@
         <string name="displayName">My Corporation</string>
         <string name="type">portal:site</string>
         <string name="owner">user:system:su</string>
-        <dateTime name="modifiedTime">2017-04-10T13:25:41.540Z</dateTime>
+        <dateTime name="modifiedTime">2017-07-07T10:59:46.317Z</dateTime>
         <string name="modifier">user:system:su</string>
         <string name="creator">user:system:su</string>
         <dateTime name="createdTime">2017-02-03T09:33:59.893Z</dateTime>
         <property-set name="publish">
+            <dateTime isNull="true" name="first"/>
             <dateTime isNull="true" name="from"/>
             <dateTime isNull="true" name="to"/>
         </property-set>
         <property-set name="data">
             <string isNull="true" name="description"/>
             <property-set name="siteConfig">
-                <string name="applicationKey">com.enonic.app.bootstrap</string>
+                <string name="applicationKey">com.enonic.app.corporate.theme</string>
                 <property-set name="config">
                     <reference name="logo">90370b68-6b0e-4247-8eb5-ad4f839a76da</reference>
-                    <string name="footerText">© 2013 ShapeBootstrap. All Rights Reserved</string>
-                    <string name="socialIcons">facebook</string>
-                    <string name="socialIcons">instagram</string>
-                    <string name="socialIcons">youtube</string>
-                    <string name="SocialIcon">facebook</string>
-                    <string name="SocialIcon">instagram</string>
-                    <string name="SocialIcon">youtube</string>
-                    <string name="title">ADDRESS</string>
-                    <property-set name="contact">
-                        <string name="icon">home</string>
-                        <string name="text">Address: 1032 Wayback Lane, Wantagh NY 11793</string>
-                    </property-set>
-                    <property-set name="contact">
-                        <string name="icon">envelope</string>
-                        <string name="text">Email: support@email.com</string>
-                    </property-set>
-                    <property-set name="contact">
-                        <string name="icon">globe</string>
-                        <string name="text">Website: www.domain.com</string>
-                    </property-set>
-                    <property-set name="contact">
-                        <string name="icon">phone</string>
-                        <string name="text">Toll Free: 631-409-3105</string>
-                    </property-set>
-                    <string name="title2">OUR COMPANY</string>
+                    <string name="footerText">© 2017 ShapeBootstrap. All Rights Reserved</string>
+                    <string name="title">Address</string>
+                    <string name="title2">Our company</string>
+					<string name="title3">Our Services</string>
+					<string name="address">1032 Wayback Lane, Wantagh NY 11793</string>
+					<string name="email">support@email.com</string>
+					<string name="phone">631-409-3105</string>
                     <reference name="items">ca8c605e-e22f-4529-84fb-73349133c868</reference>
                     <reference name="items">55d5bcff-c394-4ff0-877f-bfa74353de07</reference>
                     <reference name="items">862c8cc2-3b18-4657-ad91-59b24fd657f0</reference>
-                    <string name="address">1032 Wayback Lane, Wantagh NY 11793</string>
-                    <string name="email">support@email.com</string>
-                    <string name="phone">631-409-3105</string>
-                    <string name="title3">Our Services</string>
                     <string name="freeText">&lt;p&gt;Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.&lt;/p&gt;</string>
                     <string name="facebook">https://www.facebook.com/</string>
                     <string name="twitter">https://twitter.com/</string>
@@ -88,7 +67,7 @@
             </property-set>
         </property-set>
         <property-set name="x">
-            <property-set name="com-enonic-app-bootstrap">
+            <property-set name="com-enonic-app-corporate-theme">
                 <property-set name="menu-item">
                     <boolean name="menuItem">false</boolean>
                     <string isNull="true" name="menuName"/>
@@ -96,7 +75,7 @@
             </property-set>
         </property-set>
         <property-set name="page">
-            <string name="controller">com.enonic.app.bootstrap:default</string>
+            <string name="controller">com.enonic.app.corporate.theme:default</string>
             <reference isNull="true" name="template"/>
             <property-set name="region">
                 <string name="name">main</string>
@@ -104,27 +83,27 @@
                     <string name="type">PartComponent</string>
                     <property-set name="PartComponent">
                         <string name="name">Slider</string>
-                        <string name="template">com.enonic.app.bootstrap:slider</string>
+                        <string name="template">com.enonic.app.corporate.theme:slider</string>
                         <property-set name="config">
                             <property-set name="banner">
                                 <reference name="image">9d6d1269-1944-4d2e-8ad2-a83fa3470d01</reference>
                                 <string name="title1">Creative Ideas</string>
                                 <string name="title2">Tincidunt condimentum eros</string>
-                                <string isNull="true" name="url"/>
+                                <reference name="linkTo">ca8c605e-e22f-4529-84fb-73349133c868</reference>
                                 <string isNull="true" name="backgroundColor"/>
                             </property-set>
                             <property-set name="banner">
                                 <reference name="image">23e10ece-6e3b-4dad-8a89-1c54e31f7098</reference>
                                 <string name="title1">Planning &amp; Analysis</string>
                                 <string name="title2">Aenean ultricies mi vitast</string>
-                                <string isNull="true" name="url"/>
+                                <reference name="linkTo">3ba4273e-0f84-4c10-b27c-54717bc14d71</reference>
                                 <string name="backgroundColor">#e67e22</string>
                             </property-set>
                             <property-set name="banner">
                                 <reference name="image">81bca7c3-04a9-4ac0-ba66-cbe484af0bc7</reference>
                                 <string name="title1">Unique Solutions</string>
                                 <string name="title2">Breatures who have been utterly</string>
-                                <string isNull="true" name="url"/>
+                                <reference name="linkTo">862c8cc2-3b18-4657-ad91-59b24fd657f0</reference>
                                 <string name="backgroundColor">#9b59b6</string>
                             </property-set>
                         </property-set>
@@ -134,7 +113,7 @@
                     <string name="type">LayoutComponent</string>
                     <property-set name="LayoutComponent">
                         <string name="name">2 columns</string>
-                        <string name="template">com.enonic.app.bootstrap:layout-2-col</string>
+                        <string name="template">com.enonic.app.corporate.theme:layout-2-col</string>
                         <property-set name="config">
                             <string name="layoutConf">70-30</string>
                             <boolean name="fullWidth">false</boolean>
@@ -156,11 +135,20 @@
                                 <string name="type">PartComponent</string>
                                 <property-set name="PartComponent">
                                     <string name="name">Button</string>
-                                    <string name="template">com.enonic.app.bootstrap:button</string>
+                                    <string name="template">com.enonic.app.corporate.theme:button</string>
                                     <property-set name="config">
-                                    <string name="btnText">Free Download</string>
+                                    <string name="btnText">Contact us</string>
                                     <string isNull="true" name="btnColor"/>
                                     <string isNull="true" name="externalUrl"/>
+                                    <property-set name="url">
+                                    <string name="_selected">content</string>
+                                    <property-set name="text">
+                                    <string isNull="true" name="url"/>
+                                    </property-set>
+                                    <property-set name="content">
+                                    <reference name="key">ca8c605e-e22f-4529-84fb-73349133c868</reference>
+                                    </property-set>
+                                    </property-set>
                                     </property-set>
                                 </property-set>
                             </property-set>
@@ -168,62 +156,49 @@
                     </property-set>
                 </property-set>
                 <property-set name="component">
-                    <string name="type">LayoutComponent</string>
-                    <property-set name="LayoutComponent">
-                        <string name="name">1 column</string>
-                        <string name="template">com.enonic.app.bootstrap:layout-1-col</string>
+                    <string name="type">PartComponent</string>
+                    <property-set name="PartComponent">
+                        <string name="name">Services - List selected</string>
+                        <string name="template">com.enonic.app.corporate.theme:service-frontpage</string>
                         <property-set name="config">
-                            <boolean name="fullWidth">true</boolean>
+                            <string name="title">What We Offer</string>
+                            <string name="intro">Look at some of the recent projects we have completed for our valuble clients</string>
+                            <reference name="service">a660ffd4-dae2-4fd5-bca3-dc432c32d61c</reference>
+                            <reference name="service">5dd0ac91-d5f8-4129-adba-d306575878ca</reference>
+                            <reference name="service">eb7ccf69-0167-44a2-9558-c19e69a86b0d</reference>
+                            <reference name="service">29d4ad0d-1378-4fce-8323-4070b803959d</reference>
+                            <reference name="service">b18f909d-d2c5-43f4-a1ba-1b295a0ef890</reference>
+                            <reference name="service">56d67e28-2a10-4e14-a730-8d7f84270cfc</reference>
                         </property-set>
-                        <property-set name="region">
-                            <string name="name">main</string>
-                            <property-set name="component">
-                                <string name="type">PartComponent</string>
-                                <property-set name="PartComponent">
-                                    <string name="name">Services - List selected</string>
-                                    <string name="template">com.enonic.app.bootstrap:service-frontpage</string>
-                                    <property-set name="config">
-                                    <string name="title">What We Offer</string>
-                                    <string name="intro">Look at some of the recent projects we have completed for our valuble clients</string>
-                                    <reference name="service">a660ffd4-dae2-4fd5-bca3-dc432c32d61c</reference>
-                                    <reference name="service">5dd0ac91-d5f8-4129-adba-d306575878ca</reference>
-                                    <reference name="service">eb7ccf69-0167-44a2-9558-c19e69a86b0d</reference>
-                                    <reference name="service">29d4ad0d-1378-4fce-8323-4070b803959d</reference>
-                                    <reference name="service">b18f909d-d2c5-43f4-a1ba-1b295a0ef890</reference>
-                                    <reference name="service">56d67e28-2a10-4e14-a730-8d7f84270cfc</reference>
-                                    </property-set>
-                                </property-set>
-                            </property-set>
-                            <property-set name="component">
-                                <string name="type">PartComponent</string>
-                                <property-set name="PartComponent">
-                                    <string name="name">Portfolio - List selected</string>
-                                    <string name="template">com.enonic.app.bootstrap:portfolio-frontpage</string>
-                                    <property-set name="config">
-                                    <string name="partTitle">Our recent work</string>
-                                    <string name="partIntro">Look at some of the recent projects we have completed for our valuble clients</string>
-                                    <reference name="portfolio">88686739-5263-4d4e-b6a2-c887fddd56da</reference>
-                                    <reference name="portfolio">a876ebc3-093d-4ea0-aa15-70efa52de397</reference>
-                                    <reference name="portfolio">448bcaee-45d9-41d8-9e44-66391273a009</reference>
-                                    <reference name="portfolio">c2ff1fda-3be4-4a3e-98c1-50f257053f0c</reference>
-                                    </property-set>
-                                </property-set>
-                            </property-set>
-                            <property-set name="component">
-                                <string name="type">PartComponent</string>
-                                <property-set name="PartComponent">
-                                    <string name="name">Partners</string>
-                                    <string name="template">com.enonic.app.bootstrap:partner</string>
-                                    <property-set name="config">
-                                    <string name="title">Our partners</string>
-                                    <string name="intro">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</string>
-                                    <reference name="partnerLogo">916480d8-01aa-4909-8bf5-5d91409cf103</reference>
-                                    <reference name="partnerLogo">fde46648-07b5-4d4f-9f6f-a951bd088eb4</reference>
-                                    <reference name="partnerLogo">b4d29df4-aef7-44d6-9c14-ce02e867840a</reference>
-                                    <reference name="partnerLogo">3f0debde-17ba-4fd5-b189-f37c8ee321b2</reference>
-                                    </property-set>
-                                </property-set>
-                            </property-set>
+                    </property-set>
+                </property-set>
+                <property-set name="component">
+                    <string name="type">PartComponent</string>
+                    <property-set name="PartComponent">
+                        <string name="name">Portfolio - List selected</string>
+                        <string name="template">com.enonic.app.corporate.theme:portfolio-frontpage</string>
+                        <property-set name="config">
+                            <string name="partTitle">Our recent work</string>
+                            <string name="partIntro">Look at some of the recent projects we have completed for our valuble clients</string>
+                            <reference name="portfolio">88686739-5263-4d4e-b6a2-c887fddd56da</reference>
+                            <reference name="portfolio">a876ebc3-093d-4ea0-aa15-70efa52de397</reference>
+                            <reference name="portfolio">448bcaee-45d9-41d8-9e44-66391273a009</reference>
+                            <reference name="portfolio">c2ff1fda-3be4-4a3e-98c1-50f257053f0c</reference>
+                        </property-set>
+                    </property-set>
+                </property-set>
+                <property-set name="component">
+                    <string name="type">PartComponent</string>
+                    <property-set name="PartComponent">
+                        <string name="name">Partners</string>
+                        <string name="template">com.enonic.app.corporate.theme:partner</string>
+                        <property-set name="config">
+                            <string name="title">Our partners</string>
+                            <string name="intro">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</string>
+                            <reference name="partnerLogo">916480d8-01aa-4909-8bf5-5d91409cf103</reference>
+                            <reference name="partnerLogo">fde46648-07b5-4d4f-9f6f-a951bd088eb4</reference>
+                            <reference name="partnerLogo">b4d29df4-aef7-44d6-9c14-ce02e867840a</reference>
+                            <reference name="partnerLogo">3f0debde-17ba-4fd5-b189-f37c8ee321b2</reference>
                         </property-set>
                     </property-set>
                 </property-set>
@@ -249,8 +224,21 @@
                     <nGram>true</nGram>
                     <fulltext>true</fulltext>
                     <includeInAllText>true</includeInAllText>
+                    <indexValueProcessors>
+                        <indexValueProcessor>htmlStripper</indexValueProcessor>
+                    </indexValueProcessors>
                 </indexConfig>
-                <path>page.region.**.text</path>
+                <path>page.region.**.TextComponent.text</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>data.siteconfig.applicationkey</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -271,36 +259,6 @@
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
                 <path>page.regions</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>true</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>creator</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>true</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>createdTime</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>true</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>modifiedTime</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -381,6 +339,36 @@
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
                 <path>data</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>creator</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>createdTime</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>modifiedTime</path>
             </pathIndexConfig>
         </pathIndexConfigs>
     </indexConfigs>

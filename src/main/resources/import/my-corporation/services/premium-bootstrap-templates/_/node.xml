@@ -2,8 +2,8 @@
     <id>56d67e28-2a10-4e14-a730-8d7f84270cfc</id>
     <childOrder>modifiedtime DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2017-04-07T10:19:20.340Z</timestamp>
-    <inheritPermissions>false</inheritPermissions>
+    <timestamp>2017-07-07T07:09:28.476Z</timestamp>
+    <inheritPermissions>true</inheritPermissions>
     <permissions>
         <principal key="role:cms.admin">
             <allow type="array">
@@ -27,7 +27,7 @@
     <data>
         <boolean name="valid">true</boolean>
         <string name="displayName">Premium Bootstrap Templates</string>
-        <string name="type">com.enonic.app.bootstrap:service</string>
+        <string name="type">com.enonic.app.corporate.theme:service</string>
         <string name="owner">user:system:su</string>
         <dateTime name="modifiedTime">2017-04-07T10:19:20.339Z</dateTime>
         <string name="modifier">user:system:su</string>
@@ -47,7 +47,7 @@
             <string name="serviceIcon">leaf</string>
         </property-set>
         <property-set name="x">
-            <property-set name="com-enonic-app-bootstrap">
+            <property-set name="com-enonic-app-corporate-theme">
                 <property-set name="menu-item">
                     <boolean name="menuItem">false</boolean>
                     <string isNull="true" name="menuName"/>

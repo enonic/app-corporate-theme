@@ -2,7 +2,7 @@
     <id>3ba4273e-0f84-4c10-b27c-54717bc14d71</id>
     <childOrder>_manualordervalue DESC, _timestamp DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2017-04-06T13:24:19.364Z</timestamp>
+    <timestamp>2017-07-07T10:39:00.320Z</timestamp>
     <inheritPermissions>true</inheritPermissions>
     <permissions>
         <principal key="role:cms.admin">
@@ -27,19 +27,20 @@
     <data>
         <boolean name="valid">true</boolean>
         <string name="displayName">Services</string>
-        <string name="type">com.enonic.app.bootstrap:landing-page</string>
+        <string name="type">com.enonic.app.corporate.theme:landing-page</string>
         <string name="owner">user:system:su</string>
-        <dateTime name="modifiedTime">2017-04-06T13:24:19.364Z</dateTime>
+        <dateTime name="modifiedTime">2017-07-07T10:39:00.320Z</dateTime>
         <string name="modifier">user:system:su</string>
         <string name="creator">user:system:su</string>
         <dateTime name="createdTime">2017-03-06T08:43:35.472Z</dateTime>
         <property-set name="publish">
+            <dateTime isNull="true" name="first"/>
             <dateTime isNull="true" name="from"/>
             <dateTime isNull="true" name="to"/>
         </property-set>
         <property-set name="data"/>
         <property-set name="x">
-            <property-set name="com-enonic-app-bootstrap">
+            <property-set name="com-enonic-app-corporate-theme">
                 <property-set name="menu-item">
                     <boolean name="menuItem">true</boolean>
                     <string isNull="true" name="menuName"/>
@@ -47,7 +48,7 @@
             </property-set>
         </property-set>
         <property-set name="page">
-            <string name="controller">com.enonic.app.bootstrap:default</string>
+            <string name="controller">com.enonic.app.corporate.theme:default</string>
             <reference isNull="true" name="template"/>
             <property-set name="region">
                 <string name="name">main</string>
@@ -55,7 +56,7 @@
                     <string name="type">PartComponent</string>
                     <property-set name="PartComponent">
                         <string name="name">Services</string>
-                        <string name="template">com.enonic.app.bootstrap:service</string>
+                        <string name="template">com.enonic.app.corporate.theme:service</string>
                         <property-set name="config"/>
                     </property-set>
                 </property-set>
@@ -63,11 +64,20 @@
                     <string name="type">PartComponent</string>
                     <property-set name="PartComponent">
                         <string name="name">Button</string>
-                        <string name="template">com.enonic.app.bootstrap:button</string>
+                        <string name="template">com.enonic.app.corporate.theme:button</string>
                         <property-set name="config">
                             <string name="btnText">Request a free quote</string>
-                            <string name="btnColor">#2dcc70</string>
+                            <string isNull="true" name="btnColor"/>
                             <string isNull="true" name="externalUrl"/>
+                            <property-set name="url">
+                                <string name="_selected">content</string>
+                                <property-set name="text">
+                                    <string isNull="true" name="url"/>
+                                </property-set>
+                                <property-set name="content">
+                                    <reference name="key">ca8c605e-e22f-4529-84fb-73349133c868</reference>
+                                </property-set>
+                            </property-set>
                         </property-set>
                     </property-set>
                 </property-set>
@@ -93,8 +103,21 @@
                     <nGram>true</nGram>
                     <fulltext>true</fulltext>
                     <includeInAllText>true</includeInAllText>
+                    <indexValueProcessors>
+                        <indexValueProcessor>htmlStripper</indexValueProcessor>
+                    </indexValueProcessors>
                 </indexConfig>
-                <path>page.region.**.text</path>
+                <path>page.region.**.TextComponent.text</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>data.siteconfig.applicationkey</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -115,36 +138,6 @@
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
                 <path>page.regions</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>true</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>creator</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>true</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>createdTime</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>true</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>modifiedTime</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -225,6 +218,36 @@
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
                 <path>data</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>creator</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>createdTime</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>modifiedTime</path>
             </pathIndexConfig>
         </pathIndexConfigs>
     </indexConfigs>

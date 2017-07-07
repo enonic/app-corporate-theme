@@ -2,7 +2,7 @@
     <id>ca8c605e-e22f-4529-84fb-73349133c868</id>
     <childOrder>modifiedtime DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2017-04-07T11:21:25.321Z</timestamp>
+    <timestamp>2017-07-07T07:09:28.595Z</timestamp>
     <inheritPermissions>true</inheritPermissions>
     <permissions>
         <principal key="role:cms.admin">
@@ -27,7 +27,7 @@
     <data>
         <boolean name="valid">true</boolean>
         <string name="displayName">Contact</string>
-        <string name="type">com.enonic.app.bootstrap:landing-page</string>
+        <string name="type">com.enonic.app.corporate.theme:landing-page</string>
         <string name="owner">user:system:su</string>
         <dateTime name="modifiedTime">2017-04-07T11:21:25.320Z</dateTime>
         <string name="modifier">user:system:su</string>
@@ -39,7 +39,7 @@
         </property-set>
         <property-set name="data"/>
         <property-set name="x">
-            <property-set name="com-enonic-app-bootstrap">
+            <property-set name="com-enonic-app-corporate-theme">
                 <property-set name="menu-item">
                     <boolean name="menuItem">true</boolean>
                     <string isNull="true" name="menuName"/>
@@ -47,7 +47,7 @@
             </property-set>
         </property-set>
         <property-set name="page">
-            <string name="controller">com.enonic.app.bootstrap:default</string>
+            <string name="controller">com.enonic.app.corporate.theme:default</string>
             <reference isNull="true" name="template"/>
             <property-set name="region">
                 <string name="name">main</string>
@@ -55,7 +55,7 @@
                     <string name="type">PartComponent</string>
                     <property-set name="PartComponent">
                         <string name="name">Contact</string>
-                        <string name="template">com.enonic.app.bootstrap:contact</string>
+                        <string name="template">com.enonic.app.corporate.theme:contact</string>
                         <property-set name="config">
                             <string name="text">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</string>
                             <string name="address">1209 Willow Oaks Lane, New York Lafayette, 1212, United States</string>

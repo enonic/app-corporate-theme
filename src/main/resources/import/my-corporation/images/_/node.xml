@@ -2,7 +2,7 @@
     <id>fac543f2-8fbd-4aaa-a498-ddb55928d512</id>
     <childOrder>modifiedtime DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2017-03-31T11:00:58.251Z</timestamp>
+    <timestamp>2017-07-07T11:12:40.476Z</timestamp>
     <inheritPermissions>true</inheritPermissions>
     <permissions>
         <principal key="role:cms.admin">
@@ -26,20 +26,21 @@
     </permissions>
     <data>
         <boolean name="valid">true</boolean>
-        <string name="displayName">images</string>
+        <string name="displayName">Images</string>
         <string name="type">base:folder</string>
         <string name="owner">user:system:su</string>
-        <dateTime name="modifiedTime">2017-03-05T20:01:45.824Z</dateTime>
+        <dateTime name="modifiedTime">2017-07-07T11:12:40.475Z</dateTime>
         <string name="modifier">user:system:su</string>
         <string name="creator">user:system:su</string>
         <dateTime name="createdTime">2017-03-05T20:01:40.794Z</dateTime>
         <property-set name="publish">
+            <dateTime isNull="true" name="first"/>
             <dateTime isNull="true" name="from"/>
             <dateTime isNull="true" name="to"/>
         </property-set>
         <property-set name="data"/>
         <property-set name="x">
-            <property-set name="com-enonic-app-bootstrap">
+            <property-set name="com-enonic-app-corporate-theme">
                 <property-set name="menu-item">
                     <boolean name="menuItem">false</boolean>
                     <string isNull="true" name="menuName"/>
@@ -64,8 +65,21 @@
                     <nGram>true</nGram>
                     <fulltext>true</fulltext>
                     <includeInAllText>true</includeInAllText>
+                    <indexValueProcessors>
+                        <indexValueProcessor>htmlStripper</indexValueProcessor>
+                    </indexValueProcessors>
                 </indexConfig>
-                <path>page.region.**.text</path>
+                <path>page.region.**.TextComponent.text</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>data.siteconfig.applicationkey</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>

@@ -1,6 +1,6 @@
+premium-enonic-xp-themes
 android-application-development
 ios-application-development
 responsive-web-design
-premium-wordpress-themes
 web-design-development
 premium-bootstrap-templates

@@ -2,8 +2,8 @@
     <id>916480d8-01aa-4909-8bf5-5d91409cf103</id>
     <childOrder>modifiedtime DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2017-04-10T11:16:51.018Z</timestamp>
-    <inheritPermissions>false</inheritPermissions>
+    <timestamp>2017-07-07T07:09:28.619Z</timestamp>
+    <inheritPermissions>true</inheritPermissions>
     <permissions>
         <principal key="role:cms.admin">
             <allow type="array">

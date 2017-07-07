@@ -2,7 +2,7 @@
     <id>55d5bcff-c394-4ff0-877f-bfa74353de07</id>
     <childOrder>_manualordervalue DESC, _timestamp DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2017-04-10T13:45:24.772Z</timestamp>
+    <timestamp>2017-07-07T09:18:36.404Z</timestamp>
     <inheritPermissions>true</inheritPermissions>
     <permissions>
         <principal key="role:cms.admin">
@@ -27,19 +27,20 @@
     <data>
         <boolean name="valid">true</boolean>
         <string name="displayName">About us</string>
-        <string name="type">com.enonic.app.bootstrap:landing-page</string>
+        <string name="type">com.enonic.app.corporate.theme:landing-page</string>
         <string name="owner">user:system:su</string>
-        <dateTime name="modifiedTime">2017-04-10T13:45:24.771Z</dateTime>
+        <dateTime name="modifiedTime">2017-07-07T09:18:36.403Z</dateTime>
         <string name="modifier">user:system:su</string>
         <string name="creator">user:system:su</string>
         <dateTime name="createdTime">2017-03-06T08:42:58.656Z</dateTime>
         <property-set name="publish">
+            <dateTime isNull="true" name="first"/>
             <dateTime isNull="true" name="from"/>
             <dateTime isNull="true" name="to"/>
         </property-set>
         <property-set name="data"/>
         <property-set name="x">
-            <property-set name="com-enonic-app-bootstrap">
+            <property-set name="com-enonic-app-corporate-theme">
                 <property-set name="menu-item">
                     <boolean name="menuItem">true</boolean>
                     <string isNull="true" name="menuName"/>
@@ -47,7 +48,7 @@
             </property-set>
         </property-set>
         <property-set name="page">
-            <string name="controller">com.enonic.app.bootstrap:default</string>
+            <string name="controller">com.enonic.app.corporate.theme:default</string>
             <reference isNull="true" name="template"/>
             <property-set name="region">
                 <string name="name">main</string>
@@ -55,7 +56,7 @@
                     <string name="type">LayoutComponent</string>
                     <property-set name="LayoutComponent">
                         <string name="name">2 columns</string>
-                        <string name="template">com.enonic.app.bootstrap:layout-2-col</string>
+                        <string name="template">com.enonic.app.corporate.theme:layout-2-col</string>
                         <property-set name="config">
                             <string name="layoutConf">50-50</string>
                             <boolean name="fullWidth">false</boolean>
@@ -73,6 +74,14 @@
                         </property-set>
                         <property-set name="region">
                             <string name="name">right</string>
+                            <property-set name="component">
+                                <string name="type">TextComponent</string>
+                                <property-set name="TextComponent">
+                                    <string name="name">Text</string>
+                                    <string name="text">&lt;h3&gt;Why Choose Us?&lt;/h3&gt;
+&lt;p&gt;Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.&lt;/p&gt;</string>
+                                </property-set>
+                            </property-set>
                         </property-set>
                     </property-set>
                 </property-set>
@@ -80,7 +89,7 @@
                     <string name="type">LayoutComponent</string>
                     <property-set name="LayoutComponent">
                         <string name="name">1 column</string>
-                        <string name="template">com.enonic.app.bootstrap:layout-1-col</string>
+                        <string name="template">com.enonic.app.corporate.theme:layout-1-col</string>
                         <property-set name="config">
                             <boolean name="fullWidth">false</boolean>
                             <string isNull="true" name="backgroundColor"/>
@@ -91,7 +100,7 @@
                                 <string name="type">PartComponent</string>
                                 <property-set name="PartComponent">
                                     <string name="name">Employees list</string>
-                                    <string name="template">com.enonic.app.bootstrap:employees</string>
+                                    <string name="template">com.enonic.app.corporate.theme:employees</string>
                                     <property-set name="config">
                                     <string name="titleEmployee">Meet the Team</string>
                                     <reference name="team">8848ee3a-e2b2-4f42-ac16-e33495972bd9</reference>
@@ -101,31 +110,6 @@
                                     </property-set>
                                 </property-set>
                             </property-set>
-                        </property-set>
-                    </property-set>
-                </property-set>
-                <property-set name="component">
-                    <string name="type">LayoutComponent</string>
-                    <property-set name="LayoutComponent">
-                        <string name="name">2 columns</string>
-                        <string name="template">com.enonic.app.bootstrap:layout-2-col</string>
-                        <property-set name="config">
-                            <string name="layoutConf">50-50</string>
-                            <boolean name="fullWidth">false</boolean>
-                        </property-set>
-                        <property-set name="region">
-                            <string name="name">left</string>
-                            <property-set name="component">
-                                <string name="type">TextComponent</string>
-                                <property-set name="TextComponent">
-                                    <string name="name">Text</string>
-                                    <string name="text">&lt;h3&gt;Why Choose Us?&lt;/h3&gt;
-&lt;p&gt;Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.&lt;/p&gt;</string>
-                                </property-set>
-                            </property-set>
-                        </property-set>
-                        <property-set name="region">
-                            <string name="name">right</string>
                         </property-set>
                     </property-set>
                 </property-set>
@@ -151,8 +135,21 @@
                     <nGram>true</nGram>
                     <fulltext>true</fulltext>
                     <includeInAllText>true</includeInAllText>
+                    <indexValueProcessors>
+                        <indexValueProcessor>htmlStripper</indexValueProcessor>
+                    </indexValueProcessors>
                 </indexConfig>
-                <path>page.region.**.text</path>
+                <path>page.region.**.TextComponent.text</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>data.siteconfig.applicationkey</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -173,36 +170,6 @@
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
                 <path>page.regions</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>true</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>creator</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>true</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>createdTime</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>true</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>modifiedTime</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -283,6 +250,36 @@
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
                 <path>data</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>creator</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>createdTime</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>modifiedTime</path>
             </pathIndexConfig>
         </pathIndexConfigs>
     </indexConfigs>

@@ -2,8 +2,8 @@
     <id>a660ffd4-dae2-4fd5-bca3-dc432c32d61c</id>
     <childOrder>modifiedtime DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2017-04-07T10:18:57.018Z</timestamp>
-    <inheritPermissions>false</inheritPermissions>
+    <timestamp>2017-07-07T07:09:28.468Z</timestamp>
+    <inheritPermissions>true</inheritPermissions>
     <permissions>
         <principal key="role:cms.admin">
             <allow type="array">
@@ -27,7 +27,7 @@
     <data>
         <boolean name="valid">true</boolean>
         <string name="displayName">Web Design &amp; Development</string>
-        <string name="type">com.enonic.app.bootstrap:service</string>
+        <string name="type">com.enonic.app.corporate.theme:service</string>
         <string name="owner">user:system:su</string>
         <dateTime name="modifiedTime">2017-04-07T10:18:57.017Z</dateTime>
         <string name="modifier">user:system:su</string>
@@ -46,7 +46,7 @@
             <string name="serviceIcon">cog</string>
         </property-set>
         <property-set name="x">
-            <property-set name="com-enonic-app-bootstrap">
+            <property-set name="com-enonic-app-corporate-theme">
                 <property-set name="menu-item">
                     <boolean name="menuItem">false</boolean>
                     <string isNull="true" name="menuName"/>

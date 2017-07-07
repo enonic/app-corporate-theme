@@ -2,8 +2,8 @@
     <id>eb7ccf69-0167-44a2-9558-c19e69a86b0d</id>
     <childOrder>modifiedtime DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2017-04-07T10:18:01.457Z</timestamp>
-    <inheritPermissions>false</inheritPermissions>
+    <timestamp>2017-07-07T07:09:28.439Z</timestamp>
+    <inheritPermissions>true</inheritPermissions>
     <permissions>
         <principal key="role:cms.admin">
             <allow type="array">
@@ -27,7 +27,7 @@
     <data>
         <boolean name="valid">true</boolean>
         <string name="displayName">iOS Application Development</string>
-        <string name="type">com.enonic.app.bootstrap:service</string>
+        <string name="type">com.enonic.app.corporate.theme:service</string>
         <string name="owner">user:system:su</string>
         <dateTime name="modifiedTime">2017-04-07T10:18:01.455Z</dateTime>
         <string name="modifier">user:system:su</string>
@@ -46,7 +46,7 @@
             <string name="serviceIcon">camera</string>
         </property-set>
         <property-set name="x">
-            <property-set name="com-enonic-app-bootstrap">
+            <property-set name="com-enonic-app-corporate-theme">
                 <property-set name="menu-item">
                     <boolean name="menuItem">false</boolean>
                     <string isNull="true" name="menuName"/>

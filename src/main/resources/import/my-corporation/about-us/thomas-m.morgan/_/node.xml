@@ -2,7 +2,7 @@
     <id>613431cd-4356-4ff1-9305-77d7c01daaa4</id>
     <childOrder>modifiedtime DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2017-04-10T13:36:51.868Z</timestamp>
+    <timestamp>2017-07-07T07:09:28.380Z</timestamp>
     <inheritPermissions>true</inheritPermissions>
     <permissions>
         <principal key="role:cms.admin">
@@ -27,7 +27,7 @@
     <data>
         <boolean name="valid">true</boolean>
         <string name="displayName">Thomas M. Morgan</string>
-        <string name="type">com.enonic.app.bootstrap:employee</string>
+        <string name="type">com.enonic.app.corporate.theme:employee</string>
         <string name="owner">user:system:su</string>
         <dateTime name="modifiedTime">2017-04-10T13:36:51.867Z</dateTime>
         <string name="modifier">user:system:su</string>
@@ -53,7 +53,7 @@
             </property-set>
         </property-set>
         <property-set name="x">
-            <property-set name="com-enonic-app-bootstrap">
+            <property-set name="com-enonic-app-corporate-theme">
                 <property-set name="menu-item">
                     <boolean name="menuItem">false</boolean>
                     <string isNull="true" name="menuName"/>

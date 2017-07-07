@@ -2,8 +2,8 @@
     <id>8848ee3a-e2b2-4f42-ac16-e33495972bd9</id>
     <childOrder>modifiedtime DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2017-04-10T13:43:11.361Z</timestamp>
-    <inheritPermissions>false</inheritPermissions>
+    <timestamp>2017-07-07T07:09:28.313Z</timestamp>
+    <inheritPermissions>true</inheritPermissions>
     <permissions>
         <principal key="role:cms.admin">
             <allow type="array">
@@ -27,7 +27,7 @@
     <data>
         <boolean name="valid">true</boolean>
         <string name="displayName">Agustin E. Hightower</string>
-        <string name="type">com.enonic.app.bootstrap:employee</string>
+        <string name="type">com.enonic.app.corporate.theme:employee</string>
         <string name="owner">user:system:su</string>
         <dateTime name="modifiedTime">2017-03-21T09:33:10.193Z</dateTime>
         <string name="modifier">user:system:su</string>
@@ -53,7 +53,7 @@
             </property-set>
         </property-set>
         <property-set name="x">
-            <property-set name="com-enonic-app-bootstrap">
+            <property-set name="com-enonic-app-corporate-theme">
                 <property-set name="menu-item">
                     <boolean name="menuItem">false</boolean>
                     <string isNull="true" name="menuName"/>

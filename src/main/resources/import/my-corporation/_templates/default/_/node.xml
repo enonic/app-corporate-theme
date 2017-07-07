@@ -2,7 +2,7 @@
     <id>51776dee-e137-4334-befb-372f84ff4176</id>
     <childOrder>modifiedtime DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2017-04-06T12:48:35.845Z</timestamp>
+    <timestamp>2017-07-07T07:09:28.684Z</timestamp>
     <inheritPermissions>true</inheritPermissions>
     <permissions>
         <principal key="role:cms.admin">
@@ -38,11 +38,11 @@
             <dateTime isNull="true" name="to"/>
         </property-set>
         <property-set name="data">
-            <string name="supports">com.enonic.app.bootstrap:landing-page</string>
+            <string name="supports">com.enonic.app.corporate.theme:landing-page</string>
             <string name="supports">portal:site</string>
         </property-set>
         <property-set name="x">
-            <property-set name="com-enonic-app-bootstrap">
+            <property-set name="com-enonic-app-corporate-theme">
                 <property-set name="menu-item">
                     <boolean name="menuItem">false</boolean>
                     <string isNull="true" name="menuName"/>
@@ -50,7 +50,7 @@
             </property-set>
         </property-set>
         <property-set name="page">
-            <string name="controller">com.enonic.app.bootstrap:default</string>
+            <string name="controller">com.enonic.app.corporate.theme:default</string>
             <reference isNull="true" name="template"/>
             <property-set name="region">
                 <string name="name">main</string>

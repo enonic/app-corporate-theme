@@ -2,7 +2,7 @@
     <id>21c0102d-abaf-4344-9bd5-e2c0d1feafbc</id>
     <childOrder>modifiedtime DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2017-04-04T06:47:18.202Z</timestamp>
+    <timestamp>2017-07-07T07:09:28.409Z</timestamp>
     <inheritPermissions>true</inheritPermissions>
     <permissions>
         <principal key="role:cms.admin">
@@ -27,7 +27,7 @@
     <data>
         <boolean name="valid">true</boolean>
         <string name="displayName">Privacy Policy</string>
-        <string name="type">com.enonic.app.bootstrap:landing-page</string>
+        <string name="type">com.enonic.app.corporate.theme:landing-page</string>
         <string name="owner">user:system:su</string>
         <dateTime name="modifiedTime">2017-04-04T06:47:18.201Z</dateTime>
         <string name="modifier">user:system:su</string>
@@ -39,7 +39,7 @@
         </property-set>
         <property-set name="data"/>
         <property-set name="x">
-            <property-set name="com-enonic-app-bootstrap">
+            <property-set name="com-enonic-app-corporate-theme">
                 <property-set name="menu-item">
                     <boolean name="menuItem">true</boolean>
                     <string isNull="true" name="menuName"/>
@@ -47,7 +47,7 @@
             </property-set>
         </property-set>
         <property-set name="page">
-            <string name="controller">com.enonic.app.bootstrap:default</string>
+            <string name="controller">com.enonic.app.corporate.theme:default</string>
             <reference isNull="true" name="template"/>
             <property-set name="region">
                 <string name="name">main</string>
@@ -55,7 +55,7 @@
                     <string name="type">LayoutComponent</string>
                     <property-set name="LayoutComponent">
                         <string name="name">1 column</string>
-                        <string name="template">com.enonic.app.bootstrap:layout-1-col</string>
+                        <string name="template">com.enonic.app.corporate.theme:layout-1-col</string>
                         <property-set name="config"/>
                         <property-set name="region">
                             <string name="name">main</string>
