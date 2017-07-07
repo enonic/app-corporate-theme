@@ -1,6 +1,6 @@
-<div data-th-class="${container}">
+<div data-th-class="${container}" data-th-style="${'background-color:' + banner.backgroundColor}">
     <div class="row">
-        <div class="span16" data-portal-region="main">
+        <div class="col-md-12" data-portal-region="main">
             <div data-th-each="component : ${mainRegion.components}" data-th-remove="tag">
                 <div data-portal-component="${component.path}" data-th-remove="tag"/>
             </div>
