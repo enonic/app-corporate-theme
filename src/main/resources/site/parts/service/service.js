@@ -10,30 +10,28 @@ var libs = {
 var view = resolve("service.html");
 
 exports.get = function(req){
-    
+
     var content = libs.portal.getContent();
     var currentSite = libs.portal.getSite()._path;
     var serviceList =[];
 
-    var services = libs.content.query({
-        start : 0,
-        count : 300,
-        sort : "modifiedTime DESC",
-        contentTypes : [
+    var services = libs.content.getChildren({
+		key: content._id,
+		start: 0,
+        count: 100,
+        contentTypes: [
             app.name + ":service"
-        ],
-        query : "_path LIKE '/content" + currentSite + "/*'"
+        ]
     });
 
-    if(services){
-        var servicesResult = services.hits;
-        var serviceList = libs.shared.getServiceData(servicesResult);
+    if (services) {
+        serviceList = libs.shared.getServiceData(services.hits);
     }
 
     var model = {
-        serviceList : serviceList ? serviceList : null
+        serviceList : serviceList ? libs.util.data.forceArray(serviceList) : null
     };
 
     var body = libs.thymeleaf.render(view, model);
-    return { body : body};
+    return { body : body };
 };
