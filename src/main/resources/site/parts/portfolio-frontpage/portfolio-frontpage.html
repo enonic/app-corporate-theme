@@ -4,10 +4,9 @@
             <h3 data-th-text="${title}"></h3>
             <p class="lead" data-th-text="${intro}"></p>
         </div>
-        <div class="gap"></div>
         <ul class="gallery row">
-            <li class="col-sm-3" data-th-if="portfolios" data-th-each="item : ${portfolios}">
-					<div class="preview">
+            <li class="col-sm-3 col-xs-6" data-th-if="portfolios" data-th-each="item : ${portfolios}">
+				<div class="preview">
 	                <img data-th-if="${item.image}" data-th-src="${item.image}" alt="" />
 	                <div class="overlay"></div>
 	                <div class="links">
@@ -19,7 +18,7 @@
 	            </div>
 				<div id="modal-1" data-th-id="${item.uniqueId}" data-th-if="${item.imageFull}" class="modal fade">
 					<div class="modal-dialog">
-						<a class="close" href="#" data-dismiss="modal" aria-hidden="true"><i class="modal-close icon-remove "></i></a>
+						<a class="close" href="#" data-dismiss="modal" aria-hidden="true"><i class="modal-close icon-remove"></i></a>
 						<div class="modal-content">
 							<div class="modal-body">
 								<img data-th-src="${item.imageFull}" alt="" />

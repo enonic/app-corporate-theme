@@ -14,38 +14,18 @@ body div section {
 .contactInfo{
 	padding-left: 10px;
 }
-.portfolio .modal .modal-body img {
-	width: 100%;
-	max-height: 400px;
-}
-
 .thumbnail{
 	border: none;
 }
 .address{
 	padding-left: 0;
 }
-
 .icon-medium{
 	width: auto;
 }
-.preview{
-	margin : 5px!important;
-}
 
-/*Modal*/
-.box img{
-	max-width : 100%;
-}
-.close{
-	opacity: 1!important;
-}
-.modal-close{
-	color: #3b4149!important;
-	right : 3px!important;
-	top : 5px!important;
-	z-index: 2;
-}
+
+
 /* General font-size for this theme is smaller when used with Bootstrap 3, increase the size a bit */
 body {
 	font-size: 14px;
@@ -90,6 +70,34 @@ ul.gallery li .preview .links {
 .portfolio .gallery {
 	padding: 0 15px;
 }
+/* Spacing on phablets for portfolio gallery. */
+ul.gallery li .desc {
+	margin: 15px 0;
+}
+ul.gallery li .preview {
+	margin: 0;
+}
+/* Modal images */
+.portfolio .modal .modal-body img {
+	width: 100%;
+	max-height: 400px;
+}
+/* Close button for modal images. */
+.portfolio .modal .close {
+	opacity: 1;
+	text-shadow: none;
+	background-color: transparent;
+}
+	.portfolio .modal .modal-close {
+		color: #3b4149;
+		right : 7px;
+		top : -1px;
+		z-index: 2;
+		font-size: 2em;
+	}
+	.portfolio .modal .icon-remove {
+		background-color: transparent;
+	}
 /* Footer looks odd with it's margins on phablets unless the paddings are adjusted. */
 #bottom {
 	padding: 50px 0 30px 0;
@@ -171,6 +179,16 @@ ul.gallery li .preview .links {
 /* Employee list has no bottom spacing */
 #about-us {
 	padding-bottom: 50px;
+}
+
+/* Bottom spacing on front page */
+#services, .portfolio, #clients {
+	padding-bottom: 50px;
+}
+
+/* Remove gap element */
+.portfolio .center {
+	padding-bottom: 20px;
 }
 
 /* Some things are just not meant for small screens. Like stacked elements separated with a light hr. */
