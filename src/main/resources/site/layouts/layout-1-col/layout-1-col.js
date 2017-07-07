@@ -6,11 +6,11 @@ var libs = {
 var view = resolve('layout-1-col.html');
 
 exports.get = function(req) {
-    var component = libs.portal.getComponent().config;
+    var component = libs.portal.getComponent();
     var model = {
         mainRegion: component.regions['main'],
-        container: config.fullWidth ? "container-fluid" : "container",
-        backgroundColor: config.backgroundColor || "#252525"
+        container: component.config.fullWidth ? "container-fluid" : "container",
+        backgroundColor: component.config.backgroundColor || null
     };
     var body = libs.thymeleaf.render(view, model);
     return { body: body };
