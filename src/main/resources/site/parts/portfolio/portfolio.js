@@ -14,25 +14,27 @@ exports.get = function(req){
     var content = libs.portal.getContent();
     var currentSite = libs.portal.getSite();
     var sitePath = currentSite._path;
-
+	var portfolioList =[];
 
     var portfolios = libs.content.query({
-        start : 0,
-        count : 300,
-        sort : "modifiedTime DESC",
+		key: content._id,
+		start : 0,
+        count : 100,
+        sort : "_manualOrderValue DESC",
         contentTypes : [
             app.name + ":portfolio"
         ],
         query : "_path LIKE '/content" + sitePath + "/*'"
     });
 
-    var portfolioResults = portfolios.hits;
-    var portfolioList = libs.shared.getPortfolioData(portfolioResults);
+	if (portfolios) {
+		portfolioList = libs.shared.getPortfolioData(portfolios.hits);
+    }
 
     var model = {
-        portfolioList : portfolioList || null
+        portfolioList : portfolioList ? libs.util.data.forceArray(portfolioList) : null
     };
 
     var body = libs.thymeleaf.render(view, model);
-    return { body : body};
+    return { body : body };
 };

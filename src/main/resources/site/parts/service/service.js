@@ -12,16 +12,19 @@ var view = resolve("service.html");
 exports.get = function(req){
 
     var content = libs.portal.getContent();
-    var currentSite = libs.portal.getSite()._path;
-    var serviceList =[];
+    var currentSite = libs.portal.getSite();
+    var sitePath = currentSite._path;
+	var serviceList =[];
 
-    var services = libs.content.getChildren({
+    var services = libs.content.query({
 		key: content._id,
-		start: 0,
-        count: 100,
-        contentTypes: [
+		start : 0,
+        count : 100,
+        sort : "_manualOrderValue DESC",
+        contentTypes : [
             app.name + ":service"
-        ]
+        ],
+        query : "_path LIKE '/content" + sitePath + "/*'"
     });
 
     if (services) {

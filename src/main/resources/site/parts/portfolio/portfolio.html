@@ -1,6 +1,6 @@
 <section class="container main portfolio">
-    <ul class="gallery">
-        <li data-th-if="${portfolioList}" data-th-each="item : ${portfolioList}">
+    <ul class="gallery row">
+        <li class="col-sm-3 col-xs-6" data-th-if="${portfolioList}" data-th-each="item : ${portfolioList}">
             <div class="preview">
                 <img data-th-if="${item.image}" data-th-src="${item.image}" alt="" />
                 <div class="overlay"></div>
@@ -19,7 +19,7 @@
                         <div class="modal-body">
                             <img data-th-src="${item.imageFull}" alt="" />
                         </div>
-                    <a class="close" href="#" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i></a>
+                    <a class="close" href="#" data-dismiss="modal" aria-hidden="true"><i class="modal-close icon-remove"></i></a>
                     </div>
                 </div>
             </div>
