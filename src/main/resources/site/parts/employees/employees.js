@@ -35,7 +35,7 @@ function getEmployeeContents(config) {
 
 
 function getEmployeesModel(employeeContents) {
-    log.info('employeeContents:' + JSON.stringify(employeeContents, null, 4));
+    //log.debug('employeeContents:' + JSON.stringify(employeeContents, null, 4));
     var employees = [];
     for(var j=0; j < employeeContents.length; j++) {
         var employeeContent = employeeContents[j];
