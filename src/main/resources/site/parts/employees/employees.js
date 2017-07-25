@@ -7,69 +7,61 @@ var libs = {
 
 var view = resolve('employees.html');
 
-exports.get = function(){
+var CONTENT_TYPE_EMPLOYEE = app.name + ':employee';
 
-    var component = libs.portal.getComponent();
-    var config = component.config;
-    var employees = [];
-    var facebookUrl = null;
-    var twitterUrl = null;
-    var linkedinUrl = null;
-    var googleUrl = null;
 
-    var employeesArray = config.team ? libs.util.data.forceArray(config.team) : null;
-    if (employeesArray) {
-        for(var i=0 ; i < employeesArray.length; i++) {
-            var employeeKey = libs.content.get({
-                key: employeesArray[i]
-            });
+function getEmployeeContents(config) {
+    var content = libs.portal.getContent();
 
-			if (employeeKey) {
-			var selected = employeeKey.data.socialLinks._selected;
-				var socialLinks = employeeKey.data.socialLinks;
+    if (content.type === CONTENT_TYPE_EMPLOYEE) { return [content]; }
 
-					// Check for use of social links
-	            if (selected.indexOf("twitter") >= 0) {
-	                twitterUrl = socialLinks.twitter.twitterUrl;
-	            }
-	            if (selected.indexOf("facebook") >= 0) {
-	                facebookUrl = socialLinks.facebook.facebookUrl;
-	            }
-	            if (selected.indexOf("linkedin") >= 0) {
-	                linkedinUrl = socialLinks.linkedin.linkedinUrl;
-	            }
-	            if (selected.indexOf("google") >= 0) {
-	                googleUrl = socialLinks.google.googleUrl;
-	            }
-
-					var imageUrl = null;
-					if (employeeKey.data.photo) {
-						imageUrl = libs.portal.imageUrl({
-							 id: employeeKey.data.photo,
-							 scale: 'block(250,167)',
-						});
-					}
-
-	            var employeeObject = {
-	                photo: imageUrl,
-	                name: employeeKey.displayName,
-	                intro: employeeKey.data.intro,
-	                facebookUrl: facebookUrl,
-	                twitterUrl: twitterUrl,
-	                linkedinUrl: linkedinUrl,
-	                googleUrl: googleUrl
-	            };
-
-	            employees.push(employeeObject);
-				}
-        }
+    if (content.type === 'portal:page-template') {
+        return libs.content.query({
+            contentTypes: [CONTENT_TYPE_EMPLOYEE],
+            count: -1,
+            query: ''
+        }).hits;
     }
 
-    var model = {
-		titleEmployee : config.titleEmployee || null,
-        employees : employees
-    };
+    var employeeIds = config.team ? libs.util.data.forceArray(config.team) : null;
+    if (!employeeIds) { return [] };
+    var employeeContents = [];
+    for(var i=0; i < employeeIds.length; i++) {
+        var employeeContent = libs.content.get({ key: employeeIds[i] });
+        if (employeeContent) { employeeContents.push(employeeContent); }
+    } // for employeeIds
+    return employeeContents;
+} // function getEmployeeContents()
 
-    var body = libs.thymeleaf.render(view, model);
-    return { body : body };
+
+function getEmployeesModel(employeeContents) {
+    log.info('employeeContents:' + JSON.stringify(employeeContents, null, 4));
+    var employees = [];
+    for(var j=0; j < employeeContents.length; j++) {
+        var employeeContent = employeeContents[j];
+        var selected = (employeeContent.data.socialLinks && employeeContent.data.socialLinks._selected) ? employeeContent.data.socialLinks._selected : [];
+        employees.push({
+            photo: employeeContent.data.photo ? libs.portal.imageUrl({
+                id: employeeContent.data.photo,
+                scale: 'block(250,167)',
+            }) : null,
+            name:  employeeContent.displayName,
+            intro: employeeContent.data.intro,
+            facebookUrl: selected.indexOf('facebook') >= 0 ? employeeContent.data.socialLinks.facebook.facebookUrl : null,
+            twitterUrl:  selected.indexOf('twitter')  >= 0 ? employeeContent.data.socialLinks.twitter.twitterUrl   : null,
+            linkedinUrl: selected.indexOf('linkedin') >= 0 ? employeeContent.data.socialLinks.linkedin.linkedinUrl : null,
+            googleUrl:   selected.indexOf('google')   >= 0 ? employeeContent.data.socialLinks.google.googleUrl     : null
+        });
+    } // for employeeContents
+    return employees;
+} // function getEmployeesModel
+
+
+exports.get = function() {
+    var config = libs.portal.getComponent().config;
+    var model = {
+        titleEmployee : config.titleEmployee || null,
+        employees : getEmployeesModel(getEmployeeContents(config))
+    };
+    return { body : libs.thymeleaf.render(view, model) };
 };
