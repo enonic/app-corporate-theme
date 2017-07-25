@@ -40,29 +40,24 @@ exports.getPortfolioData = function(portfolios) {
     return portfolioList;
 };
 
-exports.getServiceData = function(services){
-    var serviceList = [];
-    var readMore = null;
 
-    for(var i=0; i <services.length; i++){
-        var hit = services[i];
-
-         var icon =  "icon-" +hit.data.serviceIcon;
-
-        readMore = libs.portal.pageUrl({
-            path : hit._path
-        });
-
-        var serviceObj = {
-            icon : icon,
-            title : hit.displayName,
-            intro : hit.data.serviceIntro ? hit.data.serviceIntro : null,
-            readMore : readMore
-        };
-
-        if(serviceObj){
-            serviceList.push(serviceObj);
-        }
-    }
-    return serviceList;
+exports.getAllWithinSite = function(contentType) {
+    return libs.content.query({
+        contentTypes: [contentType],
+        count: -1,
+        query : "_path LIKE '/content" + libs.portal.getSite()._path + "/*'",
+        sort : '_manualOrderValue DESC'
+    }).hits;
 };
+
+
+exports.getContents = function(contentType, fallbackCallback) {
+    var content = libs.portal.getContent();
+    if (content.type === contentType) { return [content]; }
+
+    if (content.type === 'portal:page-template') {
+        return exports.getAllWithinSite(contentType);
+    }
+
+    return fallbackCallback();
+}; // function getContents
