@@ -1,40 +1,30 @@
 var libs = {
-    portal : require('/lib/xp/portal'),
-    thymeleaf : require('/lib/xp/thymeleaf'),
-    content : require('/lib/xp/content'),
-    util : require('/lib/enonic/util'),
-    shared : require('/lib/shared')
+    portal:    require('/lib/xp/portal'),
+    thymeleaf: require('/lib/xp/thymeleaf'),
+    content:   require('/lib/xp/content'),
+    util:      require('/lib/enonic/util'),
+    shared:    require('/lib/shared'),
+    portfolio: require('/content-types/portfolio')
 };
 
-//Setting
 var view = resolve("portfolio.html");
 
-exports.get = function(req){
+var CONTENT_TYPE_PORTFOLIO = app.name + ':portfolio';
 
-    var content = libs.portal.getContent();
-    var currentSite = libs.portal.getSite();
-    var sitePath = currentSite._path;
-	var portfolioList =[];
 
-    var portfolios = libs.content.query({
-		key: content._id,
-		start : 0,
-        count : 100,
-        sort : "_manualOrderValue DESC",
-        contentTypes : [
-            app.name + ":portfolio"
-        ],
-        query : "_path LIKE '/content" + sitePath + "/*'"
+exports.get = function(req) {
+    var contents = libs.shared.getContents(CONTENT_TYPE_PORTFOLIO, function() {
+        return libs.shared.getAllWithinSite(CONTENT_TYPE_PORTFOLIO);
     });
 
-	if (portfolios) {
-		portfolioList = libs.shared.getPortfolioData(portfolios.hits);
+    var portfolios = [];
+    for(var j = 0; j < contents.length; j++ ) {
+        var portfolioModel = libs.portfolio.getPortfolioModelFromContent(contents[j]);
+        portfolioModel.uniqueId = 'portfolioItem' + (j+1);
+        portfolios.push(portfolioModel);
     }
 
-    var model = {
-        portfolioList : portfolioList ? libs.util.data.forceArray(portfolioList) : null
-    };
+    var model = { portfolioList: portfolios };
 
-    var body = libs.thymeleaf.render(view, model);
-    return { body : body };
-};
+    return { body: libs.thymeleaf.render(view, model) };
+}; // exports.get

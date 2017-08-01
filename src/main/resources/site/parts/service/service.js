@@ -3,38 +3,26 @@ var libs = {
     thymeleaf : require('/lib/xp/thymeleaf'),
     content : require('/lib/xp/content'),
     util : require('/lib/enonic/util'),
-    shared : require('/lib/shared')
+    shared : require('/lib/shared'),
+    services: require('/content-types/service')
 };
 
-//Setting
 var view = resolve("service.html");
 
-exports.get = function(req){
+var CONTENT_TYPE_SERVICES = app.name + ':service';
 
-    var content = libs.portal.getContent();
-    var currentSite = libs.portal.getSite();
-    var sitePath = currentSite._path;
-	var serviceList =[];
 
-    var services = libs.content.query({
-		key: content._id,
-		start : 0,
-        count : 100,
-        sort : "_manualOrderValue DESC",
-        contentTypes : [
-            app.name + ":service"
-        ],
-        query : "_path LIKE '/content" + sitePath + "/*'"
+exports.get = function(req) {
+    var contents = libs.shared.getContents(CONTENT_TYPE_SERVICES, function() {
+        return libs.shared.getAllWithinSite(CONTENT_TYPE_SERVICES);
     });
 
-    if (services) {
-        serviceList = libs.shared.getServiceData(services.hits);
+    var services = [];
+    for(var j = 0; j < contents.length; j++ ) {
+        services.push(libs.services.getServicesModelFromContent(contents[j]));
     }
 
-    var model = {
-        serviceList : serviceList ? libs.util.data.forceArray(serviceList) : null
-    };
+    var model = { serviceList : services };
 
-    var body = libs.thymeleaf.render(view, model);
-    return { body : body };
+    return { body: libs.thymeleaf.render(view, model) };
 };
