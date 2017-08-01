@@ -94,14 +94,20 @@ ul.gallery li {
 }
 	.portfolio .modal .modal-close {
 		color: #3b4149;
-		right : 7px;
-		top : -1px;
+		right: -8px;
+		top: -8px;
 		z-index: 2;
-		font-size: 2em;
-	}
+		font-size: 1.2em;
+		background-color: white;
+		border-radius: 50%;
+		padding: 6px;
+		overflow: hidden;
+		width: auto;
+		height: auto;
+	}/*
 	.portfolio .modal .icon-remove {
 		background-color: transparent;
-	}
+	}*/
 .layout-col-1 section {
 	padding-bottom: 50px;
 }
