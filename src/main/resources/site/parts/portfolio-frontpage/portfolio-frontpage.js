@@ -1,38 +1,44 @@
 var libs = {
-    portal : require('/lib/xp/portal'),
-    thymeleaf : require('/lib/xp/thymeleaf'),
-    content : require('/lib/xp/content'),
-    util : require('/lib/enonic/util'),
-    shared : require('/lib/shared')
+    portal:    require('/lib/xp/portal'),
+    thymeleaf: require('/lib/xp/thymeleaf'),
+    content:   require('/lib/xp/content'),
+    util:      require('/lib/enonic/util'),
+    shared:    require('/lib/shared'),
+    portfolio: require('/content-types/portfolio')
 };
 
 var view = resolve('portfolio-frontpage.html');
 
-exports.get = function(req){
+var CONTENT_TYPE_PORTFOLIO = app.name + ':portfolio';
 
+
+exports.get = function(req) {
     var config = libs.portal.getComponent().config;
-    var portfolioItems = [];
-    var portfolioArray = config.portfolio ? libs.util.data.forceArray(config.portfolio) : null;
 
-    if(portfolioArray) {
-
-        for (var i = 0; i < portfolioArray.length; i++) {
-            var portfolioItem = libs.content.get({
-                key: portfolioArray[i]
-            });
-
-            portfolioItems.push(portfolioItem);
+    var contents = libs.shared.getContents(CONTENT_TYPE_PORTFOLIO, function() {
+        var ids = config.portfolio ? libs.util.data.forceArray(config.portfolio) : null;
+        if(ids) {
+            var _contents = [];
+            for(var i = 0; i < ids.length; i++ ) {
+                var content = libs.content.get({ key: ids[i] });
+                content && _contents.push(content);
+            }
+            return _contents;
         }
-    }
+    });
 
-    var portfolioList = libs.shared.getPortfolioData(portfolioItems);
+    var portfolios = [];
+    for(var j = 0; j < contents.length; j++ ) {
+        var portfolioModel = libs.portfolio.getPortfolioModelFromContent(contents[j]);
+        portfolioModel.uniqueId = 'portfolioItem' + (j+1);
+        portfolios.push(portfolioModel);
+    }
 
     var model = {
         title : config.partTitle,
         intro : config.partIntro,
-        portfolios : portfolioList
+        portfolios : portfolios
     };
-    var body = libs.thymeleaf.render(view, model);
-    return {body : body};
 
-};
+    return { body: libs.thymeleaf.render(view, model) };
+}; // exports.get
