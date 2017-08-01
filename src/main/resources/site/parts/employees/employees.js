@@ -43,7 +43,7 @@ function getEmployeesModel(employeeContents) {
         employees.push({
             photo: employeeContent.data.photo ? libs.portal.imageUrl({
                 id: employeeContent.data.photo,
-                scale: 'block(250,167)',
+                scale: 'block(716,478)',
             }) : null,
             name:  employeeContent.displayName,
             intro: employeeContent.data.intro,

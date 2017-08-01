@@ -187,6 +187,11 @@ ul.gallery li {
 #about-us {
 	padding-bottom: 50px;
 }
+/* Make sure employee profile pictures doesn't flow over the containing box */
+#about-us .box img {
+	max-width: 100%;
+	min-width: 100%;
+}
 
 /* Bottom spacing on front page */
 #services, .portfolio, #clients {
