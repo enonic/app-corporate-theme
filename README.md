@@ -1,12 +1,12 @@
-# Bootstrap Corporate Theme app
+# The Corporate Theme app
 
-This is an app for Enonic XP that lets you build your corporate website using a predefined set list of components. We give you a set of handy content types, staff list, contact form (using ajax), menus, customizable footer, a very nice slider for the frontpage, and many other nice features. Continue reading for detailed information about all of the components.
+This is an app for [Enonic XP](https://www.enonic.com/) that lets you build your corporate website using a predefined set of components. We give you some handy content types, staff list, contact form (using ajax), menus, customizable footer, a nice slider for the frontpage, and many other nice features.
 
-For additional features, check out the [Enonic Market](https://market.enonic.com/) and try apps like [Favicon](https://market.enonic.com/vendors/selbekk/io.selbekk.favicon), [SEO Meta Fields](https://market.enonic.com/vendors/enonic/com.enonic.app.metafields), and more, that goes great with this theme.
+For additional features, check out the [Enonic Market](https://market.enonic.com/) and try apps like [Favicon](https://market.enonic.com/vendors/selbekk/io.selbekk.favicon), [SEO Meta Fields](https://market.enonic.com/vendors/enonic/com.enonic.app.metafields) - and many more - that goes great with this theme.
 
 ## Features
 
-The Bootstrap Corporation Theme app is a responsive multi-purpose bootstrap theme website developed based on Twitter Bootstrap 3. It can be used for building a corporate, small business, or startup, website. It has different features and looks perfect on all devices. It is also customizable and you can change the content and design of the pages based on your needs by using reusable and configurable Enonic XP components like layouts and parts.
+The Corporate Theme app is a responsive website developed based on Twitter Bootstrap 3. It can be used for building a corporate, small business, or startup, website. It has different features and looks good on all devices. It is also customizable and you can change the content and design of the pages based on your needs by using reusable and configurable Enonic XP components like layouts and parts.
 
 ### Dependencies
 
@@ -19,13 +19,13 @@ All dependencies are bundled with the project.
 
 ### Based on Shapebootstrap Theme Nova
 
-We’ve based the design on the theme called [Nova from Shapebootstrap](https://shapebootstrap.net/item/1524969-nova-multipurpose-site-template). However, we have upgraded it from Bootstrap 2 to 3, and from an old version of jQuery to the latest 1.x-version. Upgrading even further is currently not needed. We’ve also adapted all the components to work with Enonic XP, with full configuration from the Content Studio admin interface.
+We’ve based the design on the theme called [Nova from Shapebootstrap](https://shapebootstrap.net/item/1524969-nova-multipurpose-site-template). However, we have upgraded it from Bootstrap 2 to 3, and from an old version of jQuery to the latest 1.x-version. Upgrading even further is currently not needed. We’ve also adapted all the components to work with Enonic XP, with full configuration from the Content Studio admin interface. The rights to adapt this theme have been given by the friendly staff at Shapebootstrap.
 
 Please check [the original theme on Shapebootstrap](https://shapebootstrap.net/item/1524969-nova-multipurpose-site-template).
 
 ## Demo website included
 
-By installing the app in Enonic XP, a demo site will be created automatically. It shows the use of all different components and can work as an inspiration for how you can build your very own site, from scratch. But feel free to customize the demo site to your own liking too.
+By installing the app in Enonic XP, a demo site will be created automatically. It shows the use of all the different components and can work as an inspiration for how you can build your very own site, from scratch. But feel free to customize the demo site to your own liking too.
 
 ### Generate new demo sites
 
