@@ -2,5 +2,3 @@ agustin-e.hightower
 david-j.robbins
 leonard-m.spurlock
 thomas-m.morgan
-terms-of-use
-privacy-policy
