@@ -30,9 +30,10 @@ body div section {
 body {
 	font-size: 14px;
 }
-/* Bootstrap 3 creates gray dividers, work bad on bright green bg. */
+/* Bootstrap 3 creates gray dividers, works bad on bright green bg. Because of whitespace from thymeleaf padding is adjusted too. */
 .breadcrumb>li+li:before {
 	color: white;
+	padding: 0 0 0 4px;
 }
 /* Needed in Bootstrap 3 to vertically align menu better. */
 ul.breadcrumb {
