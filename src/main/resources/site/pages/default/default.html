@@ -44,7 +44,7 @@
  (menuItem.inPath ? ' in-path' : '') +
  (menuItem.isActive ? ' active' : '')
 }">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown"
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
 					data-th-href="${portal.pageUrl({'_path=' + menuItem.path})}"
 					data-th-target="${menuItem.newWindow ? '_blank' : ''}"
 					data-th-class="${menuItem.hasChildren ? 'dropdown-toggle' : ''}"

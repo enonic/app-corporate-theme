@@ -39,7 +39,6 @@ jQuery(function($) {
 		return false;
 	});
 
-
 	// Goto Top
 	$('.gototop').click(function(event) {
 		 event.preventDefault();
