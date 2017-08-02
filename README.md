@@ -34,69 +34,77 @@ Protip: If you happen to want to start over, just delete your site (or rename it
 **TODO: Proof read from here:**
 
 ## Site configuration
-Site configuration has a form including site logo and content for footer. Footer has fields for contact information and links to site pages. It also includes two optional free text field.
+
+The app is added to a site and gives you some settings from the edit screen of your site in Content Studio. These settings lets you set logo, footer text, social media links, company address, and many more things.
 
 ### Layout
-App has two layouts. One column and two columns layouts. Two column layout has a setting that determine the width for left and right columns. It can be 30-70, 50-50 or 70-30 percent.
+
+The app has two layouts. A layout is used to split a page into structured columns. Without a layout component in place, any other component will fill the entire width of the page. We have a one column and a two column layout in this app. The two column layout has a setting for the width of left and right columns. It can be 30-70, 50-50 or 70-30 percent.
 
 ### Templates
-There are two page templates for this app. One is used for pages and the other for making service.
+
+Templates are already setup in the demo website. They are used to display the content you view and create. It has a preselected and preconfigured set of components. Find them in the site's "Templates" folder.
 
 ### Content
+
 Content can be created in different ways.
 
-Mostly they come from Part’s setting. Some parts have setting that makes them configurable. What you fill in these forms are shown on website pages.
+Mostly they come from the Part’s settings. Some parts have setting that makes them configurable. What you fill in these forms are shown on website pages.
 
-For creating portfolio, service and employee you need to create each type. These content types are predefined. You can create them by selecting the specific type and fill the form. These content will be later shown throw parts.
+For creating portfolio, service and employee you need to create new content for each type. These content types are predefined. You can create them by selecting the specific type in the create new content wizard in Content Studio. Fill in the form and save draft to see a handy preview to the right.
 
-Contact information and footer texts are from site setting. In edit mode of your site (site content) click the pencil icon in the "Corporation theme" block under the "Applications" label and edit the form with related content.
+Contact information and footer texts comes from the site configuration, described earlier.
 
-You can also use Text component from “Show inspection panel” if the content is only text.
+You can also use the builtin Text Component in Content Studio edit mode to add free form HTML to any page.
 
 ### Parts
-There are various parts that can be used directly on pages. Each part serve a particular purpose. Here you can find list of all available parts in Corporation app:
 
-About**: This part is used for “About us” page. It has a setting for introduction text and tile, in addition you can select employees content that you have already created and  want to show on this page.
+There are various parts that can be used directly on pages. Each part serve a particular purpose. Here's a list of all available parts in The Corporate Theme app:
+
+**About**: This part is used for the "About us" page. It lets you select employee content that you have already created and  want to show on this page.
 
 **Button**: This part creates a button. Button text, background color and url to external source or link to a page can be specified in part setting.
 
-**Contact**: The contact part includes a form so that user can send message. The values of receiver email address and the description text are set in the part setting. In addition to receiver email address, mail configuration should be updated with correct values. More detail about it are explained in Mail configuration section.
+**Contact**: The contact part includes a form so that users can send an email to you. The values of receiver email address and the description text are set in the part settings. In addition to receiver email address, mail server configuration should be set up for Enonic XP. More detail about this are explained in Mail configuration section further down in this readme.
 
-**Partner**: This part has a setting for title and short introduction about this section. You are allowed to select or upload up to 4 images/ logos of partners.
+**Partner**: A simple part that has a setting for title and short introduction about the section. You are allowed to select or upload up to 4 images/logos of partners.
 
-**Portfolio - List all**: Portfolio part is used in Portfolio page and shows the list of all portfolios content that's already been created. There are no setting for this part.
+**Portfolio - List all**: Portfolio part is used in Portfolio page and shows the list of all portfolios content that's already been created. There are no settings for this part.
 
-**Portfolio - List selected**:  This part shows a list of selected portfolios in front page. A title and introduction can be added to part setting as well.
+**Portfolio - List selected**: This part shows a list of selected portfolios on the front page. A title and introduction can be added to the part settings.
 
-**Service - List all**: Service part has no setting and fetches all service types and shows list of them.
+**Service - List all**: This part has no settings but fetches all content of type service and shows a list of them.
 
-**Service - List selected**: This part displays a list of selected services in front page. A title and introduction is also available for this part.
+**Service - List selected**: This part displays a list of selected services on the front page. Setting a title and introduction is also available for this part.
 
-**Slider**: Shows slider images in home page. You can use the setting to select images, and specify titles, external url and background color for each image.
+**Slider**: Shows slider images on home page. You can use the setting to select images, and specify titles, link and background color for each image. If a link is added (as external URL or link to internal content) a button will be displayed. Best effect is given if you use transparent PNG-images with colorful backgrounds added with the part settings.
 
 ### Mail configuration
-The mail server that is used for sending email messages needs to be configured. Find configuration file in `$XP_HOME/config/com.enonic.xp.mail.cfg` and configure it as so:
+
+The mail server that is used for sending email messages needs to be configured. Enonic XP ships with mail capabilities, as long as you configure them first. Find the configuration file in `$XP_HOME/config/com.enonic.xp.mail.cfg` and configure it as so:
 
 ```
 smtpHost=smtp.gmail.com
 smtpPort=587
 smtpAuth=true
-smtpUser= xxxx@example.com
+smtpUser=xxxx@example.com
 smtpPassword=xxxx
-smtpTLS = true
+smtpTLS=true
 ```
 
-This is if you want to use your own Gmail account for sending emails. When using this in production you would need to set up a dedicated SMTP server.
+This is if you want to use your own Gmail account for sending emails. Replace the example username and password with your own details. When using this in production you would need to set up a dedicated SMTP server.
 
 ## Copyright
-**TODO: Copyright stuff .. or info about the original theme source:**  
-**TODO: Used with approval from original author. Reference the email.**  
+
+[Shapebootstrap](https://shapebootstrap.net/) designed and developed this theme. We adapted its HTML and CSS to use Bootstrap 3. We also upgraded all the different modules to become Enonic XP components, configurable. For this all HTML was moved into self containing components, back-end JavaScript fetches the data while Thymeleaf is used to display it.
+
+The theme was adapted and used with approval from the original author.
 
 ## Compatibility
 
 | Version       | XP version |
 | ------------- | ---------- |
-| 1.0.0         | 6.10      |
+| 1.0.0         | 6.11      |
 
 ## Changelog
 
