@@ -38,11 +38,7 @@
             <dateTime isNull="true" name="to"/>
         </property-set>
         <property-set name="data">
-            <string name="iconFrontPage">globe</string>
-            <string name="iconServicePage">bullhorn</string>
-            <string name="serviceTitle">Android Application Development</string>
             <string name="serviceIntro">Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.</string>
-            <string isNull="true" name="serviceDescription"/>
             <string name="serviceIcon">bullhorn</string>
         </property-set>
         <property-set name="x">
