@@ -18,10 +18,6 @@
             </config>
             <default>cog</default>
         </input>
-        <input name="serviceTitle" type="TextLine">
-            <label>Title</label>
-            <occurrences minimum="0" maximum="1"/>
-        </input>
         <input name="serviceIntro" type="TextArea">
             <label>Service introduction</label>
             <occurrences minimum="0" maximum="1"/>
