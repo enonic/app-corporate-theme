@@ -104,9 +104,15 @@ The theme was adapted and used with approval from the original author.
 
 | Version       | XP version |
 | ------------- | ---------- |
+| 1.1.0         | 6.13      |
 | 1.0.0         | 6.11      |
 
 ## Changelog
+
+### 1.1.0
+
+* Upgraded for Gradle 4
+* New feature: News articles
 
 ### 1.0.0
 
