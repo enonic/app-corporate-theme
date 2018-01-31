@@ -113,6 +113,8 @@ The theme was adapted and used with approval from the original author.
 
 * Upgraded for Gradle 4
 * New feature: News articles
+* New feature: Create external URLs in menu
+* Minor tweeks and improvements
 
 ### 1.0.0
 
