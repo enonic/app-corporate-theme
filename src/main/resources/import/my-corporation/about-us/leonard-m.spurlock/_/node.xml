@@ -39,7 +39,6 @@
         </property-set>
         <property-set name="data">
             <reference name="photo">fbb0ffd9-a963-48b3-b676-9d1cb521c69c</reference>
-            <string name="name">Leonard M. Spurlock</string>
             <string name="intro">Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat.</string>
             <property-set name="socialLinks">
                 <string name="_selected">facebook</string>

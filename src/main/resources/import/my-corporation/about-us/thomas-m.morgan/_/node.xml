@@ -39,7 +39,6 @@
         </property-set>
         <property-set name="data">
             <reference name="photo">322c456f-3874-47ce-b093-2a7bad6e6077</reference>
-            <string isNull="true" name="name"/>
             <string name="intro">Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat.</string>
             <property-set name="socialLinks">
                 <string name="_selected">facebook</string>

@@ -39,7 +39,6 @@
         </property-set>
         <property-set name="data">
             <reference name="photo">5a4f9466-7acf-4df1-9204-057a5f2d3edf</reference>
-            <string name="name">David J. Robbins</string>
             <string name="intro">Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat.</string>
             <property-set name="socialLinks">
                 <string name="_selected">facebook</string>
