@@ -39,7 +39,6 @@
         </property-set>
         <property-set name="data">
             <reference name="portfolioImage">4a7b98e5-09cd-4249-abae-7d2364b2a7c9</reference>
-            <string name="portfolioTitle">Portfolio 1</string>
             <string name="portfolioIntro">Portfolio item short description</string>
             <string isNull="true" name="portfolioUrl"/>
         </property-set>

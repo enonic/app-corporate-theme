@@ -40,7 +40,7 @@
         <property-set name="data">
             <reference name="portfolioImage">1ba22830-2900-4a86-9e8f-9306ca0e0a3e</reference>
             <string name="portfolioIntro">Portfolio item short description</string>
-            <string name="portfolioUrl">http://googel.com</string>
+            <string name="portfolioUrl">http://google.com</string>
         </property-set>
         <property-set name="x">
             <property-set name="com-enonic-app-corporate-theme">
