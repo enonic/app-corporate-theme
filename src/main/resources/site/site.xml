@@ -115,8 +115,10 @@
 			</items>
 		</field-set>
 	</config>
-	<mapping controller="/lib/enonic/url-redirect/index.js">
-	  <match>type:'com.enonic.app.corporate.theme:url'</match>
-	</mapping>
+	<mappings>
+		<mapping controller="/lib/enonic/url-redirect/index.js">
+		  <match>type:'com.enonic.app.corporate.theme:url'</match>
+		</mapping>
+	</mappings>
 	<x-data mixin="menu-item"/>
 </site>
