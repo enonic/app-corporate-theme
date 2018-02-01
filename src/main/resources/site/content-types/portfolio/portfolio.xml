@@ -5,6 +5,9 @@
        <input name="portfolioImage" type="ImageSelector">
            <label>Photo/screenshot</label>
            <occurrences minimum="0" maximum="1" />
+			  <config>
+				  <allowPath>${site}/*</allowPath>
+			  </config>
        </input>
        <input name="portfolioIntro" type="TextArea">
            <label>Description of your work</label>
