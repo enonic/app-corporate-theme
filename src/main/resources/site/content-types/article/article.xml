@@ -4,24 +4,22 @@
 	<super-type>base:structured</super-type>
 	<allow-child-content>true</allow-child-content>
 	<form>
-		<items>
-			<input name="header" type="ImageSelector">
-				<label>Header image</label>
-				<occurrences minimum="0" maximum="1" />
-				<config>
- 				  <allowPath>${site}/*</allowPath>
- 			  </config>
-			</input>
-			<input name="preface" type="TextArea">
-				<label>Preface</label>
-				<occurrences minimum="1" maximum="1"/>
-				<help-text>Article introductory text</help-text>
-			</input>
-			<input name="body" type="HtmlArea">
-				<label>Full body</label>
-				<occurrences minimum="1" maximum="1"/>
-				<help-text>The Article</help-text>
-			</input>
-		</items>
+		<input name="header" type="ImageSelector">
+			<label>Header image</label>
+			<occurrences minimum="0" maximum="1" />
+			<config>
+				  <allowPath>${site}/*</allowPath>
+			  </config>
+		</input>
+		<input name="preface" type="TextArea">
+			<label>Preface</label>
+			<occurrences minimum="1" maximum="1"/>
+			<help-text>Article introductory text</help-text>
+		</input>
+		<input name="body" type="HtmlArea">
+			<label>Full body</label>
+			<occurrences minimum="1" maximum="1"/>
+			<help-text>The Article</help-text>
+		</input>
 	</form>
 </content-type>
