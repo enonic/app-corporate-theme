@@ -1,0 +1,33 @@
+<part>
+	<display-name>Articles - List</display-name>
+	<config>
+		<input name="style" type="RadioButton">
+			<label>Display style</label>
+			<occurrences minimum="0" maximum="0"/>
+			<help-text>Block = Show title and preface, side-by-side. List = Show only title, vertically.</help-text>
+			<config>
+				<option value="block">Block</option>
+				<option value="list">List</option>
+			</config>
+			<default>block</default>
+		</input>
+		<input name="amount" type="Long">
+			<label>Articles to show</label>
+			<config>
+				<min>1</min>
+				<max>10</max>
+			</config>
+		</input>
+		<input name="articles" type="ContentSelector">
+			<label>Promoted articles</label>
+			<occurrences minimum="0" maximum="5"/>
+			<help-text>This list will pick news articles based on their publish dates, latest first. However, if you need, you can select up to five items to promot to the top of the list, sorted the way you decide!</help-text>
+			<config>
+				<relationshipType>system:reference</relationshipType>
+				<allowContentType>article</allowContentType>
+				<allowPath>${site}/*</allowPath>
+				<showStatus>true</showStatus>
+			</config>
+		</input>
+	</config>
+</part>

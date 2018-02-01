@@ -1,0 +1,17 @@
+<article class="p_article-show" role="article">
+
+<!-- TODO:
+	What I want from this: Toggle to show blocks or link list.
+	Link list to be used inside other news items, shows title and date underneath only.
+	Link block shows title, date, and preface, in blocks that can float side-by-side.
+	Possibility to select which of the items to show in the list, and how many.
+-->
+
+	<img data-th-if="${content.data.headerUrl}" data-th-src="${content.data.headerUrl}" alt="" />
+
+	<p class="preface" data-th-text="${content.data}? ${content.data.preface}" data-th-if="${content.data.preface}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Tempor incididunt ut labore et dolore magna aliqua.</p>
+
+	<div data-th-utext="${content.data} ? ${portal.processHtml({'_value=' + content.data.body}) }" data-th-remove="tag" />
+
+</article>
