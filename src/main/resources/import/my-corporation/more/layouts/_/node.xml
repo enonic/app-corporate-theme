@@ -1,8 +1,8 @@
 <node>
-    <id>be3714be-0cc0-4451-a14d-443f81a7a191</id>
+    <id>06091395-191f-47f8-8a8f-6946bfb0b2eb</id>
     <childOrder>modifiedtime DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2017-08-02T08:02:01.940Z</timestamp>
+    <timestamp>2018-02-01T09:46:02.798Z</timestamp>
     <inheritPermissions>true</inheritPermissions>
     <permissions>
         <principal key="role:cms.admin">
@@ -26,13 +26,13 @@
     </permissions>
     <data>
         <boolean name="valid">true</boolean>
-        <string name="displayName">Pages</string>
+        <string name="displayName">Layouts</string>
         <string name="type">com.enonic.app.corporate.theme:landing-page</string>
         <string name="owner">user:system:su</string>
-        <dateTime name="modifiedTime">2017-08-02T08:01:21.546Z</dateTime>
+        <dateTime name="modifiedTime">2018-02-01T09:45:08.209Z</dateTime>
         <string name="modifier">user:system:su</string>
         <string name="creator">user:system:su</string>
-        <dateTime name="createdTime">2017-08-02T08:01:09.762Z</dateTime>
+        <dateTime name="createdTime">2018-02-01T09:38:22.914Z</dateTime>
         <property-set name="publish">
             <dateTime isNull="true" name="first"/>
             <dateTime isNull="true" name="from"/>
@@ -47,6 +47,66 @@
                 </property-set>
             </property-set>
         </property-set>
+        <property-set name="page">
+            <string name="controller">com.enonic.app.corporate.theme:default</string>
+            <reference isNull="true" name="template"/>
+            <property-set name="region">
+                <string name="name">main</string>
+                <property-set name="component">
+                    <string name="type">LayoutComponent</string>
+                    <property-set name="LayoutComponent">
+                        <string name="name">2 columns</string>
+                        <string name="template">com.enonic.app.corporate.theme:layout-2-col</string>
+                        <property-set name="config">
+                            <boolean name="fullWidth">false</boolean>
+                            <string name="layoutConf">70-30</string>
+                        </property-set>
+                        <property-set name="region">
+                            <string name="name">left</string>
+                            <property-set name="component">
+                                <string name="type">TextComponent</string>
+                                <property-set name="TextComponent">
+                                    <string name="name">Text</string>
+                                    <string name="text">&lt;h1&gt;Introducing the Layout Component&lt;/h1&gt;
+&lt;p&gt;Using a Layout Component, splitting pages into columns is very easy. You can move Components between the areas (Regions) inside the Layout, or even in and out of the Layout itself. This makes for great flexibility. Start a page without any Layout Components, add loads of Parts, and then later, add a Layout and restructure your Parts. No need to re-build anything.&lt;/p&gt;</string>
+                                </property-set>
+                            </property-set>
+                        </property-set>
+                        <property-set name="region">
+                            <string name="name">right</string>
+                            <property-set name="component">
+                                <string name="type">TextComponent</string>
+                                <property-set name="TextComponent">
+                                    <string name="name">Text</string>
+                                    <string name="text">&lt;h3&gt;Hint!&lt;/h3&gt;
+&lt;p&gt;The size of the columns can easily be adjusted without losing any of its contents.&lt;/p&gt;</string>
+                                </property-set>
+                            </property-set>
+                        </property-set>
+                    </property-set>
+                </property-set>
+                <property-set name="component">
+                    <string name="type">PartComponent</string>
+                    <property-set name="PartComponent">
+                        <string name="name">Button</string>
+                        <string name="template">com.enonic.app.corporate.theme:button</string>
+                        <property-set name="config">
+                            <string name="btnText">Read the Enonic Docs</string>
+                            <string name="btnColor">#3498DB</string>
+                            <property-set name="url">
+                                <string name="_selected">text</string>
+                                <property-set name="text">
+                                    <string name="url">http://docs.enonic.com/en/stable/admin/index.html</string>
+                                </property-set>
+                                <property-set name="content"/>
+                            </property-set>
+                        </property-set>
+                    </property-set>
+                </property-set>
+            </property-set>
+            <property-set name="config"/>
+            <boolean name="customized">true</boolean>
+        </property-set>
     </data>
     <indexConfigs>
         <analyzer>document_index_default</analyzer>
@@ -58,6 +118,36 @@
             <includeInAllText>false</includeInAllText>
         </defaultConfig>
         <pathIndexConfigs>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>page.region.**.LayoutComponent.config.*</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>page.region.**.PartComponent.config.*</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>page.region.**.LayoutComponent.*</path>
+            </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
                     <decideByType>false</decideByType>
@@ -79,7 +169,47 @@
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>data.siteconfig.applicationkey</path>
+                <path>page.region.**.PartComponent.*</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>page.region.**.TextComponent.*</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>data.siteConfig.applicationkey</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>page.config.*</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>page.controller</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -90,6 +220,16 @@
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
                 <path>attachment.text</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>x.*</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -130,16 +270,6 @@
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
                 <path>attachment</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>true</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>x</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>

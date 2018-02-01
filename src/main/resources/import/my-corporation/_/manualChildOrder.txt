@@ -2,6 +2,7 @@ about-us
 services
 portfolio
 contact
-pages
+news
+more
 images
 _templates
