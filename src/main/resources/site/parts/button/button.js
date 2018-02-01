@@ -25,7 +25,7 @@ exports.get = function(req){
 
     var model = {
         btnText : config.btnText || "Click Here",
-        btnColor : config.btnColor || "#5bb75b",
+        btnColor : config.btnColor || null,
         btnUrl : btnUrl
 	};
 
