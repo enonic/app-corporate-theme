@@ -14,7 +14,12 @@ exports.get = function(req){
 
 		// Reset empty content to insert placeholder text for when viewing a template.
 		if (content.type === app.name + ':article') {
-
+			if (content.data.header) {
+				content.data.headerUrl = libs.portal.imageUrl({
+					id:    content.data.header,
+					scale: 'block(1024,768)'
+				});
+			}
 		} else {
 			content = {
 				header: null,

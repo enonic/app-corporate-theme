@@ -1,5 +1,7 @@
 <article class="p_article-show" role="article">
 
+	<img data-th-if="${content.data.headerUrl}" data-th-src="${content.data.headerUrl}" alt="" />
+
 	<p class="preface" data-th-text="${content.data}? ${content.data.preface}" data-th-if="${content.data.preface}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Tempor incididunt ut labore et dolore magna aliqua.</p>
 

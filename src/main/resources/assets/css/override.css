@@ -210,6 +210,10 @@ header.navbar .nav > li.in-path > a:hover {
 		font-style: italic;
 		margin-bottom: 2rem;
 	}
+	.p_article-show img {
+		margin-top: -3rem;
+		margin-bottom: 2rem;
+	}
 
 /* Employee list has no bottom spacing */
 #about-us {
