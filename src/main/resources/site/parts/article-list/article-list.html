@@ -1,21 +1,17 @@
-<section id="services">
-	<div class="container">
-		<!--/*<div class="center gap">
-			<h3 data-th-text="${title}"></h3>
-			<p class="lead" data-th-text="${intro}"></p>
-		</div>*/-->
-		<div data-th-if="${articles}" data-th-remove="tag">
-			<div data-th-each="article: ${#numbers.sequence(0, #lists.size(articles) - 1, 3)}" data-th-remove="tag">
+<section id="articles">
+	<div class="container" data-th-if="${articles}">
+
+		<!--/* BLOCK STYLE */-->
+		<div data-th-if="${config.style == 'block'}" data-th-remove="tag">
+			<div data-th-each="article: ${#numbers.sequence(0, #lists.size(articles), 3)}" data-th-remove="tag">
 				<div class="row row-eq-height">
 					<div data-th-each="index: ${#numbers.sequence(article, article + 2)}" data-th-remove="tag" data-th-with="article=${index lt #lists.size(articles) ? articles.get(index) : null}">
 						<div class="col-md-4" data-th-if="${service != null}">
 							<div class="media">
-								<div class="pull-left">
-									<i class="icon-medium" data-th-classappend="${article.icon}"></i>
-								</div>
 								<div class="media-body">
-									<h4 class="media-heading" data-th-text="${article.title}"></h4>
-									<p data-th-text="${service.intro}"></p>
+									<h4 class="media-heading" data-th-text="${article.displayName}"></h4>
+									<p class="published-date" data-th-text="${article.data.published}"></p>
+									<p data-th-text="${article.data.preface}"></p>
 								</div>
 							</div>
 						</div>
@@ -23,5 +19,16 @@
 				</div>
 			</div>
 		</div>
+
+		<!--/* LIST STYLE */-->
+		<div data-th-unless="${config.style == 'block'}" data-th-remove="tag">
+			<ul>
+				<li data-th-each="article: ${articles}">
+					<h4 data-th-text="${article.displayName}"></h4>
+					<p class="published-date" data-th-text="${article.data.published}"></p>
+				</li>
+			</ul>
+		</div>
+
 	</div>
 </section>

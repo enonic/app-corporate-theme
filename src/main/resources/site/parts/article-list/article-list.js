@@ -2,8 +2,7 @@ var libs = {
 	portal:    require('/lib/xp/portal'),
 	thymeleaf: require('/lib/xp/thymeleaf'),
 	content:   require('/lib/xp/content'),
-	util:      require('/lib/enonic/util'),
-	shared:    require('/lib/shared')
+	util:      require('/lib/enonic/util')
 };
 var view = resolve('article-list.html');
 
@@ -21,23 +20,27 @@ exports.get = function(req){
 		articles: config.articles || null
 	};
 
-	var articles = libs.shared.getContents(app.name + ':article', function() {
-		 var ids = config.articles ? libs.util.data.forceArray(config.articles) : null;
-		 if(ids) {
-			  var _articles = [];
-			  for(var i = 0; i < ids.length; i++ ) {
-					var article = libs.content.get({ key: ids[i] });
-					article && _articles.push(article);
-			  }
-			  return _articles;
-		 }
+	var selectedIds = [].concat(config.articles || []);
+	var articles = libs.content.query({
+		start: 0,
+		count: config.amount,
+		filters: {
+			ids: {
+				values: selectedIds
+			}
+		},
+		contentTypes: [app.name + ':article']
 	});
+
+	for (var i = 0; i < articles.hits.length; i++) {
+		articles.hits[i].data.published = articles.hits[i].publish.from || articles.hits[i].modifiedTime;
+	}
 
 	var params = {
 		'config': config,
-		'articles': articles
+		'articles': articles.hits
 	};
-
+libs.util.log(params);
 	return {
 		body: libs.thymeleaf.render(view, params),
 		contentType: 'text/html'
