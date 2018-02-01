@@ -1,17 +1,27 @@
-<article class="p_article-show" role="article">
-
-<!-- TODO:
-	What I want from this: Toggle to show blocks or link list.
-	Link list to be used inside other news items, shows title and date underneath only.
-	Link block shows title, date, and preface, in blocks that can float side-by-side.
-	Possibility to select which of the items to show in the list, and how many.
--->
-
-	<img data-th-if="${content.data.headerUrl}" data-th-src="${content.data.headerUrl}" alt="" />
-
-	<p class="preface" data-th-text="${content.data}? ${content.data.preface}" data-th-if="${content.data.preface}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Tempor incididunt ut labore et dolore magna aliqua.</p>
-
-	<div data-th-utext="${content.data} ? ${portal.processHtml({'_value=' + content.data.body}) }" data-th-remove="tag" />
-
-</article>
+<section id="services">
+	<div class="container">
+		<!--/*<div class="center gap">
+			<h3 data-th-text="${title}"></h3>
+			<p class="lead" data-th-text="${intro}"></p>
+		</div>*/-->
+		<div data-th-if="${articles}" data-th-remove="tag">
+			<div data-th-each="article: ${#numbers.sequence(0, #lists.size(articles) - 1, 3)}" data-th-remove="tag">
+				<div class="row row-eq-height">
+					<div data-th-each="index: ${#numbers.sequence(article, article + 2)}" data-th-remove="tag" data-th-with="article=${index lt #lists.size(articles) ? articles.get(index) : null}">
+						<div class="col-md-4" data-th-if="${service != null}">
+							<div class="media">
+								<div class="pull-left">
+									<i class="icon-medium" data-th-classappend="${article.icon}"></i>
+								</div>
+								<div class="media-body">
+									<h4 class="media-heading" data-th-text="${article.title}"></h4>
+									<p data-th-text="${service.intro}"></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

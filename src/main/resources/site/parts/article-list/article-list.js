@@ -1,45 +1,45 @@
 var libs = {
+	portal:    require('/lib/xp/portal'),
 	thymeleaf: require('/lib/xp/thymeleaf'),
-	content: require('/lib/xp/content'),
-	portal: require('/lib/xp/portal'),
-	util: require('/lib/enonic/util')
+	content:   require('/lib/xp/content'),
+	util:      require('/lib/enonic/util'),
+	shared:    require('/lib/shared')
 };
-var view = resolve('article-show.html');
+var view = resolve('article-list.html');
 
 exports.get = function(req){
-	var component = libs.portal.getComponent();
-	var content = libs.portal.getContent();
+	var config = libs.portal.getComponent().config;
 
 	// Contents of component.config:
 	// .style    = block||list
 	// .amount   = 1-10 amount
 	// .articles = 0-5 promoted articles
 
-	// Reset empty content to insert placeholder text for when viewing a template.
-	if (content.type === app.name + ':article') {
-		if (content.data.header) {
-			content.data.headerUrl = libs.portal.imageUrl({
-				id:    content.data.header,
-				scale: 'block(1024,768)'
-			});
-		}
-	} else {
-		content = {
-			header: null,
-			displayName: "No News Article found!",
-         data: {
-             preface: "This template is used to preview contents of the type News Article.",
-				 body: "<p>You need to create a new content in Content Studio, preferably under the page 'News', but you are free to place it elsewhere too.</p>"
-         }
-     };
-	}
+	config = {
+		style: config.style === 'inline' ? 'inline' : 'block',
+		amount: config.amount || 3,
+		articles: config.articles || null
+	};
 
-    var params = {
-        'content': content
-    };
+	var articles = libs.shared.getContents(app.name + ':article', function() {
+		 var ids = config.articles ? libs.util.data.forceArray(config.articles) : null;
+		 if(ids) {
+			  var _articles = [];
+			  for(var i = 0; i < ids.length; i++ ) {
+					var article = libs.content.get({ key: ids[i] });
+					article && _articles.push(article);
+			  }
+			  return _articles;
+		 }
+	});
 
-    return {
-        body: libs.thymeleaf.render(view, params),
-        contentType: 'text/html'
-    }
+	var params = {
+		'config': config,
+		'articles': articles
+	};
+
+	return {
+		body: libs.thymeleaf.render(view, params),
+		contentType: 'text/html'
+	};
 };

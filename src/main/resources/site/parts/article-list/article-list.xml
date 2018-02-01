@@ -17,6 +17,7 @@
 				<min>1</min>
 				<max>10</max>
 			</config>
+			<default>3</default>
 		</input>
 		<input name="articles" type="ContentSelector">
 			<label>Promoted articles</label>
@@ -26,7 +27,6 @@
 				<relationshipType>system:reference</relationshipType>
 				<allowContentType>article</allowContentType>
 				<allowPath>${site}/*</allowPath>
-				<showStatus>true</showStatus>
 			</config>
 		</input>
 	</config>
