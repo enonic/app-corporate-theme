@@ -190,6 +190,17 @@ ul.gallery li {
 	}
 }
 
+/* Articles - Single view */
+.p_article-show {
+	padding: 2em 0;
+}
+	.p_article-show .preface {
+		font-weight: 400;
+		font-size: 1.9rem;
+		font-style: italic;
+		margin-bottom: 2rem;
+	}
+
 /* Employee list has no bottom spacing */
 #about-us {
 	padding-bottom: 50px;
