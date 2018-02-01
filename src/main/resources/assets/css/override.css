@@ -130,6 +130,16 @@ ul.gallery li {
 .dropdown-submenu:focus > a {
 	color: #ffffff;
 }
+/* Old theme doesn't color "in-path" class, but we want to add that feature. */
+header.navbar .nav > li.in-path > a,
+header.navbar .nav > li.in-path > a:hover {
+	background: transparent;
+	color: #2dcc70;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
 /* Nav toggler (small screens) */
 .navbar-default  .navbar-toggle {
 	border: none;
