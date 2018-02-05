@@ -2,7 +2,8 @@ var libs = {
     thymeleaf: require('/lib/xp/thymeleaf'),
     content: require('/lib/xp/content'),
     portal: require('/lib/xp/portal'),
-    util: require('/lib/enonic/util')
+    util: require('/lib/enonic/util'),
+    moment: require('/assets/momentjs/2.20.1/min/moment-with-locales.min.js')
 };
 
 var view = resolve('article-show.html');
@@ -19,7 +20,9 @@ exports.get = function(req){
 					id:    content.data.header,
 					scale: 'block(850,350)'
 				});
-				content.data.published = content.publish.from || content.modifiedTime;
+				var published = content.publish.from || content.modifiedTime;
+				published = libs.moment(published).format('MMMM Do YYYY, h:mm a');
+				content.data.published = published;
 			}
 		} else {
 			content = {

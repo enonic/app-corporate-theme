@@ -24,6 +24,8 @@ dependencies {
 	include 'com.enonic.lib:menu:2.0.1'
 	include 'com.enonic.lib:landingpage:1.0.0'
 	include 'com.enonic.lib:urlredirect:2.0.0'
+
+	webjar 'org.webjars:momentjs:2.20.1'
 }
 
 repositories {

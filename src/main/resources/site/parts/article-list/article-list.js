@@ -2,7 +2,8 @@ var libs = {
 	portal:    require('/lib/xp/portal'),
 	thymeleaf: require('/lib/xp/thymeleaf'),
 	content:   require('/lib/xp/content'),
-	util:      require('/lib/enonic/util')
+	util:      require('/lib/enonic/util'),
+	moment:    require('/assets/momentjs/2.20.1/min/moment-with-locales.min.js')
 };
 var view = resolve('article-list.html');
 
@@ -33,7 +34,9 @@ exports.get = function(req){
 	});
 
 	for (var i = 0; i < articles.hits.length; i++) {
-		articles.hits[i].data.published = articles.hits[i].publish.from || articles.hits[i].modifiedTime;
+		var published = articles.hits[i].publish.from || articles.hits[i].modifiedTime;
+		published = libs.moment(published).format('MMMM Do YYYY, h:mm a');
+		articles.hits[i].data.published = published;
 		articles.hits[i].data.url = libs.portal.pageUrl({
 			'id': articles.hits[i]._id
 		});
