@@ -22,16 +22,6 @@ For additional features, check out the [Enonic Market](https://market.enonic.com
 
 Those and many other apps goes great with this theme!
 
-### Dependencies
-
-* **Bootstrap 3** - 3.3.7
-* **jQuery 1** - 1.12.4
-* **Font Awesome 3** - 3.2.1
-* **jquery SlitSlider** 1.2.0 from codrops (depends on *modernizr 2.6.2* and *ba-cond plugin*)
-* **moment.js** - 2.20.1
-
-All dependencies are bundled with the project.
-
 ### Based on Shapebootstrap Theme Nova
 
 We’ve based the design on the theme called [Nova from Shapebootstrap](https://shapebootstrap.net/item/1524969-nova-multipurpose-site-template). However, we have upgraded it from Bootstrap 2 to 3, and from an old version of jQuery to the latest 1.x-version. Upgrading even further is currently not needed. We’ve also adapted all the components to work with Enonic XP, with full configuration from the Content Studio admin interface. The rights to adapt this theme have been given by the friendly staff at Shapebootstrap.
@@ -116,6 +106,17 @@ This is if you want to use your own Gmail account for sending emails. Replace th
 [Shapebootstrap](https://shapebootstrap.net/) designed and developed this theme. We adapted its HTML and CSS to use Bootstrap 3. We also upgraded all the different modules to become Enonic XP components, configurable. For this all HTML was moved into self containing components, back-end JavaScript fetches the data while Thymeleaf is used to display it.
 
 The theme was adapted and used with approval from the original author.
+
+### Dependencies
+
+Some front-end dependencies for the code and functionality of this project.
+
+* **Bootstrap 3** - 3.3.7
+* **jQuery 1** - 1.12.4
+* **Font Awesome 3** - 3.2.1
+* **jquery SlitSlider** 1.2.0 from codrops (depends on *modernizr 2.6.2* and *ba-cond plugin*)
+
+All dependencies are bundled with the project.
 
 ## Compatibility
 
