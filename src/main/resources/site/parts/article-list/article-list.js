@@ -33,15 +33,15 @@ exports.get = function(req){
 		contentTypes: [app.name + ':article']
 	});
 
-log.info(selectedIds.toString());
+//log.info(selectedIds.toString());
 
 	// Selected IDs not enough to meet amount, do another query withot IDs.
 	if (articles.count < config.amount) {
 		var query = null;
 		if (selectedIds.length > 0) {
-			log.info(selectedIds.length);
+			//log.info(selectedIds.length);
 			query = "_id NOT IN ('" + selectedIds.join("', '") + "')";
-			log.info(query);
+			//log.info(query);
 		}
 
 		var moreArticles = libs.content.query({
@@ -60,13 +60,13 @@ log.info(selectedIds.toString());
 			},*/
 			contentTypes: [app.name + ':article']
 		});
-		libs.util.log(moreArticles);
+		//libs.util.log(moreArticles);
 
 		if (moreArticles.count > 0) {
 			articles.hits = articles.hits.concat(moreArticles.hits);
 		}
 	}
-libs.util.log(articles);
+//libs.util.log(articles);
 	// Fintune the data before sending back to the view.
 	for (var i = 0; i < articles.hits.length; i++) {
 		var published = articles.hits[i].publish.from || articles.hits[i].modifiedTime;
