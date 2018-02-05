@@ -250,6 +250,10 @@ header.navbar .nav > li.in-path > a:hover {
 	.p_article-show .header-image {
 		margin-bottom: 2rem;
 	}
+	.p_article-show .published {
+		padding-top: 20px;
+		font-style: italic;
+	}
 
 /* Employee list has no bottom spacing */
 #about-us {

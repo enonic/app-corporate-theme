@@ -5,8 +5,12 @@
 	<p class="preface" data-th-text="${content.data}? ${content.data.preface}" data-th-if="${content.data.preface}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Tempor incididunt ut labore et dolore magna aliqua.</p>
 
-	<p data-th-text="${content.data.published}" class="published" />
 
 	<div data-th-utext="${content.data} ? ${portal.processHtml({'_value=' + content.data.body}) }" data-th-remove="tag" />
+
+	<p data-th-if="${content.data.published}" class="published">
+		<i class="icon-time"></i>
+		<span data-th-text="${'Online since ' + content.data.published}"></span>
+	</p>
 
 </article>

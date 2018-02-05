@@ -11,7 +11,10 @@
 								<div class="media-body">
 									<a href="#" data-th-href="${article.data.url}">
 										<h4 class="media-heading" data-th-text="${article.displayName}"></h4>
-										<p class="published-date" data-th-text="${article.data.published}"></p>
+										<p data-th-if="${article.data.published}" class="published-date">
+											<i class="icon-time"></i>
+											<span data-th-text="${article.data.published}"></span>
+										</p>
 										<p data-th-text="${article.data.preface}"></p>
 									</a>
 								</div>
@@ -29,7 +32,10 @@
 			<li data-th-each="article: ${articles}">
 				<a href="#" data-th-href="${article.data.url}">
 					<h4 data-th-text="${article.displayName}"></h4>
-					<p class="published-date" data-th-text="${article.data.published}"></p>
+					<p data-th-if="${article.data.published}" class="published-date">
+						<i class="icon-time"></i>
+						<span data-th-text="${article.data.published}"></span>
+					</p>
 				</a>
 			</li>
 		</ul>
