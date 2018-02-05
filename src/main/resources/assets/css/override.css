@@ -200,6 +200,23 @@ header.navbar .nav > li.in-path > a:hover {
 	}
 }
 
+/* Articles - list */
+.p_article-show .article-list {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+	.p_article-show .article-list li {
+		padding: 1rem;
+		transition: background-color 300ms linear;
+	}
+	.p_article-show .article-list li:hover {
+		background-color: hsla(41.9, 32.5%, 68%, 0.4);
+	}
+		.p_article-show .article-list p {
+			margin: 0;
+		}
+
 /* Remove link around partner logos, updating CSS to reflect new DOM. */
 .thumbnail .img-circle {
 	display: block;
@@ -217,8 +234,7 @@ header.navbar .nav > li.in-path > a:hover {
 		font-style: italic;
 		margin-bottom: 2rem;
 	}
-	.p_article-show img {
-		margin-top: -3rem;
+	.p_article-show .header-image {
 		margin-bottom: 2rem;
 	}
 

@@ -17,7 +17,7 @@ exports.get = function(req){
 			if (content.data.header) {
 				content.data.headerUrl = libs.portal.imageUrl({
 					id:    content.data.header,
-					scale: 'block(1024,768)'
+					scale: 'block(850,350)'
 				});
 			}
 		} else {

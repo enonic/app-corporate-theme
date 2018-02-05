@@ -1,9 +1,8 @@
-<section id="articles">
+<section id="articles" class="p_article-show">
 
-	<div class="container" data-th-if="${articles}">
-
-		<!--/* BLOCK STYLE */-->
-		<div data-th-if="${config.style == 'block'}" data-th-remove="tag">
+	<!--/* BLOCK STYLE */-->
+	<div data-th-if="${config.style == 'block'}" data-th-remove="tag">
+		<div class="container" data-th-if="${articles}">
 			<div data-th-each="article: ${#numbers.sequence(0, #lists.size(articles), 3)}" data-th-remove="tag">
 				<div class="row row-eq-height">
 					<div data-th-each="index: ${#numbers.sequence(article, article + 2)}" data-th-remove="tag" data-th-with="article=${index lt #lists.size(articles) ? articles.get(index) : null}">
@@ -20,16 +19,16 @@
 				</div>
 			</div>
 		</div>
-
-		<!--/* LIST STYLE */-->
-		<div data-th-if="${config.style == 'list'}" data-th-remove="tag">
-			<ul>
-				<li data-th-each="article: ${articles}">
-					<h4 data-th-text="${article.displayName}"></h4>
-					<p class="published-date" data-th-text="${article.data.published}"></p>
-				</li>
-			</ul>
-		</div>
-
 	</div>
+
+	<!--/* LIST STYLE */-->
+	<div data-th-if="${config.style == 'list'}" data-th-remove="tag">
+		<ul class="article-list">
+			<li data-th-each="article: ${articles}">
+				<h4 data-th-text="${article.displayName}"></h4>
+				<p class="published-date" data-th-text="${article.data.published}"></p>
+			</li>
+		</ul>
+	</div>
+
 </section>
