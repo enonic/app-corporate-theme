@@ -21,7 +21,7 @@ exports.get = function(req){
 		articles: config.articles || null
 	};
 
-	var selectedIds = libs.util.data.forceArray(config.articles);
+	var selectedIds = libs.util.data.trimArray( libs.util.data.forceArray(config.articles) );
 	var articles = libs.content.query({
 		start: 0,
 		count: config.amount,
@@ -33,6 +33,41 @@ exports.get = function(req){
 		contentTypes: [app.name + ':article']
 	});
 
+log.info(selectedIds.toString());
+
+	// Selected IDs not enough to meet amount, do another query withot IDs.
+	if (articles.count < config.amount) {
+		var query = null;
+		if (selectedIds.length > 0) {
+			log.info(selectedIds.length);
+			query = "_id NOT IN ('" + selectedIds.join("', '") + "')";
+			log.info(query);
+		}
+
+		var moreArticles = libs.content.query({
+			start: 0,
+			count: config.amount - articles.count,
+			query: query,
+			/*filters: {
+				boolean: {
+					mustNot: {
+	               hasValue: {
+	                  field: "_id",
+	                  values: selectedIds
+	               }
+	            }
+				}
+			},*/
+			contentTypes: [app.name + ':article']
+		});
+		libs.util.log(moreArticles);
+
+		if (moreArticles.count > 0) {
+			articles.hits = articles.hits.concat(moreArticles.hits);
+		}
+	}
+libs.util.log(articles);
+	// Fintune the data before sending back to the view.
 	for (var i = 0; i < articles.hits.length; i++) {
 		var published = articles.hits[i].publish.from || articles.hits[i].modifiedTime;
 		published = libs.moment(published).format('MMMM Do YYYY, h:mm a');
