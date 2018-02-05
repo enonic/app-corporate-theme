@@ -15,12 +15,12 @@ exports.get = function(req){
 	// .articles = 0-5 promoted articles
 
 	config = {
-		style: config.style === 'inline' ? 'inline' : 'block',
+		style: config.style === 'list' ? 'list' : 'block',
 		amount: config.amount || 3,
 		articles: config.articles || null
 	};
 
-	var selectedIds = [].concat(config.articles || []);
+	var selectedIds = libs.util.data.forceArray(config.articles);
 	var articles = libs.content.query({
 		start: 0,
 		count: config.amount,
@@ -40,7 +40,7 @@ exports.get = function(req){
 		'config': config,
 		'articles': articles.hits
 	};
-libs.util.log(params);
+
 	return {
 		body: libs.thymeleaf.render(view, params),
 		contentType: 'text/html'

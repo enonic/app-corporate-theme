@@ -1,4 +1,5 @@
 <section id="articles">
+
 	<div class="container" data-th-if="${articles}">
 
 		<!--/* BLOCK STYLE */-->
@@ -6,7 +7,7 @@
 			<div data-th-each="article: ${#numbers.sequence(0, #lists.size(articles), 3)}" data-th-remove="tag">
 				<div class="row row-eq-height">
 					<div data-th-each="index: ${#numbers.sequence(article, article + 2)}" data-th-remove="tag" data-th-with="article=${index lt #lists.size(articles) ? articles.get(index) : null}">
-						<div class="col-md-4" data-th-if="${service != null}">
+						<div class="col-md-4" data-th-if="${article != null}">
 							<div class="media">
 								<div class="media-body">
 									<h4 class="media-heading" data-th-text="${article.displayName}"></h4>
@@ -21,7 +22,7 @@
 		</div>
 
 		<!--/* LIST STYLE */-->
-		<div data-th-unless="${config.style == 'block'}" data-th-remove="tag">
+		<div data-th-if="${config.style == 'list'}" data-th-remove="tag">
 			<ul>
 				<li data-th-each="article: ${articles}">
 					<h4 data-th-text="${article.displayName}"></h4>
