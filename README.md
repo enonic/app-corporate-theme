@@ -15,7 +15,7 @@ For additional features, check out the [Enonic Market](https://market.enonic.com
 * [SEO Meta Fields](https://market.enonic.com/vendors/enonic/com.enonic.app.metafields) - Improve how search engines finds your site.
 * [Social Macros](https://market.enonic.com/vendors/enonic/com.enonic.app.socialmacros) - Easily add tweets, Youtube videos etc.
 * [Sitemap.xml](https://market.enonic.com/vendors/enonic/com.enonic.app.sitemapxml) - Create a sitemap.xml to assist search engines navigate your site.
-* [Robots.txt](https://market.enonic.com/vendors/enonic/com.enonic.app.robotstxt) - Create
+* [Robots.txt](https://market.enonic.com/vendors/enonic/com.enonic.app.robotstxt) - Create the robots.txt file to control what parts of your website a search engine can access.
 * [SumoMe](https://market.enonic.com/vendors/enonic/com.enonic.app.sumome) - Let users share your pages and articles in social media.
 * [RSS feeds](https://market.enonic.com/vendors/enonic/com.enonic.app.rss) - Collect all your news in a feed format that users can subscribe to.
 * [Google Analytics](https://market.enonic.com/vendors/enonic/google-analytics) - Collect and view contextual statistics over your site's visitors.
