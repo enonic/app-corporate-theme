@@ -2,11 +2,25 @@
 
 This is an app for [Enonic XP](https://www.enonic.com/) that lets you build your corporate website using a predefined set of components. We give you some handy content types, staff list, contact form (using ajax), menus, customizable footer, a nice slider for the frontpage, and many other nice features.
 
-For additional features, check out the [Enonic Market](https://market.enonic.com/) and try apps like [Favicon](https://market.enonic.com/vendors/selbekk/io.selbekk.favicon), [SEO Meta Fields](https://market.enonic.com/vendors/enonic/com.enonic.app.metafields) - and many more - that goes great with this theme.
 
 ## Features
 
 The Corporate Theme app is a responsive website developed based on Twitter Bootstrap 3. It can be used for building a corporate, small business, or startup, website. It has different features and looks good on all devices. It is also customizable and you can change the content and design of the pages based on your needs by using reusable and configurable Enonic XP components like layouts and parts.
+
+## Extending Corporate Theme
+
+For additional features, check out the [Enonic Market](https://market.enonic.com/) and try apps like these:
+
+* [Favicon](https://market.enonic.com/vendors/selbekk/io.selbekk.favicon) - Customize the favicon for you new website.
+* [SEO Meta Fields](https://market.enonic.com/vendors/enonic/com.enonic.app.metafields) - Improve how search engines finds your site.
+* [Social Macros](https://market.enonic.com/vendors/enonic/com.enonic.app.socialmacros) - Easily add tweets, Youtube videos etc.
+* [Sitemap.xml](https://market.enonic.com/vendors/enonic/com.enonic.app.sitemapxml) - Create a sitemap.xml to assist search engines navigate your site.
+* [Robots.txt](https://market.enonic.com/vendors/enonic/com.enonic.app.robotstxt) - Create
+* [SumoMe](https://market.enonic.com/vendors/enonic/com.enonic.app.sumome) - Let users share your pages and articles in social media.
+* [RSS feeds](https://market.enonic.com/vendors/enonic/com.enonic.app.rss) - Collect all your news in a feed format that users can subscribe to.
+* [Google Analytics](https://market.enonic.com/vendors/enonic/google-analytics) - Collect and view contextual statistics over your site's visitors.
+
+Those and many other apps goes great with this theme!
 
 ### Dependencies
 
@@ -14,6 +28,7 @@ The Corporate Theme app is a responsive website developed based on Twitter Boots
 * **jQuery 1** - 1.12.4
 * **Font Awesome 3** - 3.2.1
 * **jquery SlitSlider** 1.2.0 from codrops (depends on *modernizr 2.6.2* and *ba-cond plugin*)
+* **moment.js** - 2.20.1
 
 All dependencies are bundled with the project.
 
@@ -30,8 +45,6 @@ By installing the app in Enonic XP, a demo site will be created automatically. I
 ### Generate new demo sites
 
 Protip: If you happen to want to start over, just delete your site (or rename its `path`) and then go to the Application admin tool in Enonic XP and stop the app, then start the app again. This will run the initialization script once more and generate a new demo-site for you!
-
-**TODO: Proof read from here:**
 
 ## Site configuration
 
@@ -79,6 +92,10 @@ There are various parts that can be used directly on pages. Each part serve a pa
 
 **Slider**: Shows slider images on home page. You can use the setting to select images, and specify titles, link and background color for each image. If a link is added (as external URL or link to internal content) a button will be displayed. Best effect is given if you use transparent PNG-images with colorful backgrounds added with the part settings.
 
+**Articles - List**: Display a selection of hand picked and latest news items.
+
+**Article - Single view**: Show one full article including its images and body text.
+
 ### Mail configuration
 
 The mail server that is used for sending email messages needs to be configured. Enonic XP ships with mail capabilities, as long as you configure them first. Find the configuration file in `$XP_HOME/config/com.enonic.xp.mail.cfg` and configure it as so:
@@ -111,10 +128,10 @@ The theme was adapted and used with approval from the original author.
 
 ### 1.1.0
 
-* Upgraded for Gradle 4
-* New feature: News articles
-* New feature: Create external URLs in menu
-* Minor tweeks and improvements
+* Upgraded for Gradle 4.
+* New feature: News articles.
+* New feature: Create external URLs in menu.
+* Loads of minor tweeks, fixes, and improvements.
 
 ### 1.0.0
 
