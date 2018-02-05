@@ -34,6 +34,9 @@ exports.get = function(req){
 
 	for (var i = 0; i < articles.hits.length; i++) {
 		articles.hits[i].data.published = articles.hits[i].publish.from || articles.hits[i].modifiedTime;
+		articles.hits[i].data.url = libs.portal.pageUrl({
+			'id': articles.hits[i]._id
+		});
 	}
 
 	var params = {

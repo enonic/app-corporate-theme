@@ -201,21 +201,34 @@ header.navbar .nav > li.in-path > a:hover {
 }
 
 /* Articles - list */
-.p_article-show .article-list {
-	list-style-type: none;
+.p_article-list {
 	padding: 0;
+}
+.p_article-list .article-list {
+	list-style-type: none;
+	padding: 30px 0 0 0;
 	margin: 0;
 }
-	.p_article-show .article-list li {
+	.p_article-list .article-list li,
+	.p_article-list .media-body {
 		padding: 1rem;
 		transition: background-color 300ms linear;
 	}
-	.p_article-show .article-list li:hover {
+	.p_article-list .article-list li:hover,
+	.p_article-list .media-body:hover {
 		background-color: hsla(41.9, 32.5%, 68%, 0.4);
 	}
-		.p_article-show .article-list p {
+		.p_article-list .article-list p {
 			margin: 0;
 		}
+		.p_article-list .article-list a,
+		.p_article-list .media-body a {
+			color: #34495e;
+		}
+			.p_article-list .article-list a:hover,
+			.p_article-list .media-body a:hover {
+				color: #34495e;
+			}
 
 /* Remove link around partner logos, updating CSS to reflect new DOM. */
 .thumbnail .img-circle {

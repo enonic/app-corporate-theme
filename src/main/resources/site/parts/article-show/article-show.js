@@ -19,6 +19,7 @@ exports.get = function(req){
 					id:    content.data.header,
 					scale: 'block(850,350)'
 				});
+				content.data.published = content.publish.from || content.modifiedTime;
 			}
 		} else {
 			content = {
