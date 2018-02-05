@@ -7,11 +7,11 @@
             <default>Our partners</default>
         </input>
         <input type="TextArea" name="intro">
-            <label>Short introduction about your partners.</label>
+            <label>Short introduction</label>
             <ocurrences minimum="0" maximum="1"/>
         </input>
         <input type="ImageSelector" name="partnerLogo">
-            <label>Partners</label>
+            <label>Partner logos</label>
             <occurrences minimum="0" maximum="4" />
             <help-text>You can select up to 4 images/logos of your partners.</help-text>
             <config>

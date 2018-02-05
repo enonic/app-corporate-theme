@@ -200,6 +200,13 @@ header.navbar .nav > li.in-path > a:hover {
 	}
 }
 
+/* Remove link around partner logos, updating CSS to reflect new DOM. */
+.thumbnail .img-circle {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
 /* Articles - Single view */
 .p_article-show {
 	padding: 2em 0;
