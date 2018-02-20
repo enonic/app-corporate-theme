@@ -24,6 +24,16 @@ exports.get = function(req){
 				published = libs.moment(published).format('MMMM Do YYYY, h:mm a');
 				content.data.published = published;
 			}
+			// Handle empty fields, improved UX for new users.
+			if (!content.data.preface && !content.data.body) {
+				content.data.preface = "TODO: Please write a short preface for this article. Please do so in the form to the left side in Content Studio.";
+			}
+			if (!content.data.body) {
+				content.data.body = "<p>TODO: You need to write a body text for this type of content. Please do so in the form to the left side in Content Studio.</p>";
+			}
+			if (!content.displayName) {
+				content.displayName = "TODO: write a title!";
+			}
 		} else {
 			content = {
 				header: null,
