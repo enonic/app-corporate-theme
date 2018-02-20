@@ -249,6 +249,7 @@ header.navbar .nav > li.in-path > a:hover {
 	}
 	.p_article-show .header-image {
 		margin-bottom: 2rem;
+		max-width: 100%;
 	}
 	.p_article-show .published {
 		padding-top: 20px;
