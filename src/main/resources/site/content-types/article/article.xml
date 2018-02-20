@@ -8,13 +8,22 @@
 			<label>Header image</label>
 			<occurrences minimum="0" maximum="1" />
 			<config>
-				  <allowPath>${site}/*</allowPath>
-			  </config>
+				<allowPath>${site}/*</allowPath>
+			</config>
 		</input>
 		<input name="preface" type="TextArea">
 			<label>Preface</label>
 			<occurrences minimum="1" maximum="1"/>
 			<help-text>Article introductory text</help-text>
+		</input>
+		<input name="author" type="ContentSelector">
+			<label>Author</label>
+			<help-text>Who wrote this piece? Select one of the employees.</help-text>
+			<occurrences minimum="0" maximum="1" />
+			<config>
+				<allowContentType>employee</allowContentType>
+				<allowPath>${site}/*</allowPath>
+			</config>
 		</input>
 		<input name="body" type="HtmlArea">
 			<label>Full body</label>
