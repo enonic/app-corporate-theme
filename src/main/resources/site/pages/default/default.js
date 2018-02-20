@@ -12,10 +12,13 @@ var view = resolve('default.html');
 exports.get = function(req){
 
     var content = libs.portal.getContent();
+	 if (content.displayName === '') { content.displayName = 'TODO - add display name!'; }
+
     var site = libs.portal.getSite();
     var siteConfig = libs.portal.getSiteConfig();
+	 var menuItems = libs.menu.getMenuTree(2);
+
     var mainRegion = content.page.regions["main"];
-    var menuItems = libs.menu.getMenuTree(2);
 
 	 var breadcrumbs = libs.menu.getBreadcrumbMenu({
 		 linkActiveItem: false,
@@ -25,7 +28,7 @@ exports.get = function(req){
 
 	 var showTitle = false;
 
-    //Fetching site logo
+    // Fetching site logo
     if (siteConfig.logo) {
         var logoKey = libs.content.get({
             key : siteConfig.logo
@@ -42,8 +45,8 @@ exports.get = function(req){
     if (sitePath === currentPath) {
         showTitle = true;
     }
-    //Footer content
-    //Fetching social media's icons
+    // Footer content
+    // Fetching social media's icons
     var icons = siteConfig.SocialIcon ? libs.util.data.forceArray(siteConfig.SocialIcon) : null;
     var iconsList = [];
     if(icons){
