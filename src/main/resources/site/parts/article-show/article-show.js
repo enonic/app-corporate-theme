@@ -21,15 +21,26 @@ exports.get = function(req){
 					scale: 'block(850,350)'
 				});
 				var published = content.publish.from || content.modifiedTime;
-				published = libs.moment(published).format('MMMM Do YYYY, h:mm a');
-				content.data.published = published;
+				content.data.published = libs.moment(published).format('MMMM Do YYYY, h:mm a');
 			}
 			// Handle empty fields, improved UX for new users.
-			if (!content.data.preface && !content.data.body) {
+			if (!content.data.preface ) {
 				content.data.preface = "TODO: Please write a short preface for this article. Please do so in the form to the left side in Content Studio.";
 			}
 			if (!content.data.body) {
 				content.data.body = "<p>TODO: You need to write a body text for this type of content. Please do so in the form to the left side in Content Studio.</p>";
+			}
+			// Related content author needs to be fetched and added to the main content data.
+			if (content.data.author) {
+				var author = libs.content.get({
+					key: content.data.author
+				});
+				if (author) {
+					content.data.author = {
+						id: content.data.author,
+						displayName: author.displayName
+					};
+				}
 			}
 		} else {
 			content = {

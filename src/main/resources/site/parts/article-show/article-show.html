@@ -12,5 +12,9 @@
 		<i class="icon-time"></i>
 		<span data-th-text="${'Online since ' + content.data.published}"></span>
 	</p>
+	<p data-th-if="${content.data.author}" class="author">
+		<i class="icon-edit"></i>
+		<span>Written by <strong data-th-text="${content.data.author.displayName}">Author</strong></span>
+	</p>
 
 </article>

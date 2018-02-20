@@ -251,9 +251,13 @@ header.navbar .nav > li.in-path > a:hover {
 		margin-bottom: 2rem;
 		max-width: 100%;
 	}
-	.p_article-show .published {
+	.p_article-show .published,
+	.p_article-show .author {
 		padding-top: 20px;
 		font-style: italic;
+	}
+	.p_article-show .author {
+		padding-top: 0;
 	}
 
 /* Employee list has no bottom spacing */

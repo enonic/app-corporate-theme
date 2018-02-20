@@ -58,7 +58,8 @@ exports.get = function(req){
 	            }
 				}
 			},*/
-			contentTypes: [app.name + ':article']
+			contentTypes: [app.name + ':article'],
+			order: "publish.from DESC, createdTime DESC, modifiedTime DESC"
 		});
 		//libs.util.log(moreArticles);
 
@@ -69,6 +70,7 @@ exports.get = function(req){
 //libs.util.log(articles);
 	// Fintune the data before sending back to the view.
 	for (var i = 0; i < articles.hits.length; i++) {
+		if (articles.hits[i].displayName === '') { articles.hits[i].displayName = 'TODO - add display name!'; }
 		var published = articles.hits[i].publish.from || articles.hits[i].modifiedTime;
 		published = libs.moment(published).format('MMMM Do YYYY, h:mm a');
 		articles.hits[i].data.published = published;
