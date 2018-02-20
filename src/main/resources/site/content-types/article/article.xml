@@ -17,9 +17,9 @@
 			<help-text>Article introductory text</help-text>
 		</input>
 		<input name="author" type="ContentSelector">
-			<label>Author</label>
-			<help-text>Who wrote this piece? Select one of the employees.</help-text>
-			<occurrences minimum="0" maximum="1" />
+			<label>Authors</label>
+			<help-text>Who wrote this piece? Select one or more of the employees that contributed.</help-text>
+			<occurrences minimum="0" maximum="0" />
 			<config>
 				<allowContentType>employee</allowContentType>
 				<allowPath>${site}/*</allowPath>

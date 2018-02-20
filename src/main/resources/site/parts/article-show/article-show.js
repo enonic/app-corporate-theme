@@ -32,15 +32,21 @@ exports.get = function(req){
 			}
 			// Related content author needs to be fetched and added to the main content data.
 			if (content.data.author) {
-				var author = libs.content.get({
-					key: content.data.author
-				});
-				if (author) {
-					content.data.author = {
-						id: content.data.author,
-						displayName: author.displayName
-					};
+				var authorsHolder = [];
+				var authors = libs.util.data.forceArray(content.data.author); // Single selections will come out as strings, multiple as arrays. That makes our Thymeleaf complicated, so let's always force this data into arrays so our Thymeleaf can expect to loop if there's any data.
+				for (var i = 0; i < authors.length; i++) {
+					var author = libs.content.get({
+						key: authors[i]
+					});
+					if (author) {
+						var data = {
+							id: authors[i],
+							displayName: author.displayName
+						};
+						authorsHolder.push(data);
+					}
 				}
+				content.data.authors = authorsHolder;
 			}
 		} else {
 			content = {

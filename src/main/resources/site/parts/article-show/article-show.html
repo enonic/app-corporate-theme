@@ -14,7 +14,12 @@
 	</p>
 	<p data-th-if="${content.data.author}" class="author">
 		<i class="icon-edit"></i>
-		<span>Written by <strong data-th-text="${content.data.author.displayName}">Author</strong></span>
+		<span>
+			Written by
+			<div data-th-each="author,iter : ${content.data.authors}" data-th-remove="tag">
+				<strong data-th-text="${author.displayName}">Author</strong><span data-th-if="${!iter.last}" data-th-remove="tag">, </span>
+			</div>
+		</span>
 	</p>
 
 </article>
