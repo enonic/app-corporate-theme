@@ -31,7 +31,7 @@ exports.get = function(req){
 			if (!content.data.body) {
 				content.data.body = "<p>TODO: You need to write a body text for this type of content. Please do so in the form to the left side in Content Studio.</p>";
 			}
-			if (!content.displayName) {
+			if (!content.displayName || content.displayName === '') {
 				content.displayName = "TODO: write a title!";
 			}
 		} else {
