@@ -59,7 +59,7 @@ exports.get = function(req){
 				}
 			},*/
 			contentTypes: [app.name + ':article'],
-			order: "publish.from DESC, createdTime DESC, modifiedTime DESC"
+			sort: "publish.from DESC, modifiedTime DESC"
 		});
 		//libs.util.log(moreArticles);
 

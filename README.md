@@ -109,7 +109,7 @@ The theme was adapted and used with approval from the original author.
 
 ### Dependencies
 
-Some front-end dependencies for the code and functionality of this project.
+We use some front-end dependencies for the code and functionality of this project, these are the ones:
 
 * **Bootstrap 3** - 3.3.7
 * **jQuery 1** - 1.12.4
@@ -122,10 +122,17 @@ All dependencies are bundled with the project.
 
 | Version       | XP version |
 | ------------- | ---------- |
-| 1.1.0         | 6.13      |
+| 1.1.x         | 6.13      |
 | 1.0.0         | 6.11      |
 
 ## Changelog
+
+### 1.1.1
+
+* New: Add author field to News article content type.
+* Fix: Responsive behaviour of news header images.
+* Fix: Improve sorting on news list part.
+* Fix: Tuning of imported data.
 
 ### 1.1.0
 
