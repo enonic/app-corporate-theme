@@ -127,6 +127,10 @@ All dependencies are bundled with the project.
 
 ## Changelog
 
+### 1.1.2
+
+* Add rendering support for Fragments
+
 ### 1.1.1
 
 * New: Add author field to News article content type.

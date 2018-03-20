@@ -14,11 +14,13 @@ exports.get = function(req){
     var content = libs.portal.getContent();
 	 if (content.displayName === '') { content.displayName = 'TODO - add display name!'; }
 
+	 // Fragment handling (single fragments should use this page controller automatically to render itself)
+	 var isFragment = content.type === 'portal:fragment';
+	 var mainRegion = isFragment ? null : content.page.regions.main;
+
     var site = libs.portal.getSite();
     var siteConfig = libs.portal.getSiteConfig();
 	 var menuItems = libs.menu.getMenuTree(2);
-
-    var mainRegion = content.page.regions["main"];
 
 	 var breadcrumbs = libs.menu.getBreadcrumbMenu({
 		 linkActiveItem: false,
@@ -117,7 +119,8 @@ exports.get = function(req){
 		  breadcrumbs: breadcrumbs,
         footer : footer,
         mainRegion : mainRegion,
-        menuItems : menuItems
+        menuItems : menuItems,
+		  isFragment: isFragment
     };
     var body = libs.thymeleaf.render(view, model);
     return { body : body};

@@ -97,12 +97,16 @@
 </section>
 
 <!-- Main body -->
-
-<div data-portal-region="main">
+<!--/* Render any components added to this region - except for Fragments. */-->
+<div data-portal-region="main" data-th-unless="${isFragment}">
     <div data-th-each="component : ${mainRegion.components}" data-th-remove="tag">
         <div data-portal-component="${component.path}" data-th-remove="tag"></div>
     </div>
 </div>
+<!--/* Render Fragments (single view, supported with mappings in site.xml) */-->
+<main data-th-if="${isFragment}" data-th-remove="tag">
+	<div data-portal-component="fragment" data-th-remove="tag"/>
+</main>
 
 
 <!-- Footer level 1 -->

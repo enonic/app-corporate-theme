@@ -80,35 +80,35 @@
 		<field-set name="socialNetworks">
 			<label>Social networks</label>
 			<items>
-				<input name="facebook" type="TextLine" >
+				<input name="facebook" type="TextLine">
 					<label>Facebook url</label>
 					<occurrences minimum="0" maximum="1" />
 				</input>
-				<input name="twitter" type="TextLine" >
+				<input name="twitter" type="TextLine">
 					<label>Twitter url</label>
 					<occurrences minimum="0" maximum="1" />
 				</input>
-				<input name="pinterest" type="TextLine" >
+				<input name="pinterest" type="TextLine">
 					<label>Pinterest url</label>
 					<occurrences minimum="0" maximum="1" />
 				</input>
-				<input name="linkedin" type="TextLine" >
+				<input name="linkedin" type="TextLine">
 					<label>Linkedin url</label>
 					<occurrences minimum="0" maximum="1" />
 				</input>
-				<input name="googleplus" type="TextLine" >
+				<input name="googleplus" type="TextLine">
 					<label>Google plus url</label>
 					<occurrences minimum="0" maximum="1" />
 				</input>
-				<input name="youtube" type="TextLine" >
+				<input name="youtube" type="TextLine">
 					<label>Youtube url</label>
 					<occurrences minimum="0" maximum="1" />
 				</input>
-				<input name="tumblr" type="TextLine" >
+				<input name="tumblr" type="TextLine">
 					<label>Tumblr url</label>
 					<occurrences minimum="0" maximum="1" />
 				</input>
-				<input name="instagram" type="TextLine" >
+				<input name="instagram" type="TextLine">
 					<label>Instagram url</label>
 					<occurrences minimum="0" maximum="1" />
 				</input>
@@ -118,6 +118,9 @@
 	<mappings>
 		<mapping controller="/lib/enonic/url-redirect/index.js">
 		  <match>type:'com.enonic.app.corporate.theme:url'</match>
+		</mapping>
+		<mapping controller="/site/pages/default/default.js">
+		  <match>type:'portal:fragment'</match>
 		</mapping>
 	</mappings>
 	<x-data mixin="menu-item"/>
