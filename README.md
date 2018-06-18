@@ -127,6 +127,13 @@ All dependencies are bundled with the project.
 
 ## Changelog
 
+### 1.1.3
+
+* New: Output caption (if any) on top of images on news articles.
+* New: Add alt-text to header images on news articles.
+* Fix: Clear any floats when outputting publishing dates on news articles.
+* Fix: Improve look of menu on tablets.
+
 ### 1.1.2
 
 * Add rendering support for Fragments
