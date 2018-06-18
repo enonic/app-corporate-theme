@@ -279,6 +279,22 @@ header.navbar .nav > li.in-path > a:hover {
 .portfolio .center {
 	padding-bottom: 20px;
 }
+/* Problems with smaller logos */
+header.navbar {
+	min-height: 80px;
+	align-items: center; /* vertically */
+	display: flex;
+}
+
+@media (max-width: 768px) {
+	.navbar-default .navbar-brand img {
+		max-width: 220px;
+	}
+	.navbar-default .container,
+	header.navbar {
+		display: block !important;
+	}
+}
 
 /* Some things are just not meant for small screens. Like stacked elements separated with a light hr. */
 @media (max-width: 992px) {
@@ -287,5 +303,15 @@ header.navbar .nav > li.in-path > a:hover {
 	}
 	.services .col-md-4 {
 		padding-bottom: 20px;
+	}
+	.navbar-default .navbar-brand img {
+		max-width: 150px;
+	}
+	.navbar-default .container {
+		align-items: center;
+		display: flex;
+	}
+	header.navbar .nav {
+		margin-top: 0;
 	}
 }
