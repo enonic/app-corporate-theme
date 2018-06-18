@@ -1,6 +1,9 @@
 <article class="p_article-show" role="article">
 
-	<img data-th-if="${content.data.headerUrl}" data-th-src="${content.data.headerUrl}" alt="" class="header-image" />
+	<figure class="header-graphics" data-th-if="${content.data.image}">
+		<img data-th-src="${content.data.image.url}" alt="" data-th-alt="${content.data.image.displayName}" class="header-image" />
+		<figcaption data-th-if="${content.data.image.caption}" data-th-text="${content.data.image.caption}"></figcaption>
+	</figure>
 
 	<p class="preface" data-th-text="${content.data}? ${content.data.preface}" data-th-if="${content.data.preface}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Tempor incididunt ut labore et dolore magna aliqua.</p>

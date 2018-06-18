@@ -247,9 +247,27 @@ header.navbar .nav > li.in-path > a:hover {
 		font-style: italic;
 		margin-bottom: 2rem;
 	}
-	.p_article-show .header-image {
+	.p_article-show figure {
+		padding: 20px;
+	}
+	.p_article-show .header-graphics {
+		padding: 0;
 		margin-bottom: 2rem;
 		max-width: 100%;
+		position: relative;
+	}
+	.p_article-show .header-graphics img {
+		max-width: 100%;
+	}
+	.p_article-show .header-graphics figcaption {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		background-color: hsla(1,100%,100%,0.75);
+		display: block;
+		width: 100%;
+		padding: 6px 10px;
+		color: black;
 	}
 	.p_article-show .published,
 	.p_article-show .author {
@@ -259,9 +277,6 @@ header.navbar .nav > li.in-path > a:hover {
 	}
 	.p_article-show .author {
 		padding-top: 0;
-	}
-	.p_article-show figure {
-		padding: 20px;
 	}
 
 /* Employee list has no bottom spacing */

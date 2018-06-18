@@ -16,13 +16,27 @@ exports.get = function(req){
 		// Reset empty content to insert placeholder text for when viewing a template.
 		if (content.type === app.name + ':article') {
 			if (content.data.header) {
-				content.data.headerUrl = libs.portal.imageUrl({
-					id:    content.data.header,
-					scale: 'block(850,350)'
+				// Get the full image object, for accessing metadata
+				var image = libs.content.get({
+					key: content.data.header
 				});
-				var published = content.publish.from || content.modifiedTime;
-				content.data.published = libs.moment(published).format('MMMM Do YYYY, h:mm a');
+				if (image) {
+					var imageUrl = libs.portal.imageUrl({
+						id:    content.data.header,
+						scale: 'block(850,350)'
+					});
+					content.data.image = {
+						displayName: image.displayName,
+						caption: image.data.caption,
+						url: imageUrl
+					};
+
+				}
 			}
+
+			var published = content.publish.from || content.modifiedTime;
+			content.data.published = libs.moment(published).format('MMMM Do YYYY, h:mm a');
+
 			// Handle empty fields, improved UX for new users.
 			if (!content.data.preface ) {
 				content.data.preface = "TODO: Please write a short preface for this article. Please do so in the form to the left side in Content Studio.";
