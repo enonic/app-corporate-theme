@@ -1,4 +1,5 @@
-<div data-th-class="${container}">
+<div data-th-class="${containerClass}" data-th-style="'background-color:' + ${containerColor}">
+  <div class="container">
     <div class="row">
         <div data-portal-region="topLeft" data-th-class="${topLeftClass}">
             <div data-th-each="component : ${topLeftRegion.components}" data-th-remove="tag">
@@ -35,4 +36,5 @@
             </div>
         </div>
     </div>
+  </div>
 </div>

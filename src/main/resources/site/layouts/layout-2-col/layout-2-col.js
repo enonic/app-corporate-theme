@@ -16,13 +16,16 @@ exports.get = function(req){
     var leftCol = libs.shared.mapBootstrapColumns(columns[0]) || "col-md-6";
     var rightCol = libs.shared.mapBootstrapColumns(columns[1]) || "col-md-6";
 
-    var fullWidth = config.fullWidth ? "container-fluid" : "container";
+	 var containerClass = config.fullWidthBackground.yes ? "container-fluid" : "container";
+	 var containerColor = config.fullWidthBackground.yes ? config.fullWidthBackground.yes.backgroundColor : 'transparent';
+
     var model = {
         leftRegion : component.regions["left"],
         rightRegion : component.regions["right"],
         leftCol : leftCol,
         rightCol : rightCol,
-        container : fullWidth
+        containerClass: containerClass,
+		  containerColor: containerColor
     };
 
     var body = libs.thymeleaf.render(view, model);

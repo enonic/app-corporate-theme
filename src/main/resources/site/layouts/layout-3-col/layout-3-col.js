@@ -17,7 +17,9 @@ exports.get = function(req) {
     var middleCol = libs.shared.mapBootstrapColumns(columns[1]) || "col-md-4";
     var rightCol = libs.shared.mapBootstrapColumns(columns[2]) || "col-md-4";
 
-    var fullWidth = config.fullWidth ? "container-fluid" : "container";
+	 var containerClass = config.fullWidthBackground.yes ? "container-fluid" : "container";
+	 var containerColor = config.fullWidthBackground.yes ? config.fullWidthBackground.yes.backgroundColor : 'transparent';
+
     var model = {
         leftRegion : component.regions["left"],
         middleRegion : component.regions["middle"],
@@ -27,7 +29,8 @@ exports.get = function(req) {
 			  center: middleCol,
 			  right: rightCol
 		  },
-        container : fullWidth
+        containerClass: containerClass,
+		  containerColor: containerColor
     };
 
     return {
