@@ -17,6 +17,8 @@ exports.get = function(req) {
         containerClass: containerClass,
 		  containerColor: containerColor
     };
-    var body = libs.thymeleaf.render(view, model);
-    return { body: body };
+
+    return {
+		 body: libs.thymeleaf.render(view, model)
+	 };
 };

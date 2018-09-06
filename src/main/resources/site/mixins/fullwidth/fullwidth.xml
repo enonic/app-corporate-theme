@@ -1,0 +1,24 @@
+<mixin>
+	<display-name>Full width layout</display-name>
+	<items>
+		<option-set name="fullWidthBackground">
+		  <label>Full width layout?</label>
+		  <expanded>true</expanded>
+		  <occurrences minimum="0" maximum="1"/>
+		  <help-text>Makes the background of the layout fill the entire screen, making it great for coloring the background to emphasising its contents.</help-text>
+		  <options minimum="0" maximum="1">
+			 <option name="yes">
+			   <label>Yes</label>
+			   <items>
+				  <input name="backgroundColor" type="TextLine">
+					 <label>Background color?</label>
+					 <help-text>Use hexadecimal color codes ('#dd0044'), or write the name of the color in English ('purple').</help-text>
+					 <occurrences minimum="0" maximum="1"/>
+					 <config />
+				  </input>
+			   </items>
+			 </option>
+		  </options>
+		</option-set>
+	</items>
+</mixin>
