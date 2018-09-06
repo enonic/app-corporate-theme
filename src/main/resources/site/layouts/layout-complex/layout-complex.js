@@ -14,12 +14,12 @@ exports.get = function(req) {
     var fullWidth = config.fullWidth ? "container-fluid" : "container";
 
     var model = {
-		  topLeft: component.regions["topLeft"],
-		  topMiddle: component.regions["topMiddle"],
-		  topRight: component.regions["topRight"],
-		  middleFull: component.regions["middleFull"],
-		  bottomLeft: component.regions["bottomLeft"],
-		  bottomRight: component.regions["bottomRight"],
+		  topLeftRegion: component.regions["topLeft"],
+		  topMiddleRegion: component.regions["topMiddle"],
+		  topRightRegion: component.regions["topRight"],
+		  middleFullRegion: component.regions["middleFull"],
+		  bottomLeftRegion: component.regions["bottomLeft"],
+		  bottomRightRegion: component.regions["bottomRight"],
 		  topLeftClass: 'col-md-4',
 		  topMiddleClass: 'col-md-4',
 		  topRightClass: 'col-md-4',
