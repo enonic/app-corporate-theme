@@ -26,7 +26,7 @@ exports.getContents = function(contentType, fallbackCallback) {
 }; // function getContents
 
 exports.mapBootstrapColumns = function(percentage) {
-	var column = null;
+	var column = null, columnClass = null;
 	switch(percentage) {
 		 case '20': column = 2; break;
 		 case '25': column = 3; break;
@@ -39,7 +39,7 @@ exports.mapBootstrapColumns = function(percentage) {
 		 case '80': column = 10; break;
 	}
 	if (column) {
-		columnClass = "col-md-" + columns;
+		columnClass = "col-md-" + column;
 	}
 	return columnClass;
 };

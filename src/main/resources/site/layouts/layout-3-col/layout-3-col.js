@@ -13,9 +13,9 @@ exports.get = function(req) {
     var config = component.config;
     var columnConfig = config.layoutConf || '30-30-30'; // Always have fallback for those times nothing is saved/defaulted yet.
 	 var columns = columnConfig.split('-');
-    var leftCol = libs.sharedmapBootstrapColumns(columns[0]) || "col-md-4";
-    var middleCol = libs.sharedmapBootstrapColumns(columns[1]) || "col-md-4";
-    var rightCol = libs.sharedmapBootstrapColumns(columns[2]) || "col-md-4";
+    var leftCol = libs.shared.mapBootstrapColumns(columns[0]) || "col-md-4";
+    var middleCol = libs.shared.mapBootstrapColumns(columns[1]) || "col-md-4";
+    var rightCol = libs.shared.mapBootstrapColumns(columns[2]) || "col-md-4";
 
     var fullWidth = config.fullWidth ? "container-fluid" : "container";
     var model = {

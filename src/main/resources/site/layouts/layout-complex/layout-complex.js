@@ -1,8 +1,7 @@
 var libs = {
     portal : require('/lib/xp/portal'),
     thymeleaf : require('/lib/xp/thymeleaf'),
-    util : require('/lib/enonic/util'),
-    shared : require('/lib/shared')
+    util : require('/lib/enonic/util')
 };
 
 var view = resolve('layout-complex.html');

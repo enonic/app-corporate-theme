@@ -13,8 +13,8 @@ exports.get = function(req){
     var config = component.config;
     var columnConfig = config.layoutConf || '50-50'; // Always have fallback for those times nothing is saved/defaulted yet.
 	 var columns = columnConfig.split('-');
-    var leftCol = libs.sharedmapBootstrapColumns(columns[0]) || "col-md-6";
-    var rightCol = libs.sharedmapBootstrapColumns(columns[1]) || "col-md-6";
+    var leftCol = libs.shared.mapBootstrapColumns(columns[0]) || "col-md-6";
+    var rightCol = libs.shared.mapBootstrapColumns(columns[1]) || "col-md-6";
 
     var fullWidth = config.fullWidth ? "container-fluid" : "container";
     var model = {
