@@ -16,8 +16,8 @@ exports.get = function(req){
     var leftCol = libs.shared.mapBootstrapColumns(columns[0]) || "col-md-6";
     var rightCol = libs.shared.mapBootstrapColumns(columns[1]) || "col-md-6";
 
-	 var containerClass = config.fullWidthBackground.yes ? "container-fluid" : "container";
-	 var containerColor = config.fullWidthBackground.yes ? config.fullWidthBackground.yes.backgroundColor : 'transparent';
+	 var containerClass = config.fullWidthBackground ? (config.fullWidthBackground.yes ? 'container-fluid' : 'container') : 'container';
+	 var containerColor = config.fullWidthBackground ? (config.fullWidthBackground.yes ? config.fullWidthBackground.yes.backgroundColor : 'transparent') : 'transparent';
 
     var model = {
         leftRegion : component.regions["left"],

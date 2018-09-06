@@ -10,8 +10,8 @@ exports.get = function(req) {
 
     var component = libs.portal.getComponent();
     var config = component.config;
-    var containerClass = config.fullWidthBackground.yes ? "container-fluid" : "container";
-	 var containerColor = config.fullWidthBackground.yes ? config.fullWidthBackground.yes.backgroundColor : 'transparent';
+	 var containerClass = config.fullWidthBackground ? (config.fullWidthBackground.yes ? 'container-fluid' : 'container') : 'container';
+	 var containerColor = config.fullWidthBackground ? (config.fullWidthBackground.yes ? config.fullWidthBackground.yes.backgroundColor : 'transparent') : 'transparent';
 
     var model = {
 		  topLeftRegion: component.regions["topLeft"],

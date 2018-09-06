@@ -1,7 +1,7 @@
 <layout>
-    <display-name>1 column</display-name>
+    <display-name>Single column</display-name>
     <config>
-	 	<inline mixin="fullwidth"/>
+        <inline mixin="fullwidth"/>
     </config>
     <regions>
         <region name="main" />
