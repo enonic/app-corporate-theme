@@ -24,3 +24,22 @@ exports.getContents = function(contentType, fallbackCallback) {
 
     return fallbackCallback();
 }; // function getContents
+
+exports.mapBootstrapColumns = function(percentage) {
+	var column = null;
+	switch(percentage) {
+		 case '20': column = 2; break;
+		 case '25': column = 3; break;
+		 case '30': column = 3; break;
+		 case '33': column = 4; break;
+		 case '40': column = 5; break;
+		 case '50': column = 6; break;
+		 case '60': column = 7; break;
+		 case '70': column = 9; break;
+		 case '80': column = 10; break;
+	}
+	if (column) {
+		columnClass = "col-md-" + columns;
+	}
+	return columnClass;
+};

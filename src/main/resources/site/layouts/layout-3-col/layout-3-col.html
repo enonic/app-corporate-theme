@@ -1,0 +1,19 @@
+<div data-th-class="${container}">
+    <div class="row">
+        <div data-portal-region="left" data-th-class="${columns.left}">
+            <div data-th-each="component : ${leftRegion.components}" data-th-remove="tag">
+                <div data-portal-component="${component.path}" data-th-remove="tag" />
+            </div>
+        </div>
+        <div data-portal-region="middle" data-th-class="${columns.center}" >
+            <div data-th-each="component : ${middleRegion.components}" data-th-remove="tag">
+                <div data-portal-component="${component.path}" data-th-remove="tag" />
+            </div>
+        </div>
+        <div data-portal-region="right" data-th-class="${columns.right}" >
+            <div data-th-each="component : ${rightRegion.components}" data-th-remove="tag">
+                <div data-portal-component="${component.path}" data-th-remove="tag" />
+            </div>
+        </div>
+    </div>
+</div>

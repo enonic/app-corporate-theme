@@ -1,0 +1,38 @@
+<div data-th-class="${container}">
+    <div class="row">
+        <div data-portal-region="topLeft" data-th-class="${topLeftClass}">
+            <div data-th-each="component : ${topLeftRegion.components}" data-th-remove="tag">
+                <div data-portal-component="${component.path}" data-th-remove="tag" />
+            </div>
+        </div>
+        <div data-portal-region="topMiddle" data-th-class="${topMiddleClass}" >
+            <div data-th-each="component : ${topMiddleRegion.components}" data-th-remove="tag">
+                <div data-portal-component="${component.path}" data-th-remove="tag" />
+            </div>
+        </div>
+        <div data-portal-region="topRight" data-th-class="${topRightClass}" >
+            <div data-th-each="component : ${topRightRegion.components}" data-th-remove="tag">
+                <div data-portal-component="${component.path}" data-th-remove="tag" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div data-portal-region="middleFull" data-th-class="${middleFullClass}">
+            <div data-th-each="component : ${middleFullRegion.components}" data-th-remove="tag">
+                <div data-portal-component="${component.path}" data-th-remove="tag" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div data-portal-region="bottomLeft" data-th-class="${bottomLeftClass}" >
+            <div data-th-each="component : ${bottomLeftRegion.components}" data-th-remove="tag">
+                <div data-portal-component="${component.path}" data-th-remove="tag" />
+            </div>
+        </div>
+        <div data-portal-region="bottomRight" data-th-class="${bottomRightClass}" >
+            <div data-th-each="component : ${bottomRightRegion.components}" data-th-remove="tag">
+                <div data-portal-component="${component.path}" data-th-remove="tag" />
+            </div>
+        </div>
+    </div>
+</div>

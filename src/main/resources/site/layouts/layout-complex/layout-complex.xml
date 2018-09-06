@@ -1,0 +1,17 @@
+<layout>
+    <display-name>Complex layout</display-name>
+    <config>
+		<input name="fullWidth" type="CheckBox">
+			<label>Full width layout?</label>
+			<occurrences minimum="0" maximum="1"/>
+		</input>
+    </config>
+    <regions>
+        <region name="topLeft" />
+        <region name="topMiddle" />
+        <region name="topRight" />
+        <region name="middleFull" />
+        <region name="bottomLeft" />
+        <region name="bottomRight" />
+    </regions>
+</layout>
