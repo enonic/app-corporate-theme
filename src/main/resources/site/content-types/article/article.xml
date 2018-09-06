@@ -4,7 +4,7 @@
 	<super-type>base:structured</super-type>
 	<allow-child-content>true</allow-child-content>
 	<form>
-		<input name="header" type="ImageSelector">
+		<input name="headerImage" type="ImageSelector">
 			<label>Header image</label>
 			<occurrences minimum="0" maximum="1" />
 			<config>

@@ -22,7 +22,7 @@ exports.get = function(req){
 				});
 				if (image) {
 					var imageUrl = libs.portal.imageUrl({
-						id:    content.data.header,
+						id:    content.data.headerImage,
 						scale: 'block(850,350)'
 					});
 					content.data.image = {

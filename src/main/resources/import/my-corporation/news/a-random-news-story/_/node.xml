@@ -39,7 +39,7 @@
             <dateTime isNull="true" name="to"/>
         </property-set>
         <property-set name="data">
-            <reference name="header">8b39271b-eb6e-43d4-adb3-ad820bb0f8ad</reference>
+            <reference name="headerImage">8b39271b-eb6e-43d4-adb3-ad820bb0f8ad</reference>
             <string name="preface">This preface is just a void filler. Give it some meaning!</string>
             <string name="body">&lt;p&gt;Lorem ipsum doler sit amet. Lorem ipsum doler sit amet. Lorem ipsum doler sit amet. Lorem ipsum doler sit amet. Lorem ipsum doler sit amet. Lorem ipsum doler sit amet.&lt;/p&gt;
 &lt;p&gt;Lorem ipsum doler sit amet. Lorem ipsum doler sit amet. Lorem ipsum doler sit amet. Lorem ipsum doler sit amet. Lorem ipsum doler sit amet. Lorem ipsum doler sit amet. Lorem ipsum doler sit amet. Lorem ipsum doler sit amet. Lorem ipsum doler sit amet. Lorem ipsum doler sit amet. Lorem ipsum doler sit amet. Lorem ipsum doler sit amet.&lt;/p&gt;
