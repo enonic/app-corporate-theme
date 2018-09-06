@@ -64,7 +64,6 @@ exports.get = function(req){
 			}
 		} else {
 			content = {
-				header: null,
 				displayName: "No News Article found!",
             data: {
                 preface: "This template is used to preview contents of the type News Article.",
