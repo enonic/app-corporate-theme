@@ -15,10 +15,10 @@ exports.get = function(req){
 
 		// Reset empty content to insert placeholder text for when viewing a template.
 		if (content.type === app.name + ':article') {
-			if (content.data.header) {
+			if (content.data.headerImage) {
 				// Get the full image object, for accessing metadata
 				var image = libs.content.get({
-					key: content.data.header
+					key: content.data.headerImage
 				});
 				if (image) {
 					var imageUrl = libs.portal.imageUrl({
@@ -68,7 +68,7 @@ exports.get = function(req){
 				displayName: "No News Article found!",
             data: {
                 preface: "This template is used to preview contents of the type News Article.",
-					 body: "<p>You need to create a new content in Content Studio, preferably under the page 'News', but you are free to place it elsewhere too.</p>"
+					 body: "<p>You need to create a new content in Content Studio, preferably under the page 'News', but you are free to place it elsewhere too. After that, any preview for that content will be using this template.</p>"
             }
         };
 		}
