@@ -129,6 +129,13 @@ All dependencies are bundled with the project.
 
 ### 1.1.3
 
+New: Layout 3 columns.
+New: Layout - complex (example).
+New: Ability to set background color on all full-width layouts.
+Improvement: UX and code for all Layouts.
+
+### 1.1.3
+
 * New: Output caption (if any) on top of images on news articles.
 * New: Add alt-text to header images on news articles.
 * Fix: Clear any floats when outputting publishing dates on news articles.
