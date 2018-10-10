@@ -109,14 +109,11 @@ exports.get = function(req){
     var siteUrl = libs.portal.pageUrl({
         path: site._path
     });
-    var lang = "";
-    if (site.language) {
-        lang = site.language;
-    }
+    
     var model = {
         logo : logo,
         site : site,
-        lang : lang,
+        lang : site.language || "en-us",
         siteUrl: siteUrl,
         showTitle : showTitle,
         pageTitle: content.displayName + " | " + site.displayName,
