@@ -122,12 +122,17 @@ All dependencies are bundled with the project.
 
 | Version       | XP version |
 | ------------- | ---------- |
+| 2.0.0         | 7.0.0      |
 | 1.1.x         | 6.13      |
 | 1.0.0         | 6.11      |
 
 ## Changelog
 
-### 1.1.3
+### 2.0.0
+
+Upgrade to XP7
+
+### 1.1.4
 
 New: Layout 3 columns.
 New: Layout - complex (example).
