@@ -1,25 +1,25 @@
 <layout>
-    <display-name>3 columns</display-name>
-    <config>
-		 <inline mixin="fullwidth"/>
-        <input name="layoutConf" type="RadioButton">
-            <label>Column configuration</label>
-				<help-text>The numbers represent the amount of percent each column should occupy of the screen (responsive).</help-text>
-            <occurrences minimum="1" maximum="1"/>
-            <config>
-                <option value="25-50-25">25-50-25</option>
-                <option value="50-25-25">50-25-25</option>
-                <option value="40-30-30">40-30-30</option>
-                <option value="33-33-33">33-33-33</option>
-					 <option value="30-30-40">30-30-40</option>
-					 <option value="25-25-50">25-25-50</option>
-            </config>
-            <default>33-33-33</default>
-        </input>
-    </config>
-    <regions>
-        <region name="left" />
-        <region name="middle" />
-        <region name="right" />
-    </regions>
+  <display-name>3 columns</display-name>
+  <form>
+    <inline mixin="fullwidth"/>
+    <input name="layoutConf" type="RadioButton">
+      <label>Column configuration</label>
+      <help-text>The numbers represent the amount of percent each column should occupy of the screen (responsive).</help-text>
+      <occurrences minimum="1" maximum="1"/>
+      <config>
+        <option value="25-50-25">25-50-25</option>
+        <option value="50-25-25">50-25-25</option>
+        <option value="40-30-30">40-30-30</option>
+        <option value="33-33-33">33-33-33</option>
+        <option value="30-30-40">30-30-40</option>
+        <option value="25-25-50">25-25-50</option>
+      </config>
+      <default>33-33-33</default>
+    </input>
+  </form>
+  <regions>
+    <region name="left"/>
+    <region name="middle"/>
+    <region name="right"/>
+  </regions>
 </layout>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-	<config>
+	<form>
 		<field-set name="company">
 			<label>Your company</label>
 			<items>
@@ -114,7 +114,7 @@
 				</input>
 			</items>
 		</field-set>
-	</config>
+	</form>
 	<mappings>
 		<mapping controller="/lib/enonic/url-redirect/index.js">
 		  <match>type:'com.enonic.app.corporate.theme:url'</match>

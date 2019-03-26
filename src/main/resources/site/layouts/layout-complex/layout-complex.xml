@@ -1,14 +1,14 @@
 <layout>
-    <display-name>Complex layout</display-name>
-    <config>
-		 <inline mixin="fullwidth"/>
-    </config>
-    <regions>
-        <region name="topLeft" />
-        <region name="topMiddle" />
-        <region name="topRight" />
-        <region name="middleFull" />
-        <region name="bottomLeft" />
-        <region name="bottomRight" />
-    </regions>
+  <display-name>Complex layout</display-name>
+  <form>
+    <inline mixin="fullwidth"/>
+  </form>
+  <regions>
+    <region name="topLeft"/>
+    <region name="topMiddle"/>
+    <region name="topRight"/>
+    <region name="middleFull"/>
+    <region name="bottomLeft"/>
+    <region name="bottomRight"/>
+  </regions>
 </layout>

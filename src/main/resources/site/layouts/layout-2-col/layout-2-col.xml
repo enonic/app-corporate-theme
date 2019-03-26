@@ -1,25 +1,25 @@
 <layout>
-    <display-name>2 columns</display-name>
-    <config>
-		 <inline mixin="fullwidth"/>
-        <input name="layoutConf" type="RadioButton">
-            <label>Column configuration</label>
-				<help-text>The numbers represent the amount of percent each column should occupy of the screen (responsive).</help-text>
-            <occurrences minimum="1" maximum="1"/>
-            <config>
-                <option value="80-20">80-20</option>
-                <option value="70-30">70-30</option>
-                <option value="60-40">60-40</option>
-                <option value="50-50">50-50</option>
-                <option value="40-60">40-60</option>
-                <option value="30-70">30-70</option>
-                <option value="20-80">20-80</option>
-            </config>
-            <default>50-50</default>
-        </input>
-    </config>
-    <regions>
-        <region name="left" />
-        <region name="right" />
-    </regions>
+  <display-name>2 columns</display-name>
+  <form>
+    <inline mixin="fullwidth"/>
+    <input name="layoutConf" type="RadioButton">
+      <label>Column configuration</label>
+      <help-text>The numbers represent the amount of percent each column should occupy of the screen (responsive).</help-text>
+      <occurrences minimum="1" maximum="1"/>
+      <config>
+        <option value="80-20">80-20</option>
+        <option value="70-30">70-30</option>
+        <option value="60-40">60-40</option>
+        <option value="50-50">50-50</option>
+        <option value="40-60">40-60</option>
+        <option value="30-70">30-70</option>
+        <option value="20-80">20-80</option>
+      </config>
+      <default>50-50</default>
+    </input>
+  </form>
+  <regions>
+    <region name="left"/>
+    <region name="right"/>
+  </regions>
 </layout>

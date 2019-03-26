@@ -1,22 +1,22 @@
 <content-type>
-    <display-name>Portfolio</display-name>
-    <super-type>base:structured</super-type>
-    <form>
-       <input name="portfolioImage" type="ImageSelector">
-           <label>Photo/screenshot</label>
-           <occurrences minimum="0" maximum="1" />
-			  <config>
-				  <allowPath>${site}/*</allowPath>
-			  </config>
-       </input>
-       <input name="portfolioIntro" type="TextArea">
-           <label>Description of your work</label>
-           <occurrences minimum="0" maximum="1"/>
-       </input>
-       <input name="portfolioUrl" type="TextLine">
-           <label>External Url</label>
-           <occurrences minimum="0" maximum="1"/>
-           <help-text>Add external url for this portfolio item. Url should contain "https" or "http". For example https://example.com</help-text>
-       </input>
-    </form>
+  <display-name>Portfolio</display-name>
+  <super-type>base:structured</super-type>
+  <form>
+    <input name="portfolioImage" type="ImageSelector">
+      <label>Photo/screenshot</label>
+      <occurrences minimum="0" maximum="1"/>
+      <config>
+        <allowPath>${site}/*</allowPath>
+      </config>
+    </input>
+    <input name="portfolioIntro" type="TextArea">
+      <label>Description of your work</label>
+      <occurrences minimum="0" maximum="1"/>
+    </input>
+    <input name="portfolioUrl" type="TextLine">
+      <label>External Url</label>
+      <occurrences minimum="0" maximum="1"/>
+      <help-text>Add external url for this portfolio item. Url should contain "https" or "http". For example https://example.com</help-text>
+    </input>
+  </form>
 </content-type>

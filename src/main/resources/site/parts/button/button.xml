@@ -1,16 +1,18 @@
 <part>
-    <display-name>Button</display-name>
-    <config>
-        <input name="btnText" type="TextLine">
-            <label>Text</label>
-            <occurrences minimum="0" maximum="1"/>
-			<help-text>Set a button text. Fallback value is "Click here"</help-text>
-        </input>
-        <input name="btnColor" type="TextLine">
-            <label>Background color</label>
-            <occurrences minimum="0" maximum="1"/>
-            <help-text>Use a hexadecimal color value for the background of the button (example: "#4286f4"), or a valid color name (example: "red" or "white"). The default color, if nothing here is set, is a green one.</help-text>
-        </input>
-		<inline mixin="links"/>
-    </config>
+  <display-name>Button</display-name>
+  <form>
+    <input name="btnText" type="TextLine">
+      <label>Text</label>
+      <occurrences minimum="0" maximum="1"/>
+      <help-text>Set a button text. Fallback value is "Click here"</help-text>
+    </input>
+    <input name="btnColor" type="TextLine">
+      <label>Background color</label>
+      <occurrences minimum="0" maximum="1"/>
+      <help-text>Use a hexadecimal color value for the background of the button (example: "#4286f4"), or a valid color name (example: "red"
+        or "white"). The default color, if nothing here is set, is a green one.
+      </help-text>
+    </input>
+    <inline mixin="links"/>
+  </form>
 </part>
