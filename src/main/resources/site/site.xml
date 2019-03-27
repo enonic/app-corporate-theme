@@ -123,5 +123,5 @@
 		  <match>type:'portal:fragment'</match>
 		</mapping>
 	</mappings>
-	<x-data mixin="menu-item"/>
+	<x-data name="menu-item"/>
 </site>

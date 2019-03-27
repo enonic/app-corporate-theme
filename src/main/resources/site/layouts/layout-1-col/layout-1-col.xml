@@ -1,7 +1,7 @@
 <layout>
   <display-name>Single column</display-name>
   <form>
-    <inline mixin="fullwidth"/>
+    <mixin name="fullwidth"/>
   </form>
   <regions>
     <region name="main"/>

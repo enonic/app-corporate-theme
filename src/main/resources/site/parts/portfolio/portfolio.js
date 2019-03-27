@@ -4,7 +4,7 @@ var libs = {
     content:   require('/lib/xp/content'),
     util:      require('/lib/util'),
     shared:    require('/lib/shared'),
-    portfolio: require('/content-types/portfolio')
+    portfolio: require('/site/content-types/portfolio')
 };
 
 var view = resolve("portfolio.html");

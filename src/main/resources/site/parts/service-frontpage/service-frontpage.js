@@ -4,7 +4,7 @@ var libs = {
     content : require('/lib/xp/content'),
     util : require('/lib/util'),
     shared : require('/lib/shared'),
-    services: require('/content-types/service')
+    services: require('/site/content-types/service')
 };
 
 var view = resolve('service-frontpage.html');

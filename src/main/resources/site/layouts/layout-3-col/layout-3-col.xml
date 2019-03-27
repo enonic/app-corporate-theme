@@ -1,7 +1,7 @@
 <layout>
   <display-name>3 columns</display-name>
   <form>
-    <inline mixin="fullwidth"/>
+    <mixin name="fullwidth"/>
     <input name="layoutConf" type="RadioButton">
       <label>Column configuration</label>
       <help-text>The numbers represent the amount of percent each column should occupy of the screen (responsive).</help-text>
