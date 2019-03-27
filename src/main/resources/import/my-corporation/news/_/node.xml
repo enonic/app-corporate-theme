@@ -2,7 +2,7 @@
     <id>752861c1-44de-49be-8389-41880e89c05a</id>
     <childOrder>modifiedtime DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2018-02-05T11:46:23.562Z</timestamp>
+    <timestamp>2019-03-26T12:46:09.754Z</timestamp>
     <inheritPermissions>true</inheritPermissions>
     <permissions>
         <principal key="role:cms.admin">
@@ -47,51 +47,59 @@
                 </property-set>
             </property-set>
         </property-set>
-        <property-set name="page">
-            <string name="controller">com.enonic.app.corporate.theme:default</string>
-            <reference isNull="true" name="template"/>
-            <property-set name="region">
-                <string name="name">main</string>
-                <property-set name="component">
-                    <string name="type">LayoutComponent</string>
-                    <property-set name="LayoutComponent">
-                        <string name="name">1 column</string>
-                        <string name="template">com.enonic.app.corporate.theme:layout-1-col</string>
-                        <property-set name="config">
+        <property-set name="components">
+            <string name="type">page</string>
+            <string name="path">/</string>
+            <property-set name="page">
+                <string name="descriptor">com.enonic.app.corporate.theme:default</string>
+                <boolean name="customized">true</boolean>
+                <property-set name="config">
+                    <property-set name="com-enonic-app-corporate-theme">
+                        <property-set name="default"/>
+                    </property-set>
+                </property-set>
+            </property-set>
+        </property-set>
+        <property-set name="components">
+            <string name="type">layout</string>
+            <string name="path">/main/0</string>
+            <property-set name="layout">
+                <string name="descriptor">com.enonic.app.corporate.theme:layout-1-col</string>
+                <property-set name="config">
+                    <property-set name="com-enonic-app-corporate-theme">
+                        <property-set name="layout-1-col">
                             <boolean name="fullWidth">false</boolean>
                             <string isNull="true" name="backgroundColor"/>
-                        </property-set>
-                        <property-set name="region">
-                            <string name="name">main</string>
-                            <property-set name="component">
-                                <string name="type">TextComponent</string>
-                                <property-set name="TextComponent">
-                                    <string name="name">Text</string>
-                                    <string name="text">&lt;p&gt;Stay up to date with the events happening for our company. Read all the news items posted here.&lt;/p&gt;</string>
-                                </property-set>
-                            </property-set>
-                            <property-set name="component">
-                                <string name="type">PartComponent</string>
-                                <property-set name="PartComponent">
-                                    <string name="name">Articles - List</string>
-                                    <string name="template">com.enonic.app.corporate.theme:article-list</string>
-                                    <property-set name="config">
-                                    <string name="style">block</string>
-                                    <long name="amount">9</long>
-                                    <reference name="articles">74565876-b6c0-4942-a373-383caf5f7bd1</reference>
-                                    </property-set>
-                                </property-set>
-                            </property-set>
                         </property-set>
                     </property-set>
                 </property-set>
             </property-set>
-            <property-set name="config"/>
-            <boolean name="customized">true</boolean>
+        </property-set>
+        <property-set name="components">
+            <string name="type">text</string>
+            <string name="path">/main/0/main/0</string>
+            <property-set name="text">
+                <string name="value">&lt;p&gt;Stay up to date with the events happening for our company. Read all the news items posted here.&lt;/p&gt;</string>
+            </property-set>
+        </property-set>
+        <property-set name="components">
+            <string name="type">part</string>
+            <string name="path">/main/0/main/1</string>
+            <property-set name="part">
+                <string name="descriptor">com.enonic.app.corporate.theme:article-list</string>
+                <property-set name="config">
+                    <property-set name="com-enonic-app-corporate-theme">
+                        <property-set name="article-list">
+                            <string name="style">block</string>
+                            <long name="amount">9</long>
+                            <reference name="articles">74565876-b6c0-4942-a373-383caf5f7bd1</reference>
+                        </property-set>
+                    </property-set>
+                </property-set>
+            </property-set>
         </property-set>
     </data>
     <indexConfigs>
-        <analyzer>document_index_default</analyzer>
         <defaultConfig>
             <decideByType>true</decideByType>
             <enabled>true</enabled>
@@ -108,7 +116,7 @@
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>page.region.**.LayoutComponent.config.*</path>
+                <path>components.part.config.com-enonic-app-corporate-theme.article-list.*</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -118,50 +126,17 @@
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>page.region.**.PartComponent.config.*</path>
+                <path>components.page.config.com-enonic-app-corporate-theme.default.*</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
-                    <decideByType>false</decideByType>
+                    <decideByType>true</decideByType>
                     <enabled>true</enabled>
                     <nGram>false</nGram>
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>page.region.**.LayoutComponent.*</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>true</enabled>
-                    <nGram>true</nGram>
-                    <fulltext>true</fulltext>
-                    <includeInAllText>true</includeInAllText>
-                    <indexValueProcessors>
-                        <indexValueProcessor>htmlStripper</indexValueProcessor>
-                    </indexValueProcessors>
-                </indexConfig>
-                <path>page.region.**.TextComponent.text</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>true</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>page.region.**.PartComponent.*</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>true</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>page.region.**.TextComponent.*</path>
+                <path>components.layout.config.com-enonic-app-corporate-theme.layout-1-col.*</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -175,33 +150,86 @@
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
-                    <decideByType>true</decideByType>
-                    <enabled>true</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>page.config.*</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>true</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>page.controller</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
                     <decideByType>false</decideByType>
                     <enabled>true</enabled>
                     <nGram>true</nGram>
                     <fulltext>true</fulltext>
+                    <includeInAllText>true</includeInAllText>
+                    <indexValueProcessors>
+                        <indexValueProcessor>htmlStripper</indexValueProcessor>
+                    </indexValueProcessors>
+                </indexConfig>
+                <path>components.text.value</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>attachment.text</path>
+                <path>components.part.descriptor</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.page.template</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.page.descriptor</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.page.customized</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.layout.descriptor</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.image.id</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.fragment.id</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -216,12 +244,72 @@
             <pathIndexConfig>
                 <indexConfig>
                     <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>true</nGram>
+                    <fulltext>true</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>attachment.text</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>type</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
                     <enabled>false</enabled>
                     <nGram>false</nGram>
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>page.regions</path>
+                <path>site</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>owner</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>modifier</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>modifiedTime</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>data</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -246,32 +334,12 @@
             <pathIndexConfig>
                 <indexConfig>
                     <decideByType>false</decideByType>
-                    <enabled>true</enabled>
+                    <enabled>false</enabled>
                     <nGram>false</nGram>
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>modifiedTime</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>true</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>modifier</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>true</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>owner</path>
+                <path>components</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -283,46 +351,7 @@
                 </indexConfig>
                 <path>attachment</path>
             </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>false</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>page</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>false</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>site</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>true</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>type</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>true</decideByType>
-                    <enabled>true</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>data</path>
-            </pathIndexConfig>
         </pathIndexConfigs>
+        <allTextIndexConfig/>
     </indexConfigs>
 </node>

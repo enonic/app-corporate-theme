@@ -2,7 +2,7 @@
     <id>b18f909d-d2c5-43f4-a1ba-1b295a0ef890</id>
     <childOrder>modifiedtime DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2017-07-07T10:34:41.729Z</timestamp>
+    <timestamp>2019-03-26T12:46:09.607Z</timestamp>
     <inheritPermissions>true</inheritPermissions>
     <permissions>
         <principal key="role:cms.admin">
@@ -52,7 +52,6 @@
         </property-set>
     </data>
     <indexConfigs>
-        <analyzer>document_index_default</analyzer>
         <defaultConfig>
             <decideByType>true</decideByType>
             <enabled>true</enabled>
@@ -61,19 +60,6 @@
             <includeInAllText>false</includeInAllText>
         </defaultConfig>
         <pathIndexConfigs>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>true</enabled>
-                    <nGram>true</nGram>
-                    <fulltext>true</fulltext>
-                    <includeInAllText>true</includeInAllText>
-                    <indexValueProcessors>
-                        <indexValueProcessor>htmlStripper</indexValueProcessor>
-                    </indexValueProcessors>
-                </indexConfig>
-                <path>page.region.**.TextComponent.text</path>
-            </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
                     <decideByType>false</decideByType>
@@ -97,46 +83,6 @@
             <pathIndexConfig>
                 <indexConfig>
                     <decideByType>false</decideByType>
-                    <enabled>false</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>page.regions</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>true</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>modifier</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>true</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>owner</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>true</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>attachment</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
                     <enabled>true</enabled>
                     <nGram>false</nGram>
                     <fulltext>false</fulltext>
@@ -147,12 +93,12 @@
             <pathIndexConfig>
                 <indexConfig>
                     <decideByType>false</decideByType>
-                    <enabled>false</enabled>
+                    <enabled>true</enabled>
                     <nGram>false</nGram>
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>page</path>
+                <path>type</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -172,7 +118,27 @@
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>type</path>
+                <path>owner</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>modifier</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>modifiedTime</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -212,8 +178,9 @@
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>modifiedTime</path>
+                <path>attachment</path>
             </pathIndexConfig>
         </pathIndexConfigs>
+        <allTextIndexConfig/>
     </indexConfigs>
 </node>
