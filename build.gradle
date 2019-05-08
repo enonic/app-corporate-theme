@@ -13,17 +13,15 @@ app {
 }
 
 dependencies {
-	compile "com.enonic.xp:core-api:${xpVersion}"
-	compile "com.enonic.xp:portal-api:${xpVersion}"
 	include "com.enonic.xp:lib-content:${xpVersion}"
 	include "com.enonic.xp:lib-portal:${xpVersion}"
 	include "com.enonic.xp:lib-mail:${xpVersion}"
 
-	include 'com.enonic.lib:landingpage:1.0.0'
-	include 'com.enonic.lib:urlredirect:2.0.0'
-	include "com.enonic.lib:lib-thymeleaf:2.0.0-B1"
-	include 'com.enonic.lib:lib-util:2.0.0-B1'
-	include 'com.enonic.lib:lib-menu:3.0.0-B1'
+	include 'com.enonic.lib:lib-landingpage:2.0.0'
+	include 'com.enonic.lib:lib-menu:3.0.0-RC1'
+	include "com.enonic.lib:lib-thymeleaf:2.0.0-RC1"
+	include 'com.enonic.lib:lib-urlredirect:3.0.0-RC1'
+	include 'com.enonic.lib:lib-util:2.0.0-RC1'
 
 	webjar 'org.webjars:momentjs:2.20.1'
 }

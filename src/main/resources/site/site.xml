@@ -116,7 +116,7 @@
 		</field-set>
 	</form>
 	<mappings>
-		<mapping controller="/lib/enonic/url-redirect/index.js">
+		<mapping controller="/lib/urlredirect.js">
 		  <match>type:'com.enonic.app.corporate.theme:url'</match>
 		</mapping>
 		<mapping controller="/site/pages/default/default.js">
