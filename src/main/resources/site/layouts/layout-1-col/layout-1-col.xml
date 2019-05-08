@@ -1,9 +1,9 @@
 <layout>
-    <display-name>Single column</display-name>
-    <config>
-        <inline mixin="fullwidth"/>
-    </config>
-    <regions>
-        <region name="main" />
-    </regions>
+  <display-name>Single column</display-name>
+  <form>
+    <mixin name="fullwidth"/>
+  </form>
+  <regions>
+    <region name="main"/>
+  </regions>
 </layout>

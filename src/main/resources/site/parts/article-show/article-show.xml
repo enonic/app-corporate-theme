@@ -1,5 +1,4 @@
 <part>
-    <display-name>Article - Single view</display-name>
-    <config>
-    </config>
+  <display-name>Article - Single view</display-name>
+  <form/>
 </part>

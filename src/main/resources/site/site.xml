@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-	<config>
+	<form>
 		<field-set name="company">
 			<label>Your company</label>
 			<items>
@@ -114,14 +114,14 @@
 				</input>
 			</items>
 		</field-set>
-	</config>
+	</form>
 	<mappings>
-		<mapping controller="/lib/enonic/url-redirect/index.js">
+		<mapping controller="/lib/urlredirect.js">
 		  <match>type:'com.enonic.app.corporate.theme:url'</match>
 		</mapping>
 		<mapping controller="/site/pages/default/default.js">
 		  <match>type:'portal:fragment'</match>
 		</mapping>
 	</mappings>
-	<x-data mixin="menu-item"/>
+	<x-data name="menu-item"/>
 </site>
