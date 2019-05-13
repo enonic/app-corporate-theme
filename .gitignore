@@ -8,6 +8,8 @@
 # Icon must end with two \r
 Icon
 
+#Enonic cli folder
+.enonic
 
 # Thumbnails
 ._*
