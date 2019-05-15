@@ -5,7 +5,7 @@ This is an app for [Enonic XP](https://www.enonic.com/) that lets you build your
 
 ## Features
 
-The Corporate Theme app is a responsive website developed based on Twitter Bootstrap 3. It can be used for building a corporate, small business, or startup, website. It has different features and looks good on all devices. It is also customizable and you can change the content and design of the pages based on your needs by using reusable and configurable Enonic XP components like layouts and parts.
+The Corporate Theme app is a responsive website developed based on Bootstrap 4. It can be used for building a corporate, small business, or startup, website. It has different features and looks good on all devices. It is also customizable and you can change the content and design of the pages based on your needs by using reusable and configurable Enonic XP components like layouts and parts.
 
 ## Extending Corporate Theme
 
@@ -111,8 +111,8 @@ The theme was adapted and used with approval from the original author.
 
 We use some front-end dependencies for the code and functionality of this project, these are the ones:
 
-* **Bootstrap 3** - 3.3.7
-* **jQuery 1** - 1.12.4
+* **Bootstrap** - 4.3.1
+* **jQuery** - 3.1.1
 * **Font Awesome 3** - 3.2.1
 * **jquery SlitSlider** 1.2.0 from codrops (depends on *modernizr 2.6.2* and *ba-cond plugin*)
 
@@ -122,11 +122,16 @@ All dependencies are bundled with the project.
 
 | Version       | XP version |
 | ------------- | ---------- |
+| 2.1.0         | 7.0.0      |
 | 2.0.0         | 7.0.0      |
 | 1.1.x         | 6.13      |
 | 1.0.0         | 6.11      |
 
 ## Changelog
+
+### 2.1.0
+
+Upgrade to latest Bootstrap and jQuery
 
 ### 2.0.0
 
