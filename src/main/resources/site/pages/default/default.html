@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title data-th-text="${pageTitle}">Home | My Corporation</title>
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" data-th-href="${portal.assetUrl({'_path=css/bootstrap.min.css'})}" href="/assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" data-th-href="${portal.assetUrl({'_path=css/bootstrap.css'})}" href="/assets/css/bootstrap.css"/>
     <link rel="stylesheet" data-th-href="${portal.assetUrl({'_path=css/font-awesome.min.css'})}" href="/assets/css/font-awesome.min.css" />
     <link rel="stylesheet" data-th-href="${portal.assetUrl({'_path=css/sl-slide.css'})}" href="/assets/css/sl-slide.css" />
     <link rel="stylesheet" data-th-href="${portal.assetUrl({'_path=css/main.css'})}" href="/assets/css/main.css" />
@@ -15,72 +15,55 @@
 <body>
 
 <!-- Page header and menu -->
-<header class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-   <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <!--<a class="navbar-brand" href="#">
-        <img alt="Brand" src="...">
-	</a>-->
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#corporate-collapsed-menu" aria-expanded="false">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-		<span class="sr-only">Toggle navigation</span>
-      </button>
-	  <a class="navbar-brand" href="/" data-th-href="${siteUrl}">
-		  <img data-th-src="${logo}" alt=""/>
-	  </a>
+<header class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <div class="container">
+            <a class="navbar-brand" href="/" data-th-href="${siteUrl}">
+                <img data-th-src="${logo}" alt=""/>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#corporate-collapsed-menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
     </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <nav class="collapse navbar-collapse pull-right" id="corporate-collapsed-menu">
-		<ul class="nav navbar-nav">
-			<li><a href="/" data-th-href="${siteUrl}">Home</a></li>
-			<li data-th-each="menuItem : ${menuItems}"
-				data-th-class="${
- (menuItem.hasChildren ? 'dropdown' : '') +
- (menuItem.inPath ? ' in-path' : '') +
- (menuItem.isActive ? ' active' : '')
-}">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
-					data-th-href="${portal.pageUrl({'_path=' + menuItem.path})}"
-					data-th-target="${menuItem.newWindow ? '_blank' : ''}"
-					data-th-class="${menuItem.hasChildren ? 'dropdown-toggle' : ''}"
-					data-th-attr="data-toggle=${menuItem.hasChildren ? 'dropdown' : ''}"
-					>
-					<span data-th-text="${menuItem.menuName} ?: ${menuItem.displayName}" data-th-remove="tag">Page</span>
-					<i data-th-if="${menuItem.hasChildren}" class="icon-angle-down"></i>
-				</a>
-				<ul data-th-if="${menuItem.hasChildren}" class="dropdown-menu">
-					<li data-th-each="submenuItem : ${menuItem.children}"
-						data-th-class="${
-		 (submenuItem.hasChildren ? 'dropdown' : '') +
-		 (submenuItem.inPath ? ' in-path' : '') +
-		 (submenuItem.isActive ? ' active' : '')
-	 }">
-						<a href="#" data-th-href="${portal.pageUrl({'_path=' + submenuItem.path})}"
-						   data-th-text="${submenuItem.menuName} ?: ${submenuItem.displayName}"
-						   data-th-target="${submenuItem.newWindow ? '_blank' : ''}">Page title</a>
-					</li>
-				</ul>
-			</li>
-		</ul>
-    </nav><!-- /.navbar-collapse -->
-   </div><!-- /.container -->
-  </div><!-- /.container-fluid -->
+    <nav class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/" data-th-href="${siteUrl}">Home</a>
+            </li>
+            <li data-th-each="menuItem : ${menuItems}"
+                data-th-class="${'nav-item' +
+                                        (menuItem.hasChildren ? ' dropdown' : '') +
+                                        (menuItem.inPath ? ' in-path' : '') +
+                                        (menuItem.isActive ? ' active' : '')
+                                        }">
+                <a href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                   data-th-href="${portal.pageUrl({'_path=' + menuItem.path})}"
+                   data-th-target="${menuItem.newWindow ? '_blank' : ''}"
+                   data-th-class="${'nav-link' + (menuItem.hasChildren ? ' dropdown-toggle' : '')}"
+                   data-th-attr="data-toggle=${menuItem.hasChildren ? 'dropdown' : ''}"
+                ><span data-th-text="${menuItem.menuName} ?: ${menuItem.displayName}" data-th-remove="tag">Page</span></a>
+                <div data-th-if="${menuItem.hasChildren}" class="dropdown-menu">
+                    <a data-th-each="submenuItem : ${menuItem.children}"
+                       href="#" class="dropdown-item" data-th-href="${portal.pageUrl({'_path=' + submenuItem.path})}"
+                       data-th-text="${submenuItem.menuName} ?: ${submenuItem.displayName}"
+                       data-th-target="${submenuItem.newWindow ? '_blank' : ''}">Page title</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
 </header>
 
 <!-- Page breadcrumb and title bar -->
 <section class="title" data-th-if="${!showTitle}">
     <div class="container">
         <div class="row">
-            <div class="col-sm-6 col-xs-12">
+            <div class="col-sm-6 col-12">
                 <h1 data-th-text="${breadcrumbTitle}"></h1>
             </div>
-            <div class="col-sm-6 col-xs-12">
-					<ul class="breadcrumb pull-right ">
+            <div class="col-sm-6 col-12">
+					<ul class="breadcrumb float-right ">
 						 <li data-th-each="item, iterStat : ${breadcrumbs.items}" data-th-class="
 							  ${item.active ? 'active' : ''} +
 							  ${iterStat.first ? ' first' : ''} +
@@ -160,7 +143,7 @@
             </div>
             <!--/Copyright-->
             <div class="col-md-6">
-                <ul class="social pull-right">
+                <ul class="social float-right">
                     <li data-th-if="${footer.socialUrls.facebook}"><a data-th-href="${footer.socialUrls.facebook}"><i class="icon-facebook"></i></a></li>
                     <li data-th-if="${footer.socialUrls.twitter}"><a data-th-href="${footer.socialUrls.twitter}"><i class="icon-twitter"></i></a></li>
                     <li data-th-if="${footer.socialUrls.pinterest}"><a data-th-href="${footer.socialUrls.pinterest}"><i class="icon-pinterest"></i></a></li>
@@ -172,14 +155,14 @@
                 </ul>
             </div>
             <div class="col-md-1">
-                <a id="gototop" class="gototop pull-right" href="#"><i class="icon-angle-up"></i></a>
+                <a id="gototop" class="gototop float-right" href="#"><i class="icon-angle-up"></i></a>
             </div>
             <!--/Goto Top-->
         </div>
     </div>
 </footer>
 
-<script data-th-src="${portal.assetUrl({'_path=js/vendor/jquery-1.12.4.min.js'})}" src="/assets/js/vendor/jquery-1.12.1.min.js"></script>
+<script data-th-src="${portal.assetUrl({'_path=js/vendor/jquery-3.1.1.min.js'})}" src="/assets/js/vendor/jquery-3.1.1.min.js"></script>
 <script data-th-src="${portal.assetUrl({'_path=js/bootstrap.min.js'})}" src="/assets/js/bootstrap.min.js"></script>
 <script data-th-src="${portal.assetUrl({'_path=js/jquery.ba-cond.min.js'})}" src="/assets/js/jquery.ba-cond.min.js" ></script>
 <script data-th-src="${portal.assetUrl({'_path=js/jquery.slitslider.js'})}" src="/assets/js/jquery.slitslider.js" ></script>

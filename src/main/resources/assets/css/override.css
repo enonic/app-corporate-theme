@@ -68,10 +68,7 @@ ul.gallery li .preview .links {
 	max-width: 100%;
 	width: 100%;
 }
-/* Left side padding on the ul element makes the entire list of portfolio items not centered. Reset to Bootstrap defaults. */
-.portfolio .gallery {
-	padding: 0 15px;
-}
+
 /* Spacing on phablets for portfolio gallery. */
 ul.gallery li .desc {
 	margin: 15px 0;
@@ -237,6 +234,10 @@ header.navbar .nav > li.in-path > a:hover {
 	height: auto;
 }
 
+.row.thumbnail {
+	margin: 0;
+}
+
 /* Articles - Single view */
 .p_article-show {
 	padding: 2em 0;
@@ -303,6 +304,7 @@ header.navbar {
 	min-height: 80px;
 	align-items: center; /* vertically */
 	display: flex;
+	padding: 0 4rem;
 }
 
 @media (max-width: 768px) {

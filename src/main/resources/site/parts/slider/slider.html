@@ -5,7 +5,7 @@
                     class="sl-slide item1" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
                 <div class="sl-slide-inner" data-th-style="${banner.backgroundColor != '' ? 'background-color:' + banner.backgroundColor : ''}">
                     <div class="container">
-                        <img class="pull-right" data-th-src="${banner.image}" alt="" />
+                        <img class="float-right" data-th-src="${banner.image}" alt="" />
                         <h2 data-th-text="${banner.title}"></h2>
                         <h3 class="gap" data-th-text="${banner.secondTitle}"></h3>
                         <a class="btn btn-large btn-transparent" data-th-href="${banner.linkTarget}" data-th-if="${banner.linkTarget}">Learn more</a>

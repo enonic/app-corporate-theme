@@ -104,7 +104,7 @@
                             <property-set name="url">
                                 <string name="_selected">text</string>
                                 <property-set name="text">
-                                    <string name="url">http://docs.enonic.com/en/stable/admin/index.html</string>
+                                    <string name="url">https://developer.enonic.com/</string>
                                 </property-set>
                                 <property-set name="content"/>
                             </property-set>

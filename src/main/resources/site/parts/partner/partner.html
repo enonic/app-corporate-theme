@@ -3,22 +3,20 @@
         <div class="row">
             <div class="col-md-2">
                 <div class="clearfix">
-                    <h4 class="pull-left" data-th-text="${title}"></h4>
+                    <h4 class="float-left" data-th-text="${title}"></h4>
                 </div>
                 <p data-th-text="${intro}"></p>
             </div>
             <div class="col-md-10">
-                <div id="myCarousel" class="clients">
+                <div id="myCarousel" class="clients carousel">
                     <!-- Carousel items -->
                     <div class="carousel-inner">
-                        <div class="active item">
-                            <div class="row">
-                                <ul class="thumbnail list-unstyled">
-                                    <li class="col-xs-3" data-th-if="${logosList}" data-th-each="logo : ${logosList}">
-                                         <img data-th-src="${logo}" class="img-circle">
-                                    </li>
-                                </ul>
-                            </div>
+                        <div class="active carousel-item">
+                            <ul class="row thumbnail list-unstyled">
+                                <li class="col-3" data-th-if="${logosList}" data-th-each="logo : ${logosList}">
+                                     <img data-th-src="${logo}" class="img-circle">
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
