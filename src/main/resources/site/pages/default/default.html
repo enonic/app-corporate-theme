@@ -16,27 +16,23 @@
 
 <!-- Page header and menu -->
 <header class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-        <div class="container">
-            <a class="navbar-brand" href="/" data-th-href="${siteUrl}">
-                <img data-th-src="${logo}" alt=""/>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#corporate-collapsed-menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-    </div>
+    <a class="navbar-brand" href="/" data-th-href="${siteUrl}">
+        <img data-th-src="${logo}" alt=""/>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#corporate-collapsed-menu" aria-controls="corporate-collapsed-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <nav class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="/" data-th-href="${siteUrl}">Home</a>
+    <nav class="collapse navbar-collapse" id="corporate-collapsed-menu">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a data-th-class="${'nav-link' + (breadcrumbs.items.size()==1 ? ' active' : '')}" href="/" data-th-href="${siteUrl}">Home</a>
             </li>
             <li data-th-each="menuItem : ${menuItems}"
                 data-th-class="${'nav-item' +
                                         (menuItem.hasChildren ? ' dropdown' : '') +
                                         (menuItem.inPath ? ' in-path' : '') +
-                                        (menuItem.isActive ? ' active' : '')
+                                        (menuItem.isActive || (breadcrumbs.items.size()==3 && menuItem.displayName=='More') ? ' active' : '')
                                         }">
                 <a href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                    data-th-href="${portal.pageUrl({'_path=' + menuItem.path})}"
@@ -46,7 +42,8 @@
                 ><span data-th-text="${menuItem.menuName} ?: ${menuItem.displayName}" data-th-remove="tag">Page</span></a>
                 <div data-th-if="${menuItem.hasChildren}" class="dropdown-menu">
                     <a data-th-each="submenuItem : ${menuItem.children}"
-                       href="#" class="dropdown-item" data-th-href="${portal.pageUrl({'_path=' + submenuItem.path})}"
+                       href="#" data-th-href="${portal.pageUrl({'_path=' + submenuItem.path})}"
+                       data-th-class="${'dropdown-item' + (submenuItem.isActive ? ' active' : '')}"
                        data-th-text="${submenuItem.menuName} ?: ${submenuItem.displayName}"
                        data-th-target="${submenuItem.newWindow ? '_blank' : ''}">Page title</a>
                 </div>

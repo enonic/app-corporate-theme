@@ -118,6 +118,19 @@ ul.gallery li {
 		padding-bottom: 20px;
 	}
 
+.dropdown-menu .dropdown-item {
+	font-family: "Fjalla One", sans-serif;
+	color: rgb(0, 0, 0);
+	background-color: transparent;
+	opacity: 0.5;
+}
+.dropdown-menu .dropdown-item:hover {
+	opacity: 0.7;
+}
+.dropdown-menu .dropdown-item.active {
+	opacity: 0.9;
+}
+
 /* Old theme CSS and new bootstrap doesn't color hover in menu sub levels properly. */
 .dropdown-menu > .active > a:hover,
 .dropdown-menu > .active > a:focus,
@@ -203,7 +216,7 @@ header.navbar .nav > li.in-path > a:hover {
 }
 .p_article-list .article-list {
 	list-style-type: none;
-	padding: 30px 0 0 0;
+	padding: 20px 0;
 	margin: 0;
 }
 	.p_article-list .article-list li,
@@ -304,16 +317,31 @@ header.navbar {
 	min-height: 80px;
 	align-items: center; /* vertically */
 	display: flex;
-	padding: 0 4rem;
 }
-
+@media (min-width: 768px) {
+	header.navbar {
+		padding: 0 4rem;
+	}
+}
 @media (max-width: 768px) {
 	.navbar-default .navbar-brand img {
 		max-width: 220px;
 	}
-	.navbar-default .container,
-	header.navbar {
+	.navbar-default .container {
 		display: block !important;
+	}
+
+	.dropdown-menu {
+		background-color: transparent;
+	}
+
+}
+
+@media (min-width: 992px) {
+
+	.dropdown-menu {
+		left: unset;
+		right: 0;
 	}
 }
 
