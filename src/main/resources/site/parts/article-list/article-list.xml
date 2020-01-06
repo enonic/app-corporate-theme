@@ -1,6 +1,6 @@
 <part>
 	<display-name>Articles - List</display-name>
-	<config>
+	<form>
 		<input name="style" type="RadioButton">
 			<label>Display style</label>
 			<occurrences minimum="0" maximum="0"/>
@@ -26,8 +26,7 @@
 			<config>
 				<relationshipType>system:reference</relationshipType>
 				<allowContentType>article</allowContentType>
-				<allowPath>${site}/*</allowPath>
 			</config>
 		</input>
-	</config>
+	</form>
 </part>

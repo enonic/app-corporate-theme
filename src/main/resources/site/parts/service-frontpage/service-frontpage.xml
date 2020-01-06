@@ -3,12 +3,12 @@
   <form>
     <input type="TextLine" name="title">
       <label>Title</label>
-      <occurrences minimum="1" maximum="1"></occurrences>
+      <occurrences minimum="1" maximum="1"/>
       <default>What We Offer</default>
     </input>
     <input type="TextArea" name="intro">
       <label>Introduction</label>
-      <occurrences minimum="1" maximum="1"></occurrences>
+      <occurrences minimum="1" maximum="1"/>
       <default>Look at some of the recent projects we have completed for our valuble clients</default>
     </input>
     <input type="ContentSelector" name="service">
@@ -16,7 +16,6 @@
       <occurrences minimum="0" maximum="0"/>
       <config>
         <allowContentType>service</allowContentType>
-        <allowPath>${site}/*</allowPath>
       </config>
     </input>
   </form>

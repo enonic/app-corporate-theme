@@ -31,7 +31,6 @@
           <help-text>Optional link to one of your website's other pages. Button will not be generated unless it has a target link.</help-text>
           <config>
             <allowContentType>landing-page</allowContentType>
-            <allowPath>${site}/*</allowPath>
           </config>
         </input>
       </items>

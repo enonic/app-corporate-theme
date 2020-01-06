@@ -5,9 +5,9 @@
         <input name="photo" type="ImageSelector">
             <label>Photo</label>
             <occurrences minimum="1" maximum="1"/>
-				<config>
- 				  <allowPath>${site}/*</allowPath>
- 			  </config>
+            <config>
+              <allowPath>${site}/*</allowPath>
+            </config>
         </input>
         <input name="intro" type="TextArea">
             <label>About</label>
