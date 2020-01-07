@@ -60,17 +60,17 @@
                 <h1 data-th-text="${breadcrumbTitle}"></h1>
             </div>
             <div class="col-sm-6 col-12">
-					<ul class="breadcrumb float-right ">
-						 <li data-th-each="item, iterStat : ${breadcrumbs.items}" data-th-class="
-							  ${item.active ? 'active' : ''} +
-							  ${iterStat.first ? ' first' : ''} +
-							  ${iterStat.last ? ' last' : ''}
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb float-right">
+                        <li data-th-each="item, iterStat : ${breadcrumbs.items}" data-th-class="'breadcrumb-item' +
+							  ${item.active ? ' active' : ''}
 						 ">
-							 <a href="/" data-th-if="${item.url}" data-th-href="${item.url}" data-th-text="${item.text}">Home</a>
-							 <span data-th-unless="${item.url}" data-th-text="${item.text}" data-th-remove="tag">Home</span>
-							 <div data-th-remove="tag" data-th-if="${breadcrumbs.divider} and !${iterStat.last}" data-th-utext="${breadcrumbs.divider}"></div>
-						 </li>
-					</ul>
+                            <a href="/" data-th-if="${item.url}" data-th-href="${item.url}" data-th-text="${item.text}">Home</a>
+                            <span data-th-unless="${item.url}" data-th-text="${item.text}" data-th-remove="tag">Home</span>
+                            <div data-th-remove="tag" data-th-if="${breadcrumbs.divider} and !${iterStat.last}" data-th-utext="${breadcrumbs.divider}"></div>
+                        </li>
+                    </ol>
+                </nav>
             </div>
         </div>
     </div>
