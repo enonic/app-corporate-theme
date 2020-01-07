@@ -111,9 +111,11 @@ exports.get = function (req) {
     var siteUrl = libs.portal.pageUrl({
         path: site._path
     });
+
     var model = {
         logo: logo,
         site: site,
+        lang : site.language || "en-us",
         siteUrl: siteUrl,
         showTitle: showTitle,
         pageTitle: content.displayName + " | " + site.displayName,
