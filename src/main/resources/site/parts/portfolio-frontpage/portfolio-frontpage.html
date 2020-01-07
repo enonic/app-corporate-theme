@@ -4,7 +4,7 @@
             <h3 data-th-text="${title}"></h3>
             <p class="lead" data-th-text="${intro}"></p>
         </div>
-        <ul class="gallery row">
+        <ul class="gallery row list-unstyled">
             <li class="col-sm-3 col-6" data-th-if="portfolios" data-th-each="item : ${portfolios}">
 				<div class="preview">
 	                <img data-th-if="${item.image}" data-th-src="${item.image}" alt="" />

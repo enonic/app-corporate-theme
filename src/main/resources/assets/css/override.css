@@ -71,9 +71,6 @@ ol.breadcrumb > li.active {
 #bottom h4 {
 	text-transform: uppercase;
 }
-ul.gallery {
-	list-style: none;
-}
 /* In our app, one can add only link (no preview) for a portfolio item, then the design doesn't properly center this link. */
 ul.gallery li .preview .links {
 	text-align: center;
@@ -258,12 +255,13 @@ header.navbar .nav > li.in-path > a:hover {
 /* Remove link around partner logos, updating CSS to reflect new DOM. */
 .thumbnail .img-circle {
 	display: block;
-	max-width: 100%;
+	max-width: 50%;
 	height: auto;
 }
 
 .row.thumbnail {
 	margin: 0;
+	padding-top: 10px;
 }
 
 /* Articles - Single view */
