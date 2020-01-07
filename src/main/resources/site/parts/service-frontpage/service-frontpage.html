@@ -10,11 +10,11 @@
 					<div data-th-each="index: ${#numbers.sequence(service, service + 2)}" data-th-remove="tag" data-th-with="service=${index lt #lists.size(services) ? services.get(index) : null}">
 						<div class="col-md-4" data-th-if="${service != null}">
 							<div class="media">
-								<div class="pull-left">
+								<div class="float-left pr-2">
 									<i class="icon-medium" data-th-classappend="${service.icon}"></i>
 								</div>
 								<div class="media-body">
-									<h4 class="media-heading" data-th-text="${service.title}"></h4>
+									<h5 class="media-heading" data-th-text="${service.title}"></h5>
 									<p data-th-text="${service.intro}"></p>
 								</div>
 							</div>

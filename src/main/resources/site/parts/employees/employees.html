@@ -1,7 +1,7 @@
 <section id="about-us" class="main">
     <div class="row">
         <h1 class="center" data-th-text="${titleEmployee}"></h1>
-        <div class="col-md-3 col-sm-6 col-xs-12" data-th-if="${employees}" data-th-each="employee : ${employees}">
+        <div class="col-md-3 col-sm-6 col-12" data-th-if="${employees}" data-th-each="employee : ${employees}">
             <div class="box">
                 <p><img data-th-src="${employee.photo}" alt=""></p>
                 <h5 data-th-text="${employee.name}"></h5>

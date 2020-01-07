@@ -1,5 +1,5 @@
 var libs = {
-	thymeleaf: require('/lib/xp/thymeleaf')
+	thymeleaf: require('/lib/thymeleaf')
 };
 
 var viewError = resolve('error.html');

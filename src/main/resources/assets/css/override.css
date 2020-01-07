@@ -2,6 +2,10 @@
 @-o-viewport { width: device-width; }
 @viewport { width: device-width; }
 
+html {
+	width: 100vw;
+}
+
 body div section {
 	padding: 50px 0 0 0;
 }
@@ -30,14 +34,22 @@ body div section {
 body {
 	font-size: 14px;
 }
-/* Bootstrap 3 creates gray dividers, works bad on bright green bg. Because of whitespace from thymeleaf padding is adjusted too. */
-.breadcrumb>li+li:before {
-	color: white;
-	padding: 0 0 0 4px;
+ol.breadcrumb {
+	background-color: transparent;
 }
-/* Needed in Bootstrap 3 to vertically align menu better. */
-ul.breadcrumb {
-	margin: 14px 0 0;
+ol.breadcrumb > li > a,
+.breadcrumb-item + .breadcrumb-item::before{
+	color: white;
+}
+ol.breadcrumb > li {
+	opacity: 1;
+}
+ol.breadcrumb > li:hover {
+	opacity: 0.8;
+}
+ol.breadcrumb > li.active {
+	color: white;
+	opacity: 0.8;
 }
 /* Properly re-space heading one inside the title header block, broken when Bootstrap 3 was introduced. */
 .title h1 {
@@ -68,10 +80,7 @@ ul.gallery li .preview .links {
 	max-width: 100%;
 	width: 100%;
 }
-/* Left side padding on the ul element makes the entire list of portfolio items not centered. Reset to Bootstrap defaults. */
-.portfolio .gallery {
-	padding: 0 15px;
-}
+
 /* Spacing on phablets for portfolio gallery. */
 ul.gallery li .desc {
 	margin: 15px 0;
@@ -120,6 +129,19 @@ ul.gallery li {
 	#bottom .col-md-6 {
 		padding-bottom: 20px;
 	}
+
+.dropdown-menu .dropdown-item {
+	font-family: "Fjalla One", sans-serif;
+	color: rgb(0, 0, 0);
+	background-color: transparent;
+	opacity: 0.5;
+}
+.dropdown-menu .dropdown-item:hover {
+	opacity: 0.7;
+}
+.dropdown-menu .dropdown-item.active {
+	opacity: 0.9;
+}
 
 /* Old theme CSS and new bootstrap doesn't color hover in menu sub levels properly. */
 .dropdown-menu > .active > a:hover,
@@ -206,7 +228,7 @@ header.navbar .nav > li.in-path > a:hover {
 }
 .p_article-list .article-list {
 	list-style-type: none;
-	padding: 30px 0 0 0;
+	padding: 20px 0;
 	margin: 0;
 }
 	.p_article-list .article-list li,
@@ -235,6 +257,10 @@ header.navbar .nav > li.in-path > a:hover {
 	display: block;
 	max-width: 100%;
 	height: auto;
+}
+
+.row.thumbnail {
+	margin: 0;
 }
 
 /* Articles - Single view */
@@ -304,14 +330,31 @@ header.navbar {
 	align-items: center; /* vertically */
 	display: flex;
 }
-
+@media (min-width: 768px) {
+	header.navbar {
+		padding: 0 4rem;
+	}
+}
 @media (max-width: 768px) {
 	.navbar-default .navbar-brand img {
 		max-width: 220px;
 	}
-	.navbar-default .container,
-	header.navbar {
+	.navbar-default .container {
 		display: block !important;
+	}
+
+	.dropdown-menu {
+		background-color: transparent;
+		border: none;
+	}
+
+}
+
+@media (min-width: 992px) {
+
+	.dropdown-menu {
+		left: unset;
+		right: 0;
 	}
 }
 

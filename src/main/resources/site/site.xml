@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-	<config>
+	<form>
 		<field-set name="company">
 			<label>Your company</label>
 			<items>
@@ -60,7 +60,6 @@
 					<help-text>Select pages that you want to link to from the footer. You can add multiple links to create a menu for your most important content.</help-text>
 					<config>
 						<allowContentType>landing-page</allowContentType>
-						<allowPath>${site}/*</allowPath>
 					</config>
 				</input>
 				<input name="freeText" type="HtmlArea">
@@ -114,14 +113,14 @@
 				</input>
 			</items>
 		</field-set>
-	</config>
+	</form>
 	<mappings>
-		<mapping controller="/lib/enonic/url-redirect/index.js">
+		<mapping controller="/lib/urlredirect.js">
 		  <match>type:'com.enonic.app.corporate.theme:url'</match>
 		</mapping>
 		<mapping controller="/site/pages/default/default.js">
 		  <match>type:'portal:fragment'</match>
 		</mapping>
 	</mappings>
-	<x-data mixin="menu-item"/>
+	<x-data name="menu-item"/>
 </site>

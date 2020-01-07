@@ -1,22 +1,22 @@
 <part>
-    <display-name>Partners</display-name>
-    <config>
-        <input type="TextLine" name="title">
-            <label>Title</label>
-            <occurrences  minimum="0" maximum="1"/>
-            <default>Our partners</default>
-        </input>
-        <input type="TextArea" name="intro">
-            <label>Short introduction</label>
-            <ocurrences minimum="0" maximum="1"/>
-        </input>
-        <input type="ImageSelector" name="partnerLogo">
-            <label>Partner logos</label>
-            <occurrences minimum="0" maximum="4" />
-            <help-text>You can select up to 4 images/logos of your partners.</help-text>
-            <config>
-                <allowPath>${site}/*</allowPath>
-            </config>
-        </input>
-    </config>
+  <display-name>Partners</display-name>
+  <form>
+    <input type="TextLine" name="title">
+      <label>Title</label>
+      <occurrences minimum="0" maximum="1"/>
+      <default>Our partners</default>
+    </input>
+    <input type="TextArea" name="intro">
+      <label>Short introduction</label>
+      <ocurrences minimum="0" maximum="1"/>
+    </input>
+    <input type="ImageSelector" name="partnerLogo">
+      <label>Partner logos</label>
+      <occurrences minimum="0" maximum="4"/>
+      <help-text>You can select up to 4 images/logos of your partners.</help-text>
+      <config>
+        <allowPath>${site}/*</allowPath>
+      </config>
+    </input>
+  </form>
 </part>

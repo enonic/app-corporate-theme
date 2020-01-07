@@ -2,7 +2,7 @@
     <id>840899b3-3585-4c0d-a052-2f3f2b42763e</id>
     <childOrder>_manualordervalue DESC, _timestamp DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2017-07-07T10:59:46.318Z</timestamp>
+    <timestamp>2019-03-26T12:46:09.182Z</timestamp>
     <inheritPermissions>false</inheritPermissions>
     <permissions>
         <principal key="role:cms.admin">
@@ -29,8 +29,8 @@
         <string name="displayName">My Corporation</string>
         <string name="type">portal:site</string>
         <string name="owner">user:system:su</string>
-        <dateTime name="modifiedTime">2017-07-07T10:59:46.317Z</dateTime>
-        <string name="modifier">user:system:su</string>
+        <dateTime name="modifiedTime">2019-03-26T12:46:09.161Z</dateTime>
+        <string name="modifier">user:system:anonymous</string>
         <string name="creator">user:system:su</string>
         <dateTime name="createdTime">2017-02-03T09:33:59.893Z</dateTime>
         <property-set name="publish">
@@ -47,10 +47,10 @@
                     <string name="footerText">&lt;p&gt;A corporate website theme running on &lt;a href="https://www.enonic.com/"&gt;Enonic XP&lt;/a&gt;, adapted from  &lt;a href="https://shapebootstrap.net/"&gt;ShapeBootstrap&lt;/a&gt;.&lt;/p&gt;</string>
                     <string name="title">Address</string>
                     <string name="title2">Our company</string>
-					<string name="title3">Our Services</string>
-					<string name="address">1032 Wayback Lane, Wantagh NY 11793</string>
-					<string name="email">support@email.com</string>
-					<string name="phone">631-409-3105</string>
+                    <string name="title3">Our Services</string>
+                    <string name="address">1032 Wayback Lane, Wantagh NY 11793</string>
+                    <string name="email">support@email.com</string>
+                    <string name="phone">631-409-3105</string>
                     <reference name="items">ca8c605e-e22f-4529-84fb-73349133c868</reference>
                     <reference name="items">55d5bcff-c394-4ff0-877f-bfa74353de07</reference>
                     <reference name="items">862c8cc2-3b18-4657-ad91-59b24fd657f0</reference>
@@ -74,17 +74,27 @@
                 </property-set>
             </property-set>
         </property-set>
-        <property-set name="page">
-            <string name="controller">com.enonic.app.corporate.theme:default</string>
-            <reference isNull="true" name="template"/>
-            <property-set name="region">
-                <string name="name">main</string>
-                <property-set name="component">
-                    <string name="type">PartComponent</string>
-                    <property-set name="PartComponent">
-                        <string name="name">Slider</string>
-                        <string name="template">com.enonic.app.corporate.theme:slider</string>
-                        <property-set name="config">
+        <property-set name="components">
+            <string name="type">page</string>
+            <string name="path">/</string>
+            <property-set name="page">
+                <string name="descriptor">com.enonic.app.corporate.theme:default</string>
+                <boolean name="customized">true</boolean>
+                <property-set name="config">
+                    <property-set name="com-enonic-app-corporate-theme">
+                        <property-set name="default"/>
+                    </property-set>
+                </property-set>
+            </property-set>
+        </property-set>
+        <property-set name="components">
+            <string name="type">part</string>
+            <string name="path">/main/0</string>
+            <property-set name="part">
+                <string name="descriptor">com.enonic.app.corporate.theme:slider</string>
+                <property-set name="config">
+                    <property-set name="com-enonic-app-corporate-theme">
+                        <property-set name="slider">
                             <property-set name="banner">
                                 <reference name="image">9d6d1269-1944-4d2e-8ad2-a83fa3470d01</reference>
                                 <string name="title1">Creative Ideas</string>
@@ -109,58 +119,64 @@
                         </property-set>
                     </property-set>
                 </property-set>
-                <property-set name="component">
-                    <string name="type">LayoutComponent</string>
-                    <property-set name="LayoutComponent">
-                        <string name="name">2 columns</string>
-                        <string name="template">com.enonic.app.corporate.theme:layout-2-col</string>
-                        <property-set name="config">
+            </property-set>
+        </property-set>
+        <property-set name="components">
+            <string name="type">layout</string>
+            <string name="path">/main/1</string>
+            <property-set name="layout">
+                <string name="descriptor">com.enonic.app.corporate.theme:layout-2-col</string>
+                <property-set name="config">
+                    <property-set name="com-enonic-app-corporate-theme">
+                        <property-set name="layout-2-col">
                             <string name="layoutConf">70-30</string>
                             <boolean name="fullWidth">false</boolean>
                         </property-set>
-                        <property-set name="region">
-                            <string name="name">left</string>
-                            <property-set name="component">
-                                <string name="type">TextComponent</string>
-                                <property-set name="TextComponent">
-                                    <string name="name">Text</string>
-                                    <string name="text">&lt;h4&gt;Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas&lt;/h4&gt;
+                    </property-set>
+                </property-set>
+            </property-set>
+        </property-set>
+        <property-set name="components">
+            <string name="type">text</string>
+            <string name="path">/main/1/left/0</string>
+            <property-set name="text">
+                <string name="value">&lt;h4&gt;Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas&lt;/h4&gt;
 &lt;p&gt;Tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet&lt;/p&gt;</string>
-                                </property-set>
-                            </property-set>
-                        </property-set>
-                        <property-set name="region">
-                            <string name="name">right</string>
-                            <property-set name="component">
-                                <string name="type">PartComponent</string>
-                                <property-set name="PartComponent">
-                                    <string name="name">Button</string>
-                                    <string name="template">com.enonic.app.corporate.theme:button</string>
-                                    <property-set name="config">
-                                    <string name="btnText">Contact us</string>
-                                    <string isNull="true" name="btnColor"/>
-                                    <string isNull="true" name="externalUrl"/>
-                                    <property-set name="url">
-                                    <string name="_selected">content</string>
-                                    <property-set name="text">
+            </property-set>
+        </property-set>
+        <property-set name="components">
+            <string name="type">part</string>
+            <string name="path">/main/1/right/0</string>
+            <property-set name="part">
+                <string name="descriptor">com.enonic.app.corporate.theme:button</string>
+                <property-set name="config">
+                    <property-set name="com-enonic-app-corporate-theme">
+                        <property-set name="button">
+                            <string name="btnText">Contact us</string>
+                            <string isNull="true" name="btnColor"/>
+                            <string isNull="true" name="externalUrl"/>
+                            <property-set name="url">
+                                <string name="_selected">content</string>
+                                <property-set name="text">
                                     <string isNull="true" name="url"/>
-                                    </property-set>
-                                    <property-set name="content">
+                                </property-set>
+                                <property-set name="content">
                                     <reference name="key">ca8c605e-e22f-4529-84fb-73349133c868</reference>
-                                    </property-set>
-                                    </property-set>
-                                    </property-set>
                                 </property-set>
                             </property-set>
                         </property-set>
                     </property-set>
                 </property-set>
-                <property-set name="component">
-                    <string name="type">PartComponent</string>
-                    <property-set name="PartComponent">
-                        <string name="name">Services - List selected</string>
-                        <string name="template">com.enonic.app.corporate.theme:service-frontpage</string>
-                        <property-set name="config">
+            </property-set>
+        </property-set>
+        <property-set name="components">
+            <string name="type">part</string>
+            <string name="path">/main/2</string>
+            <property-set name="part">
+                <string name="descriptor">com.enonic.app.corporate.theme:service-frontpage</string>
+                <property-set name="config">
+                    <property-set name="com-enonic-app-corporate-theme">
+                        <property-set name="service-frontpage">
                             <string name="title">What We Offer</string>
                             <string name="intro">Look at some of the recent projects we have completed for our valuble clients</string>
                             <reference name="service">a660ffd4-dae2-4fd5-bca3-dc432c32d61c</reference>
@@ -172,12 +188,16 @@
                         </property-set>
                     </property-set>
                 </property-set>
-                <property-set name="component">
-                    <string name="type">PartComponent</string>
-                    <property-set name="PartComponent">
-                        <string name="name">Portfolio - List selected</string>
-                        <string name="template">com.enonic.app.corporate.theme:portfolio-frontpage</string>
-                        <property-set name="config">
+            </property-set>
+        </property-set>
+        <property-set name="components">
+            <string name="type">part</string>
+            <string name="path">/main/3</string>
+            <property-set name="part">
+                <string name="descriptor">com.enonic.app.corporate.theme:portfolio-frontpage</string>
+                <property-set name="config">
+                    <property-set name="com-enonic-app-corporate-theme">
+                        <property-set name="portfolio-frontpage">
                             <string name="partTitle">Our recent work</string>
                             <string name="partIntro">Look at some of the recent projects we have completed for our valuble clients</string>
                             <reference name="portfolio">88686739-5263-4d4e-b6a2-c887fddd56da</reference>
@@ -187,12 +207,16 @@
                         </property-set>
                     </property-set>
                 </property-set>
-                <property-set name="component">
-                    <string name="type">PartComponent</string>
-                    <property-set name="PartComponent">
-                        <string name="name">Partners</string>
-                        <string name="template">com.enonic.app.corporate.theme:partner</string>
-                        <property-set name="config">
+            </property-set>
+        </property-set>
+        <property-set name="components">
+            <string name="type">part</string>
+            <string name="path">/main/4</string>
+            <property-set name="part">
+                <string name="descriptor">com.enonic.app.corporate.theme:partner</string>
+                <property-set name="config">
+                    <property-set name="com-enonic-app-corporate-theme">
+                        <property-set name="partner">
                             <string name="title">Our partners</string>
                             <string name="intro">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</string>
                             <reference name="partnerLogo">916480d8-01aa-4909-8bf5-5d91409cf103</reference>
@@ -203,12 +227,9 @@
                     </property-set>
                 </property-set>
             </property-set>
-            <property-set name="config"/>
-            <boolean name="customized">true</boolean>
         </property-set>
     </data>
     <indexConfigs>
-        <analyzer>document_index_default</analyzer>
         <defaultConfig>
             <decideByType>true</decideByType>
             <enabled>true</enabled>
@@ -217,6 +238,76 @@
             <includeInAllText>false</includeInAllText>
         </defaultConfig>
         <pathIndexConfigs>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.part.config.com-enonic-app-corporate-theme.slider.*</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.part.config.com-enonic-app-corporate-theme.service-frontpage.*</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.part.config.com-enonic-app-corporate-theme.portfolio-frontpage.*</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.part.config.com-enonic-app-corporate-theme.partner.*</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.part.config.com-enonic-app-corporate-theme.button.*</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.page.config.com-enonic-app-corporate-theme.default.*</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.layout.config.com-enonic-app-corporate-theme.layout-2-col.*</path>
+            </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
                     <decideByType>false</decideByType>
@@ -228,7 +319,20 @@
                         <indexValueProcessor>htmlStripper</indexValueProcessor>
                     </indexValueProcessors>
                 </indexConfig>
-                <path>page.region.**.TextComponent.text</path>
+                <path>data.siteConfig.config.freeText</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>true</nGram>
+                    <fulltext>true</fulltext>
+                    <includeInAllText>true</includeInAllText>
+                    <indexValueProcessors>
+                        <indexValueProcessor>htmlStripper</indexValueProcessor>
+                    </indexValueProcessors>
+                </indexConfig>
+                <path>data.siteConfig.config.footerText</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -238,7 +342,100 @@
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>data.siteconfig.applicationkey</path>
+                <path>data.siteConfig.applicationkey</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>true</nGram>
+                    <fulltext>true</fulltext>
+                    <includeInAllText>true</includeInAllText>
+                    <indexValueProcessors>
+                        <indexValueProcessor>htmlStripper</indexValueProcessor>
+                    </indexValueProcessors>
+                </indexConfig>
+                <path>components.text.value</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.part.descriptor</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.page.template</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.page.descriptor</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.page.customized</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.layout.descriptor</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.image.id</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.fragment.id</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>x.*</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -253,62 +450,12 @@
             <pathIndexConfig>
                 <indexConfig>
                     <decideByType>false</decideByType>
-                    <enabled>false</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>page.regions</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
                     <enabled>true</enabled>
                     <nGram>false</nGram>
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>modifier</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>true</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>owner</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>true</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>attachment</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>true</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>x</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>false</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>page</path>
+                <path>type</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -328,7 +475,27 @@
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>type</path>
+                <path>owner</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>modifier</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>modifiedTime</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -363,13 +530,24 @@
             <pathIndexConfig>
                 <indexConfig>
                     <decideByType>false</decideByType>
+                    <enabled>false</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
                     <enabled>true</enabled>
                     <nGram>false</nGram>
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>modifiedTime</path>
+                <path>attachment</path>
             </pathIndexConfig>
         </pathIndexConfigs>
+        <allTextIndexConfig/>
     </indexConfigs>
 </node>
