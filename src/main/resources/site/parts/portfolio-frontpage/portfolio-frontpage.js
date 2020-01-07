@@ -17,14 +17,14 @@ exports.get = function(req) {
 
     var contents = libs.shared.getContents(CONTENT_TYPE_PORTFOLIO, function() {
         var ids = config.portfolio ? libs.util.data.forceArray(config.portfolio) : null;
+        var _contents = [];
         if(ids) {
-            var _contents = [];
             for(var i = 0; i < ids.length; i++ ) {
                 var content = libs.content.get({ key: ids[i] });
                 content && _contents.push(content);
             }
-            return _contents;
         }
+        return _contents;
     });
 
     var portfolios = [];
