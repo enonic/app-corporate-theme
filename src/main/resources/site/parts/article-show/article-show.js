@@ -3,7 +3,7 @@ var libs = {
     content: require('/lib/xp/content'),
     portal: require('/lib/xp/portal'),
     util: require('/lib/util'),
-    moment: require('/assets/momentjs/2.20.1/min/moment-with-locales.min.js')
+    moment: require('/assets/momentjs/2.29.1/min/moment-with-locales.min.js')
 };
 
 var view = resolve('article-show.html');

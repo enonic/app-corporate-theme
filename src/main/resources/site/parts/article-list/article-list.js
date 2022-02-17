@@ -3,7 +3,7 @@ var libs = {
 	thymeleaf: require('/lib/thymeleaf'),
 	content:   require('/lib/xp/content'),
 	util:      require('/lib/util'),
-	moment:    require('/assets/momentjs/2.20.1/min/moment-with-locales.min.js')
+	moment:    require('/assets/momentjs/2.29.1/min/moment-with-locales.min.js')
 };
 var view = resolve('article-list.html');
 
