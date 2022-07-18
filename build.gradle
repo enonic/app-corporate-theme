@@ -26,7 +26,7 @@ dependencies {
 	include 'com.enonic.lib:lib-urlredirect:3.0.0'
 	include 'com.enonic.lib:lib-util:2.2.1'
 
-	webjar 'org.webjars:momentjs:2.29.3'
+	webjar 'org.webjars:momentjs:2.29.4'
 }
 
 repositories {
