@@ -22,7 +22,7 @@ exports.get = function (req) {
 
     var site = libs.portal.getSite();
     var siteConfig = libs.portal.getSiteConfig();
-    var menuItems = libs.menu.getMenuTree(2);
+    var menuItems = libs.menu.getMenuTree(2).menuItems;
 
     var breadcrumbs = libs.menu.getBreadcrumbMenu({
         linkActiveItem: false,
@@ -126,6 +126,9 @@ exports.get = function (req) {
         menuItems: menuItems,
         isFragment: isFragment
     };
+
+    log.info(JSON.stringify(menuItems, null, 4));
+
     var body = libs.thymeleaf.render(view, model);
     return {body: body};
 };

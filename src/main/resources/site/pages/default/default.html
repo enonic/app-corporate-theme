@@ -39,12 +39,12 @@
                    data-th-target="${menuItem.newWindow ? '_blank' : ''}"
                    data-th-class="${'nav-link' + (menuItem.hasChildren ? ' dropdown-toggle' : '')}"
                    data-th-attr="data-toggle=${menuItem.hasChildren ? 'dropdown' : ''}"
-                ><span data-th-text="${menuItem.menuName} ?: ${menuItem.displayName}" data-th-remove="tag">Page</span></a>
+                ><span data-th-text="${menuItem.title}" data-th-remove="tag">Page</span></a>
                 <div data-th-if="${menuItem.hasChildren}" class="dropdown-menu">
                     <a data-th-each="submenuItem : ${menuItem.children}"
                        href="#" data-th-href="${portal.pageUrl({'_path=' + submenuItem.path})}"
                        data-th-class="${'dropdown-item' + (submenuItem.isActive ? ' active' : '')}"
-                       data-th-text="${submenuItem.menuName} ?: ${submenuItem.displayName}"
+                       data-th-text="${submenuItem.title}"
                        data-th-target="${submenuItem.newWindow ? '_blank' : ''}">Page title</a>
                 </div>
             </li>
