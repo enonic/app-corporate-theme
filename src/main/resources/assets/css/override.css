@@ -2,10 +2,6 @@
 @-o-viewport { width: device-width; }
 @viewport { width: device-width; }
 
-html {
-	width: 100vw;
-}
-
 body div section {
 	padding: 50px 0 0 0;
 }
