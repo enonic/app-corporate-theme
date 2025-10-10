@@ -3,7 +3,7 @@
     <childOrder>modifiedtime DESC</childOrder>
     <nodeType>content</nodeType>
     <timestamp>2025-10-10T07:36:45.822Z</timestamp>
-    <inheritPermissions>false</inheritPermissions>
+    <inheritPermissions>true</inheritPermissions>
     <permissions>
         <principal key="role:system.everyone">
             <allow type="array">

@@ -2,9 +2,27 @@
     <id>840899b3-3585-4c0d-a052-2f3f2b42763e</id>
     <childOrder>_manualordervalue DESC, _timestamp DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2019-03-26T12:46:09.182Z</timestamp>
-    <inheritPermissions>false</inheritPermissions>
+    <timestamp>2025-10-10T11:34:49.140Z</timestamp>
+    <inheritPermissions>true</inheritPermissions>
     <permissions>
+        <principal key="role:system.everyone">
+            <allow type="array">
+                <value>READ</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
+        <principal key="role:system.admin">
+            <allow type="array">
+                <value>READ</value>
+                <value>CREATE</value>
+                <value>MODIFY</value>
+                <value>DELETE</value>
+                <value>PUBLISH</value>
+                <value>READ_PERMISSIONS</value>
+                <value>WRITE_PERMISSIONS</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
         <principal key="role:cms.admin">
             <allow type="array">
                 <value>READ</value>
@@ -17,7 +35,46 @@
             </allow>
             <deny type="array"/>
         </principal>
-        <principal key="role:system.everyone">
+        <principal key="role:cms.project.corporate-theme.owner">
+            <allow type="array">
+                <value>READ</value>
+                <value>CREATE</value>
+                <value>MODIFY</value>
+                <value>DELETE</value>
+                <value>PUBLISH</value>
+                <value>READ_PERMISSIONS</value>
+                <value>WRITE_PERMISSIONS</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
+        <principal key="role:cms.project.corporate-theme.editor">
+            <allow type="array">
+                <value>READ</value>
+                <value>CREATE</value>
+                <value>MODIFY</value>
+                <value>DELETE</value>
+                <value>PUBLISH</value>
+                <value>READ_PERMISSIONS</value>
+                <value>WRITE_PERMISSIONS</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
+        <principal key="role:cms.project.corporate-theme.author">
+            <allow type="array">
+                <value>READ</value>
+                <value>CREATE</value>
+                <value>MODIFY</value>
+                <value>DELETE</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
+        <principal key="role:cms.project.corporate-theme.contributor">
+            <allow type="array">
+                <value>READ</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
+        <principal key="role:cms.project.corporate-theme.viewer">
             <allow type="array">
                 <value>READ</value>
             </allow>
@@ -29,14 +86,18 @@
         <string name="displayName">My Corporation</string>
         <string name="type">portal:site</string>
         <string name="owner">user:system:su</string>
-        <dateTime name="modifiedTime">2019-03-26T12:46:09.161Z</dateTime>
-        <string name="modifier">user:system:anonymous</string>
+        <dateTime name="modifiedTime">2025-10-10T11:34:49.137Z</dateTime>
+        <string name="modifier">user:system:su</string>
         <string name="creator">user:system:su</string>
         <dateTime name="createdTime">2017-02-03T09:33:59.893Z</dateTime>
         <property-set name="publish">
             <dateTime isNull="true" name="first"/>
             <dateTime isNull="true" name="from"/>
             <dateTime isNull="true" name="to"/>
+        </property-set>
+        <property-set name="workflow">
+            <string name="state">READY</string>
+            <property-set name="checks"/>
         </property-set>
         <property-set name="data">
             <string isNull="true" name="description"/>
@@ -63,6 +124,20 @@
                     <string name="youtube">https://www.youtube.com/</string>
                     <string isNull="true" name="tumblr"/>
                     <string name="instagram">https://www.instagram.com/</string>
+                </property-set>
+            </property-set>
+            <property-set name="siteConfig">
+                <string name="applicationKey">no.bouvet.app.securityheaders</string>
+                <property-set name="config">
+                    <boolean name="useConfigFile">false</boolean>
+                    <property-set name="contentSecurityPolicy">
+                        <property-set name="commonDirectives">
+                            <property-set name="frame-src">
+                                <string name="directiveValues">'self' https://www.google.com/</string>
+                            </property-set>
+                            <string name="_selected">frame-src</string>
+                        </property-set>
+                    </property-set>
                 </property-set>
             </property-set>
         </property-set>
@@ -98,23 +173,23 @@
                             <property-set name="banner">
                                 <reference name="image">9d6d1269-1944-4d2e-8ad2-a83fa3470d01</reference>
                                 <string name="title1">Creative Ideas</string>
-                                <string name="title2">Tincidunt condimentum eros</string>
+                                <string name="title2">Better Together</string>
                                 <reference name="linkTo">ca8c605e-e22f-4529-84fb-73349133c868</reference>
-                                <string isNull="true" name="backgroundColor"/>
+                                <string name="backgroundColor">#A6BDD6</string>
                             </property-set>
                             <property-set name="banner">
                                 <reference name="image">23e10ece-6e3b-4dad-8a89-1c54e31f7098</reference>
                                 <string name="title1">Planning &amp; Analysis</string>
-                                <string name="title2">Aenean ultricies mi vitast</string>
+                                <string name="title2">Building Better Worlds</string>
                                 <reference name="linkTo">3ba4273e-0f84-4c10-b27c-54717bc14d71</reference>
-                                <string name="backgroundColor">#e67e22</string>
+                                <string name="backgroundColor">#FCD48F</string>
                             </property-set>
                             <property-set name="banner">
                                 <reference name="image">81bca7c3-04a9-4ac0-ba66-cbe484af0bc7</reference>
                                 <string name="title1">Unique Solutions</string>
-                                <string name="title2">Breatures who have been utterly</string>
+                                <string name="title2">High Performance. Delivered.</string>
                                 <reference name="linkTo">862c8cc2-3b18-4657-ad91-59b24fd657f0</reference>
-                                <string name="backgroundColor">#9b59b6</string>
+                                <string name="backgroundColor">#88E788</string>
                             </property-set>
                         </property-set>
                     </property-set>
@@ -131,6 +206,7 @@
                         <property-set name="layout-2-col">
                             <string name="layoutConf">70-30</string>
                             <boolean name="fullWidth">false</boolean>
+                            <property-set name="fullWidthBackground"/>
                         </property-set>
                     </property-set>
                 </property-set>
@@ -140,8 +216,10 @@
             <string name="type">text</string>
             <string name="path">/main/1/left/0</string>
             <property-set name="text">
-                <string name="value">&lt;h4&gt;Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas&lt;/h4&gt;
-&lt;p&gt;Tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet&lt;/p&gt;</string>
+                <string name="value">&lt;h4&gt;Your Future, Our Goal&lt;/h4&gt;
+
+&lt;p&gt;Discover unparalleled innovation and solutions at My Corporation, where we transform your challenges into opportunities. Partner with us to revolutionize your industry and achieve unprecedented success.&lt;/p&gt;
+</string>
             </property-set>
         </property-set>
         <property-set name="components">
@@ -217,8 +295,8 @@
                 <property-set name="config">
                     <property-set name="com-enonic-app-corporate-theme">
                         <property-set name="partner">
-                            <string name="title">Our partners</string>
-                            <string name="intro">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</string>
+                            <string name="title">Our Partners</string>
+                            <string name="intro">Strong partnerships, confidence, and mutual improvement ensures the best result.</string>
                             <reference name="partnerLogo">916480d8-01aa-4909-8bf5-5d91409cf103</reference>
                             <reference name="partnerLogo">fde46648-07b5-4d4f-9f6f-a951bd088eb4</reference>
                             <reference name="partnerLogo">b4d29df4-aef7-44d6-9c14-ce02e867840a</reference>
@@ -230,6 +308,7 @@
         </property-set>
     </data>
     <indexConfigs>
+        <analyzer>document_index_default</analyzer>
         <defaultConfig>
             <decideByType>true</decideByType>
             <enabled>true</enabled>
@@ -246,7 +325,7 @@
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>components.part.config.com-enonic-app-corporate-theme.slider.*</path>
+                <path>components.part.config.com-enonic-app-corporate-theme.slider</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -256,7 +335,7 @@
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>components.part.config.com-enonic-app-corporate-theme.service-frontpage.*</path>
+                <path>components.part.config.com-enonic-app-corporate-theme.service-frontpage</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -266,7 +345,7 @@
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>components.part.config.com-enonic-app-corporate-theme.portfolio-frontpage.*</path>
+                <path>components.part.config.com-enonic-app-corporate-theme.portfolio-frontpage</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -276,7 +355,7 @@
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>components.part.config.com-enonic-app-corporate-theme.partner.*</path>
+                <path>components.part.config.com-enonic-app-corporate-theme.partner</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -286,7 +365,7 @@
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>components.part.config.com-enonic-app-corporate-theme.button.*</path>
+                <path>components.part.config.com-enonic-app-corporate-theme.button</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -296,17 +375,7 @@
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>components.page.config.com-enonic-app-corporate-theme.default.*</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>true</decideByType>
-                    <enabled>true</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>components.layout.config.com-enonic-app-corporate-theme.layout-2-col.*</path>
+                <path>components.layout.config.com-enonic-app-corporate-theme.layout-2-col</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>

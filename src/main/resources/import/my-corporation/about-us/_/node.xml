@@ -2,9 +2,27 @@
     <id>55d5bcff-c394-4ff0-877f-bfa74353de07</id>
     <childOrder>_manualordervalue DESC, _timestamp DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2019-03-26T12:46:09.315Z</timestamp>
+    <timestamp>2025-10-10T11:24:27.402Z</timestamp>
     <inheritPermissions>true</inheritPermissions>
     <permissions>
+        <principal key="role:system.everyone">
+            <allow type="array">
+                <value>READ</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
+        <principal key="role:system.admin">
+            <allow type="array">
+                <value>READ</value>
+                <value>CREATE</value>
+                <value>MODIFY</value>
+                <value>DELETE</value>
+                <value>PUBLISH</value>
+                <value>READ_PERMISSIONS</value>
+                <value>WRITE_PERMISSIONS</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
         <principal key="role:cms.admin">
             <allow type="array">
                 <value>READ</value>
@@ -17,7 +35,46 @@
             </allow>
             <deny type="array"/>
         </principal>
-        <principal key="role:system.everyone">
+        <principal key="role:cms.project.corporate-theme.owner">
+            <allow type="array">
+                <value>READ</value>
+                <value>CREATE</value>
+                <value>MODIFY</value>
+                <value>DELETE</value>
+                <value>PUBLISH</value>
+                <value>READ_PERMISSIONS</value>
+                <value>WRITE_PERMISSIONS</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
+        <principal key="role:cms.project.corporate-theme.editor">
+            <allow type="array">
+                <value>READ</value>
+                <value>CREATE</value>
+                <value>MODIFY</value>
+                <value>DELETE</value>
+                <value>PUBLISH</value>
+                <value>READ_PERMISSIONS</value>
+                <value>WRITE_PERMISSIONS</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
+        <principal key="role:cms.project.corporate-theme.author">
+            <allow type="array">
+                <value>READ</value>
+                <value>CREATE</value>
+                <value>MODIFY</value>
+                <value>DELETE</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
+        <principal key="role:cms.project.corporate-theme.contributor">
+            <allow type="array">
+                <value>READ</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
+        <principal key="role:cms.project.corporate-theme.viewer">
             <allow type="array">
                 <value>READ</value>
             </allow>
@@ -26,10 +83,10 @@
     </permissions>
     <data>
         <boolean name="valid">true</boolean>
-        <string name="displayName">About us</string>
+        <string name="displayName">About Us</string>
         <string name="type">com.enonic.app.corporate.theme:landing-page</string>
         <string name="owner">user:system:su</string>
-        <dateTime name="modifiedTime">2017-07-07T09:18:36.403Z</dateTime>
+        <dateTime name="modifiedTime">2025-10-10T11:24:27.400Z</dateTime>
         <string name="modifier">user:system:su</string>
         <string name="creator">user:system:su</string>
         <dateTime name="createdTime">2017-03-06T08:42:58.656Z</dateTime>
@@ -37,6 +94,10 @@
             <dateTime isNull="true" name="first"/>
             <dateTime isNull="true" name="from"/>
             <dateTime isNull="true" name="to"/>
+        </property-set>
+        <property-set name="workflow">
+            <string name="state">READY</string>
+            <property-set name="checks"/>
         </property-set>
         <property-set name="data"/>
         <property-set name="x">
@@ -79,8 +140,10 @@
             <string name="type">text</string>
             <string name="path">/main/0/left/0</string>
             <property-set name="text">
-                <string name="value">&lt;h3&gt;What we are&lt;/h3&gt;
-&lt;p&gt;Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.&lt;/p&gt;</string>
+                <string name="value">&lt;h3&gt;What We Are&lt;/h3&gt;
+
+&lt;p&gt;We are a team of passionate and experienced professionals dedicated to providing innovative solutions and exceptional service to our clients. We strive to create a positive impact on the world through our work, fostering a culture of collaboration, integrity, and continuous improvement.&lt;/p&gt;
+</string>
             </property-set>
         </property-set>
         <property-set name="components">
@@ -88,7 +151,9 @@
             <string name="path">/main/0/right/0</string>
             <property-set name="text">
                 <string name="value">&lt;h3&gt;Why Choose Us?&lt;/h3&gt;
-&lt;p&gt;Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.&lt;/p&gt;</string>
+
+&lt;p&gt;Choosing us means partnering with a leader dedicated to your success. We bring unmatched expertise, innovative solutions, and a client-centric approach to every project. With us, you gain a trusted ally committed to driving your growth, providing unparalleled support, and building a lasting relationship based on mutual success. Experience the difference.&lt;/p&gt;
+</string>
             </property-set>
         </property-set>
         <property-set name="components">
@@ -126,6 +191,7 @@
         </property-set>
     </data>
     <indexConfigs>
+        <analyzer>document_index_default</analyzer>
         <defaultConfig>
             <decideByType>true</decideByType>
             <enabled>true</enabled>
@@ -142,7 +208,7 @@
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>components.part.config.com-enonic-app-corporate-theme.employees.*</path>
+                <path>components.part.config.com-enonic-app-corporate-theme.employees</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -152,7 +218,7 @@
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>components.page.config.com-enonic-app-corporate-theme.default.*</path>
+                <path>components.layout.config.com-enonic-app-corporate-theme.layout-2-col</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -162,17 +228,7 @@
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>components.layout.config.com-enonic-app-corporate-theme.layout-2-col.*</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>true</decideByType>
-                    <enabled>true</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>components.layout.config.com-enonic-app-corporate-theme.layout-1-col.*</path>
+                <path>components.layout.config.com-enonic-app-corporate-theme.layout-1-col</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -182,7 +238,7 @@
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>data.siteconfig.applicationkey</path>
+                <path>data.siteConfig.applicationkey</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -269,6 +325,16 @@
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>x.*</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
                     <decideByType>false</decideByType>
                     <enabled>true</enabled>
                     <nGram>true</nGram>
@@ -276,16 +342,6 @@
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
                 <path>attachment.text</path>
-            </pathIndexConfig>
-            <pathIndexConfig>
-                <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>true</enabled>
-                    <nGram>false</nGram>
-                    <fulltext>false</fulltext>
-                    <includeInAllText>false</includeInAllText>
-                </indexConfig>
-                <path>x</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>

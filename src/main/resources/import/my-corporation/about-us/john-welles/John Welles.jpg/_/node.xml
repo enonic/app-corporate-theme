@@ -1,0 +1,320 @@
+<node>
+    <id>a3b373f2-bc42-4331-884d-6b0ebf256947</id>
+    <childOrder>modifiedtime DESC</childOrder>
+    <nodeType>content</nodeType>
+    <timestamp>2025-10-10T11:40:00.034Z</timestamp>
+    <inheritPermissions>true</inheritPermissions>
+    <permissions>
+        <principal key="role:system.everyone">
+            <allow type="array">
+                <value>READ</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
+        <principal key="role:system.admin">
+            <allow type="array">
+                <value>READ</value>
+                <value>CREATE</value>
+                <value>MODIFY</value>
+                <value>DELETE</value>
+                <value>PUBLISH</value>
+                <value>READ_PERMISSIONS</value>
+                <value>WRITE_PERMISSIONS</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
+        <principal key="role:cms.admin">
+            <allow type="array">
+                <value>READ</value>
+                <value>CREATE</value>
+                <value>MODIFY</value>
+                <value>DELETE</value>
+                <value>PUBLISH</value>
+                <value>READ_PERMISSIONS</value>
+                <value>WRITE_PERMISSIONS</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
+        <principal key="role:cms.project.corporate-theme.owner">
+            <allow type="array">
+                <value>READ</value>
+                <value>CREATE</value>
+                <value>MODIFY</value>
+                <value>DELETE</value>
+                <value>PUBLISH</value>
+                <value>READ_PERMISSIONS</value>
+                <value>WRITE_PERMISSIONS</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
+        <principal key="role:cms.project.corporate-theme.editor">
+            <allow type="array">
+                <value>READ</value>
+                <value>CREATE</value>
+                <value>MODIFY</value>
+                <value>DELETE</value>
+                <value>PUBLISH</value>
+                <value>READ_PERMISSIONS</value>
+                <value>WRITE_PERMISSIONS</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
+        <principal key="role:cms.project.corporate-theme.author">
+            <allow type="array">
+                <value>READ</value>
+                <value>CREATE</value>
+                <value>MODIFY</value>
+                <value>DELETE</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
+        <principal key="role:cms.project.corporate-theme.contributor">
+            <allow type="array">
+                <value>READ</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
+        <principal key="role:cms.project.corporate-theme.viewer">
+            <allow type="array">
+                <value>READ</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
+    </permissions>
+    <data>
+        <boolean name="valid">true</boolean>
+        <string name="displayName">John Welles</string>
+        <string name="type">media:image</string>
+        <string name="owner">user:system:su</string>
+        <dateTime name="modifiedTime">2025-10-10T11:40:00.033Z</dateTime>
+        <string name="modifier">user:system:su</string>
+        <string name="creator">user:system:su</string>
+        <dateTime name="createdTime">2025-10-10T09:26:55.068Z</dateTime>
+        <property-set name="publish">
+            <dateTime isNull="true" name="first"/>
+            <dateTime isNull="true" name="from"/>
+            <dateTime isNull="true" name="to"/>
+        </property-set>
+        <property-set name="workflow">
+            <string name="state">READY</string>
+            <property-set name="checks"/>
+        </property-set>
+        <property-set name="data">
+            <property-set name="media">
+                <string name="attachment">John Welles.jpg</string>
+                <property-set name="focalPoint">
+                    <double name="x">0.453125</double>
+                    <double name="y">0.30234374999999997</double>
+                </property-set>
+                <property-set name="zoomPosition">
+                    <double name="left">0.0</double>
+                    <double name="top">0.0</double>
+                    <double name="right">1.0</double>
+                    <double name="bottom">1.0</double>
+                </property-set>
+                <property-set name="cropPosition">
+                    <double name="left">0.0</double>
+                    <double name="top">0.0</double>
+                    <double name="right">1.0</double>
+                    <double name="bottom">1.0</double>
+                    <double name="zoom">1.0</double>
+                </property-set>
+            </property-set>
+            <string isNull="true" name="caption"/>
+            <string isNull="true" name="artist"/>
+            <string isNull="true" name="copyright"/>
+            <string isNull="true" name="tags"/>
+            <string isNull="true" name="altText"/>
+        </property-set>
+        <property-set name="x">
+            <property-set name="media">
+                <property-set name="imageInfo">
+                    <string name="colorSpace">RGB</string>
+                    <string name="contentType">image/jpeg</string>
+                    <string isNull="true" name="description"/>
+                    <string isNull="true" name="fileSource"/>
+                    <long name="pixelSize">2457600</long>
+                    <long name="imageHeight">1280</long>
+                    <long name="imageWidth">1920</long>
+                    <long name="byteSize">180319</long>
+                </property-set>
+                <property-set name="cameraInfo">
+                    <localDateTime isNull="true" name="date"/>
+                    <string isNull="true" name="make"/>
+                    <string isNull="true" name="model"/>
+                    <string isNull="true" name="lens"/>
+                    <string isNull="true" name="iso"/>
+                    <string isNull="true" name="focalLength"/>
+                    <string isNull="true" name="focalLength35"/>
+                    <string isNull="true" name="exposureBias"/>
+                    <string isNull="true" name="aperture"/>
+                    <string isNull="true" name="shutterTime"/>
+                    <string isNull="true" name="flash"/>
+                    <string isNull="true" name="autoFlashCompensation"/>
+                    <string isNull="true" name="whiteBalance"/>
+                    <string isNull="true" name="exposureProgram"/>
+                    <string isNull="true" name="shootingMode"/>
+                    <string isNull="true" name="meteringMode"/>
+                    <string isNull="true" name="exposureMode"/>
+                    <string isNull="true" name="focusDistance"/>
+                    <string isNull="true" name="orientation"/>
+                </property-set>
+            </property-set>
+            <property-set name="base">
+                <property-set name="gpsInfo">
+                    <geoPoint isNull="true" name="geoPoint"/>
+                    <string isNull="true" name="altitude"/>
+                    <string isNull="true" name="direction"/>
+                </property-set>
+            </property-set>
+            <property-set name="com-enonic-app-corporate-theme">
+                <property-set name="menu-item">
+                    <boolean name="menuItem">false</boolean>
+                    <string isNull="true" name="menuName"/>
+                </property-set>
+            </property-set>
+        </property-set>
+        <property-set name="attachment">
+            <string name="name">John Welles.jpg</string>
+            <string name="label">source</string>
+            <binaryReference name="binary">John Welles.jpg</binaryReference>
+            <string name="mimeType">image/jpeg</string>
+            <long name="size">180319</long>
+            <string name="sha512">43fcd1740eb2e6f6564f0f64bee5bd30af561202e24d7433e91d360c9d6ab4d975bee75a9f2ff64a997b3446f7ac3cfabd83402fce14d38b26772b572b229634</string>
+            <string isNull="true" name="text"/>
+        </property-set>
+    </data>
+    <indexConfigs>
+        <analyzer>document_index_default</analyzer>
+        <defaultConfig>
+            <decideByType>true</decideByType>
+            <enabled>true</enabled>
+            <nGram>false</nGram>
+            <fulltext>false</fulltext>
+            <includeInAllText>false</includeInAllText>
+        </defaultConfig>
+        <pathIndexConfigs>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>data.siteConfig.applicationkey</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>x.*</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>true</nGram>
+                    <fulltext>true</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>attachment.text</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>type</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>false</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>site</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>owner</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>modifier</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>modifiedTime</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>data</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>creator</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>createdTime</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>attachment</path>
+            </pathIndexConfig>
+        </pathIndexConfigs>
+        <allTextIndexConfig/>
+    </indexConfigs>
+</node>
