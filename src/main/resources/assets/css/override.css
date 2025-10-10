@@ -131,8 +131,8 @@ ul.gallery li {
 	}
 
 .dropdown-menu .dropdown-item {
-	font-family: "Fjalla One", sans-serif;
-	color: rgb(0, 0, 0);
+  font-family: Cambria, serif;
+  color: rgb(0, 0, 0);
 	background-color: transparent;
 	opacity: 0.5;
 }
