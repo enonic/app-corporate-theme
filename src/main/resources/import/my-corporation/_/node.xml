@@ -43,7 +43,7 @@
             <property-set name="siteConfig">
                 <string name="applicationKey">com.enonic.app.corporate.theme</string>
                 <property-set name="config">
-                    <reference name="logo">90370b68-6b0e-4247-8eb5-ad4f839a76da</reference>
+                    <reference name="logo">b038fbac-9aa7-430f-9f6e-b5238599f970</reference>
                     <string name="footerText">&lt;p&gt;A corporate website theme running on &lt;a href="https://www.enonic.com/"&gt;Enonic XP&lt;/a&gt;, adapted from  &lt;a href="https://shapebootstrap.net/"&gt;ShapeBootstrap&lt;/a&gt;.&lt;/p&gt;</string>
                     <string name="title">Address</string>
                     <string name="title2">Our company</string>
