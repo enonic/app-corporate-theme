@@ -58,20 +58,20 @@ body h3,body h4{
     border-color:rgba(255,255,255,0.5)
 }
 .btn.btn-link{
-    color:#2dcc70;
+    color:#1E1E1E;
     padding:0
 }
 .btn.btn-link:hover{
     text-decoration:none
 }
 .btn-primary{
-    background-color:#2dcc70
+    background-color:#1E1E1E
 }
 .btn-primary:hover{
     background-color:#24a259
 }
 a{
-    color:#2dcc70;
+    color:#1E1E1E;
     -webkit-transition:300ms;
     -moz-transition:300ms;
     -o-transition:300ms;
@@ -92,12 +92,12 @@ body>section#slide-show{
     padding:0
 }
 #recent-works{
-    background:#2dcc70;
+    background:#1E1E1E;
     color:#fff
 }
 #recent-works .links>a{
     background:#fff;
-    color:#2dcc70;
+    color:#1E1E1E;
     text-shadow:none
 }
 #clients{
@@ -120,7 +120,7 @@ body>section#slide-show{
     color:#999
 }
 .title{
-    background:#2dcc70;
+    background:#1E1E1E;
     color:#fff;
     padding:20px 0
 }
@@ -235,21 +235,21 @@ header.navbar .navbar-nav>li>a{
 }
 header.navbar .navbar-nav>li>a:hover{
     background:transparent;
-    color:#2dcc70;
+    color:#1E1E1E;
     -webkit-box-shadow:none;
     -moz-box-shadow:none;
     box-shadow:none
 }
 header.navbar .navbar-nav>li.active>a,header.navbar .navbar-nav>li.active>a:hover{
     background:transparent;
-    color:#2dcc70;
+    color:#1E1E1E;
     -webkit-box-shadow:none;
     -moz-box-shadow:none;
     box-shadow:none
 }
 header.navbar .navbar-nav>li.dropdown.open>a.dropdown-toggle{
     background:transparent;
-    color:#2dcc70
+    color:#1E1E1E
 }
 header.navbar .navbar-nav>li.login>a{
     border-left:1px solid #e5e5e5
@@ -259,7 +259,7 @@ header .dropdown-menu:before{
 }
 .navbar .navbar-nav li.dropdown.open>.dropdown-toggle,.navbar .navbar-nav li.dropdown.active>.dropdown-toggle,.navbar .navbar-nav li.dropdown.open.active>.dropdown-toggle{
     background-color:transparent;
-    color:#2dcc70
+    color:#1E1E1E
 }
 .navbar .navbar-nav>.active>a,.navbar .navbar-nav>.active>a:hover,.navbar .navbar-nav>.active>a:focus{
     -webkit-box-shadow:none;
@@ -267,7 +267,7 @@ header .dropdown-menu:before{
     box-shadow:none
 }
 .navbar .navbar-nav>li>a:focus,.navbar .navbar-nav>li>a:hover{
-    color:#2dcc70
+    color:#1E1E1E
 }
 .dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus,.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-submenu:hover>a,.dropdown-submenu:focus>a{
     background:#24a259
@@ -285,7 +285,7 @@ header .dropdown-menu:before{
     line-height:18px;
     text-align:center;
     display:inline-block;
-    background:#2dcc70;
+    background:#1E1E1E;
     padding:10px;
     -webkit-border-radius:100%;
     -moz-border-radius:100%;
@@ -361,7 +361,7 @@ header .dropdown-menu:before{
 }
 #main-contents .blog-news .created{
     font-size:18px;
-    color:#2dcc70
+    color:#1E1E1E
 }
 .registration-form{
     border:0;
@@ -388,7 +388,7 @@ header .dropdown-menu:before{
     color:#6f6f6f
 }
 #bottom a:hover{
-    color:#2dcc70
+    color:#1E1E1E
 }
 #bottom ul.address>li{
     position:relative;
@@ -449,7 +449,7 @@ ul.rss li::before{
     color:#666
 }
 #footer a:hover{
-    color:#2dcc70
+    color:#1E1E1E
 }
 #footer #gototop{
     height:40px;
@@ -565,7 +565,7 @@ body:not(.xp-page-editor-page-view) input[type="search"]:focus,
 body:not(.xp-page-editor-page-view) input[type="tel"]:focus,
 body:not(.xp-page-editor-page-view) input[type="color"]:focus,
 body.uneditable-input:focus{
-    border-color:#2dcc70;
+    border-color:#1E1E1E;
     -webkit-box-shadow:none;
     -moz-box-shadow:none;
     box-shadow:none
@@ -590,7 +590,7 @@ textarea#message{
 .widget .date{
     margin-top:5px;
     padding:8px 10px;
-    background:#2dcc70
+    background:#1E1E1E
 }
 .widget .date>span{
     display:block;
@@ -709,7 +709,7 @@ ul.gallery li .preview .links>a{
     line-height:40px;
     display:inline-block;
     text-align:center;
-    background:#2dcc70;
+    background:#1E1E1E;
     color:#fff;
     text-shadow:0 1px rgba(0,0,0,0.3);
     font-size:18px;
@@ -743,7 +743,7 @@ ul.faq li span.number{
     height:50px;
     line-height:50px;
     text-align:center;
-    background:#2dcc70;
+    background:#1E1E1E;
     color:#fff;
     font-size:24px
 }
