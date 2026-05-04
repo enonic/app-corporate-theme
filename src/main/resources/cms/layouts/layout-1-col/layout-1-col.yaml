@@ -1,0 +1,7 @@
+kind: "Layout"
+title: "Single column"
+form:
+  - type: "FormFragment"
+    name: "fullwidth"
+regions:
+  - "main"

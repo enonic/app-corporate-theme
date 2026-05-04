@@ -1,0 +1,25 @@
+kind: "Part"
+title: "Partners"
+form:
+  - type: "TextLine"
+    name: "title"
+    label: "Title"
+    occurrences:
+      min: 0
+      max: 1
+    default: "Our partners"
+  - type: "TextArea"
+    name: "intro"
+    label: "Short introduction"
+    occurrences:
+      min: 0
+      max: 1
+  - type: "ImageSelector"
+    name: "partnerLogo"
+    label: "Partner logos"
+    occurrences:
+      min: 0
+      max: 4
+    helpText: "You can select up to 4 images/logos of your partners."
+    allowPath:
+      - "${site}/*"

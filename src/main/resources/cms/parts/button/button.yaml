@@ -1,0 +1,19 @@
+kind: "Part"
+title: "Button"
+form:
+  - type: "TextLine"
+    name: "btnText"
+    label: "Text"
+    occurrences:
+      min: 0
+      max: 1
+    helpText: "Set a button text. Fallback value is \"Click here\""
+  - type: "TextLine"
+    name: "btnColor"
+    label: "Background color"
+    occurrences:
+      min: 0
+      max: 1
+    helpText: "Use a hexadecimal color value for the background of the button (example: \"#4286f4\"), or a valid color name (example: \"red\" or \"white\"). The default color, if nothing here is set, is a green one."
+  - type: "FormFragment"
+    name: "links"

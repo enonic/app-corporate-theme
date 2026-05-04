@@ -1,0 +1,25 @@
+kind: "FormFragment"
+title: "Full width layout"
+form:
+  - type: "OptionSet"
+    name: "fullWidthBackground"
+    label: "Full width layout?"
+    expanded: false
+    occurrences:
+      min: 1
+      max: 1
+    helpText: "Makes the background of the layout fill the entire screen, making it great for coloring the background to emphasising its contents."
+    selection:
+      min: 0
+      max: 1
+    options:
+      - name: "yes"
+        label: "Yes"
+        items:
+          - type: "TextLine"
+            name: "backgroundColor"
+            label: "Background color?"
+            helpText: "Use hexadecimal color codes ('#dd0044'), or write the name of the color in English ('purple')."
+            occurrences:
+              min: 0
+              max: 1

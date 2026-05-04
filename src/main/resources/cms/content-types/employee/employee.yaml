@@ -1,0 +1,67 @@
+kind: "ContentType"
+title: "Employee"
+superType: "base:structured"
+form:
+  - type: "ImageSelector"
+    name: "photo"
+    label: "Photo"
+    occurrences:
+      min: 1
+      max: 1
+    allowPath:
+      - "${site}/*"
+  - type: "TextArea"
+    name: "intro"
+    label: "About"
+    occurrences:
+      min: 1
+      max: 1
+    helpText: "An introduction about employee."
+  - type: "OptionSet"
+    name: "socialLinks"
+    label: "Social networks info"
+    expanded: true
+    occurrences:
+      min: 0
+      max: 1
+    helpText: "Select one or more options from the list. Add url for each in the corresponding field. Url should contain \"https\" or \"http\". For example https://example.com."
+    selection:
+      min: 1
+      max: 4
+    options:
+      - name: "facebook"
+        label: "Facebook"
+        items:
+          - type: "TextLine"
+            name: "facebookUrl"
+            label: "Facebook profile's Url"
+            occurrences:
+              min: 1
+              max: 1
+      - name: "google"
+        label: "Google Plus"
+        items:
+          - type: "TextLine"
+            name: "googleUrl"
+            label: "Google profile's Url"
+            occurrences:
+              min: 1
+              max: 1
+      - name: "twitter"
+        label: "Twitter"
+        items:
+          - type: "TextLine"
+            name: "twitterUrl"
+            label: "Twitter profile's Url"
+            occurrences:
+              min: 1
+              max: 1
+      - name: "linkedin"
+        label: "Linkedin"
+        items:
+          - type: "TextLine"
+            name: "linkedinUrl"
+            label: "Linkedin profile's Url"
+            occurrences:
+              min: 1
+              max: 1

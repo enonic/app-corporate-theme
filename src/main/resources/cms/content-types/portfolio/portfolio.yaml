@@ -1,0 +1,25 @@
+kind: "ContentType"
+title: "Portfolio"
+superType: "base:structured"
+form:
+  - type: "ImageSelector"
+    name: "portfolioImage"
+    label: "Photo/screenshot"
+    occurrences:
+      min: 0
+      max: 1
+    allowPath:
+      - "${site}/*"
+  - type: "TextArea"
+    name: "portfolioIntro"
+    label: "Description of your work"
+    occurrences:
+      min: 0
+      max: 1
+  - type: "TextLine"
+    name: "portfolioUrl"
+    label: "External Url"
+    occurrences:
+      min: 0
+      max: 1
+    helpText: "Add external url for this portfolio item. Url should contain \"https\" or \"http\". For example https://example.com"

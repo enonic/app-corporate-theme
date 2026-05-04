@@ -1,0 +1,12 @@
+kind: "Layout"
+title: "Complex layout"
+form:
+  - type: "FormFragment"
+    name: "fullwidth"
+regions:
+  - "topLeft"
+  - "topMiddle"
+  - "topRight"
+  - "middleFull"
+  - "bottomLeft"
+  - "bottomRight"

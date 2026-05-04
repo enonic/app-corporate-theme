@@ -1,0 +1,13 @@
+[versions]
+landingpage = "2.0.1"
+menu = "4.2.1"
+thymeleaf = "3.0.0-SNAPSHOT"
+urlredirect = "3.0.1"
+util = "3.1.1"
+
+[libraries]
+lib-landingpage = { module = "com.enonic.lib:lib-landingpage", version.ref = "landingpage" }
+lib-menu        = { module = "com.enonic.lib:lib-menu",        version.ref = "menu" }
+lib-thymeleaf   = { module = "com.enonic.lib:lib-thymeleaf",   version.ref = "thymeleaf" }
+lib-urlredirect = { module = "com.enonic.lib:lib-urlredirect", version.ref = "urlredirect" }
+lib-util        = { module = "com.enonic.lib:lib-util",        version.ref = "util" }

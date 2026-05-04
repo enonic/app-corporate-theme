@@ -1,0 +1,38 @@
+kind: "ContentType"
+title: "News article"
+superType: "base:structured"
+allowChildContent: true
+form:
+  - type: "ImageSelector"
+    name: "headerImage"
+    label: "Header image"
+    occurrences:
+      min: 0
+      max: 1
+    allowPath:
+      - "${site}/*"
+  - type: "TextArea"
+    name: "preface"
+    label: "Preface"
+    occurrences:
+      min: 1
+      max: 1
+    helpText: "Article introductory text"
+  - type: "ContentSelector"
+    name: "author"
+    label: "Authors"
+    occurrences:
+      min: 0
+      max: 0
+    helpText: "Who wrote this piece? Select one or more of the employees that contributed."
+    allowContentType:
+      - "employee"
+    allowPath:
+      - "${site}/*"
+  - type: "HtmlArea"
+    name: "body"
+    label: "Full body"
+    occurrences:
+      min: 1
+      max: 1
+    helpText: "The Article"
