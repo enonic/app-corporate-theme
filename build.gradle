@@ -15,10 +15,10 @@ dependencies {
     include xplibs.project
 
     include(libs.lib.landingpage) { exclude group: 'com.enonic.xp' }
-    include(libs.lib.menu)        { exclude group: 'com.enonic.xp' }
+    include libs.lib.menu
     include(libs.lib.thymeleaf)   { exclude group: 'com.enonic.xp' }
     include(libs.lib.urlredirect) { exclude group: 'com.enonic.xp' }
-    include(libs.lib.util)        { exclude group: 'com.enonic.xp' }
+    include libs.lib.util
 }
 
 repositories {
