@@ -1,0 +1,26 @@
+kind: "Part"
+title: "Portfolio - List selected"
+form:
+  - type: "TextLine"
+    name: "partTitle"
+    label: "Heading"
+    occurrences:
+      min: 0
+      max: 1
+    default: "Our recent work"
+  - type: "TextArea"
+    name: "partIntro"
+    label: "Introduction"
+    occurrences:
+      min: 0
+      max: 1
+    default: "Some introduction text to your work"
+  - type: "ContentSelector"
+    name: "portfolio"
+    label: "Selected portfolios"
+    occurrences:
+      min: 0
+      max: 4
+    helpText: "Select any number of specific portfolio items you want to show. Protip: Exactly 4 items looks best =)"
+    allowContentType:
+      - "portfolio"

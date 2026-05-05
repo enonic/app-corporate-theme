@@ -1,0 +1,6 @@
+kind: "Site"
+mappings:
+  - controller: "/lib/urlredirect.js"
+    match: "type:'com.enonic.app.corporate.theme:url'"
+  - controller: "/cms/pages/default/default.js"
+    match: "type:'portal:fragment'"

@@ -1,0 +1,20 @@
+kind: "Part"
+title: "Employees list"
+form:
+  - type: "TextLine"
+    name: "titleEmployee"
+    label: "Title"
+    occurrences:
+      min: 0
+      max: 1
+    default: "Meet the Team"
+    helpText: "Title for second section which is a list of employees."
+  - type: "ContentSelector"
+    name: "team"
+    label: "Employees"
+    occurrences:
+      min: 0
+      max: 0
+    helpText: "The second section is about introducing the employees. From the list above select employees you wish to Introduce."
+    allowContentType:
+      - "employee"

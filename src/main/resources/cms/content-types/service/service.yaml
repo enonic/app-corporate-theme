@@ -1,0 +1,37 @@
+kind: "ContentType"
+title: "Services"
+superType: "base:structured"
+form:
+  - type: "ComboBox"
+    name: "serviceIcon"
+    label: "Service icon"
+    occurrences:
+      min: 1
+      max: 1
+    options:
+      - value: "bar-chart"
+        label: "Bar chart"
+      - value: "cog"
+        label: "Cog"
+      - value: "heart"
+        label: "Heart"
+      - value: "globe"
+        label: "Globe"
+      - value: "camera"
+        label: "Camera"
+      - value: "bullhorn"
+        label: "Bullhorn"
+      - value: "thumbs-up-alt"
+        label: "Thumbs-up"
+      - value: "leaf"
+        label: "Leaf"
+      - value: "shopping-cart"
+        label: "Shopping cart"
+    default: "cog"
+  - type: "TextArea"
+    name: "serviceIntro"
+    label: "Service introduction"
+    occurrences:
+      min: 0
+      max: 1
+    helpText: "A short introduction to the service. The introduction will be in Service section in front page."

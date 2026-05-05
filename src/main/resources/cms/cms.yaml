@@ -1,0 +1,128 @@
+kind: "CMS"
+mixins:
+  - name: "com.enonic.lib.menu:menu-item"
+    optional: false
+form:
+  - type: "ImageSelector"
+    name: "logo"
+    label: "Company logo"
+    occurrences:
+      min: 0
+      max: 1
+    helpText: "Add your company logo. Used in the header on all pages."
+    allowPath:
+      - "${site}/*"
+  - type: "TextLine"
+    name: "address"
+    label: "Company address"
+    occurrences:
+      min: 0
+      max: 1
+  - type: "TextLine"
+    name: "email"
+    label: "Company e-mail"
+    occurrences:
+      min: 0
+      max: 1
+  - type: "TextLine"
+    name: "phone"
+    label: "Company phone number"
+    occurrences:
+      min: 0
+      max: 1
+  - type: "TextLine"
+    name: "title"
+    label: "First column"
+    occurrences:
+      min: 1
+      max: 1
+    default: "Address"
+    helpText: "Required title for the contact info column in the footer. Default value is \"Address\"."
+  - type: "TextLine"
+    name: "title2"
+    label: "Second column"
+    occurrences:
+      min: 1
+      max: 1
+    default: "Our company"
+    helpText: "Required title for links to different pages of the website. Default value is \"Our company\"."
+  - type: "TextLine"
+    name: "title3"
+    label: "Third column"
+    occurrences:
+      min: 1
+      max: 1
+    default: "Our services"
+    helpText: "The third (and largest) column in the footer needs a heading. Use it to describe your site."
+  - type: "ContentSelector"
+    name: "items"
+    label: "Focused content"
+    occurrences:
+      min: 0
+      max: 0
+    helpText: "Select pages that you want to link to from the footer. You can add multiple links to create a menu for your most important content."
+    allowContentType:
+      - "landing-page"
+  - type: "HtmlArea"
+    name: "freeText"
+    label: "Company description"
+    occurrences:
+      min: 1
+      max: 1
+    default: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo."
+    helpText: "Describe your company. Shown only in the footer (third column)."
+  - type: "HtmlArea"
+    name: "footerText"
+    label: "Copyright message"
+    occurrences:
+      min: 0
+      max: 1
+    default: "<p>A corporate website theme running on <a href=\"https://www.enonic.com/\">Enonic XP</a>, adapted from <a href=\"https://shapebootstrap.net/\">ShapeBootstrap</a>.</p>"
+  - type: "TextLine"
+    name: "facebook"
+    label: "Facebook url"
+    occurrences:
+      min: 0
+      max: 1
+  - type: "TextLine"
+    name: "twitter"
+    label: "Twitter url"
+    occurrences:
+      min: 0
+      max: 1
+  - type: "TextLine"
+    name: "pinterest"
+    label: "Pinterest url"
+    occurrences:
+      min: 0
+      max: 1
+  - type: "TextLine"
+    name: "linkedin"
+    label: "Linkedin url"
+    occurrences:
+      min: 0
+      max: 1
+  - type: "TextLine"
+    name: "googleplus"
+    label: "Google plus url"
+    occurrences:
+      min: 0
+      max: 1
+  - type: "TextLine"
+    name: "youtube"
+    label: "Youtube url"
+    occurrences:
+      min: 0
+      max: 1
+  - type: "TextLine"
+    name: "tumblr"
+    label: "Tumblr url"
+    occurrences:
+      min: 0
+      max: 1
+  - type: "TextLine"
+    name: "instagram"
+    label: "Instagram url"
+    occurrences:
+      min: 0
+      max: 1

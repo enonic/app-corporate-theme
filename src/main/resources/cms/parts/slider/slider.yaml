@@ -1,0 +1,46 @@
+kind: "Part"
+title: "Slider"
+form:
+  - type: "ItemSet"
+    name: "banner"
+    label: "Slide"
+    occurrences:
+      min: 0
+      max: 0
+    items:
+      - type: "ImageSelector"
+        name: "image"
+        label: "Image"
+        occurrences:
+          min: 1
+          max: 1
+        allowPath:
+          - "${site}/*"
+      - type: "TextLine"
+        name: "backgroundColor"
+        label: "Background color"
+        occurrences:
+          min: 0
+          max: 1
+        helpText: "Use a hexadecimal color value for the background color (example: \"#4286f4\"), or a valid color name (example: \"red\" or \"white\"). The default color, if nothing here is set, is a blue one. Seeing this color requires images to contain transparency."
+      - type: "TextLine"
+        name: "title1"
+        label: "Main title"
+        occurrences:
+          min: 0
+          max: 1
+      - type: "TextLine"
+        name: "title2"
+        label: "Subtitle"
+        occurrences:
+          min: 0
+          max: 1
+      - type: "ContentSelector"
+        name: "linkTo"
+        label: "Button link"
+        occurrences:
+          min: 0
+          max: 1
+        helpText: "Optional link to one of your website's other pages. Button will not be generated unless it has a target link."
+        allowContentType:
+          - "landing-page"

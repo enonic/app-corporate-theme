@@ -1,0 +1,34 @@
+kind: "Part"
+title: "Articles - List"
+form:
+  - type: "RadioButton"
+    name: "style"
+    label: "Display style"
+    occurrences:
+      min: 0
+      max: 0
+    helpText: "Block = Show title and preface, side-by-side. List = Show only title, vertically."
+    options:
+      - value: "block"
+        label: "Block"
+      - value: "list"
+        label: "List"
+    default: "block"
+  - type: "Long"
+    name: "amount"
+    label: "Articles to show"
+    occurrences:
+      min: 0
+      max: 1
+    min: 1
+    max: 10
+    default: 3
+  - type: "ContentSelector"
+    name: "articles"
+    label: "Promoted articles"
+    occurrences:
+      min: 0
+      max: 5
+    helpText: "This list will pick news articles based on their publish dates, latest first. However, if you need, you can select up to five items to promot to the top of the list, sorted the way you decide!"
+    allowContentType:
+      - "article"

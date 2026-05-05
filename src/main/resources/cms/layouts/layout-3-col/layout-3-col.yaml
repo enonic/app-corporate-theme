@@ -1,0 +1,30 @@
+kind: "Layout"
+title: "3 columns"
+form:
+  - type: "FormFragment"
+    name: "fullwidth"
+  - type: "RadioButton"
+    name: "layoutConf"
+    label: "Column configuration"
+    helpText: "The numbers represent the amount of percent each column should occupy of the screen (responsive)."
+    occurrences:
+      min: 1
+      max: 1
+    options:
+      - value: "25-50-25"
+        label: "25-50-25"
+      - value: "50-25-25"
+        label: "50-25-25"
+      - value: "40-30-30"
+        label: "40-30-30"
+      - value: "33-33-33"
+        label: "33-33-33"
+      - value: "30-30-40"
+        label: "30-30-40"
+      - value: "25-25-50"
+        label: "25-25-50"
+    default: "33-33-33"
+regions:
+  - "left"
+  - "middle"
+  - "right"

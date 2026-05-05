@@ -1,0 +1,38 @@
+kind: "FormFragment"
+title: "Links"
+form:
+  - type: "OptionSet"
+    name: "url"
+    label: "Link"
+    expanded: true
+    occurrences:
+      min: 1
+      max: 1
+    helpText: "Please select the type of link you wish to create. The first option is used for linking outside of your site, while the second one is for internal links."
+    selection:
+      min: 1
+      max: 1
+    options:
+      - name: "text"
+        label: "External URL"
+        helpText: "Add an URL to an external source. The URL should begin with \"https\" or \"http\". For example https://example.com. You can only use either \"External URL\" or \"Link to a page\". In case you fill both fields, \"Link to a page\" has priority."
+        items:
+          - type: "TextLine"
+            name: "url"
+            label: "Full URL (including 'http')"
+            occurrences:
+              min: 1
+              max: 1
+      - name: "content"
+        label: "Link to another content"
+        selected: true
+        helpText: "Select a page that you have already made and want the button to point to. You can only use either \"External URL\" or \"Link to a page\". In case you fill both fields, \"Link to a page\" has priority."
+        items:
+          - type: "ContentSelector"
+            name: "key"
+            label: "Select page"
+            occurrences:
+              min: 1
+              max: 1
+            allowContentType:
+              - "landing-page"

@@ -1,0 +1,31 @@
+kind: "Layout"
+title: "2 columns"
+form:
+  - type: "FormFragment"
+    name: "fullwidth"
+  - type: "RadioButton"
+    name: "layoutConf"
+    label: "Column configuration"
+    helpText: "The numbers represent the amount of percent each column should occupy of the screen (responsive)."
+    occurrences:
+      min: 1
+      max: 1
+    options:
+      - value: "80-20"
+        label: "80-20"
+      - value: "70-30"
+        label: "70-30"
+      - value: "60-40"
+        label: "60-40"
+      - value: "50-50"
+        label: "50-50"
+      - value: "40-60"
+        label: "40-60"
+      - value: "30-70"
+        label: "30-70"
+      - value: "20-80"
+        label: "20-80"
+    default: "50-50"
+regions:
+  - "left"
+  - "right"
