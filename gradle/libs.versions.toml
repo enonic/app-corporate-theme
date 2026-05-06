@@ -1,9 +1,9 @@
 [versions]
-landingpage = "2.0.1"
-menu = "4.2.1"
+landingpage = "3.0.0-SNAPSHOT"
+menu = "5.0.0-SNAPSHOT"
 thymeleaf = "3.0.0-SNAPSHOT"
-urlredirect = "3.0.1"
-util = "3.1.1"
+urlredirect = "4.0.0-SNAPSHOT"
+util = "4.0.0-SNAPSHOT"
 
 [libraries]
 lib-landingpage = { module = "com.enonic.lib:lib-landingpage", version.ref = "landingpage" }
