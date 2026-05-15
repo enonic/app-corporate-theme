@@ -16,6 +16,7 @@ function runInContext(callback) {
     let result;
     try {
         result = contextLib.run({
+            branch: 'draft',
             principals: ["role:system.admin"],
             repository: 'com.enonic.cms.' + projectData.id
         }, callback);
