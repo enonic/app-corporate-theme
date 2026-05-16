@@ -2,7 +2,6 @@ var libs = {
 	portal:    require('/lib/xp/portal'),
 	thymeleaf: require('/lib/thymeleaf'),
 	content:   require('/lib/xp/content'),
-	util:      require('/lib/util'),
 	moment:    require('/lib/moment-2.29.4.min.js')
 };
 var view = resolve('article-list.html');
@@ -21,7 +20,7 @@ exports.get = function(req){
 		articles: config.articles || null
 	};
 
-	var selectedIds = libs.util.data.trimArray( libs.util.data.forceArray(config.articles) );
+	var selectedIds = (Array.isArray(config.articles) ? config.articles : [config.articles]).filter(function (v) { return v != null && v !== ''; });
 	var articles = libs.content.query({
 		start: 0,
 		count: config.amount,
@@ -61,13 +60,11 @@ exports.get = function(req){
 			contentTypes: [app.name + ':article'],
 			sort: "publish.from DESC, modifiedTime DESC"
 		});
-		//libs.util.log(moreArticles);
 
 		if (moreArticles.count > 0) {
 			articles.hits = articles.hits.concat(moreArticles.hits);
 		}
 	}
-//libs.util.log(articles);
 	// Fintune the data before sending back to the view.
 	for (var i = 0; i < articles.hits.length; i++) {
 		if (articles.hits[i].displayName === '') { articles.hits[i].displayName = 'TODO - add display name!'; }

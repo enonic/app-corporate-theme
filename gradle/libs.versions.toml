@@ -3,11 +3,9 @@ landingpage = "3.0.0-SNAPSHOT"
 menu = "5.0.0-SNAPSHOT"
 thymeleaf = "3.0.0-SNAPSHOT"
 urlredirect = "4.0.0-SNAPSHOT"
-util = "4.0.0-SNAPSHOT"
 
 [libraries]
 lib-landingpage = { module = "com.enonic.lib:lib-landingpage", version.ref = "landingpage" }
 lib-menu        = { module = "com.enonic.lib:lib-menu",        version.ref = "menu" }
 lib-thymeleaf   = { module = "com.enonic.lib:lib-thymeleaf",   version.ref = "thymeleaf" }
 lib-urlredirect = { module = "com.enonic.lib:lib-urlredirect", version.ref = "urlredirect" }
-lib-util        = { module = "com.enonic.lib:lib-util",        version.ref = "util" }

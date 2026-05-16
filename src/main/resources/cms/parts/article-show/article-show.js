@@ -2,7 +2,6 @@ var libs = {
     thymeleaf: require('/lib/thymeleaf'),
     content: require('/lib/xp/content'),
     portal: require('/lib/xp/portal'),
-    util: require('/lib/util'),
     moment: require('/lib/moment-2.29.4.min.js')
 };
 
@@ -47,7 +46,7 @@ exports.get = function(req){
 			// Related content author needs to be fetched and added to the main content data.
 			if (content.data.author) {
 				var authorsHolder = [];
-				var authors = libs.util.data.forceArray(content.data.author); // Single selections will come out as strings, multiple as arrays. That makes our Thymeleaf complicated, so let's always force this data into arrays so our Thymeleaf can expect to loop if there's any data.
+				var authors = Array.isArray(content.data.author) ? content.data.author : [content.data.author]; // Single selections will come out as strings, multiple as arrays. That makes our Thymeleaf complicated, so let's always force this data into arrays so our Thymeleaf can expect to loop if there's any data.
 				for (var i = 0; i < authors.length; i++) {
 					var author = libs.content.get({
 						key: authors[i]

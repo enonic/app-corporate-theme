@@ -18,7 +18,6 @@ dependencies {
     include libs.lib.menu
     include libs.lib.thymeleaf
     include libs.lib.urlredirect
-    include libs.lib.util
 }
 
 repositories {

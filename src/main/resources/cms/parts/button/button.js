@@ -1,8 +1,7 @@
 var libs = {
     portal : require('/lib/xp/portal'),
     thymeleaf : require('/lib/thymeleaf'),
-    content : require('/lib/xp/content'),
-    util : require('/lib/util')
+    content : require('/lib/xp/content')
 };
 var view = resolve("button.html");
 

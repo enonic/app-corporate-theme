@@ -2,7 +2,6 @@ var libs = {
     portal:    require('/lib/xp/portal'),
     thymeleaf: require('/lib/thymeleaf'),
     content:   require('/lib/xp/content'),
-    util:      require('/lib/util'),
     shared:    require('/lib/shared'),
     portfolio: require('/cms/content-types/portfolio')
 };
@@ -16,7 +15,7 @@ exports.get = function(req) {
     var config = libs.portal.getComponent().config;
 
     var contents = libs.shared.getContents(CONTENT_TYPE_PORTFOLIO, function() {
-        var ids = config.portfolio ? libs.util.data.forceArray(config.portfolio) : null;
+        var ids = config.portfolio ? (Array.isArray(config.portfolio) ? config.portfolio : [config.portfolio]) : null;
         var _contents = [];
         if(ids) {
             for(var i = 0; i < ids.length; i++ ) {

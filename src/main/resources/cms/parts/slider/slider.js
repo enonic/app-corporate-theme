@@ -1,8 +1,7 @@
 var libs={
     portal : require('/lib/xp/portal'),
     thymeleaf : require('/lib/thymeleaf'),
-    content : require('/lib/xp/content'),
-    util : require('/lib/util')
+    content : require('/lib/xp/content')
 };
 
 var view = resolve('slider.html');
@@ -11,7 +10,7 @@ exports.get = function(req){
 
     var component = libs.portal.getComponent();
     var banners = [];
-    var slides = component.config.banner ? libs.util.data.forceArray(component.config.banner) : null;
+    var slides = component.config.banner ? (Array.isArray(component.config.banner) ? component.config.banner : [component.config.banner]) : null;
 
     if(slides){
         for(var i = 0; i < slides.length; i++){

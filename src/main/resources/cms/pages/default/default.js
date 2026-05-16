@@ -2,8 +2,7 @@ var libs = {
     portal: require('/lib/xp/portal'),
     thymeleaf: require('/lib/thymeleaf'),
     content: require('/lib/xp/content'),
-    menu: require('/lib/menu'),
-    util: require('/lib/util')
+    menu: require('/lib/menu')
 };
 
 var view = resolve('default.html');
@@ -51,7 +50,7 @@ exports.get = function (req) {
     }
     // Footer content
     // Fetching social media's icons
-    var icons = siteConfig.SocialIcon ? libs.util.data.forceArray(siteConfig.SocialIcon) : null;
+    var icons = siteConfig.SocialIcon ? (Array.isArray(siteConfig.SocialIcon) ? siteConfig.SocialIcon : [siteConfig.SocialIcon]) : null;
     var iconsList = [];
     if (icons) {
         for (var i = 0; i < icons.length; i++) {
@@ -61,7 +60,7 @@ exports.get = function (req) {
     }
     //Fetching contact information
     var items = [];
-    var companyItems = siteConfig.items ? libs.util.data.forceArray(siteConfig.items) : null;
+    var companyItems = siteConfig.items ? (Array.isArray(siteConfig.items) ? siteConfig.items : [siteConfig.items]) : null;
     if (companyItems) {
         for (var j = 0; j < companyItems.length; j++) {
             var itemKey = libs.content.get({
