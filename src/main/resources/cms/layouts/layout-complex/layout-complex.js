@@ -1,7 +1,6 @@
 var libs = {
     portal : require('/lib/xp/portal'),
-    thymeleaf : require('/lib/thymeleaf'),
-    util : require('/lib/util')
+    thymeleaf : require('/lib/thymeleaf')
 };
 
 var view = resolve('layout-complex.html');

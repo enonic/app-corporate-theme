@@ -2,7 +2,6 @@ var libs = {
     portal : require('/lib/xp/portal'),
     thymeleaf : require('/lib/thymeleaf'),
     content : require('/lib/xp/content'),
-    util : require('/lib/util'),
     shared : require('/lib/shared'),
     services: require('/cms/content-types/service')
 };
@@ -16,7 +15,7 @@ exports.get = function(req){
     var config = libs.portal.getComponent().config;
 
     var contents = libs.shared.getContents(CONTENT_TYPE_SERVICES, function() {
-        var ids = config.service ? libs.util.data.forceArray(config.service) : null;
+        var ids = config.service ? (Array.isArray(config.service) ? config.service : [config.service]) : null;
         if(ids) {
             var _contents = [];
             for(var i = 0; i < ids.length; i++ ) {

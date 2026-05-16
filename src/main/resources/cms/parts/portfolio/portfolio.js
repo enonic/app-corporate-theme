@@ -2,7 +2,6 @@ var libs = {
     portal:    require('/lib/xp/portal'),
     thymeleaf: require('/lib/thymeleaf'),
     content:   require('/lib/xp/content'),
-    util:      require('/lib/util'),
     shared:    require('/lib/shared'),
     portfolio: require('/cms/content-types/portfolio')
 };

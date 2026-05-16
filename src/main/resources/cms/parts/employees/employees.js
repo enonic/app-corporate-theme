@@ -1,8 +1,7 @@
 var libs = {
     portal: require('/lib/xp/portal'),
     thymeleaf: require('/lib/thymeleaf'),
-    content: require('/lib/xp/content'),
-    util: require('/lib/util')
+    content: require('/lib/xp/content')
 };
 
 var view = resolve('employees.html');
@@ -23,7 +22,7 @@ function getEmployeeContents(config) {
         }).hits;
     }
 
-    var employeeIds = config.team ? libs.util.data.forceArray(config.team) : null;
+    var employeeIds = config.team ? (Array.isArray(config.team) ? config.team : [config.team]) : null;
     if (!employeeIds) { return [] };
     var employeeContents = [];
     for(var i=0; i < employeeIds.length; i++) {

@@ -1,8 +1,7 @@
 var libs = {
     portal : require('/lib/xp/portal'),
     thymeleaf : require('/lib/thymeleaf'),
-    content : require('/lib/xp/content'),
-    util : require('/lib/util')
+    content : require('/lib/xp/content')
 };
 
 var view = resolve('partner.html');
@@ -10,7 +9,7 @@ var view = resolve('partner.html');
 exports.get = function(req){
 
     var config = libs.portal.getComponent().config;
-    var partnerLogos = config.partnerLogo ? libs.util.data.forceArray(config.partnerLogo) : null;
+    var partnerLogos = config.partnerLogo ? (Array.isArray(config.partnerLogo) ? config.partnerLogo : [config.partnerLogo]) : null;
     var logosList = [];
 
     if(partnerLogos){
