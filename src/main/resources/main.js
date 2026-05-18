@@ -7,9 +7,7 @@ const projectData = {
     id: 'corporate-theme',
     displayName: 'Corporate Theme',
     description: 'App to build a Corporate website',
-    readAccess: {
-        public: true
-    }
+    publicRead: true
 }
 
 function runInContext(callback) {
