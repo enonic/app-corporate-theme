@@ -126,8 +126,6 @@ exports.get = function (req) {
         isFragment: isFragment
     };
 
-    log.info(JSON.stringify(menuItems, null, 4));
-
     var body = libs.thymeleaf.render(view, model);
     return {body: body};
 };
