@@ -2,8 +2,7 @@
     <id>a3b373f2-bc42-4331-884d-6b0ebf256947</id>
     <childOrder>modifiedtime DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2025-10-10T11:40:00.034Z</timestamp>
-    <inheritPermissions>true</inheritPermissions>
+    <timestamp>2026-05-29T12:52:19.247Z</timestamp>
     <permissions>
         <principal key="role:system.everyone">
             <allow type="array">
@@ -92,8 +91,6 @@
         <dateTime name="createdTime">2025-10-10T09:26:55.068Z</dateTime>
         <property-set name="publish">
             <dateTime isNull="true" name="first"/>
-            <dateTime isNull="true" name="from"/>
-            <dateTime isNull="true" name="to"/>
         </property-set>
         <property-set name="workflow">
             <string name="state">READY</string>
@@ -181,7 +178,7 @@
             <string name="mimeType">image/jpeg</string>
             <long name="size">180319</long>
             <string name="sha512">43fcd1740eb2e6f6564f0f64bee5bd30af561202e24d7433e91d360c9d6ab4d975bee75a9f2ff64a997b3446f7ac3cfabd83402fce14d38b26772b572b229634</string>
-            <string isNull="true" name="text"/>
+            <string name="text"/>
         </property-set>
     </data>
     <indexConfigs>
@@ -202,7 +199,7 @@
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>data.siteConfig.applicationkey</path>
+                <path>data.siteconfig.applicationkey</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -272,7 +269,7 @@
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>modifiedTime</path>
+                <path>modifiedtime</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -302,7 +299,7 @@
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>createdTime</path>
+                <path>createdtime</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -315,6 +312,10 @@
                 <path>attachment</path>
             </pathIndexConfig>
         </pathIndexConfigs>
-        <allTextIndexConfig/>
+        <allTextIndexConfig>
+            <enabled>true</enabled>
+            <nGram>true</nGram>
+            <fulltext>true</fulltext>
+        </allTextIndexConfig>
     </indexConfigs>
 </node>
