@@ -2,8 +2,7 @@
     <id>be3714be-0cc0-4451-a14d-443f81a7a191</id>
     <childOrder>_manualordervalue DESC, _timestamp DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2019-03-26T12:46:09.818Z</timestamp>
-    <inheritPermissions>true</inheritPermissions>
+    <timestamp>2026-05-29T12:52:19.023Z</timestamp>
     <permissions>
         <principal key="role:system.everyone">
             <allow type="array">
@@ -92,8 +91,6 @@
         <dateTime name="createdTime">2017-08-02T08:01:09.762Z</dateTime>
         <property-set name="publish">
             <dateTime isNull="true" name="first"/>
-            <dateTime isNull="true" name="from"/>
-            <dateTime isNull="true" name="to"/>
         </property-set>
         <property-set name="data"/>
         <property-set name="x">
@@ -192,7 +189,7 @@
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>modifiedTime</path>
+                <path>modifiedtime</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -222,7 +219,7 @@
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>createdTime</path>
+                <path>createdtime</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -235,6 +232,10 @@
                 <path>attachment</path>
             </pathIndexConfig>
         </pathIndexConfigs>
-        <allTextIndexConfig/>
+        <allTextIndexConfig>
+            <enabled>true</enabled>
+            <nGram>true</nGram>
+            <fulltext>true</fulltext>
+        </allTextIndexConfig>
     </indexConfigs>
 </node>

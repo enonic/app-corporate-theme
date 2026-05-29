@@ -2,8 +2,7 @@
     <id>794d5440-098c-4c8b-956b-56823a22033c</id>
     <childOrder>modifiedtime DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2025-10-10T09:43:01.998Z</timestamp>
-    <inheritPermissions>true</inheritPermissions>
+    <timestamp>2026-05-29T12:52:19.350Z</timestamp>
     <permissions>
         <principal key="role:system.everyone">
             <allow type="array">
@@ -92,8 +91,6 @@
         <dateTime name="createdTime">2017-04-10T10:28:49.733Z</dateTime>
         <property-set name="publish">
             <dateTime isNull="true" name="first"/>
-            <dateTime isNull="true" name="from"/>
-            <dateTime isNull="true" name="to"/>
         </property-set>
         <property-set name="workflow">
             <string name="state">READY</string>
@@ -131,7 +128,7 @@
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>data.siteConfig.applicationkey</path>
+                <path>data.siteconfig.applicationkey</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -201,7 +198,7 @@
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>modifiedTime</path>
+                <path>modifiedtime</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -231,7 +228,7 @@
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>createdTime</path>
+                <path>createdtime</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -244,6 +241,10 @@
                 <path>attachment</path>
             </pathIndexConfig>
         </pathIndexConfigs>
-        <allTextIndexConfig/>
+        <allTextIndexConfig>
+            <enabled>true</enabled>
+            <nGram>true</nGram>
+            <fulltext>true</fulltext>
+        </allTextIndexConfig>
     </indexConfigs>
 </node>
