@@ -2,8 +2,7 @@
     <id>b038fbac-9aa7-430f-9f6e-b5238599f970</id>
     <childOrder>modifiedtime DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2025-10-10T07:36:45.822Z</timestamp>
-    <inheritPermissions>true</inheritPermissions>
+    <timestamp>2026-05-29T12:52:19.198Z</timestamp>
     <permissions>
         <principal key="role:system.everyone">
             <allow type="array">
@@ -105,9 +104,9 @@
             <string name="label">source</string>
             <binaryReference name="binary">logo.svg</binaryReference>
             <string name="mimeType">image/svg+xml</string>
-            <string isNull="true" name="text"/>
             <long name="size">11126</long>
             <string name="sha512">48deb58a13d33e36659f5429a0c12d771ff2000bef86ce5864af452f8c7725876a6ab6a3e686cfe983b8c96e54ca9b8341e92ce7093841299b5269b0429e49b5</string>
+            <string name="text"/>
         </property-set>
     </data>
     <indexConfigs>
@@ -128,7 +127,7 @@
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>data.siteConfig.applicationkey</path>
+                <path>data.siteconfig.applicationkey</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -198,7 +197,7 @@
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>modifiedTime</path>
+                <path>modifiedtime</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -228,7 +227,7 @@
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>createdTime</path>
+                <path>createdtime</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -241,6 +240,10 @@
                 <path>attachment</path>
             </pathIndexConfig>
         </pathIndexConfigs>
-        <allTextIndexConfig/>
+        <allTextIndexConfig>
+            <enabled>true</enabled>
+            <nGram>true</nGram>
+            <fulltext>true</fulltext>
+        </allTextIndexConfig>
     </indexConfigs>
 </node>

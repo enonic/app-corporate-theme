@@ -2,8 +2,7 @@
     <id>90370b68-6b0e-4247-8eb5-ad4f839a76da</id>
     <childOrder>modifiedtime DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2019-03-26T12:46:09.884Z</timestamp>
-    <inheritPermissions>true</inheritPermissions>
+    <timestamp>2026-05-29T12:52:19.140Z</timestamp>
     <permissions>
         <principal key="role:system.everyone">
             <allow type="array">
@@ -120,6 +119,7 @@
             <binaryReference name="binary">Bootstrap-Tutorial.png</binaryReference>
             <string name="mimeType">image/png</string>
             <long name="size">13209</long>
+            <string name="sha512">62617d6dd84207003ceec0e41ff03fae957dd40a52f313df5c26914ee5fbd2ab706f6ea9f05d3c8dac317466b566081636fa5b0c4c4b1e6f6ac46104db300206</string>
             <string name="text"/>
         </property-set>
     </data>
@@ -200,7 +200,7 @@
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>modifiedTime</path>
+                <path>modifiedtime</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -230,7 +230,7 @@
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>createdTime</path>
+                <path>createdtime</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -243,6 +243,10 @@
                 <path>attachment</path>
             </pathIndexConfig>
         </pathIndexConfigs>
-        <allTextIndexConfig/>
+        <allTextIndexConfig>
+            <enabled>true</enabled>
+            <nGram>true</nGram>
+            <fulltext>true</fulltext>
+        </allTextIndexConfig>
     </indexConfigs>
 </node>

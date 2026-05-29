@@ -13,6 +13,7 @@ dependencies {
     include xplibs.mail
     include xplibs.portal
     include xplibs.project
+    include xplibs.task
 
     include libs.lib.landingpage
     include libs.lib.menu
