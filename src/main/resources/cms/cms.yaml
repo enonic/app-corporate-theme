@@ -1,6 +1,6 @@
 kind: "CMS"
 mixins:
-  - name: "com.enonic.lib.menu:menu-item"
+  - name: "menu-item"
     optional: false
 form:
   - type: "ImageSelector"
