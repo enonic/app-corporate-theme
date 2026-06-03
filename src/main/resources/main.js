@@ -8,15 +8,13 @@ const projectData = {
     displayName: 'Corporate Theme',
     description: 'App to build a Corporate website',
     publicRead: true
-/*    readAccess: {
-        public: true
-    }*/
 }
 
 function runInContext(callback) {
     let result;
     try {
         result = contextLib.run({
+            branch: 'draft',
             principals: ["role:system.admin"],
             repository: 'com.enonic.cms.' + projectData.id
         }, callback);
@@ -62,6 +60,13 @@ function createContent() {
         xslt: resolve('/import/replace_app.xsl'),
         xsltParams: {
             applicationId: app.name
+        },
+        versionAttributes: {
+            'content.import': {
+                user: "role:system.admin",
+                optime: new Date().toISOString()
+            },
+            'vacuum.skip': {}
         },
         includeNodeIds: true
     });
