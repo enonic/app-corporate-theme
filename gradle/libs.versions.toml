@@ -1,7 +1,7 @@
 [versions]
-landingpage = "3.0.0-B1"
-menu = "5.0.0-B1"
-thymeleaf = "3.0.0-B1"
+landingpage = "3.0.0"
+menu = "5.0.0"
+thymeleaf = "3.0.0"
 urlredirect = "4.0.0-B1"
 
 [libraries]
