@@ -26,6 +26,7 @@ dependencies {
 }
 
 repositories {
+    mavenLocal()
     mavenCentral()
     xp.enonicRepo('dev')
 }

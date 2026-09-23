@@ -1,6 +1,6 @@
 [versions]
 landingpage = "3.0.0"
-menu = "5.0.0"
+menu = "5.0.1-SNAPSHOT"
 thymeleaf = "3.0.0"
 urlredirect = "4.0.0"
 
