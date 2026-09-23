@@ -15,7 +15,6 @@ jobs:
           repoPassword: ${{ secrets.ARTIFACTORY_PASSWORD }}
           releaseBranch: |
             3.x
-            2.x
 
   release:
     runs-on: ubuntu-latest
